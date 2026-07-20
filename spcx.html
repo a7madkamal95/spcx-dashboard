@@ -1,7 +1,13 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
 <meta charset="UTF-8">
-<title>SPCX — خريطة الإمبراطورية</title>
-<meta name="description" content="تحليل استثماري لسهم SPCX: صواريخ سبيس إكس، ستارلينك، وxAI بأرقام وأخبار محدثة يوميًا.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPCX — خريطة الإمبراطورية · الراصد</title>
+<meta name="description" content="تحليل استثماري حي لسهم SPCX من الراصد: صواريخ سبيس إكس، ستارلينك، وxAI بأرقام وأخبار تتحدث لحالها.">
 <meta name="theme-color" content="#05060d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
 --void:#05060d;--ink:#f5f7ff;--mut:#b7bfdd;
@@ -9,19 +15,21 @@
 --glass:rgba(255,255,255,.055);--glassH:rgba(255,255,255,.11);
 --edge:rgba(255,255,255,.15);--edgeTop:rgba(255,255,255,.34);
 --focus:#38d4ff;
---disp:Tahoma,'Segoe UI',sans-serif;--body:'Segoe UI',Tahoma,sans-serif;--num:'Segoe UI',Tahoma,sans-serif;
+--disp:'Cairo',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Space Grotesk',monospace;
 --sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
 --r16:16px;--r20:20px;--r24:24px;--r99:999px;
 --dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-html[data-lang=en]{--disp:Arial,'Segoe UI',sans-serif;--body:'Segoe UI',Arial,sans-serif}
+html[data-lang=en]{--disp:'Space Grotesk',sans-serif;--body:'Space Grotesk','Segoe UI',sans-serif}
 .en,.num,#px,.st b,.ts .w,.tk i{font-variant-numeric:tabular-nums}
 html[data-lang=ar] .i-en{display:none!important}
 html[data-lang=en] .i-ar{display:none!important}
 body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
 :focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.spacebg{position:fixed;inset:0;z-index:-4;background-image:url(https://upload.wikimedia.org/wikipedia/commons/4/4a/SpaceX_Starship_ignition_during_IFT-5.jpg);background-size:cover;background-position:center 65%;opacity:.28;filter:saturate(1.05) contrast(1.05)}
+.spacebg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(5,6,13,.55),var(--void) 78%)}
 .blobs{position:fixed;inset:-20%;z-index:-2;filter:blur(70px);opacity:.85}
 .blob{position:absolute;border-radius:50%}
 .b1{width:46vw;height:46vw;background:radial-gradient(circle,rgba(139,92,255,.55),transparent 65%);top:-6%;right:-4%;animation:f1 26s ease-in-out infinite}
@@ -43,6 +51,10 @@ position:relative;overflow:hidden}
 .gl::before{content:"";position:absolute;top:0;right:8%;left:38%;height:1px;
 background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
 .bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--a2)}
+.bar .brand:hover{color:var(--a2)}
+.bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
 .bar .sym{font-family:var(--num);font-weight:700;letter-spacing:.06em;font-size:13px;color:var(--mut)}
 .bar .dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 14px var(--mint);animation:pl 1.6s infinite;flex-shrink:0}
 @keyframes pl{50%{opacity:.35}}
@@ -50,6 +62,8 @@ background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
 .neg{color:var(--coral)}.pos{color:var(--mint)}
 #pm,#vi{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
 .ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.ldot.live{background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pl 1.6s infinite}
+.ldot.wait{background:var(--gold);animation:pl 1s infinite}
 .en{direction:ltr;display:inline-block;font-family:var(--num)}
 .lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.08em;
 color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
@@ -94,12 +108,15 @@ section{margin-top:var(--sp8)}
 .ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
 .veins{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
 @media(max-width:900px){.veins{grid-template-columns:1fr}}
-.vein{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease);border-top:2px solid transparent}
+.vein{padding:0;cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease);border-top:2px solid transparent}
 .vein:hover{transform:translateY(-5px);background:var(--glassH)}
 .vein:nth-child(1){border-top-color:rgba(56,212,255,.55)}
 .vein:nth-child(2){border-top-color:rgba(60,232,166,.55)}
 .vein:nth-child(3){border-top-color:rgba(255,107,107,.55)}
-.vein .icwrap{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid var(--edge)}
+.vein .vimg{height:132px;background-size:cover;background-position:center;position:relative}
+.vein .vimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,13,.05) 35%,rgba(5,6,13,.75) 82%,var(--void) 100%)}
+.vein .vc{padding:14px var(--sp5) var(--sp5)}
+.vein .icwrap{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid var(--edge);position:relative;margin-top:-36px;backdrop-filter:blur(6px)}
 .vein .icwrap svg{width:24px;height:24px}
 .vein h3{font-family:var(--disp);font-weight:800;font-size:21px;margin-top:var(--sp3)}
 .tag{display:inline-block;font-family:var(--num);font-size:11px;letter-spacing:.1em;border-radius:var(--r99);padding:3px 12px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.05)}
@@ -129,8 +146,10 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 #news a{color:inherit;text-decoration:none;display:block;border-radius:10px}
 #news a:hover .arb{color:var(--a2)}
 .arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.6}
+.osrc{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
 .nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
 .src{font-family:var(--num);font-size:11.5px;letter-spacing:.05em;color:var(--a2);border:1px solid rgba(56,212,255,.4);border-radius:var(--r99);padding:3px 11px;background:rgba(56,212,255,.08);direction:ltr}
+.ndate{font-size:12px;color:var(--mut)}
 .sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
 @media(max-width:640px){.sc{grid-template-columns:1fr}}
 .pan{padding:var(--sp5);font-size:13.5px}
@@ -147,9 +166,14 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 @supports not (backdrop-filter:blur(1px)){.gl{background:rgba(18,22,42,.94)}}
 </style>
+</head>
+<body>
+<div class="spacebg" aria-hidden="true"></div>
 <div class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
 <div class="wrap">
 <div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v3l2 2"/></svg><span>الراصد</span></a>
+<span class="sep" aria-hidden="true"></span>
 <span class="dot" aria-hidden="true"></span><span class="sym">NASDAQ · SPCX</span>
 <span id="px">…</span><span id="vi"></span><span id="mc" class="en" style="color:var(--gold);font-weight:700"></span>
 <span id="pm" aria-live="polite"></span>
@@ -168,9 +192,9 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 <main>
 <div class="hero">
 <div class="rv">
-<div class="kick"><span class="i-ar">تحليل استثماري · محدث يوميًا</span><span class="i-en">INVESTOR INTELLIGENCE · UPDATED DAILY</span></div>
+<div class="kick"><span class="i-ar">تحليل استثماري حي · يتحدث تلقائيًا</span><span class="i-en">LIVE INVESTOR INTELLIGENCE · AUTO-UPDATING</span></div>
 <h1><span class="i-ar">إمبراطورية<br><span class="grad">سبيس إكس</span></span><span class="i-en">The <span class="grad">SpaceX</span><br>Empire</span></h1>
-<p class="lead"><span class="i-ar">ثلاث شركات مدموجة بسهم واحد: صواريخ تحتكر الفضاء، إنترنت يموّل الجميع، وذكاء اصطناعي يحرق المليارات.</span><span class="i-en">Three companies fused into one stock: rockets that monopolize launch, an internet business that funds everyone, and an AI unit burning billions.</span></p>
+<p class="lead"><span class="i-ar">ثلاث شركات مدموجة بسهم واحد: صواريخ تحتكر الفضاء، إنترنت يموّل الجميع، وذكاء اصطناعي يحرق المليارات — بأرقام حية تتحدث لحالها.</span><span class="i-en">Three companies fused into one stock: rockets that monopolize launch, an internet business that funds everyone, and an AI unit burning billions — with live numbers that update themselves.</span></p>
 </div>
 <div class="orbit gl rv">
 <svg viewBox="0 0 420 420" role="img" aria-label="Orbital diagram of SpaceX divisions">
@@ -178,7 +202,6 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 <circle class="ring ring2" cx="210" cy="210" r="178"/>
 <g class="core">
 <circle cx="210" cy="210" r="58" fill="rgba(60,232,166,.14)" stroke="#3ce8a6" stroke-width="2"/>
-<path d="M210 186c1.6 1.6 2.8 4 2.8 7.2 0 1.6-.4 3.2-1.2 4.8l-1.6 2.4-1.6-2.4c-.8-1.6-1.2-3.2-1.2-4.8 0-3.2 1.2-5.6 2.8-7.2z" fill="none" stroke="#3ce8a6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,-8) scale(1.3)"/>
 <text x="210" y="205" text-anchor="middle" fill="#f5f7ff" font-size="15" font-weight="bold">Starlink</text>
 <text x="210" y="225" text-anchor="middle" fill="#3ce8a6" font-size="12" font-weight="bold" class="i-ar">+$4.4B ربح</text>
 <text x="210" y="225" text-anchor="middle" fill="#3ce8a6" font-size="12" font-weight="bold" class="i-en">+$4.4B profit</text>
@@ -210,6 +233,8 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 <div class="veins">
 
 <div class="vein gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleVein(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleVein(this)}">
+<div class="vimg" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/9/9e/SpaceX_Falcon_9_Starlink_4-7_Launch_%2851860439246%29.jpg)" aria-hidden="true"></div>
+<div class="vc">
 <div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#38d4ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 2 3.5 5 3.5 9 0 2-.5 4-1.5 6l-2 3-2-3c-1-2-1.5-4-1.5-6 0-4 1.5-7 3.5-9z"/><path d="M9 15l-3 2v3l3-1.5"/><path d="M15 15l3 2v3l-3-1.5"/><circle cx="12" cy="9" r="1.6"/></svg></div>
 <h3><span class="i-ar">الفضاء</span><span class="i-en">Space</span></h3><span class="tag t1">SPACE · ~$5B</span>
 <p><span class="i-ar">احتكار الإطلاق العالمي بتكلفة أقل 50–70% من بلو أوريجن وأريان سبيس</span><span class="i-en">A global launch monopoly at 50–70% lower cost than Blue Origin and Arianespace</span></p>
@@ -232,8 +257,11 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 </div>
 <div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
 </div>
+</div>
 
 <div class="vein gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleVein(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleVein(this)}">
+<div class="vimg" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/9/91/Starlink_Mission_%2847926144123%29.jpg)" aria-hidden="true"></div>
+<div class="vc">
 <div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#3ce8a6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/><path d="M8.5 15.5a5 5 0 017 0"/><path d="M5.5 12.5a9 9 0 0113 0"/><path d="M3 9a13 13 0 0118 0"/></svg></div>
 <h3><span class="i-ar">الاتصالات</span><span class="i-en">Connectivity</span></h3><span class="tag t2">STARLINK · $11.4B</span>
 <p><span class="i-ar">مركز الربح الوحيد: 69% من إيرادات المجموعة</span><span class="i-en">The only profit center: 69% of group revenue</span></p>
@@ -260,8 +288,11 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 </div>
 <div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
 </div>
+</div>
 
 <div class="vein gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleVein(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleVein(this)}">
+<div class="vimg" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/f/ff/Rear_of_rack_at_NERSC_data_center_-_closeup.jpg)" aria-hidden="true"></div>
+<div class="vc">
 <div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></div>
 <h3><span class="i-ar">الذكاء الاصطناعي</span><span class="i-en">Artificial Intelligence</span></h3><span class="tag t3">xAI + X · −$14B</span>
 <p><span class="i-ar">ماكينة الحرق اللي رفعت التقييم من $800B إلى $1.75T</span><span class="i-en">The burn machine that lifted valuation from $800B to $1.75T</span></p>
@@ -286,12 +317,13 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 </div>
 <div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
 </div>
+</div>
 
 </div>
 </section>
 
 <section class="rv" id="s-numbers">
-<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>DAILY DATA</span><div class="ln"></div></div>
+<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>LIVE DATA</span><div class="ln"></div></div>
 <div class="stats" id="stats"></div>
 </section>
 
@@ -324,15 +356,16 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 
 <footer>
 <p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+<p class="dsc" style="margin-top:8px;font-size:11px;opacity:.7">
+<span class="i-ar">صور: </span><span class="i-en">Photos: </span><a href="https://commons.wikimedia.org/wiki/File:SpaceX_Starship_ignition_during_IFT-5.jpg" target="_blank" rel="noopener" style="color:inherit">Steve Jurvetson</a>, <a href="https://commons.wikimedia.org/wiki/File:SpaceX_Falcon_9_Starlink_4-7_Launch_(51860439246).jpg" target="_blank" rel="noopener" style="color:inherit">Charles Boyer</a> (CC BY 2.0) · <a href="https://commons.wikimedia.org/wiki/File:Starlink_Mission_(47926144123).jpg" target="_blank" rel="noopener" style="color:inherit">SpaceX</a>, <a href="https://commons.wikimedia.org/wiki/File:Rear_of_rack_at_NERSC_data_center_-_closeup.jpg" target="_blank" rel="noopener" style="color:inherit">Derrick Coetzee</a> (CC0) — Wikimedia Commons
+</p>
 </footer>
 
 </div>
 <script>
 function toggleVein(el){var open=el.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
 var CUR=localStorage.getItem("lang")||"ar";
-document.documentElement.lang=CUR;document.documentElement.dir=(CUR==="ar"?"rtl":"ltr");document.documentElement.setAttribute("data-lang",CUR);
-document.getElementById("lngBtn").textContent=(CUR==="ar"?"EN":"عربي");
-var D=null;
+var D=null,NEWSCACHE=null;
 var L={ar:{revenue_2025:"إجمالي إيرادات 2025",starlink_revenue_2025:"إيرادات ستارلينك",subscribers:"مشترك نشط",revenue_2026_expected:"المتوقع 2026",eps:"ربحية السهم",beta:"بيتا · التقلب",etf_holders:"صندوق مؤشرات",next_earnings:"الأرباح القادمة"},
 en:{revenue_2025:"Total revenue 2025",starlink_revenue_2025:"Starlink revenue",subscribers:"Active subscribers",revenue_2026_expected:"2026 expected",eps:"EPS",beta:"Beta",etf_holders:"Index funds",next_earnings:"Next earnings"}};
 var VEN={next_earnings:"Aug 6"};
@@ -354,6 +387,17 @@ var meta='<div class="nmeta"><span class="src">'+n.src+'</span></div>';
 return n.link?('<li><a href="'+n.link+'" target="_blank" rel="noopener">'+head+meta+'</a></li>'):('<li>'+head+meta+'</li>');
 }).join("")}
 var TKEN=["This is effectively a telecom company","Buying the stock means buying three companies","The valuation is priced on the future","The stock moves on news more than fundamentals"];
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
 var qnavLinks=document.querySelectorAll(".qnav a");
@@ -367,10 +411,7 @@ function setLang(l){CUR=l;localStorage.setItem("lang",l);
 document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
 document.documentElement.setAttribute("data-lang",l);
 document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
-renderDyn();
-document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?D.news:NEN);
-document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر تحديث "+D.last_updated:"Updated "+D.last_updated);
-}
+renderDyn();renderNews();}
 function renderDyn(){if(!D)return;
 document.getElementById("mc").textContent=D.market_cap;
 var tl=(CUR==="ar")?D.timeline:TLEN;
@@ -381,15 +422,73 @@ var ic=SICO[k]?'<svg class="sti" viewBox="0 0 24 24" fill="none" stroke="current
 return '<div class="st gl">'+ic+'<b>'+v+'</b><span>'+(L[CUR][k]||k)+'</span></div>'}).join("");
 var tk=(CUR==="ar")?D.takeaways:TKEN;
 document.getElementById("tks").innerHTML=tk.map(function(t,i){return '<div class="tk"><i>0'+(i+1)+'</i><div>'+t+'</div></div>'}).join("");
-sp(D.price_fallback);}
-function sp(p){var e=document.getElementById("px"),ipo=D.ipo_price||135,b=p<ipo;
-e.textContent="$"+(+p).toFixed(2)+(b?" ▼":" ▲");e.className=(b?"neg":"pos");
-document.getElementById("vi").textContent=(CUR==="ar"?((b?"تحت":"فوق")+" الاكتتاب $"+ipo):((b?"below":"above")+" IPO $"+ipo));}
+sp(window.__LASTP||D.price_fallback,!!window.__LIVE);}
 function initData(d){
-D=d;
-if(CUR!=="ar")setLang(CUR);else{renderDyn();document.getElementById("news").innerHTML=staticNewsHtml(D.news);
-document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>آخر تحديث '+D.last_updated;}
+D=d;window.__IPO=d.ipo_price||135;
+if(CUR!=="ar")setLang(CUR);else{renderDyn();}
+document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?d.news:NEN);
+livePrice();liveNews();
 }
-var ARTIFACT_DATA={"last_updated":"2026-07-20","price_fallback":124,"ipo_price":135,"market_cap":"$1.74T","stats":{"revenue_2025":"18.7B$","starlink_revenue_2025":"11.4B$","subscribers":"10.3M","revenue_2026_expected":"~24B$","eps":"-2.94$","beta":"5.79","etf_holders":"~200","next_earnings":"6 أغسطس"},"timeline":[{"when":"ديسمبر 2025","what":"بيع داخلي للأسهم","note":"قيّم الشركة بـ $800B"},{"when":"فبراير 2026","what":"الاندماج الكبير","note":"ابتلعت xAI ومعها منصة X بقيمة $1.25T"},{"when":"12 يونيو 2026","what":"أكبر اكتتاب بالتاريخ","note":"جمعت $75B+ بسعر $135 للسهم"},{"when":"يوليو 2026","what":"الهبوط للواقع","note":"السهم نزل ~30% ورجع تحت سعر الاكتتاب"}],"news":[{"text":"سهم سبيس إكس هبط 45% من قمته وحرق نحو تريليون دولار من القيمة السوقية — تراجعت من $2.6T إلى $1.6T","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/20/spacex-stock-is-down-45-from-its-high-history-says/"},{"text":"سبيس إكس بمفاوضات صفقة حوسبة ذكاء اصطناعي بمليارات الدولارات مع البنتاغون تنافس مايكروسوفت وأمازون","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/long-ideas/26/07/60549662/spacex-pentagon-ai-microsoft-amazon-google"},{"text":"انضمام سبيس إكس لمؤشر Nasdaq-100 يوم 7 يوليو أجبر صناديق QQQ على شراء إجباري بقيمة $4.3B من سهم عائمه العام لا يتجاوز 3–5%","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262011296-spacex-spcx-stock-forecast-july-2026-nasdaq-100-inclusion-tradingkey"},{"text":"كاثي وود ترفع حصة Ark Invest في سبيس إكس بأكثر من $51 مليون خلال أسبوع واحد رغم تراجع السهم","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/16/cathie-wood-ark-bought-spacex-stock/"},{"text":"السهم يسجل أدنى مستوى تاريخي له، بينما محلل واحد لسا يتوقع وصوله لـ $800","src":"Benzinga","link":"https://www.benzinga.com/markets/equities/26/07/60543184/spacex-stock-falls-to-record-low-but-one-analyst-sees-it-hitting-800"},{"text":"سبيس إكس تعيد جدولة اختبار Starship رحلة 13 ليوم الخميس 23 يوليو بعد إيقاف محاولة الإطلاق السابقة لاستبدال محركين","src":"Space.com","link":"https://www.space.com/space-exploration/launches-spacecraft/spacex-starship-flight-13-starlink-v3-satellites"}],"takeaways":["هذي فعليًا شركة اتصالات — Starlink هو المحرك المالي","لما تشتري السهم أنت تشتري 3 شركات إجباريًا","التقييم مبني على المستقبل مو الحاضر","السهم يتحرك مع الأخبار والاختبارات أكثر من الأرقام"]};
-initData(ARTIFACT_DATA);
+var FALLBACK_DATA={"last_updated":"2026-07-20","finnhub_api_key":"","price_fallback":124,"ipo_price":135,"market_cap":"$1.74T","stats":{"revenue_2025":"18.7B$","starlink_revenue_2025":"11.4B$","subscribers":"10.3M","revenue_2026_expected":"~24B$","eps":"-2.94$","beta":"5.79","etf_holders":"~200","next_earnings":"6 أغسطس"},"timeline":[{"when":"ديسمبر 2025","what":"بيع داخلي للأسهم","note":"قيّم الشركة بـ $800B"},{"when":"فبراير 2026","what":"الاندماج الكبير","note":"ابتلعت xAI ومعها منصة X بقيمة $1.25T"},{"when":"12 يونيو 2026","what":"أكبر اكتتاب بالتاريخ","note":"جمعت $75B+ بسعر $135 للسهم"},{"when":"يوليو 2026","what":"الهبوط للواقع","note":"السهم نزل ~30% ورجع تحت سعر الاكتتاب"}],"news":[{"text":"سهم سبيس إكس هبط 45% من قمته وحرق نحو تريليون دولار من القيمة السوقية — تراجعت من $2.6T إلى $1.6T","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/20/spacex-stock-is-down-45-from-its-high-history-says/"},{"text":"سبيس إكس بمفاوضات صفقة حوسبة ذكاء اصطناعي بمليارات الدولارات مع البنتاغون تنافس مايكروسوفت وأمازون","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/long-ideas/26/07/60549662/spacex-pentagon-ai-microsoft-amazon-google"},{"text":"انضمام سبيس إكس لمؤشر Nasdaq-100 يوم 7 يوليو أجبر صناديق QQQ على شراء إجباري بقيمة $4.3B من سهم عائمه العام لا يتجاوز 3–5%","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262011296-spacex-spcx-stock-forecast-july-2026-nasdaq-100-inclusion-tradingkey"},{"text":"كاثي وود ترفع حصة Ark Invest في سبيس إكس بأكثر من $51 مليون خلال أسبوع واحد رغم تراجع السهم","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/16/cathie-wood-ark-bought-spacex-stock/"},{"text":"السهم يسجل أدنى مستوى تاريخي له، بينما محلل واحد لسا يتوقع وصوله لـ $800","src":"Benzinga","link":"https://www.benzinga.com/markets/equities/26/07/60543184/spacex-stock-falls-to-record-low-but-one-analyst-sees-it-hitting-800"},{"text":"سبيس إكس تعيد جدولة اختبار Starship رحلة 13 ليوم الخميس 23 يوليو بعد إيقاف محاولة الإطلاق السابقة لاستبدال محركين","src":"Space.com","link":"https://www.space.com/space-exploration/launches-spacecraft/spacex-starship-flight-13-starlink-v3-satellites"}],"takeaways":["هذي فعليًا شركة اتصالات — Starlink هو المحرك المالي","لما تشتري السهم أنت تشتري 3 شركات إجباريًا","التقييم مبني على المستقبل مو الحاضر","السهم يتحرك مع الأخبار والاختبارات أكثر من الأرقام"]};
+fetch("data.json?v="+Date.now()).then(function(r){return r.json()}).then(initData).catch(function(){initData(FALLBACK_DATA)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/SPCX?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;window.__LIVE=true;sp(p,true);
+var pc=m.chartPreviousClose||m.previousClose;
+if(pc){var ch=((p-pc)/pc*100).toFixed(2);
+document.getElementById("pm").innerHTML='<span class="ldot live" aria-hidden="true"></span>'+(CUR==="ar"?"حي · اليوم ":"Live · today ")+'<span class="en">'+(ch>0?"+":"")+ch+"%</span>"}}
+}).catch(function(){document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر سعر محفوظ":"last saved price")})}
+function trTxt(t){
+return fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ar&dt=t&q="+encodeURIComponent(t))
+.then(function(r){return r.json()}).then(function(j){return j[0].map(function(s){return s[0]}).join("")})
+.catch(function(){return fetch("https://api.mymemory.translated.net/get?q="+encodeURIComponent(t)+"&langpair=en|ar")
+.then(function(r){return r.json()}).then(function(j){return (j.responseData&&j.responseData.translatedText)||t})
+.catch(function(){return t})})}
+var SRC={"finance.yahoo.com":"Yahoo Finance","yahoo.com":"Yahoo","reuters.com":"Reuters","bloomberg.com":"Bloomberg","cnbc.com":"CNBC","wsj.com":"WSJ","ft.com":"Financial Times","barrons.com":"Barrons","marketwatch.com":"MarketWatch","investors.com":"IBD","fool.com":"Motley Fool","seekingalpha.com":"Seeking Alpha","benzinga.com":"Benzinga","businessinsider.com":"Business Insider","forbes.com":"Forbes","techcrunch.com":"TechCrunch","theverge.com":"The Verge","spacenews.com":"SpaceNews","apnews.com":"AP","nytimes.com":"NY Times","cnn.com":"CNN","bbc.com":"BBC"};
+function srcName(item,link){
+var s=item.querySelector("source");
+if(s&&s.textContent.trim())return s.textContent.trim();
+try{var h=new URL(link).hostname.replace(/^www\./,"");
+if(SRC[h])return SRC[h];
+var base=h.split(".").slice(-2).join(".");
+if(SRC[base])return SRC[base];
+var nm=base.split(".")[0];return nm.charAt(0).toUpperCase()+nm.slice(1);
+}catch(e){return "Source"}}
+function agoTxt(t){
+if(!t)return "";
+var m=Math.round((Date.now()-t)/60000);
+if(CUR==="ar"){
+if(m<1)return "الحين";if(m<60)return "قبل "+m+" دقيقة";
+var h=Math.round(m/60);if(h<24)return "قبل "+h+" ساعة";
+var d=Math.round(h/24);return d===1?"أمس":"قبل "+d+" يوم";}
+if(m<1)return "now";if(m<60)return m+"m ago";
+var h2=Math.round(m/60);if(h2<24)return h2+"h ago";
+var d2=Math.round(h2/24);return d2+"d ago";}
+function renderNews(){
+if(!NEWSCACHE){if(D)document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?D.news:NEN);return;}
+document.getElementById("news").innerHTML=NEWSCACHE.map(function(n){
+var head=(CUR==="ar")?('<span class="arb">'+n.ar+'</span><span class="osrc">'+n.en+'</span>')
+:('<span class="arb" style="direction:ltr;display:block;text-align:left">'+n.en+'</span>');
+return '<li><a href="'+n.link+'" target="_blank">'+head+'<div class="nmeta"><span class="src">'+n.src+'</span><span class="ndate">'+agoTxt(n.t)+'</span></div></a></li>'}).join("")}
+function liveNews(){
+fetchViaProxies("https://feeds.finance.yahoo.com/rss/2.0/headline?s=SPCX&region=US&lang=en-US").then(function(t){
+var doc=new DOMParser().parseFromString(t,"text/xml");
+var items=Array.prototype.slice.call(doc.querySelectorAll("item"),0,6);
+if(!items.length)return;
+Promise.all(items.map(function(i){
+var ti=i.querySelector("title"),li=i.querySelector("link"),pd=i.querySelector("pubDate");
+var en=ti?ti.textContent:"";var link=li?li.textContent:"#";
+var tm=pd?new Date(pd.textContent).getTime():0;if(isNaN(tm))tm=0;
+return trTxt(en).then(function(a){return {ar:a,en:en,link:link,src:srcName(i,link),t:tm}})
+})).then(function(list){NEWSCACHE=list;renderNews()})
+}).catch(function(){})}
+function sp(p,live){var e=document.getElementById("px"),ipo=window.__IPO||135,b=p<ipo;
+e.textContent="$"+(+p).toFixed(2)+(b?" ▼":" ▲");e.className=(b?"neg":"pos");
+document.getElementById("vi").textContent=(CUR==="ar"?((b?"تحت":"فوق")+" الاكتتاب $"+ipo):((b?"below":"above")+" IPO $"+ipo));
+if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+setInterval(livePrice,60000);
 </script>
+</body>
+</html>

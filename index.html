@@ -186,6 +186,20 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 </div>
 </a>
 
+<a href="gme.html" class="stock-card gl" data-fav="true" style="border-top-color:rgba(255,33,48,.55)">
+<div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/8/89/GameStop_Retail_Store_-_Vallejo_-_California_%2850906730711%29.jpg)" role="img" aria-label="GameStop storefront"></div>
+<div class="sc-body">
+<div class="sc-top">
+<span class="sc-ticker" style="color:#ff5060">NYSE · GME</span>
+<span class="sc-fav"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><span class="i-ar">مفضل</span><span class="i-en">Favorite</span></span>
+</div>
+<h3><span class="i-ar">جيم ستوب</span><span class="i-en">GameStop</span></h3>
+<p><span class="i-ar">أكبر انعصار قصير بالتاريخ + Roaring Kitty والمجتمع + راين كوهين يطارد eBay بعرض $56 مليار</span><span class="i-en">History's biggest short squeeze + Roaring Kitty and the community + Ryan Cohen chasing eBay with a $56B bid</span></p>
+<div class="sc-price"><b id="hp-px2">…</b><span id="hp-chg2"></span></div>
+<div class="sc-cta"><span class="i-ar">التحليل الكامل</span><span class="i-en">Full analysis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div>
+</div>
+</a>
+
 <div class="stock-card gl slot" data-fav="false" style="border-top-color:var(--edge)">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
 <div><span class="i-ar">سهم جديد يُضاف قريبًا</span><span class="i-en">Next stock coming soon</span></div>
@@ -207,7 +221,7 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <footer>
 <p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
 <p class="dsc" style="margin-top:8px;font-size:11px;opacity:.7">
-<span class="i-ar">صور: </span><span class="i-en">Photos: </span><a href="https://commons.wikimedia.org/wiki/File:NASDAQ_stock_market_display.jpg" target="_blank" rel="noopener" style="color:inherit">bfishadow</a> · <a href="https://commons.wikimedia.org/wiki/File:SpaceX_Falcon_9_Starlink_4-7_Launch_(51860439246).jpg" target="_blank" rel="noopener" style="color:inherit">Charles Boyer</a> (CC BY 2.0) — Wikimedia Commons
+<span class="i-ar">صور: </span><span class="i-en">Photos: </span><a href="https://commons.wikimedia.org/wiki/File:NASDAQ_stock_market_display.jpg" target="_blank" rel="noopener" style="color:inherit">bfishadow</a> · <a href="https://commons.wikimedia.org/wiki/File:SpaceX_Falcon_9_Starlink_4-7_Launch_(51860439246).jpg" target="_blank" rel="noopener" style="color:inherit">Charles Boyer</a> · <a href="https://commons.wikimedia.org/wiki/File:GameStop_Retail_Store_-_Vallejo_-_California_(50906730711).jpg" target="_blank" rel="noopener" style="color:inherit">Will Buckner</a> (CC BY 2.0) — Wikimedia Commons
 </p>
 </footer>
 
@@ -257,6 +271,23 @@ if(p>0){window.__LASTP=p;showPrice({ipo_price:window.__IPO,price_fallback:p})}
 }).catch(function(){})}
 fetch("data.json?v="+Date.now()).then(function(r){return r.json()}).then(function(d){showPrice(d);livePrice()}).catch(function(){showPrice(FALLBACK_PRICE);livePrice()});
 setInterval(livePrice,20000);
+
+function showPrice2(p,prev){
+var up=p>=prev;
+var e=document.getElementById("hp-px2");
+if(!e)return;
+e.textContent="$"+(+p).toFixed(2);e.className=(up?"pos":"neg");
+var ch=((p-prev)/prev*100).toFixed(2);
+document.getElementById("hp-chg2").textContent=(CUR==="ar"?"":"" )+(up?"+":"")+ch+"%";
+}
+var GME_PREV=21.89,GME_FALLBACK=21.75;
+function livePrice2(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/GME?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice,pc=m.chartPreviousClose||m.previousClose||GME_PREV;
+if(p>0)showPrice2(p,pc);
+}).catch(function(){})}
+showPrice2(GME_FALLBACK,GME_PREV);livePrice2();
+setInterval(livePrice2,20000);
 </script>
 </body>
 </html>

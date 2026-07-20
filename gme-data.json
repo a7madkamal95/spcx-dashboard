@@ -1,0 +1,38 @@
+{
+  "last_updated": "2026-07-20",
+  "price_fallback": 21.75,
+  "prev_close": 21.89,
+  "market_cap": "$9.73B",
+  "stats": {
+    "revenue_q1": "835.3M$",
+    "collectibles_rev": "348.9M$",
+    "cash_securities": "8.37B$",
+    "bitcoin_holdings": "4,710 BTC",
+    "ebay_stake": "9.8%",
+    "shares_out": "448.7M",
+    "ebitda_guidance": "600M$+",
+    "next_earnings": "8 سبتمبر 2026"
+  },
+  "timeline": [
+    {"when":"يناير 2021","what":"أكبر انعصار قصير بالتاريخ","note":"السهم من $17 إلى $483 خلال 3 أسابيع، والعائم كان مباع على المكشوف 140%"},
+    {"when":"يوليو 2022","what":"تجزئة الأسهم 4 مقابل 1","note":"أعقبها بيع ملايين الأسهم الجديدة لتقوية الميزانية"},
+    {"when":"يونيو 2024","what":"عودة الأسطورة","note":"Roaring Kitty يكشف حصة 9 مليون سهم، والمجتمع يستفيق من جديد"},
+    {"when":"مايو 2026","what":"عرض الـ 56 مليار","note":"GameStop تعرض شراء eBay كاملة، ومجلس eBay يرفض خلال 9 أيام"},
+    {"when":"مايو 2026","what":"ظهور غامض ثم اختفاء","note":"منشورات Roaring Kitty الغامضة تحرك السهم 13% ثم تختفي بلا تفسير"},
+    {"when":"يوليو 2026","what":"الحصة تتضخم لـ 9.8%","note":"كوهين يواصل الشراء بعد الرفض ويقول إنه قادم على eBay بطريقة أو بأخرى"}
+  ],
+  "news": [
+    {"text":"الرئيس التنفيذي راين كوهين يؤكد أن GameStop «قادمة على eBay بطريقة أو بأخرى» ويطمح لشركة مندمجة بقيمة تريليون دولار","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-16/gamestop-ceo-ryan-cohen-is-coming-for-ebay-one-way-or-another"},
+    {"text":"GameStop ترفع حصتها الاقتصادية في eBay إلى 9.8% عبر تحويل عقود مشتقة إلى أسهم فعلية بقيمة تتجاوز 380 مليون دولار","src":"GuruFocus","link":"https://www.gurufocus.com/news/8967139/gamestop-gme-acquires-98-stake-in-ebay-ebay-following-rejected-buyout-offer"},
+    {"text":"GameStop تستهدف eBay بعرض استحواذ غير مرغوب فيه بقيمة 56 مليار دولار بعلاوة 46% فوق سعر السوق","src":"Al Jazeera","link":"https://www.aljazeera.com/economy/2026/5/4/gamestop-targets-ebay-with-unsolicited-56bn-acquisition-offer"},
+    {"text":"تقلبات حادة بسهم GameStop بعد ظهور وتوقف منشورات غامضة لحساب Roaring Kitty خلال دقائق","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-05-11/gamestop-shares-roiled-by-short-lived-roaring-kitty-tweets"},
+    {"text":"كوهين: مبيعات الألعاب المادية أصبحت «غير ذات صلة» فعليًا، والمقتنيات تشكل أكثر من نصف الأعمال اليوم","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-16/cohen-calls-physical-video-game-sales-irrelevant-to-gamestop"},
+    {"text":"أرباح الربع الأول تقفز إلى 389.6 مليون دولار مدفوعة بمكاسب مشتقات eBay ونمو المقتنيات 65%","src":"StockTitan","link":"https://www.stocktitan.net/sec-filings/GME/10-q-game-stop-corp-quarterly-earnings-report-e541c874296d.html"}
+  ],
+  "takeaways": [
+    "هذا صندوق نقدي بقشرة متجر ألعاب — المقتنيات واستثمار النقد هم القصة الحقيقية اليوم",
+    "راين كوهين حوّل اللعبة من الدفاع عن الشركة إلى مهاجمة eBay بميزانية ضخمة",
+    "قصة Roaring Kitty والمجتمع لسا تحرك السهم أكثر من أي تقرير أرباح",
+    "السهم يتحرك على الأخبار والمشاعر أكثر من الإيرادات التشغيلية الفعلية"
+  ]
+}

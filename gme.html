@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GME — الأسطورة التي رفضت الموت · الراصد</title>
+<meta name="description" content="تحليل استثماري حي لسهم GameStop من الراصد: الانعصار القصير، Roaring Kitty، راين كوهين، ومحاولة الاستحواذ على eBay — بأرقام حية وأخبار حقيقية.">
+<meta name="theme-color" content="#0a0a0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lalezar&family=Press+Start+2P&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#0a0a0d;--ink:#f5f5f2;--mut:#98979f;
+--red:#ff2130;--redDeep:#7d0d14;--green:#00e676;--amber:#ffb020;
+--glass:rgba(255,255,255,.05);--glassH:rgba(255,255,255,.10);
+--edge:rgba(255,255,255,.14);--edgeTop:rgba(255,33,48,.4);
+--focus:#ff2130;
+--disp:'Lalezar',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Space Grotesk',monospace;--pix:'Press Start 2P',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r10:10px;--r14:14px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Anton',sans-serif;--body:'Space Grotesk','Segoe UI',sans-serif}
+.en,.num,#px,.st b,.ts .w,.tk i{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.arcadebg{position:fixed;inset:0;z-index:-4;background-image:url(https://upload.wikimedia.org/wikipedia/commons/a/a8/GameStop_interior_2019.jpg);background-size:cover;background-position:center 40%;opacity:.16;filter:grayscale(.5) contrast(1.15)}
+.arcadebg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 20%,rgba(10,10,13,.5),var(--void) 76%)}
+.blobs{position:fixed;inset:-20%;z-index:-3;filter:blur(85px);opacity:.7}
+.blob{position:absolute;border-radius:50%}
+.b1{width:44vw;height:44vw;background:radial-gradient(circle,rgba(255,33,48,.4),transparent 65%);top:-10%;right:-6%;animation:f1 24s ease-in-out infinite}
+.b2{width:38vw;height:38vw;background:radial-gradient(circle,rgba(0,230,118,.22),transparent 65%);bottom:-14%;left:-8%;animation:f2 30s ease-in-out infinite}
+@keyframes f1{50%{transform:translate(-6vw,8vh) scale(1.12)}}
+@keyframes f2{50%{transform:translate(7vw,-6vh) scale(1.1)}}
+body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+background-image:repeating-linear-gradient(180deg,rgba(255,255,255,.045) 0px,rgba(255,255,255,.045) 1px,transparent 1px,transparent 3px);opacity:.5}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(255,33,48,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+border:1px solid var(--edge);border-inline-start:3px solid var(--red);
+border-radius:var(--r10);box-shadow:0 16px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06);
+clip-path:polygon(16px 0,100% 0,100% 100%,0 100%,0 16px);
+position:relative;overflow:hidden}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--red)}
+.bar .brand:hover{color:var(--red)}
+.bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
+.bar .sym{font-family:var(--pix);font-weight:400;letter-spacing:.02em;font-size:10.5px;color:var(--mut)}
+.bar .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red);animation:pl 1.6s infinite;flex-shrink:0}
+@keyframes pl{50%{opacity:.35}}
+#px{font-family:var(--num);font-weight:700;font-size:23px;direction:ltr}
+.neg{color:var(--red)}.pos{color:var(--green)}
+#pm{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.ldot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pl 1.6s infinite}
+.ldot.wait{background:var(--amber);animation:pl 1s infinite}
+.en{direction:ltr;display:inline-block;font-family:var(--num)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.08em;
+color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(255,33,48,.18);transform:translateY(-1px)}
+.lng:active{transform:translateY(0)}
+.qnav{position:sticky;top:calc(var(--sp3) + 58px);z-index:49;display:flex;gap:6px;padding:7px;margin-top:10px;
+overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.qnav::-webkit-scrollbar{display:none}
+.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mut);
+text-decoration:none;padding:9px 16px;min-height:38px;border-radius:var(--r99);white-space:nowrap;
+transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+.qnav a svg{width:15px;height:15px;flex-shrink:0}
+.qnav a:hover{color:var(--ink);background:rgba(255,255,255,.07)}
+.qnav a.on{color:var(--void);background:linear-gradient(92deg,var(--red),#ff5f5f)}
+.hero{padding:56px 0 var(--sp4);display:grid;grid-template-columns:1.08fr .92fr;gap:var(--sp6);align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
+.kick{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--red)}
+h1{font-family:var(--disp);font-weight:400;font-size:clamp(40px,7vw,66px);line-height:1.12;margin-top:var(--sp2)}
+html[data-lang=en] h1{font-weight:400;letter-spacing:.01em}
+h1 .grad{background:linear-gradient(92deg,var(--red),var(--amber) 65%,var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:17px;line-height:1.75;max-width:48ch;margin-top:var(--sp4)}
+@media(max-width:780px){.lead{margin-inline:auto}}
+.board{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:var(--sp4)}
+.board svg{width:100%;height:100%;overflow:visible}
+section{margin-top:var(--sp8)}
+.eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
+.eyeb .ln{flex:1;height:1.5px;border-radius:1px;background:linear-gradient(90deg,rgba(255,255,255,.4),rgba(255,255,255,.4) 70%,transparent)}
+.eyeb b{font-family:var(--disp);font-weight:400;font-size:28px;letter-spacing:.01em}
+.eyeb span{font-family:var(--pix);font-size:9.5px;letter-spacing:.1em;color:var(--red);font-weight:400}
+.pad{padding:var(--sp6)}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+@media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+.ts{padding:var(--sp4);border-radius:8px;background:rgba(255,255,255,.045);border:1px solid var(--edge);border-inline-start:2px solid var(--red)}
+.ts .w{font-family:var(--pix);font-size:9px;color:var(--amber);letter-spacing:.04em;font-weight:400}
+.ts .t{font-family:var(--disp);font-weight:400;font-size:18px;margin-top:4px}
+.ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
+.forces{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
+@media(max-width:900px){.forces{grid-template-columns:1fr}}
+.force{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.force:hover{transform:translateY(-5px);background:var(--glassH)}
+.force .icwrap{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid var(--edge)}
+.force .icwrap svg{width:25px;height:25px}
+.force h3{font-family:var(--disp);font-weight:400;font-size:23px;margin-top:var(--sp3)}
+.tag{display:inline-block;font-family:var(--pix);font-size:9.5px;letter-spacing:.03em;border-radius:6px;padding:5px 11px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.05)}
+.t1{color:var(--red);border-color:rgba(255,33,48,.5)}.t2{color:var(--green);border-color:rgba(0,230,118,.5)}.t3{color:var(--amber);border-color:rgba(255,176,32,.5)}
+.force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
+.force .dtl{display:none}
+.force.open .dtl{display:block}
+.force h5{font-family:var(--disp);font-size:15px;font-weight:400;color:var(--amber);margin-top:var(--sp4);letter-spacing:.02em}
+.force table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--sp2)}
+.force td{padding:8px 4px;border-top:1px solid var(--edge);vertical-align:top;line-height:1.7}
+.force td:first-child{font-family:var(--num);font-size:11.5px;white-space:nowrap;direction:ltr;font-weight:700;color:var(--red)}
+html[data-lang=ar] .force td:first-child{text-align:right}
+html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px}
+.more{font-size:12px;color:var(--red);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
+.more svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
+.force.open .more svg{transform:rotate(180deg)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
+@media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+.st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.st:hover{transform:translateY(-4px);background:var(--glassH)}
+.st .sti{width:20px;height:20px;color:var(--red);opacity:.9;margin-bottom:6px}
+.st b{display:block;font-family:var(--num);font-size:26px;font-weight:700;direction:ltr;
+background:linear-gradient(90deg,var(--red),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.st span{font-size:12.5px;color:var(--mut)}
+#news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}
+#news li:first-child{border-top:none}
+#news a{color:inherit;text-decoration:none;display:block;border-radius:10px}
+#news a:hover .arb{color:var(--red)}
+.arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.6}
+.osrc{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
+.nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
+.src{font-family:var(--pix);font-size:9.5px;letter-spacing:.02em;color:var(--red);border:1px solid rgba(255,33,48,.4);border-radius:6px;padding:4px 10px;background:rgba(255,33,48,.08);direction:ltr}
+.ndate{font-size:12px;color:var(--mut)}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
+@media(max-width:640px){.sc{grid-template-columns:1fr}}
+.pan{padding:var(--sp5);font-size:13.5px}
+.pan h4{font-family:var(--disp);font-weight:400;font-size:20px;margin-bottom:var(--sp3);display:flex;align-items:center;gap:8px}
+.pg h4{color:var(--green)}.pb h4{color:var(--red)}
+.pan li{list-style:none;padding:6px 0;border-top:1px dashed var(--edge);line-height:1.7}
+.pan li:first-of-type{border-top:none}
+.tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px solid var(--edge);font-size:15.5px;line-height:1.7}
+.tk:first-child{border-top:none}
+.tk i{font-family:var(--pix);font-style:normal;font-weight:400;color:var(--amber);font-size:11px;border:1px solid rgba(255,176,32,.45);border-radius:6px;padding:3px 8px;margin-top:3px;background:rgba(255,176,32,.07);flex-shrink:0}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(14,14,16,.96)}}
+</style>
+</head>
+<body>
+<div class="arcadebg" aria-hidden="true"></div>
+<div class="blobs"><div class="blob b1"></div><div class="blob b2"></div></div>
+<div class="wrap">
+<div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<span class="sep" aria-hidden="true"></span>
+<span class="dot" aria-hidden="true"></span><span class="sym">NYSE · GME</span>
+<span id="px">…</span><span id="mc" class="en" style="color:var(--amber);font-weight:700"></span>
+<span id="pm" aria-live="polite"></span>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<nav class="qnav gl rv" aria-label="Section navigation">
+<a href="#s-timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="i-ar">الأحداث</span><span class="i-en">Milestones</span></a>
+<a href="#s-forces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="i-ar">القوى الثلاث</span><span class="i-en">Three Forces</span></a>
+<a href="#s-numbers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span class="i-ar">الأرقام</span><span class="i-en">Numbers</span></a>
+<a href="#s-news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg><span class="i-ar">الأخبار</span><span class="i-en">News</span></a>
+<a href="#s-balance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 006 0l-3-6zM19 7l-3 6a3 3 0 006 0l-3-6zM5 7h14"/></svg><span class="i-ar">الميزان</span><span class="i-en">Balance</span></a>
+<a href="#s-takeaways"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></a>
+</nav>
+
+<main>
+<div class="hero">
+<div class="rv">
+<div class="kick"><span class="i-ar">تحليل استثماري حي · يتحدث تلقائيًا</span><span class="i-en">LIVE INVESTOR INTELLIGENCE · AUTO-UPDATING</span></div>
+<h1><span class="i-ar">الأسطورة التي<br><span class="grad">رفضت الموت</span></span><span class="i-en">The Stock That<br><span class="grad">Refused to Die</span></span></h1>
+<p class="lead"><span class="i-ar">متجر ألعاب كان على حافة الإفلاس تحول لأكبر معركة قصيرة بتاريخ وول ستريت، ثم لصندوق نقدي ضخم يحاول ابتلاع eBay كاملة — بقيادة رجل واحد ومجتمع لا يعرف الاستسلام.</span><span class="i-en">A video game retailer on the brink of bankruptcy became Wall Street's biggest short squeeze, then a cash-hoarding giant chasing a full buyout of eBay — led by one man and a community that refuses to fold.</span></p>
+</div>
+<div class="board gl rv">
+<svg viewBox="0 0 420 420" role="img" aria-label="Stylized chart of the January 2021 short squeeze">
+<defs>
+<linearGradient id="lineGrad" x1="0" y1="1" x2="0" y2="0">
+<stop offset="0%" stop-color="#00e676"/>
+<stop offset="55%" stop-color="#ffb020"/>
+<stop offset="100%" stop-color="#ff2130"/>
+</linearGradient>
+</defs>
+<rect x="10" y="10" width="400" height="400" rx="4" fill="rgba(255,255,255,.02)" stroke="rgba(255,33,48,.4)" stroke-width="2"/>
+<rect x="24" y="24" width="372" height="372" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+<g stroke="rgba(255,255,255,.06)" stroke-width="1">
+<line x1="24" y1="130" x2="396" y2="130"/>
+<line x1="24" y1="210" x2="396" y2="210"/>
+<line x1="24" y1="290" x2="396" y2="290"/>
+</g>
+<text x="210" y="52" text-anchor="middle" fill="#ff2130" font-family="'Press Start 2P',monospace" font-size="11">HIGH SCORE</text>
+<circle cx="365" cy="45" r="4" fill="#ff2130"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+<text x="378" y="49" fill="#98979f" font-family="'Press Start 2P',monospace" font-size="7">LIVE</text>
+<text x="284" y="98" text-anchor="middle" fill="#f5f5f2" font-family="'Space Grotesk',monospace" font-weight="700" font-size="26">$483</text>
+<polyline points="40,370 75,370 110,368 145,362 180,343 215,297 250,198 280,110 310,272 345,329 380,346" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 8px rgba(255,33,48,.5))"/>
+<g fill="#0a0a0d" stroke="#ffb020" stroke-width="1.5">
+<circle cx="40" cy="370" r="3"/><circle cx="145" cy="362" r="3"/><circle cx="215" cy="297" r="3"/><circle cx="280" cy="110" r="4"/><circle cx="380" cy="346" r="3"/>
+</g>
+<text x="46" y="390" fill="#98979f" font-family="'Space Grotesk',monospace" font-size="13">$17</text>
+<text x="210" y="405" text-anchor="middle" fill="#98979f" font-family="'Press Start 2P',monospace" font-size="7">JAN 2021 · SQUEEZE (ILLUSTRATIVE)</text>
+</svg>
+</div>
+</div>
+
+<section class="rv" id="s-timeline">
+<div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>2021 → 2026</span><div class="ln"></div></div>
+<div class="gl pad"><div class="tl" id="tl"></div></div>
+</section>
+
+<section class="rv" id="s-forces">
+<div class="eyeb"><b><span class="i-ar">القوى الثلاث المحركة للسهم</span><span class="i-en">The Three Forces Driving The Stock</span></b><div class="ln"></div></div>
+<div class="forces">
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ff2130" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h16M5 18V9l3 3 4-6 4 6 3-3v9"/></svg></div>
+<h3><span class="i-ar">راين كوهين</span><span class="i-en">Ryan Cohen</span></h3><span class="tag t1">CEO &amp; CHAIRMAN</span>
+<p><span class="i-ar">مؤسس Chewy اللي حول الشركة من متجر يحتضر لآلة نقدية تطارد eBay بعرض $56 مليار</span><span class="i-en">The Chewy founder who turned a dying retailer into a cash machine chasing a $56B bid for eBay</span></p>
+<div class="dtl">
+<h5><span class="i-ar">المسيرة</span><span class="i-en">Track Record</span></h5>
+<table>
+<tr><td>Chewy</td><td><span class="i-ar">أسسها وباعها لـ PetSmart عام 2017 بصفقة $3.35 مليار</span><span class="i-en">Founded it, sold to PetSmart in 2017 for $3.35B</span></td></tr>
+<tr><td>2020</td><td><span class="i-ar">بنى حصة كبيرة في GameStop عبر RC Ventures ودفع نحو التحول الرقمي</span><span class="i-en">Built a large GameStop stake via RC Ventures, pushed a digital pivot</span></td></tr>
+<tr><td>2022–23</td><td><span class="i-ar">أصبح رئيس مجلس الإدارة ثم الرئيس التنفيذي</span><span class="i-en">Became Chairman, then CEO</span></td></tr>
+</table>
+<h5><span class="i-ar">استراتيجية النقد</span><span class="i-en">The Cash Strategy</span></h5>
+<table>
+<tr><td>$8.37B</td><td><span class="i-ar">نقد واستثمارات قصيرة الأجل بدل التوسع بالمتاجر</span><span class="i-en">Cash and securities instead of store expansion</span></td></tr>
+<tr><td>4,710 BTC</td><td><span class="i-ar">اشترى بيتكوين كجزء من إدارة الميزانية</span><span class="i-en">Bought bitcoin as part of treasury management</span></td></tr>
+<tr><td><span class="en">Jul 2026</span></td><td><span class="i-ar">سحب مكافأته الخاصة كرئيس تنفيذي ليتفرغ لصفقة eBay</span><span class="i-en">Withdrew his own CEO performance award to focus on the eBay pursuit</span></td></tr>
+<tr><td><span class="en">Quote</span></td><td><span class="i-ar">"مبيعات الألعاب المادية غير ذات صلة فعليًا" ويطمح لشركة مندمجة بقيمة تريليون دولار</span><span class="i-en">"Physical game sales are totally irrelevant" — wants a combined $1T company</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 2 3.5 5 3.5 9 0 2-.5 4-1.5 6l-2 3-2-3c-1-2-1.5-4-1.5-6 0-4 1.5-7 3.5-9z"/><path d="M9 15l-3 2v3l3-1.5"/><path d="M15 15l3 2v3l-3-1.5"/></svg></div>
+<h3><span class="i-ar">Roaring Kitty والمجتمع</span><span class="i-en">Roaring Kitty &amp; the Community</span></h3><span class="tag t2">DEEPFUCKINGVALUE</span>
+<p><span class="i-ar">كيث جيل حول حساب Reddit مغمور لشرارة أشعلت أكبر انتفاضة تجزئة بالتاريخ، ومجتمع "الحاملين" لسا يرفض البيع</span><span class="i-en">Keith Gill turned an obscure Reddit account into the spark of history's biggest retail uprising — and the "diamond hands" community still refuses to sell</span></p>
+<div class="dtl">
+<h5><span class="i-ar">من هو</span><span class="i-en">Who He Is</span></h5>
+<table>
+<tr><td>Keith Gill</td><td><span class="i-ar">مسوّق مالي معروف بلقب Roaring Kitty وحساب Reddit باسم DeepFuckingValue</span><span class="i-en">A financial marketer known as Roaring Kitty and Reddit's DeepFuckingValue</span></td></tr>
+<tr><td>2020–21</td><td><span class="i-ar">وثّق مركزه بمنشورات وبثوث يوتيوب حتى تحول من $53 ألف لعشرات الملايين</span><span class="i-en">Documented his position via posts and YouTube streams as it grew from $53K to tens of millions</span></td></tr>
+<tr><td>2024</td><td><span class="i-ar">عاد فجأة كاشفًا حصة 9 مليون سهم بـ GameStop</span><span class="i-en">Resurfaced suddenly, revealing a 9M-share GameStop stake</span></td></tr>
+<tr><td><span class="en">May 2026</span></td><td><span class="i-ar">منشورات غامضة (قطة، ضفدع بالبندانا) حركت السهم 13% ثم اختفت بلا تفسير</span><span class="i-en">Cryptic posts (a cat, a frog in his bandanna) moved the stock 13% then vanished unexplained</span></td></tr>
+</table>
+<h5><span class="i-ar">ثقافة المجتمع</span><span class="i-en">Community Culture</span></h5>
+<table>
+<tr><td>r/Superstonk</td><td><span class="i-ar">مجتمع مخصص تفرّع من r/wallstreetbets بعد اندلاع 2021</span><span class="i-en">A dedicated forum that split from r/wallstreetbets after the 2021 blowup</span></td></tr>
+<tr><td>DRS</td><td><span class="i-ar">حركة تسجيل مباشر للأسهم خارج الوسطاء لإثبات حجم العائم الحقيقي</span><span class="i-en">Direct Registration System — moving shares out of brokerages to prove the real float</span></td></tr>
+<tr><td><span class="en">$238.7M</span></td><td><span class="i-ar">القيمة التقديرية لمركز جيل المعروف عند آخر سعر معلن</span><span class="i-en">Estimated value of Gill's known position at last disclosed price</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 006 0l-3-6zM19 7l-3 6a3 3 0 006 0l-3-6zM5 7h14"/></svg></div>
+<h3><span class="i-ar">صفقة eBay</span><span class="i-en">The eBay Gambit</span></h3><span class="tag t3">$56B BID</span>
+<p><span class="i-ar">من الدفاع إلى الهجوم: عرض غير مرغوب فيه للاستحواذ الكامل على eBay مموّل من جبل النقد</span><span class="i-en">From defense to offense: an unsolicited bid to fully acquire eBay, funded by a mountain of cash</span></p>
+<div class="dtl">
+<h5><span class="i-ar">العرض</span><span class="i-en">The Offer</span></h5>
+<table>
+<tr><td><span class="en">May 3, 2026</span></td><td><span class="i-ar">عرض $125 للسهم نقدًا وأسهمًا (50/50)، بقيمة إجمالية $55.5 مليار وعلاوة 46%</span><span class="i-en">$125/share cash + stock (50/50), $55.5B aggregate value, 46% premium</span></td></tr>
+<tr><td><span class="en">May 12, 2026</span></td><td><span class="i-ar">مجلس eBay رفض العرض واصفًا إياه بـ"غير موثوق وغير جذاب"</span><span class="i-en">eBay's board rejected it as "neither credible nor attractive"</span></td></tr>
+</table>
+<h5><span class="i-ar">التمويل</span><span class="i-en">Financing</span></h5>
+<table>
+<tr><td>$9.4B</td><td><span class="i-ar">نقد وأوراق مالية سائلة على ميزانية GameStop</span><span class="i-en">Cash and liquid securities on GameStop's balance sheet</span></td></tr>
+<tr><td>$20B</td><td><span class="i-ar">خطاب ثقة تمويلي من TD Securities لتغطية الباقي</span><span class="i-en">A highly-confident financing letter from TD Securities for the rest</span></td></tr>
+</table>
+<h5><span class="i-ar">بعد الرفض</span><span class="i-en">After the Rejection</span></h5>
+<table>
+<tr><td>9.8%</td><td><span class="i-ar">استمر كوهين بالشراء حتى بلغت الحصة الاقتصادية 9.8% من eBay (يوليو 2026)</span><span class="i-en">Cohen kept buying — the economic stake reached 9.8% of eBay by July 2026</span></td></tr>
+<tr><td><span class="en">Quote</span></td><td><span class="i-ar">"قادمون على eBay بطريقة أو بأخرى" — كوهين لبلومبرغ</span><span class="i-en">"We're coming for eBay one way or another" — Cohen to Bloomberg</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+</div>
+</section>
+
+<section class="rv" id="s-numbers">
+<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>LIVE DATA</span><div class="ln"></div></div>
+<div class="stats" id="stats"></div>
+</section>
+
+<section class="rv" id="s-news">
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="gl pad"><ul id="news"></ul></div>
+</section>
+
+<section class="rv" id="s-balance">
+<div class="eyeb"><b><span class="i-ar">الميزان</span><span class="i-en">The Balance</span></b><span>PRO VIEW</span><div class="ln"></div></div>
+<div class="sc">
+<div class="pan gl pg"><h4><span class="i-ar">القوة</span><span class="i-en">Strengths</span></h4><ul>
+<li><span class="i-ar">ميزانية نقدية ضخمة: $8.37 مليار نقد واستثمارات</span><span class="i-en">Massive balance sheet: $8.37B in cash and securities</span></li>
+<li><span class="i-ar">نمو مقتنيات قوي: +65% بالربع الأول</span><span class="i-en">Strong collectibles growth: +65% in Q1</span></li>
+<li><span class="i-ar">بدون ديون تقريبًا — مرونة مالية نادرة بقطاع التجزئة</span><span class="i-en">Almost no debt — rare financial flexibility for a retailer</span></li>
+<li><span class="i-ar">تحول من "متجر ألعاب" إلى صندوق استثماري نشط</span><span class="i-en">Transformed from "game store" to active investment vehicle</span></li></ul></div>
+<div class="pan gl pb"><h4><span class="i-ar">الخطر</span><span class="i-en">Risks</span></h4><ul>
+<li><span class="i-ar">عرض eBay مرفوض رسميًا وبلا صفقة مؤكدة حتى الآن</span><span class="i-en">The eBay offer was formally rejected — no confirmed deal yet</span></li>
+<li><span class="i-ar">الإيرادات التشغيلية الأساسية للألعاب بانكماش مستمر</span><span class="i-en">Core gaming operating revenue keeps shrinking</span></li>
+<li><span class="i-ar">السهم يتحرك بمنشورات Roaring Kitty أكثر من الأساسيات</span><span class="i-en">The stock moves on Roaring Kitty posts more than fundamentals</span></li>
+<li><span class="i-ar">تقييم مبني على تفاؤل نقدي/مضاربي أكثر من أرباح تشغيلية مستدامة</span><span class="i-en">Valuation rests on cash-hoard optimism more than durable operating profit</span></li></ul></div>
+</div>
+</section>
+
+<section class="rv" id="s-takeaways">
+<div class="eyeb"><b><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></b><span>4</span><div class="ln"></div></div>
+<div class="gl pad" id="tks"></div>
+</section>
+</main>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+<p class="dsc" style="margin-top:8px;font-size:11px;opacity:.7">
+<span class="i-ar">صور: </span><span class="i-en">Photos: </span><a href="https://commons.wikimedia.org/wiki/File:GameStop_interior_2019.jpg" target="_blank" rel="noopener" style="color:inherit">Dan Keck</a> (CC0) — Wikimedia Commons
+</p>
+</footer>
+
+</div>
+<script>
+function toggleForce(el){var open=el.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
+var CUR=localStorage.getItem("lang")||"ar";
+var D=null,NEWSCACHE=null;
+var L={ar:{revenue_q1:"إيرادات الربع الأول",collectibles_rev:"إيرادات المقتنيات",cash_securities:"نقد واستثمارات",bitcoin_holdings:"حيازة بيتكوين",ebay_stake:"حصة eBay",shares_out:"الأسهم القائمة",ebitda_guidance:"توقع الأرباح التشغيلية",next_earnings:"الأرباح القادمة"},
+en:{revenue_q1:"Q1 revenue",collectibles_rev:"Collectibles revenue",cash_securities:"Cash & securities",bitcoin_holdings:"Bitcoin holdings",ebay_stake:"eBay stake",shares_out:"Shares outstanding",ebitda_guidance:"Adj. EBITDA guide",next_earnings:"Next earnings"}};
+var VEN={next_earnings:"Sep 8, 2026"};
+var SICO={
+revenue_q1:'<path d="M4 20V10M12 20V4M20 20v-7"/>',
+collectibles_rev:'<rect x="4" y="8" width="16" height="12" rx="1.5"/><path d="M4 8l8-4 8 4M9 12v4M15 12v4"/>',
+cash_securities:'<rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M3 9h2M19 9h2M3 15h2M19 15h2"/>',
+bitcoin_holdings:'<circle cx="12" cy="12" r="9"/><path d="M10 7v10M13 7v10M9 8.5h4.2a2 2 0 010 4H9m0 0h4.6a2 2 0 010 4H9"/>',
+ebay_stake:'<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18z" fill="currentColor" stroke="none" opacity=".35"/>',
+shares_out:'<rect x="4" y="4" width="16" height="5" rx="1.5"/><rect x="4" y="10.5" width="16" height="5" rx="1.5"/><rect x="4" y="17" width="16" height="3" rx="1.5"/>',
+ebitda_guidance:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+next_earnings:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'
+};
+var TLEN=[{when:"Jan 2021",what:"History's biggest short squeeze",note:"Stock ran from $17 to $483 in 3 weeks; float was 140% short"},{when:"Jul 2022",what:"4-for-1 stock split",note:"Followed by a new share sale to strengthen the balance sheet"},{when:"Jun 2024",what:"The legend returns",note:"Roaring Kitty reveals a 9M-share stake; the community wakes up"},{when:"May 2026",what:"The $56B bid",note:"GameStop offers to buy all of eBay; eBay's board rejects it in 9 days"},{when:"May 2026",what:"A cryptic appearance, then gone",note:"Roaring Kitty's cryptic posts move the stock 13% then vanish unexplained"},{when:"Jul 2026",what:"Stake balloons to 9.8%",note:"Cohen keeps buying after the rejection, vows he's coming for eBay"}];
+var NEN=[{text:"GameStop CEO Ryan Cohen says the company is \"coming for eBay one way or another,\" eyeing a combined $1 trillion company",src:"Bloomberg",link:"https://www.bloomberg.com/news/articles/2026-07-16/gamestop-ceo-ryan-cohen-is-coming-for-ebay-one-way-or-another"},{text:"GameStop raises its economic stake in eBay to 9.8% by converting derivative positions into shares worth over $380M",src:"GuruFocus",link:"https://www.gurufocus.com/news/8967139/gamestop-gme-acquires-98-stake-in-ebay-ebay-following-rejected-buyout-offer"},{text:"GameStop targets eBay with a $56 billion unsolicited acquisition offer, a 46% premium over the market price",src:"Al Jazeera",link:"https://www.aljazeera.com/economy/2026/5/4/gamestop-targets-ebay-with-unsolicited-56bn-acquisition-offer"},{text:"GameStop shares are roiled by short-lived, cryptic posts from the Roaring Kitty account",src:"Bloomberg",link:"https://www.bloomberg.com/news/articles/2026-05-11/gamestop-shares-roiled-by-short-lived-roaring-kitty-tweets"},{text:"Cohen says physical video game sales are now \"totally irrelevant,\" with collectibles making up over half the business",src:"Bloomberg",link:"https://www.bloomberg.com/news/articles/2026-07-16/cohen-calls-physical-video-game-sales-irrelevant-to-gamestop"},{text:"Q1 net income jumps to $389.6M, driven by eBay derivative gains and 65% collectibles growth",src:"StockTitan",link:"https://www.stocktitan.net/sec-filings/GME/10-q-game-stop-corp-quarterly-earnings-report-e541c874296d.html"}];
+function staticNewsHtml(list){return list.map(function(n){
+var head='<span class="arb">'+n.text+'</span>';
+var meta='<div class="nmeta"><span class="src">'+n.src+'</span></div>';
+return n.link?('<li><a href="'+n.link+'" target="_blank" rel="noopener">'+head+meta+'</a></li>'):('<li>'+head+meta+'</li>');
+}).join("")}
+var TKEN=["This is a cash-hoard wrapped in a game store — collectibles and treasury management are the real story","Ryan Cohen has flipped the game from defending GameStop to attacking eBay with a war chest","The Roaring Kitty and community story still moves the stock more than any earnings report","The stock trades on news and sentiment far more than actual operating revenue"];
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+var qnavLinks=document.querySelectorAll(".qnav a");
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+var link=document.querySelector('.qnav a[href="#'+e.target.id+'"]');
+if(!link)return;
+if(e.isIntersecting){qnavLinks.forEach(function(a){a.classList.remove("on")});link.classList.add("on")}
+})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(function(el){spy.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+renderDyn();renderNews();}
+function renderDyn(){if(!D)return;
+document.getElementById("mc").textContent=D.market_cap;
+var tl=(CUR==="ar")?D.timeline:TLEN;
+document.getElementById("tl").innerHTML=tl.map(function(t){return '<div class="ts"><div class="w">'+t.when+'</div><div class="t">'+t.what+'</div><div class="n">'+t.note+'</div></div>'}).join("");
+document.getElementById("stats").innerHTML=Object.keys(D.stats).map(function(k){
+var v=(CUR==="en"&&VEN[k])?VEN[k]:D.stats[k];
+var ic=SICO[k]?'<svg class="sti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SICO[k]+'</svg>':'';
+return '<div class="st gl">'+ic+'<b>'+v+'</b><span>'+(L[CUR][k]||k)+'</span></div>'}).join("");
+var tk=(CUR==="ar")?D.takeaways:TKEN;
+document.getElementById("tks").innerHTML=tk.map(function(t,i){return '<div class="tk"><i>0'+(i+1)+'</i><div>'+t+'</div></div>'}).join("");
+sp(window.__LASTP||D.price_fallback,!!window.__LIVE);}
+function initData(d){
+D=d;window.__PREV=d.prev_close||d.price_fallback;
+if(CUR!=="ar")setLang(CUR);else{renderDyn();}
+document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?d.news:NEN);
+livePrice();liveNews();
+}
+var FALLBACK_DATA={"last_updated":"2026-07-20","price_fallback":21.75,"prev_close":21.89,"market_cap":"$9.73B","stats":{"revenue_q1":"835.3M$","collectibles_rev":"348.9M$","cash_securities":"8.37B$","bitcoin_holdings":"4,710 BTC","ebay_stake":"9.8%","shares_out":"448.7M","ebitda_guidance":"600M$+","next_earnings":"8 سبتمبر 2026"},"timeline":[{"when":"يناير 2021","what":"أكبر انعصار قصير بالتاريخ","note":"السهم من $17 إلى $483 خلال 3 أسابيع، والعائم كان مباع على المكشوف 140%"},{"when":"يوليو 2022","what":"تجزئة الأسهم 4 مقابل 1","note":"أعقبها بيع ملايين الأسهم الجديدة لتقوية الميزانية"},{"when":"يونيو 2024","what":"عودة الأسطورة","note":"Roaring Kitty يكشف حصة 9 مليون سهم، والمجتمع يستفيق من جديد"},{"when":"مايو 2026","what":"عرض الـ 56 مليار","note":"GameStop تعرض شراء eBay كاملة، ومجلس eBay يرفض خلال 9 أيام"},{"when":"مايو 2026","what":"ظهور غامض ثم اختفاء","note":"منشورات Roaring Kitty الغامضة تحرك السهم 13% ثم تختفي بلا تفسير"},{"when":"يوليو 2026","what":"الحصة تتضخم لـ 9.8%","note":"كوهين يواصل الشراء بعد الرفض ويقول إنه قادم على eBay بطريقة أو بأخرى"}],"news":[{"text":"الرئيس التنفيذي راين كوهين يؤكد أن GameStop «قادمة على eBay بطريقة أو بأخرى» ويطمح لشركة مندمجة بقيمة تريليون دولار","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-16/gamestop-ceo-ryan-cohen-is-coming-for-ebay-one-way-or-another"},{"text":"GameStop ترفع حصتها الاقتصادية في eBay إلى 9.8% عبر تحويل عقود مشتقة إلى أسهم فعلية بقيمة تتجاوز 380 مليون دولار","src":"GuruFocus","link":"https://www.gurufocus.com/news/8967139/gamestop-gme-acquires-98-stake-in-ebay-ebay-following-rejected-buyout-offer"},{"text":"GameStop تستهدف eBay بعرض استحواذ غير مرغوب فيه بقيمة 56 مليار دولار بعلاوة 46% فوق سعر السوق","src":"Al Jazeera","link":"https://www.aljazeera.com/economy/2026/5/4/gamestop-targets-ebay-with-unsolicited-56bn-acquisition-offer"},{"text":"تقلبات حادة بسهم GameStop بعد ظهور وتوقف منشورات غامضة لحساب Roaring Kitty خلال دقائق","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-05-11/gamestop-shares-roiled-by-short-lived-roaring-kitty-tweets"},{"text":"كوهين: مبيعات الألعاب المادية أصبحت «غير ذات صلة» فعليًا، والمقتنيات تشكل أكثر من نصف الأعمال اليوم","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-16/cohen-calls-physical-video-game-sales-irrelevant-to-gamestop"},{"text":"أرباح الربع الأول تقفز إلى 389.6 مليون دولار مدفوعة بمكاسب مشتقات eBay ونمو المقتنيات 65%","src":"StockTitan","link":"https://www.stocktitan.net/sec-filings/GME/10-q-game-stop-corp-quarterly-earnings-report-e541c874296d.html"}],"takeaways":["هذا صندوق نقدي بقشرة متجر ألعاب — المقتنيات واستثمار النقد هم القصة الحقيقية اليوم","راين كوهين حوّل اللعبة من الدفاع عن الشركة إلى مهاجمة eBay بميزانية ضخمة","قصة Roaring Kitty والمجتمع لسا تحرك السهم أكثر من أي تقرير أرباح","السهم يتحرك على الأخبار والمشاعر أكثر من الإيرادات التشغيلية الفعلية"]};
+fetch("gme-data.json?v="+Date.now()).then(function(r){return r.json()}).then(initData).catch(function(){initData(FALLBACK_DATA)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/GME?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;window.__LIVE=true;sp(p,true);
+var pc=m.chartPreviousClose||m.previousClose;
+if(pc){window.__PREV=pc;var ch=((p-pc)/pc*100).toFixed(2);
+document.getElementById("pm").innerHTML='<span class="ldot live" aria-hidden="true"></span>'+(CUR==="ar"?"حي · اليوم ":"Live · today ")+'<span class="en">'+(ch>0?"+":"")+ch+"%</span>"}}
+}).catch(function(){document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر سعر محفوظ":"last saved price")})}
+function trTxt(t){
+return fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ar&dt=t&q="+encodeURIComponent(t))
+.then(function(r){return r.json()}).then(function(j){return j[0].map(function(s){return s[0]}).join("")})
+.catch(function(){return fetch("https://api.mymemory.translated.net/get?q="+encodeURIComponent(t)+"&langpair=en|ar")
+.then(function(r){return r.json()}).then(function(j){return (j.responseData&&j.responseData.translatedText)||t})
+.catch(function(){return t})})}
+var SRC={"finance.yahoo.com":"Yahoo Finance","yahoo.com":"Yahoo","reuters.com":"Reuters","bloomberg.com":"Bloomberg","cnbc.com":"CNBC","wsj.com":"WSJ","ft.com":"Financial Times","barrons.com":"Barrons","marketwatch.com":"MarketWatch","investors.com":"IBD","fool.com":"Motley Fool","seekingalpha.com":"Seeking Alpha","benzinga.com":"Benzinga","businessinsider.com":"Business Insider","forbes.com":"Forbes","techcrunch.com":"TechCrunch","theverge.com":"The Verge","apnews.com":"AP","nytimes.com":"NY Times","cnn.com":"CNN","bbc.com":"BBC","gurufocus.com":"GuruFocus","aljazeera.com":"Al Jazeera","stocktitan.net":"StockTitan"};
+function srcName(item,link){
+var s=item.querySelector("source");
+if(s&&s.textContent.trim())return s.textContent.trim();
+try{var h=new URL(link).hostname.replace(/^www\./,"");
+if(SRC[h])return SRC[h];
+var base=h.split(".").slice(-2).join(".");
+if(SRC[base])return SRC[base];
+var nm=base.split(".")[0];return nm.charAt(0).toUpperCase()+nm.slice(1);
+}catch(e){return "Source"}}
+function agoTxt(t){
+if(!t)return "";
+var m=Math.round((Date.now()-t)/60000);
+if(CUR==="ar"){
+if(m<1)return "الحين";if(m<60)return "قبل "+m+" دقيقة";
+var h=Math.round(m/60);if(h<24)return "قبل "+h+" ساعة";
+var d=Math.round(h/24);return d===1?"أمس":"قبل "+d+" يوم";}
+if(m<1)return "now";if(m<60)return m+"m ago";
+var h2=Math.round(m/60);if(h2<24)return h2+"h ago";
+var d2=Math.round(h2/24);return d2+"d ago";}
+function renderNews(){
+if(!NEWSCACHE){if(D)document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?D.news:NEN);return;}
+document.getElementById("news").innerHTML=NEWSCACHE.map(function(n){
+var head=(CUR==="ar")?('<span class="arb">'+n.ar+'</span><span class="osrc">'+n.en+'</span>')
+:('<span class="arb" style="direction:ltr;display:block;text-align:left">'+n.en+'</span>');
+return '<li><a href="'+n.link+'" target="_blank">'+head+'<div class="nmeta"><span class="src">'+n.src+'</span><span class="ndate">'+agoTxt(n.t)+'</span></div></a></li>'}).join("")}
+function liveNews(){
+fetchViaProxies("https://feeds.finance.yahoo.com/rss/2.0/headline?s=GME&region=US&lang=en-US").then(function(t){
+var doc=new DOMParser().parseFromString(t,"text/xml");
+var items=Array.prototype.slice.call(doc.querySelectorAll("item"),0,6);
+if(!items.length)return;
+Promise.all(items.map(function(i){
+var ti=i.querySelector("title"),li=i.querySelector("link"),pd=i.querySelector("pubDate");
+var en=ti?ti.textContent:"";var link=li?li.textContent:"#";
+var tm=pd?new Date(pd.textContent).getTime():0;if(isNaN(tm))tm=0;
+return trTxt(en).then(function(a){return {ar:a,en:en,link:link,src:srcName(i,link),t:tm}})
+})).then(function(list){NEWSCACHE=list;renderNews()})
+}).catch(function(){})}
+function sp(p,live){var e=document.getElementById("px"),prev=window.__PREV||p,up=p>=prev;
+e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg");
+if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+setInterval(livePrice,20000);
+</script>
+</body>
+</html>

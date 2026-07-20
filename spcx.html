@@ -166,26 +166,7 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 @supports not (backdrop-filter:blur(1px)){.gl{background:rgba(18,22,42,.94)}}
 /* uniform-cards */
-.veins{align-items:stretch}
-.vein{display:flex;flex-direction:column}
-.vein .vc{flex:1;display:flex;flex-direction:column}
-.vein .more{margin-top:auto}
 
-/* native-chart */
-.chartcard{padding:var(--sp5)}
-.chartTabs{display:flex;gap:6px;margin-bottom:var(--sp4);flex-wrap:wrap}
-.chartTabs button{font-family:var(--num);font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--mut);background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:var(--r99);padding:7px 16px;cursor:pointer;transition:background .15s ease,color .15s ease;min-height:32px}
-.chartTabs button:hover{background:rgba(255,255,255,.11)}
-.chartTabs button.on{color:var(--void);background:var(--chart-accent)}
-.chartSvgWrap{position:relative;width:100%;touch-action:pan-y}
-.chartSvgWrap svg{width:100%;height:auto;display:block;overflow:visible}
-.chartMeta{display:flex;justify-content:space-between;font-family:var(--num);font-size:12px;color:var(--mut);margin-top:10px}
-.chartMeta b{color:var(--ink);font-weight:700}
-.chartState{text-align:center;color:var(--mut);font-size:13px;padding:70px 0}
-.chartHoverLine{stroke:var(--mut);stroke-width:1;stroke-dasharray:3,3;opacity:0}
-.chartHoverDot{opacity:0}
-.chartTip{position:absolute;pointer-events:none;background:rgba(10,12,20,.92);border:1px solid var(--edge);border-radius:8px;padding:6px 10px;font-family:var(--num);font-size:12px;color:var(--ink);white-space:nowrap;opacity:0;transform:translate(-50%,-115%);transition:opacity .1s ease}
-:root{--chart-accent:var(--a2)}
 </style>
 </head>
 <body>
@@ -351,19 +332,11 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 </section>
 
 <section class="rv" id="s-chart">
-<div class="eyeb"><b><span class="i-ar">الرسم البياني الحي</span><span class="i-en">Live Chart</span></b><span>YAHOO FINANCE</span><div class="ln"></div></div>
-<div class="gl chartcard">
-<div class="chartTabs" id="chartTabs" role="tablist">
-<button data-range="1mo" data-interval="1d"><span class="i-ar">شهر</span><span class="i-en">1M</span></button>
-<button data-range="3mo" data-interval="1d"><span class="i-ar">3 أشهر</span><span class="i-en">3M</span></button>
-<button data-range="6mo" data-interval="1d" class="on"><span class="i-ar">6 أشهر</span><span class="i-en">6M</span></button>
-<button data-range="1y" data-interval="1wk"><span class="i-ar">سنة</span><span class="i-en">1Y</span></button>
-<button data-range="5y" data-interval="1wk"><span class="i-ar">5 سنوات</span><span class="i-en">5Y</span></button>
-</div>
-<div class="chartSvgWrap" id="chartSvgWrap">
-<div class="chartState" id="chartState"><span class="i-ar">جاري تحميل الرسم البياني…</span><span class="i-en">Loading chart…</span></div>
-</div>
-<div class="chartMeta" id="chartMeta" style="display:none"></div>
+<div class="eyeb"><b><span class="i-ar">الرسم البياني الحي</span><span class="i-en">Live Chart</span></b><span>SPCX</span><div class="ln"></div></div>
+<div class="gl pad" style="text-align:center;padding:56px var(--sp5)">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:34px;height:34px;color:var(--mut);opacity:.6;margin-bottom:14px"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/><circle cx="19" cy="8" r="0"/></svg>
+<div style="font-family:var(--disp);font-weight:800;font-size:19px;margin-bottom:6px"><span class="i-ar">لا يوجد رسم بياني حي بعد</span><span class="i-en">No live chart yet</span></div>
+<p style="color:var(--mut);font-size:14px;max-width:44ch;margin:0 auto;line-height:1.8"><span class="i-ar">مزوّدو البيانات الماليون الحقيقيون (Yahoo Finance وTradingView) لا يملكون سجل تداول لسهم SPCX لأن سبيس إكس لم تُدرج فعليًا في أي بورصة حقيقية بعد — كل أرقام هذه الصفحة توضيحية ضمن سيناريو استثماري افتراضي.</span><span class="i-en">Real financial data providers (Yahoo Finance, TradingView) have no trading history for SPCX because SpaceX hasn't actually listed on any real exchange yet — every number on this page is illustrative, part of a hypothetical investment scenario.</span></p>
 </div>
 </section>
 
@@ -532,112 +505,6 @@ document.getElementById("vi").textContent=(CUR==="ar"?((b?"تحت":"فوق")+" �
 if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
 setInterval(livePrice,10000);
-</script>
-
-<script>
-(function(){
-var TK="SPCX";
-var wrap=document.getElementById('chartSvgWrap');
-var stateEl=document.getElementById('chartState');
-var metaEl=document.getElementById('chartMeta');
-var tabsEl=document.getElementById('chartTabs');
-var W=1000,H=340,PAD_T=16,PAD_B=28,PAD_L=4,PAD_R=4;
-var cache={};
-function fmtDate(ms){
-  var d=new Date(ms);
-  var months=(CUR==='ar')?['ينا','فبر','مار','أبر','ماي','يون','يول','أغس','سبت','أكت','نوف','ديس']:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  return months[d.getUTCMonth()]+' '+d.getUTCDate()+(CUR==='ar'?'':', ')+(CUR==='ar'?'':d.getUTCFullYear());
-}
-function load(range,interval,btn){
-  Array.prototype.forEach.call(tabsEl.querySelectorAll('button'),function(b){b.classList.remove('on')});
-  if(btn)btn.classList.add('on');
-  var key=range+'_'+interval;
-  if(cache[key]){draw(cache[key]);return;}
-  wrap.innerHTML='';
-  stateEl=document.createElement('div');
-  stateEl.className='chartState';
-  stateEl.innerHTML='<span class="i-ar">جاري تحميل الرسم البياني…</span><span class="i-en">Loading chart…</span>';
-  wrap.appendChild(stateEl);
-  metaEl.style.display='none';
-  fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(TK)+"?interval="+interval+"&range="+range)
-  .then(function(t){
-    var j=JSON.parse(t);
-    var r=j.chart&&j.chart.result&&j.chart.result[0];
-    if(!r||!r.timestamp)throw new Error('no data');
-    var ts=r.timestamp,close=r.indicators.quote[0].close;
-    var pts=[];
-    for(var i=0;i<ts.length;i++){if(close[i]!=null)pts.push([ts[i]*1000,close[i]]);}
-    if(pts.length<2)throw new Error('not enough points');
-    cache[key]=pts;
-    draw(pts);
-  }).catch(function(){
-    wrap.innerHTML='<div class="chartState"><span class="i-ar">تعذر تحميل بيانات الرسم البياني</span><span class="i-en">Couldn\'t load chart data</span></div>';
-  });
-}
-function draw(pts){
-  var prices=pts.map(function(p){return p[1]});
-  var min=Math.min.apply(null,prices),max=Math.max.apply(null,prices);
-  if(min===max){min-=1;max+=1;}
-  var t0=pts[0][0],t1=pts[pts.length-1][0];
-  var innerW=W-PAD_L-PAD_R,innerH=H-PAD_T-PAD_B;
-  function xOf(t){return PAD_L+(t1===t0?0:(t-t0)/(t1-t0))*innerW;}
-  function yOf(v){return PAD_T+(1-(v-min)/(max-min))*innerH;}
-  var d='';
-  pts.forEach(function(p,i){d+=(i===0?'M':'L')+xOf(p[0]).toFixed(2)+','+yOf(p[1]).toFixed(2)+' ';});
-  var areaD=d+'L'+xOf(t1).toFixed(2)+','+(H-PAD_B)+' L'+xOf(t0).toFixed(2)+','+(H-PAD_B)+' Z';
-  var up=pts[pts.length-1][1]>=pts[0][1];
-  var lineColor="var(--a2)";
-  var svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true">'+
-    '<defs><linearGradient id="cg-spcx" x1="0" y1="0" x2="0" y2="1">'+
-    '<stop offset="0%" stop-color="'+lineColor+'" stop-opacity="0.35"/>'+
-    '<stop offset="100%" stop-color="'+lineColor+'" stop-opacity="0"/>'+
-    '</linearGradient></defs>'+
-    '<line x1="'+PAD_L+'" y1="'+yOf(max)+'" x2="'+(W-PAD_R)+'" y2="'+yOf(max)+'" stroke="rgba(255,255,255,.07)" stroke-width="1"/>'+
-    '<line x1="'+PAD_L+'" y1="'+yOf(min)+'" x2="'+(W-PAD_R)+'" y2="'+yOf(min)+'" stroke="rgba(255,255,255,.07)" stroke-width="1"/>'+
-    '<path d="'+areaD+'" fill="url(#cg-spcx)" stroke="none"/>'+
-    '<path d="'+d+'" fill="none" stroke="'+lineColor+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'+
-    '<line class="chartHoverLine" id="chvLine" x1="0" y1="'+PAD_T+'" x2="0" y2="'+(H-PAD_B)+'"/>'+
-    '<circle class="chartHoverDot" id="chvDot" r="4.5" fill="'+lineColor+'" stroke="var(--void)" stroke-width="2"/>'+
-    '</svg><div class="chartTip" id="chartTip"></div>';
-  wrap.innerHTML=svg;
-  var svgEl=wrap.querySelector('svg');
-  var tip=document.getElementById('chartTip');
-  var hvLine=document.getElementById('chvLine');
-  var hvDot=document.getElementById('chvDot');
-  function onMove(clientX){
-    var rect=svgEl.getBoundingClientRect();
-    var relX=(clientX-rect.left)/rect.width*W;
-    relX=Math.max(PAD_L,Math.min(W-PAD_R,relX));
-    var frac=(relX-PAD_L)/innerW;
-    var idx=Math.round(frac*(pts.length-1));
-    idx=Math.max(0,Math.min(pts.length-1,idx));
-    var p=pts[idx];
-    var px=xOf(p[0]),py=yOf(p[1]);
-    hvLine.setAttribute('x1',px);hvLine.setAttribute('x2',px);hvLine.style.opacity=1;
-    hvDot.setAttribute('cx',px);hvDot.setAttribute('cy',py);hvDot.style.opacity=1;
-    var pctRect=rect.width/W;
-    tip.style.left=(px*pctRect)+'px';
-    tip.style.top=(py*(rect.height/H))+'px';
-    tip.innerHTML='<b>$'+p[1].toFixed(2)+'</b> · '+fmtDate(p[0]);
-    tip.style.opacity=1;
-  }
-  function onLeave(){hvLine.style.opacity=0;hvDot.style.opacity=0;tip.style.opacity=0;}
-  svgEl.addEventListener('mousemove',function(e){onMove(e.clientX)});
-  svgEl.addEventListener('mouseleave',onLeave);
-  svgEl.addEventListener('touchmove',function(e){if(e.touches[0])onMove(e.touches[0].clientX)},{passive:true});
-  svgEl.addEventListener('touchend',onLeave);
-  metaEl.style.display='flex';
-  metaEl.innerHTML='<span>'+fmtDate(t0)+'</span><span><b>'+(CUR==='ar'?'الأدنى':'Low')+':</b> $'+min.toFixed(2)+' &nbsp; <b>'+(CUR==='ar'?'الأعلى':'High')+':</b> $'+max.toFixed(2)+'</span><span>'+fmtDate(t1)+'</span>';
-}
-Array.prototype.forEach.call(tabsEl.querySelectorAll('button'),function(b){
-  b.addEventListener('click',function(){load(b.getAttribute('data-range'),b.getAttribute('data-interval'),b)});
-});
-function boot(){
-  if(typeof fetchViaProxies!=='function'||typeof CUR==='undefined')return setTimeout(boot,200);
-  load('6mo','1d',tabsEl.querySelector('button.on'));
-}
-boot();
-})();
 </script>
 </body>
 </html>

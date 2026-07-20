@@ -277,27 +277,8 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 </section>
 
 <section class="rv" id="s-chart">
-<div class="eyeb"><b><span class="i-ar">الرسم البياني الحي</span><span class="i-en">Live Chart</span></b><span>TRADINGVIEW</span><div class="ln"></div></div>
-<div class="gl" style="padding:8px;overflow:hidden">
-<div class="tradingview-widget-container" style="height:520px;width:100%">
-<div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
-<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-{
-  "autosize": true,
-  "symbol": "NASDAQ:AMD",
-  "interval": "D",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "allow_symbol_change": false,
-  "backgroundColor": "#08090b",
-  "gridColor": "rgba(255,255,255,0.06)",
-  "support_host": "https://www.tradingview.com"
-}
-</script>
-</div>
-</div>
+<div class="eyeb"><b><span class="i-ar">الرسم البياني الحي</span><span class="i-en">Live Chart</span></b><span>HIGHCHARTS · 1Y</span><div class="ln"></div></div>
+<div class="gl" style="padding:16px"><div id="hc-chart" style="height:480px;width:100%"></div></div>
 </section>
 
 <section class="rv" id="s-news">
@@ -461,6 +442,68 @@ e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg"
 if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
 setInterval(livePrice,10000);
+</script>
+
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script>
+(function(){
+var TK="AMD";
+function draw(){
+  if(!window.Highcharts||!window.fetchViaProxies)return setTimeout(draw,300);
+  var el=document.getElementById('hc-chart');
+  if(!el)return;
+  window.fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(TK)+"?interval=1d&range=1y").then(function(t){
+    var d=JSON.parse(t).chart.result[0];
+    if(!d||!d.timestamp)throw new Error('no data');
+    var ts=d.timestamp,q=d.indicators.quote[0];
+    var ohlc=[],vol=[];
+    for(var i=0;i<ts.length;i++){
+      if(q.open[i]==null)continue;
+      var ms=ts[i]*1000;
+      ohlc.push([ms,q.open[i],q.high[i],q.low[i],q.close[i]]);
+      vol.push([ms,q.volume[i]||0]);
+    }
+    if(!ohlc.length)throw new Error('empty');
+    Highcharts.stockChart('hc-chart',{
+      chart:{backgroundColor:'transparent',style:{fontFamily:'inherit'}},
+      credits:{enabled:false},
+      rangeSelector:{
+        selected:4,
+        buttons:[{type:'month',count:1,text:'1M'},{type:'month',count:3,text:'3M'},{type:'month',count:6,text:'6M'},{type:'ytd',text:'YTD'},{type:'year',count:1,text:'1Y'}],
+        buttonTheme:{fill:'rgba(255,255,255,0.06)',stroke:'rgba(255,255,255,0.1)',style:{color:'#b7bfdd',fontWeight:'600'},states:{select:{fill:'#5b8def',style:{color:'#0a0f1e'}},hover:{fill:'rgba(91,141,239,0.2)'}}},
+        inputStyle:{color:'#b7bfdd',backgroundColor:'transparent'},
+        labelStyle:{color:'#b7bfdd'}
+      },
+      navigator:{maskFill:'rgba(91,141,239,0.15)',outlineColor:'rgba(255,255,255,0.15)',series:{color:'#5b8def',lineColor:'#5b8def'},xAxis:{gridLineColor:'rgba(255,255,255,0.04)',labels:{style:{color:'#8a91ad'}}}},
+      scrollbar:{enabled:false},
+      xAxis:{labels:{style:{color:'#b7bfdd'}},lineColor:'rgba(255,255,255,0.15)',tickColor:'rgba(255,255,255,0.15)',gridLineColor:'rgba(255,255,255,0.04)'},
+      yAxis:[{
+        labels:{align:'right',x:-3,style:{color:'#b7bfdd'}},
+        gridLineColor:'rgba(255,255,255,0.06)',
+        height:'72%',lineWidth:0,
+        title:{text:''}
+      },{
+        labels:{align:'right',x:-3,style:{color:'#8a91ad'}},
+        gridLineColor:'rgba(255,255,255,0.06)',
+        top:'78%',height:'22%',offset:0,lineWidth:0,
+        title:{text:''}
+      }],
+      tooltip:{backgroundColor:'rgba(15,20,35,0.95)',borderColor:'rgba(255,255,255,0.15)',style:{color:'#f5f7ff'},split:true},
+      series:[{
+        type:'candlestick',name:TK,data:ohlc,
+        color:'#ff6b6b',lineColor:'#ff6b6b',
+        upColor:'#3ce8a6',upLineColor:'#3ce8a6'
+      },{
+        type:'column',name:'Volume',data:vol,yAxis:1,
+        color:'rgba(120,140,180,0.55)'
+      }]
+    });
+  }).catch(function(){
+    el.innerHTML='<div style="text-align:center;color:var(--mut);padding:80px 20px;font-size:14px"><span class="i-ar">تعذر تحميل بيانات الرسم البياني لهذا الرمز</span><span class="i-en">Chart data unavailable for this symbol</span></div>';
+  });
+}
+draw();
+})();
 </script>
 </body>
 </html>

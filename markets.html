@@ -69,6 +69,8 @@ section{margin-top:var(--sp7)}
 .tk-name{font-size:14.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tk-arrow{width:14px;height:14px;color:var(--mut);flex-shrink:0;transition:transform var(--dur-med) var(--ease)}
 .tk.open .tk-arrow{transform:rotate(180deg)}
+.tk-full{text-decoration:none;color:inherit;display:block}
+.tk-full-badge{font-size:11px;font-weight:700;color:var(--a1);border:1px solid rgba(23,191,142,.4);border-radius:99px;padding:5px 12px;background:rgba(23,191,142,.08);white-space:nowrap;flex-shrink:0}
 .tk-detail{display:none;padding:0 var(--sp4) var(--sp4);border-top:1px solid var(--edge);margin-top:2px;padding-top:var(--sp3)}
 .tk.open .tk-detail{display:block}
 .tk-price{font-family:var(--num);font-size:22px;font-weight:700;direction:ltr}
@@ -117,6 +119,9 @@ section{margin-top:var(--sp7)}
 <script>
 var CUR=localStorage.getItem("lang")||"ar";
 var TICKERS=[
+{t:"SPCX",ar:"سبيس إكس",en:"SpaceX",page:"spcx.html"},
+{t:"GME",ar:"جيم ستوب",en:"GameStop",page:"gme.html"},
+{t:"GOLD",ar:"الذهب",en:"Gold",page:"gold.html"},
 {t:"AAPL",ar:"أبل",en:"Apple"},
 {t:"MSFT",ar:"مايكروسوفت",en:"Microsoft"},
 {t:"GOOGL",ar:"ألفابت (غوغل)",en:"Alphabet (Google)"},
@@ -124,29 +129,93 @@ var TICKERS=[
 {t:"META",ar:"ميتا",en:"Meta"},
 {t:"TSLA",ar:"تسلا",en:"Tesla"},
 {t:"BRK-B",ar:"بيركشاير هاثاواي",en:"Berkshire Hathaway"},
+{t:"NVDA",ar:"إنفيديا",en:"NVIDIA",page:"nvda.html"},
+{t:"AMD",ar:"إيه إم دي",en:"AMD",page:"amd.html"},
+{t:"INTC",ar:"إنتل",en:"Intel",page:"intc.html"},
+{t:"PLTR",ar:"بالانتير",en:"Palantir",page:"pltr.html"},
+{t:"AVGO",ar:"برودكوم",en:"Broadcom"},
+{t:"QCOM",ar:"كوالكوم",en:"Qualcomm"},
+{t:"TXN",ar:"تكساس إنسترومنتس",en:"Texas Instruments"},
+{t:"IBM",ar:"آي بي إم",en:"IBM"},
+{t:"CSCO",ar:"سيسكو",en:"Cisco"},
+{t:"ORCL",ar:"أوراكل",en:"Oracle"},
+{t:"CRM",ar:"سيلزفورس",en:"Salesforce"},
+{t:"ADBE",ar:"أدوبي",en:"Adobe"},
+{t:"NOW",ar:"سيرفس ناو",en:"ServiceNow"},
+{t:"INTU",ar:"إنتويت",en:"Intuit"},
+{t:"UBER",ar:"أوبر",en:"Uber"},
+{t:"ABNB",ar:"إير بي إن بي",en:"Airbnb"},
+{t:"SHOP",ar:"شوبيفاي",en:"Shopify"},
+{t:"SPOT",ar:"سبوتيفاي",en:"Spotify"},
+{t:"PYPL",ar:"باي بال",en:"PayPal"},
+{t:"SQ",ar:"بلوك",en:"Block"},
+{t:"NFLX",ar:"نتفليكس",en:"Netflix"},
+{t:"DIS",ar:"ديزني",en:"Disney"},
 {t:"V",ar:"فيزا",en:"Visa"},
 {t:"MA",ar:"ماستركارد",en:"Mastercard"},
 {t:"JPM",ar:"جيه بي مورغان تشيس",en:"JPMorgan Chase"},
+{t:"BAC",ar:"بنك أوف أمريكا",en:"Bank of America"},
+{t:"WFC",ar:"ويلز فارغو",en:"Wells Fargo"},
+{t:"C",ar:"سيتي غروب",en:"Citigroup"},
+{t:"GS",ar:"غولدمان ساكس",en:"Goldman Sachs"},
+{t:"MS",ar:"مورغان ستانلي",en:"Morgan Stanley"},
+{t:"AXP",ar:"أمريكان إكسبريس",en:"American Express"},
+{t:"BLK",ar:"بلاك روك",en:"BlackRock"},
+{t:"SCHW",ar:"تشارلز شواب",en:"Charles Schwab"},
 {t:"JNJ",ar:"جونسون آند جونسون",en:"Johnson & Johnson"},
+{t:"UNH",ar:"يونايتد هيلث",en:"UnitedHealth"},
+{t:"PFE",ar:"فايزر",en:"Pfizer"},
+{t:"MRK",ar:"ميرك",en:"Merck"},
+{t:"ABBV",ar:"آبفي",en:"AbbVie"},
+{t:"LLY",ar:"إيلاي ليلي",en:"Eli Lilly"},
+{t:"TMO",ar:"ثيرمو فيشر",en:"Thermo Fisher"},
+{t:"ABT",ar:"أبوت",en:"Abbott"},
+{t:"MDT",ar:"مدترونيك",en:"Medtronic"},
 {t:"WMT",ar:"وول مارت",en:"Walmart"},
 {t:"PG",ar:"بروكتر آند غامبل",en:"Procter & Gamble"},
 {t:"KO",ar:"كوكاكولا",en:"Coca-Cola"},
-{t:"DIS",ar:"ديزني",en:"Disney"},
-{t:"NFLX",ar:"نتفليكس",en:"Netflix"},
-{t:"ORCL",ar:"أوراكل",en:"Oracle"},
-{t:"CRM",ar:"سيلزفورس",en:"Salesforce"},
+{t:"PEP",ar:"بيبسيكو",en:"PepsiCo"},
+{t:"COST",ar:"كوستكو",en:"Costco"},
+{t:"HD",ar:"هوم ديبوت",en:"Home Depot"},
+{t:"LOW",ar:"لوز",en:"Lowe's"},
+{t:"TGT",ar:"تارغت",en:"Target"},
+{t:"MCD",ar:"ماكدونالدز",en:"McDonald's"},
+{t:"SBUX",ar:"ستاربكس",en:"Starbucks"},
+{t:"NKE",ar:"نايكي",en:"Nike"},
+{t:"EL",ar:"إستي لودر",en:"Estée Lauder"},
 {t:"XOM",ar:"إكسون موبيل",en:"ExxonMobil"},
 {t:"CVX",ar:"شيفرون",en:"Chevron"},
-{t:"UNH",ar:"يونايتد هيلث",en:"UnitedHealth"},
-{t:"HD",ar:"هوم ديبوت",en:"Home Depot"},
-{t:"MCD",ar:"ماكدونالدز",en:"McDonald's"},
-{t:"NKE",ar:"نايكي",en:"Nike"},
+{t:"COP",ar:"كونوكو فيليبس",en:"ConocoPhillips"},
+{t:"SLB",ar:"شلمبرجير",en:"SLB"},
 {t:"BA",ar:"بوينغ",en:"Boeing"},
-{t:"PFE",ar:"فايزر",en:"Pfizer"},
-{t:"ADBE",ar:"أدوبي",en:"Adobe"},
-{t:"COST",ar:"كوستكو",en:"Costco"},
-{t:"AVGO",ar:"برودكوم",en:"Broadcom"},
-{t:"LLY",ar:"إيلاي ليلي",en:"Eli Lilly"}
+{t:"CAT",ar:"كاتربيلر",en:"Caterpillar"},
+{t:"GE",ar:"جنرال إلكتريك",en:"General Electric"},
+{t:"HON",ar:"هانيويل",en:"Honeywell"},
+{t:"UPS",ar:"يو بي إس",en:"UPS"},
+{t:"LMT",ar:"لوكهيد مارتن",en:"Lockheed Martin"},
+{t:"RTX",ar:"آر تي إكس",en:"RTX"},
+{t:"DE",ar:"دير آند كومباني",en:"Deere & Company"},
+{t:"MMM",ar:"ثري إم",en:"3M"},
+{t:"UNP",ar:"يونيون باسيفيك",en:"Union Pacific"},
+{t:"GM",ar:"جنرال موتورز",en:"General Motors"},
+{t:"F",ar:"فورد",en:"Ford"},
+{t:"T",ar:"إيه تي آند تي",en:"AT&T"},
+{t:"VZ",ar:"فيرايزون",en:"Verizon"},
+{t:"TMUS",ar:"تي موبايل",en:"T-Mobile"},
+{t:"CMCSA",ar:"كومكاست",en:"Comcast"},
+{t:"BABA",ar:"علي بابا",en:"Alibaba"},
+{t:"TSM",ar:"تايوان سيميكوندكتور",en:"Taiwan Semiconductor"},
+{t:"ASML",ar:"إيه إس إم إل",en:"ASML"},
+{t:"SAP",ar:"إس إيه بي",en:"SAP"},
+{t:"NVS",ar:"نوفارتس",en:"Novartis"},
+{t:"NVO",ar:"نوفو نورديسك",en:"Novo Nordisk"},
+{t:"SONY",ar:"سوني",en:"Sony"},
+{t:"TM",ar:"تويوتا",en:"Toyota"},
+{t:"HSBC",ar:"إتش إس بي سي",en:"HSBC"},
+{t:"SHEL",ar:"شل",en:"Shell"},
+{t:"BP",ar:"بي بي",en:"BP"},
+{t:"UL",ar:"يونيليفر",en:"Unilever"},
+{t:"RY",ar:"رويال بنك أوف كندا",en:"Royal Bank of Canada"}
 ];
 var CACHE={};
 var PROXIES=[
@@ -162,7 +231,16 @@ return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad sta
 }
 function renderGrid(){
 document.getElementById("grid").innerHTML=TICKERS.map(function(x,i){
-return '<div class="tk gl" data-t="'+x.t+'" data-q="'+(x.ar+" "+x.en+" "+x.t).toLowerCase()+'">'+
+var q=(x.ar+" "+x.en+" "+x.t).toLowerCase();
+if(x.page){
+return '<a href="'+x.page+'" class="tk gl tk-full" data-t="'+x.t+'" data-q="'+q+'">'+
+'<span class="tk-head" style="cursor:pointer">'+
+'<span class="tk-info"><span class="tk-sym">'+x.t+'</span><span class="tk-name">'+(CUR==="ar"?x.ar:x.en)+'</span></span>'+
+'<span class="tk-full-badge">'+(CUR==="ar"?"التحليل الكامل":"Full analysis")+'</span>'+
+'</span>'+
+'</a>';
+}
+return '<div class="tk gl" data-t="'+x.t+'" data-q="'+q+'">'+
 '<button class="tk-head" onclick="toggleTicker('+i+')">'+
 '<span class="tk-info"><span class="tk-sym">'+x.t+'</span><span class="tk-name">'+(CUR==="ar"?x.ar:x.en)+'</span></span>'+
 '<svg class="tk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>'+

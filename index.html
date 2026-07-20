@@ -232,13 +232,31 @@ c.style.display=show?"":"none";
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");
 document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
 var FALLBACK_PRICE={"price_fallback":124,"ipo_price":135};
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
 function showPrice(d){
-var p=d.price_fallback,ipo=d.ipo_price||135,b=p<ipo;
+window.__IPO=d.ipo_price||135;
+var p=window.__LASTP||d.price_fallback,ipo=window.__IPO,b=p<ipo;
 var e=document.getElementById("hp-px");
 e.textContent="$"+(+p).toFixed(2);e.className=(b?"neg":"pos");
 document.getElementById("hp-chg").textContent=(CUR==="ar"?(b?"تحت الاكتتاب":"فوق الاكتتاب"):(b?"below IPO":"above IPO"));
 }
-fetch("data.json?v="+Date.now()).then(function(r){return r.json()}).then(showPrice).catch(function(){showPrice(FALLBACK_PRICE)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/SPCX?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;showPrice({ipo_price:window.__IPO,price_fallback:p})}
+}).catch(function(){})}
+fetch("data.json?v="+Date.now()).then(function(r){return r.json()}).then(function(d){showPrice(d);livePrice()}).catch(function(){showPrice(FALLBACK_PRICE);livePrice()});
+setInterval(livePrice,20000);
 </script>
 </body>
 </html>

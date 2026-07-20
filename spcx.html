@@ -488,7 +488,7 @@ e.textContent="$"+(+p).toFixed(2)+(b?" ▼":" ▲");e.className=(b?"neg":"pos");
 document.getElementById("vi").textContent=(CUR==="ar"?((b?"تحت":"فوق")+" الاكتتاب $"+ipo):((b?"below":"above")+" IPO $"+ipo));
 if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
-setInterval(livePrice,60000);
+setInterval(livePrice,20000);
 </script>
 </body>
 </html>

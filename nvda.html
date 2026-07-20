@@ -83,8 +83,13 @@ h1{font-family:var(--disp);font-weight:800;font-size:clamp(36px,6.2vw,58px);line
 h1 .grad{background:linear-gradient(92deg,var(--green),#c8ff5e);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{color:var(--mut);font-size:17px;line-height:1.75;max-width:48ch;margin-top:var(--sp4)}
 @media(max-width:780px){.lead{margin-inline:auto}}
-.chip{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:var(--sp4)}
-.chip svg{width:100%;height:100%;overflow:visible}
+.chip{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:0;overflow:hidden}
+.chip-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(1.15) contrast(1.05)}
+.chip-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,8,.15) 0%,rgba(7,10,8,.35) 70%,rgba(7,10,8,.75) 100%)}
+.chip-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:var(--sp4)}
+.chip-kick{align-self:flex-end;display:flex;align-items:center;gap:6px;font-family:var(--num);font-size:10px;letter-spacing:.1em;color:#76b900;font-weight:700;background:rgba(7,10,8,.55);backdrop-filter:blur(4px);padding:5px 10px;border-radius:99px;border:1px solid rgba(118,185,0,.4)}
+.chip-dot{width:6px;height:6px;border-radius:50%;background:#76b900;box-shadow:0 0 8px #76b900;animation:pl 1.6s infinite}
+.chip-cap{font-family:var(--num);font-size:10px;letter-spacing:.08em;color:#eef5ee;background:rgba(7,10,8,.5);backdrop-filter:blur(4px);padding:6px 12px;border-radius:6px;align-self:flex-start;border:1px solid rgba(118,185,0,.3)}
 section{margin-top:var(--sp8)}
 .eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
 .eyeb .ln{flex:1;height:1.5px;border-radius:1px;background:linear-gradient(90deg,rgba(118,185,0,.4),rgba(118,185,0,.4) 70%,transparent)}
@@ -182,28 +187,11 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 <p class="lead"><span class="i-ar">من بطاقات الألعاب إلى احتكار شبه كامل لرقائق الذكاء الاصطناعي — شركة تحولت لمركز بيانات العالم، بقيادة رجل بجاكيت جلدي يواجه ضغط واشنطن وبكين معًا.</span><span class="i-en">From gaming graphics cards to a near-total monopoly on AI chips — the company that became the world's data center, led by a man in a leather jacket caught between Washington and Beijing.</span></p>
 </div>
 <div class="chip gl rv">
-<svg viewBox="0 0 420 420" role="img" aria-label="Stylized AI chip die representing Nvidia's compute demand">
-<g stroke="#76b900" stroke-width="2" opacity=".7">
-<line x1="140" y1="60" x2="140" y2="90"/><line x1="180" y1="60" x2="180" y2="90"/><line x1="220" y1="60" x2="220" y2="90"/><line x1="260" y1="60" x2="260" y2="90"/><line x1="300" y1="60" x2="300" y2="90"/>
-<line x1="140" y1="330" x2="140" y2="360"/><line x1="180" y1="330" x2="180" y2="360"/><line x1="220" y1="330" x2="220" y2="360"/><line x1="260" y1="330" x2="260" y2="360"/><line x1="300" y1="330" x2="300" y2="360"/>
-<line x1="60" y1="140" x2="90" y2="140"/><line x1="60" y1="180" x2="90" y2="180"/><line x1="60" y1="220" x2="90" y2="220"/><line x1="60" y1="260" x2="90" y2="260"/><line x1="60" y1="300" x2="90" y2="300"/>
-<line x1="330" y1="140" x2="360" y2="140"/><line x1="330" y1="180" x2="360" y2="180"/><line x1="330" y1="220" x2="360" y2="220"/><line x1="330" y1="260" x2="360" y2="260"/><line x1="330" y1="300" x2="360" y2="300"/>
-</g>
-<rect x="90" y="90" width="240" height="240" rx="8" fill="rgba(118,185,0,.06)" stroke="#76b900" stroke-width="2"/>
-<g stroke="rgba(118,185,0,.35)" stroke-width="1">
-<line x1="90" y1="140" x2="330" y2="140"/><line x1="90" y1="180" x2="330" y2="180"/><line x1="90" y1="220" x2="330" y2="220"/><line x1="90" y1="260" x2="330" y2="260"/><line x1="90" y1="300" x2="330" y2="300"/>
-<line x1="140" y1="90" x2="140" y2="330"/><line x1="180" y1="90" x2="180" y2="330"/><line x1="220" y1="90" x2="220" y2="330"/><line x1="260" y1="90" x2="260" y2="330"/><line x1="300" y1="90" x2="300" y2="330"/>
-</g>
-<circle cx="210" cy="210" r="44" fill="rgba(118,185,0,.16)" stroke="#76b900" stroke-width="2" style="filter:drop-shadow(0 0 16px rgba(118,185,0,.6))">
-<animate attributeName="r" values="44;48;44" dur="2.4s" repeatCount="indefinite"/>
-</circle>
-<text x="210" y="205" text-anchor="middle" fill="#eef5ee" font-family="'Orbitron',monospace" font-size="11" font-weight="700">AI CORE</text>
-<text x="210" y="220" text-anchor="middle" fill="#76b900" font-family="'Orbitron',monospace" font-size="9">92% LOAD</text>
-<text x="210" y="42" text-anchor="middle" fill="#76b900" font-family="'Orbitron',monospace" font-size="10" letter-spacing="2">AI COMPUTE DEMAND</text>
-<circle cx="366" cy="38" r="4" fill="#76b900"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
-<text x="378" y="42" fill="#8fa08f" font-family="'Orbitron',monospace" font-size="7">LIVE</text>
-<text x="210" y="400" text-anchor="middle" fill="#8fa08f" font-family="'Orbitron',monospace" font-size="7">DIE SCHEMATIC (ILLUSTRATIVE)</text>
-</svg>
+<div class="chip-photo" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/5/55/Silicon_chip_from_a_computer_laser_mouse_under_a_microscope_50%D1%85.jpg)" role="img" aria-label="Real microscope photo of a silicon chip die"></div>
+<div class="chip-overlay">
+<div class="chip-kick"><span class="chip-dot" aria-hidden="true"></span>LIVE</div>
+<div class="chip-cap">SILICON DIE · 50× MICROSCOPE PHOTO</div>
+</div>
 </div>
 </div>
 
@@ -305,6 +293,9 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 
 <footer>
 <p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+<p class="dsc" style="margin-top:8px;font-size:11px;opacity:.7">
+<span class="i-ar">صورة: </span><span class="i-en">Photo: </span><a href="https://commons.wikimedia.org/wiki/File:Silicon_chip_from_a_computer_laser_mouse_under_a_microscope_50%D1%85.jpg" target="_blank" rel="noopener" style="color:inherit">Alexander Klepnev / IamMM</a> (CC BY-SA 4.0) — Wikimedia Commons
+</p>
 </footer>
 
 </div>

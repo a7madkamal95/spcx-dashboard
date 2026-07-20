@@ -1,0 +1,38 @@
+{
+  "last_updated": "2026-07-20",
+  "price_fallback": 492.10,
+  "prev_close": 486.27,
+  "market_cap": "$797B",
+  "stats": {
+    "revenue_q1": "10.3B$",
+    "datacenter_rev": "5.8B$",
+    "datacenter_growth": "+57%",
+    "ai_gpu_share": "5-7%",
+    "server_cpu_2030": "120B$",
+    "from_ath": "-17%",
+    "gross_margin": "53%",
+    "next_earnings": "4 أغسطس 2026"
+  },
+  "timeline": [
+    {"when":"2014","what":"ليزا سو تتولى القيادة","note":"الشركة كانت على حافة الإفلاس بسهم أقل من 3 دولارات"},
+    {"when":"يناير 2026","what":"إطلاق خارطة طريق MI450","note":"الجيل الجديد من مسرّعات الذكاء الاصطناعي Instinct لمنافسة Nvidia"},
+    {"when":"مايو 2026","what":"إيرادات مراكز البيانات تقفز 57%","note":"5.8 مليار دولار مدفوعة بمعالجات EPYC ومسرّعات MI350"},
+    {"when":"30 يونيو 2026","what":"أعلى سعر تاريخي: 584.73$","note":"ذروة زخم الذكاء الاصطناعي قبل التصحيح"},
+    {"when":"يوليو 2026","what":"تراجع 17% عن القمة","note":"السهم يتصحح وسط حذر عام من تقييمات قطاع الذكاء الاصطناعي"},
+    {"when":"22-23 يوليو 2026","what":"فعالية Advancing AI","note":"الكشف عن تحديثات MI450 ومنصة الخوادم Helios، وإطلاق معالج Zen 6 Venice"}
+  ],
+  "news": [
+    {"text":"AMD تطلق تحديثات مسرّعات MI450 ومنصة خوادم Helios ضمن فعالية Advancing AI 2026","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},
+    {"text":"إيرادات مراكز البيانات تقفز 57% إلى 5.8 مليار دولار متجاوزة إيرادات إنتل من نفس القطاع","src":"Data Center Dynamics","link":"https://www.datacenterdynamics.com/en/news/amd-posts-q1-2026-data-center-revenue-of-58bn-forecasts-120bn-server-cpu-income-by-2030/"},
+    {"text":"AMD ترفع توقعاتها لسوق معالجات الخوادم إلى نمو سنوي 35% وتستهدف 120 مليار دولار إيرادات بحلول 2030","src":"Data Center Dynamics","link":"https://www.datacenterdynamics.com/en/news/amd-posts-q1-2026-data-center-revenue-of-58bn-forecasts-120bn-server-cpu-income-by-2030/"},
+    {"text":"نتائج الربع الأول: إيرادات 10.3 مليار دولار وهامش إجمالي 53% وأرباح صافية 1.4 مليار دولار","src":"AMD Newsroom","link":"https://www.amd.com/en/newsroom/press-releases/2026-5-5-amd-reports-first-quarter-2026-financial-results.html"},
+    {"text":"السهم يتراجع 17% عن قمته التاريخية 584.73$ المسجلة أواخر يونيو وسط حذر عام من تقييمات الذكاء الاصطناعي","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},
+    {"text":"حصة AMD من سوق مسرّعات الذكاء الاصطناعي تتراوح بين 5-7% مقابل هيمنة Nvidia بنحو 75-81%","src":"CommandLinux","link":"https://commandlinux.com/statistics/ai-gpu-market-share-nvidia-vs-amd-vs-intel"}
+  ],
+  "takeaways": [
+    "ليزا سو حوّلت شركة على حافة الإفلاس إلى منافس حقيقي بسوق يتجاوز نصف تريليون دولار",
+    "AMD تتفوق على إنتل بإيرادات مراكز البيانات لأول مرة، لكنها لا تزال بعيدة عن هيمنة Nvidia بالذكاء الاصطناعي",
+    "الطموح ضخم: 120 مليار دولار متوقعة من معالجات الخوادم وحدها بحلول 2030",
+    "السهم يتحرك بعنف مع كل حدث بقطاع الذكاء الاصطناعي — صعودًا وهبوطًا"
+  ]
+}

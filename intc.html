@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INTC — العملاق الذي يحاول النهوض · الراصد</title>
+<meta name="description" content="تحليل استثماري حي لسهم إنتل من الراصد: حصة الحكومة الأمريكية، ليب-بو تان وخطة الإنقاذ، وسباق تصنيع الرقائق — بأرقام حية وأخبار حقيقية.">
+<meta name="theme-color" content="#050b12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Changa:wght@600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#050b12;--ink:#eef3f7;--mut:#8a9bab;
+--blue:#0071c5;--blueDeep:#003c71;--red:#ff5a5a;--green:#3ce8a6;
+--glass:rgba(255,255,255,.04);--glassH:rgba(0,113,197,.1);
+--edge:rgba(0,113,197,.35);--edgeTop:rgba(0,113,197,.55);
+--focus:#0071c5;
+--disp:'Changa',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'IBM Plex Mono',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r6:6px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Oswald',sans-serif;--body:'IBM Plex Mono','Segoe UI',sans-serif}
+.en,.num,#px,.st b,.ts .w,.tk i{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.blueprint{position:fixed;inset:0;z-index:-3;background:var(--void)}
+.blueprint::before{content:"";position:absolute;inset:0;opacity:.13;
+background-image:
+linear-gradient(rgba(0,150,255,.6) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,150,255,.6) 1px,transparent 1px);
+background-size:22px 22px;
+mask-image:radial-gradient(ellipse 75% 60% at 50% 15%,#000 40%,transparent 92%)}
+.glow{position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:65vw;height:65vw;z-index:-2;
+background:radial-gradient(circle,rgba(0,113,197,.16),transparent 65%);filter:blur(75px)}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(0,113,197,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(16px) saturate(120%);-webkit-backdrop-filter:blur(16px) saturate(120%);
+border:1px solid var(--edge);
+border-radius:var(--r6);box-shadow:0 14px 36px rgba(0,0,0,.5);
+position:relative;overflow:hidden}
+.gl::before,.gl::after{content:"";position:absolute;top:7px;width:12px;height:12px;border-top:2px solid var(--blue);opacity:.6}
+.gl::before{inset-inline-start:7px;border-inline-start:2px solid var(--blue)}
+.gl::after{inset-inline-end:7px;border-inline-end:2px solid var(--blue)}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--blue)}
+.bar .brand:hover{color:var(--blue)}
+.bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
+.bar .sym{font-family:var(--num);font-weight:500;letter-spacing:.03em;font-size:12px;color:var(--mut)}
+.bar .dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 14px var(--blue);animation:pl 1.6s infinite;flex-shrink:0}
+@keyframes pl{50%{opacity:.35}}
+#px{font-family:var(--num);font-weight:700;font-size:22px;direction:ltr}
+.neg{color:var(--red)}.pos{color:var(--green)}
+#pm{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.ldot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pl 1.6s infinite}
+.ldot.wait{background:#ffb020;animation:pl 1s infinite}
+.en{direction:ltr;display:inline-block;font-family:var(--num)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.08em;
+color:var(--ink);background:rgba(255,255,255,.07);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(0,113,197,.2);transform:translateY(-1px)}
+.lng:active{transform:translateY(0)}
+.qnav{position:sticky;top:calc(var(--sp3) + 58px);z-index:49;display:flex;gap:6px;padding:7px;margin-top:10px;
+overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.qnav::-webkit-scrollbar{display:none}
+.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mut);
+text-decoration:none;padding:9px 16px;min-height:38px;border-radius:5px;white-space:nowrap;
+transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+.qnav a svg{width:15px;height:15px;flex-shrink:0}
+.qnav a:hover{color:var(--ink);background:rgba(255,255,255,.07)}
+.qnav a.on{color:var(--void);background:var(--blue)}
+.hero{padding:56px 0 var(--sp4);display:grid;grid-template-columns:1.08fr .92fr;gap:var(--sp6);align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
+.kick{font-family:var(--num);font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--blue)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(36px,6.2vw,58px);line-height:1.18;margin-top:var(--sp2)}
+h1 .grad{background:linear-gradient(92deg,var(--blue),#7ec8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:17px;line-height:1.75;max-width:48ch;margin-top:var(--sp4)}
+@media(max-width:780px){.lead{margin-inline:auto}}
+.blueprint-panel{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:var(--sp4)}
+.blueprint-panel svg{width:100%;height:100%;overflow:visible}
+section{margin-top:var(--sp8)}
+.eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
+.eyeb .ln{flex:1;height:1.5px;border-radius:1px;background:linear-gradient(90deg,rgba(0,113,197,.4),rgba(0,113,197,.4) 70%,transparent)}
+.eyeb b{font-family:var(--disp);font-weight:700;font-size:26px;letter-spacing:.01em}
+.eyeb span{font-family:var(--num);font-size:11px;letter-spacing:.15em;color:var(--blue);font-weight:500}
+.pad{padding:var(--sp6)}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+@media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+.ts{padding:var(--sp4);border-radius:5px;background:rgba(255,255,255,.035);border:1px solid var(--edge)}
+.ts .w{font-family:var(--num);font-size:10px;color:var(--blue);letter-spacing:.04em;font-weight:500}
+.ts .t{font-family:var(--disp);font-weight:700;font-size:17px;margin-top:4px}
+.ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
+.forces{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
+@media(max-width:900px){.forces{grid-template-columns:1fr}}
+.force{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.force:hover{transform:translateY(-5px);background:var(--glassH)}
+.force .icwrap{width:44px;height:44px;border-radius:5px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);border:1px solid var(--edge)}
+.force .icwrap svg{width:23px;height:23px}
+.force h3{font-family:var(--disp);font-weight:700;font-size:21px;margin-top:var(--sp3)}
+.tag{display:inline-block;font-family:var(--num);font-size:10px;letter-spacing:.04em;border-radius:4px;padding:4px 10px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.04)}
+.t1{color:var(--blue);border-color:rgba(0,113,197,.5)}.t2{color:#7ec8ff;border-color:rgba(126,200,255,.5)}.t3{color:var(--red);border-color:rgba(255,90,90,.5)}
+.force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
+.force .dtl{display:none}
+.force.open .dtl{display:block}
+.force h5{font-family:var(--disp);font-size:14px;font-weight:700;color:var(--blue);margin-top:var(--sp4);letter-spacing:.02em}
+.force table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--sp2)}
+.force td{padding:8px 4px;border-top:1px solid var(--edge);vertical-align:top;line-height:1.7}
+.force td:first-child{font-family:var(--num);font-size:11px;white-space:nowrap;direction:ltr;font-weight:700;color:var(--blue)}
+html[data-lang=ar] .force td:first-child{text-align:right}
+html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px}
+.more{font-size:12px;color:var(--blue);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
+.more svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
+.force.open .more svg{transform:rotate(180deg)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
+@media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+.st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.st:hover{transform:translateY(-4px);background:var(--glassH)}
+.st .sti{width:20px;height:20px;color:var(--blue);opacity:.9;margin-bottom:6px}
+.st b{display:block;font-family:var(--num);font-size:24px;font-weight:700;direction:ltr;color:var(--blue)}
+.st span{font-size:12.5px;color:var(--mut)}
+#news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}
+#news li:first-child{border-top:none}
+#news a{color:inherit;text-decoration:none;display:block;border-radius:5px}
+#news a:hover .arb{color:var(--blue)}
+.arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.6}
+.osrc{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
+.nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
+.src{font-family:var(--num);font-size:10.5px;letter-spacing:.02em;color:var(--blue);border:1px solid rgba(0,113,197,.45);border-radius:4px;padding:3px 10px;background:rgba(0,113,197,.1);direction:ltr}
+.ndate{font-size:12px;color:var(--mut)}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
+@media(max-width:640px){.sc{grid-template-columns:1fr}}
+.pan{padding:var(--sp5);font-size:13.5px}
+.pan h4{font-family:var(--disp);font-weight:700;font-size:19px;margin-bottom:var(--sp3);display:flex;align-items:center;gap:8px}
+.pg h4{color:var(--green)}.pb h4{color:var(--red)}
+.pan li{list-style:none;padding:6px 0;border-top:1px dashed var(--edge);line-height:1.7}
+.pan li:first-of-type{border-top:none}
+.tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px solid var(--edge);font-size:15.5px;line-height:1.7}
+.tk:first-child{border-top:none}
+.tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--blue);font-size:12px;border:1px solid rgba(0,113,197,.5);border-radius:5px;padding:2px 9px;margin-top:3px;background:rgba(0,113,197,.08);flex-shrink:0}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(8,14,20,.96)}}
+</style>
+</head>
+<body>
+<div class="blueprint" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap">
+<div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<span class="sep" aria-hidden="true"></span>
+<span class="dot" aria-hidden="true"></span><img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Intel_logo_2023.svg" alt="Intel" style="height:13px;filter:brightness(0) invert(1);opacity:.92;flex-shrink:0"><span class="sym">NASDAQ · INTC</span>
+<span id="px">…</span><span id="mc" class="en" style="color:var(--blue);font-weight:700"></span>
+<span id="pm" aria-live="polite"></span>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<nav class="qnav gl rv" aria-label="Section navigation">
+<a href="#s-timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="i-ar">الأحداث</span><span class="i-en">Milestones</span></a>
+<a href="#s-forces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="i-ar">القوى الثلاث</span><span class="i-en">Three Forces</span></a>
+<a href="#s-numbers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span class="i-ar">الأرقام</span><span class="i-en">Numbers</span></a>
+<a href="#s-news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg><span class="i-ar">الأخبار</span><span class="i-en">News</span></a>
+<a href="#s-balance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 006 0l-3-6zM19 7l-3 6a3 3 0 006 0l-3-6zM5 7h14"/></svg><span class="i-ar">الميزان</span><span class="i-en">Balance</span></a>
+<a href="#s-takeaways"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></a>
+</nav>
+
+<main>
+<div class="hero">
+<div class="rv">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Intel_logo_2023.svg" alt="Intel" style="height:22px;filter:brightness(0) invert(1);opacity:.95;margin-bottom:var(--sp4)">
+<div class="kick"><span class="i-ar">تحليل استثماري حي · يتحدث تلقائيًا</span><span class="i-en">LIVE INVESTOR INTELLIGENCE · AUTO-UPDATING</span></div>
+<h1><span class="i-ar">العملاق الذي<br>يحاول <span class="grad">النهوض</span></span><span class="i-en">The Giant<br>Trying to <span class="grad">Rise Again</span></span></h1>
+<p class="lead"><span class="i-ar">شركة صنعت المعالج الحديث ثم خسرت الصدارة لعقد كامل — واليوم الحكومة الأمريكية نفسها أكبر مساهم فيها، بينما يراهن رئيس تنفيذي جديد على عودة مصانعها للمنافسة العالمية.</span><span class="i-en">The company that invented the modern processor, then lost the lead for a decade — today the US government itself is its largest shareholder, while a new CEO bets on its fabs competing globally again.</span></p>
+</div>
+<div class="blueprint-panel gl rv">
+<svg viewBox="0 0 420 420" role="img" aria-label="Stylized manufacturing blueprint representing Intel's foundry turnaround">
+<rect x="10" y="10" width="400" height="400" rx="2" fill="rgba(0,113,197,.03)" stroke="rgba(0,113,197,.4)" stroke-width="1.5"/>
+<g stroke="rgba(0,150,255,.18)" stroke-width="1">
+<line x1="10" y1="110" x2="410" y2="110"/><line x1="10" y1="210" x2="410" y2="210"/><line x1="10" y1="310" x2="410" y2="310"/>
+<line x1="110" y1="10" x2="110" y2="410"/><line x1="210" y1="10" x2="210" y2="410"/><line x1="310" y1="10" x2="310" y2="410"/>
+</g>
+<rect x="140" y="140" width="140" height="140" fill="none" stroke="#0071c5" stroke-width="2"/>
+<rect x="165" y="165" width="90" height="90" fill="rgba(0,113,197,.1)" stroke="#7ec8ff" stroke-width="1.5"/>
+<line x1="140" y1="140" x2="115" y2="115" stroke="#0071c5" stroke-width="1"/>
+<line x1="280" y1="140" x2="305" y2="115" stroke="#0071c5" stroke-width="1"/>
+<line x1="140" y1="280" x2="115" y2="305" stroke="#0071c5" stroke-width="1"/>
+<line x1="280" y1="280" x2="305" y2="305" stroke="#0071c5" stroke-width="1"/>
+<text x="210" y="46" text-anchor="middle" fill="#0071c5" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="2">FOUNDRY BLUEPRINT</text>
+<circle cx="366" cy="40" r="4" fill="#0071c5"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+<text x="378" y="44" fill="#8a9bab" font-family="'IBM Plex Mono',monospace" font-size="7">LIVE</text>
+<text x="210" y="215" text-anchor="middle" fill="#eef3f7" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="700">18A</text>
+<text x="210" y="232" text-anchor="middle" fill="#7ec8ff" font-family="'IBM Plex Mono',monospace" font-size="8">+7-8% YIELD/MO</text>
+<text x="120" y="105" fill="#8a9bab" font-family="'IBM Plex Mono',monospace" font-size="7">A</text>
+<text x="295" y="105" fill="#8a9bab" font-family="'IBM Plex Mono',monospace" font-size="7">B</text>
+<text x="120" y="320" fill="#8a9bab" font-family="'IBM Plex Mono',monospace" font-size="7">C</text>
+<text x="295" y="320" fill="#8a9bab" font-family="'IBM Plex Mono',monospace" font-size="7">D</text>
+<text x="210" y="398" text-anchor="middle" fill="#8a9bab" font-family="'IBM Plex Mono',monospace" font-size="7">PROCESS NODE SCHEMATIC (ILLUSTRATIVE)</text>
+</svg>
+</div>
+</div>
+
+<section class="rv" id="s-timeline">
+<div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>2025 → 2026</span><div class="ln"></div></div>
+<div class="gl pad"><div class="tl" id="tl"></div></div>
+</section>
+
+<section class="rv" id="s-forces">
+<div class="eyeb"><b><span class="i-ar">القوى الثلاث المحركة للسهم</span><span class="i-en">The Three Forces Driving The Stock</span></b><div class="ln"></div></div>
+<div class="forces">
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#0071c5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg></div>
+<h3><span class="i-ar">ليب-بو تان</span><span class="i-en">Lip-Bu Tan</span></h3><span class="tag t1">THE TURNAROUND MAN</span>
+<p><span class="i-ar">رئيس تنفيذي جديد يراهن على تحسين مصانع إنتل وجذب عملاء خارجيين لتصنيع رقائقهم</span><span class="i-en">A new CEO betting on fixing Intel's fabs and winning outside customers to manufacture their chips</span></p>
+<div class="dtl">
+<h5><span class="i-ar">تقدم عقدة 18A</span><span class="i-en">18A Progress</span></h5>
+<table>
+<tr><td>+7-8%</td><td><span class="i-ar">تحسن العائد الإنتاجي شهريًا بعد أن كان الأداء ضعيفًا عند توليه المنصب</span><span class="i-en">Monthly yield improvement after weak performance when he took over</span></td></tr>
+<tr><td><span class="en">Jun 2026</span></td><td><span class="i-ar">بدء إنتاج عقدة 18A-P والاقتراب من صفقة محتملة مع أبل</span><span class="i-en">18A-P production begins, edging closer to a possible Apple deal</span></td></tr>
+</table>
+<h5><span class="i-ar">الرهان القادم</span><span class="i-en">The Next Bet</span></h5>
+<table>
+<tr><td><span class="en">14A</span></td><td><span class="i-ar">«ستكون بنفس توقيت TSMC — هذا اختراق كبير» بحسب تصريحه</span><span class="i-en">"It will be the same time as TSMC — that's a major breakthrough," per his own words</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#7ec8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M9 13h1M14 9h1M14 13h1"/></svg></div>
+<h3><span class="i-ar">الحكومة الأمريكية شريك</span><span class="i-en">The US Government as Shareholder</span></h3><span class="tag t2">10% OWNERSHIP</span>
+<p><span class="i-ar">تدخل غير مسبوق: واشنطن تحوّل منح CHIPS Act إلى حصة ملكية مباشرة بالشركة</span><span class="i-en">An unprecedented move: Washington converts CHIPS Act grants into direct company ownership</span></p>
+<div class="dtl">
+<h5><span class="i-ar">تفاصيل الصفقة</span><span class="i-en">Deal Details</span></h5>
+<table>
+<tr><td>$8.9B</td><td><span class="i-ar">استثمار حكومي مقابل 433.3 مليون سهم بسعر $20.47 للسهم</span><span class="i-en">Government investment for 433.3 million shares at $20.47/share</span></td></tr>
+<tr><td><span class="en">Aug 2025</span></td><td><span class="i-ar">ترامب يعلن الاتفاق بعد اجتماع مع الرئيس التنفيذي، ويأمل بصفقات مشابهة مع شركات أخرى</span><span class="i-en">Trump announces the deal after meeting the CEO, hopes for similar deals with other firms</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ff5a5a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2.6 18a2 2 0 001.7 3h15.4a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></div>
+<h3><span class="i-ar">الجراحة المؤلمة</span><span class="i-en">The Painful Surgery</span></h3><span class="tag t3">-24,000 JOBS</span>
+<p><span class="i-ar">أكبر عمليات تسريح بتاريخ الشركة مصاحبة لخسائر ضخمة بأعمال التصنيع</span><span class="i-en">The largest layoffs in company history alongside massive manufacturing losses</span></p>
+<div class="dtl">
+<h5><span class="i-ar">حجم التسريحات</span><span class="i-en">Scale of Layoffs</span></h5>
+<table>
+<tr><td>24,000+</td><td><span class="i-ar">وظيفة سُرّحت خلال 2025 — قرابة ربع القوى العاملة</span><span class="i-en">Jobs cut in 2025 — roughly a quarter of the workforce</span></td></tr>
+<tr><td>-$3B</td><td><span class="i-ar">خسارة تشغيلية بأعمال التصنيع بربع واحد فقط</span><span class="i-en">Operating loss in the foundry business in a single quarter</span></td></tr>
+<tr><td><span class="en">Jul 2026</span></td><td><span class="i-ar">موجة تسريح جديدة في أوريغون ضمن خفض تكاليف مستمر</span><span class="i-en">A fresh round of layoffs in Oregon as cost cuts continue</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+</div>
+</section>
+
+<section class="rv" id="s-numbers">
+<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>LIVE DATA</span><div class="ln"></div></div>
+<div class="stats" id="stats"></div>
+</section>
+
+<section class="rv" id="s-news">
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="gl pad"><ul id="news"></ul></div>
+</section>
+
+<section class="rv" id="s-balance">
+<div class="eyeb"><b><span class="i-ar">الميزان</span><span class="i-en">The Balance</span></b><span>PRO VIEW</span><div class="ln"></div></div>
+<div class="sc">
+<div class="pan gl pg"><h4><span class="i-ar">القوة</span><span class="i-en">Strengths</span></h4><ul>
+<li><span class="i-ar">دعم حكومي غير مسبوق: الحكومة الأمريكية أكبر مساهم بالشركة</span><span class="i-en">Unprecedented government backing: the US government is the largest shareholder</span></li>
+<li><span class="i-ar">تحسن حقيقي بعائد الإنتاج على عقدة 18A</span><span class="i-en">Real improvement in 18A manufacturing yield</span></li>
+<li><span class="i-ar">اهتمام متزايد من عملاء خارجيين محتملين مثل أبل وتسلا وجوجل</span><span class="i-en">Growing interest from potential outside customers like Apple, Tesla, and Google</span></li>
+<li><span class="i-ar">عقدة 14A القادمة قد تنافس TSMC مباشرة بحسب الإدارة</span><span class="i-en">The upcoming 14A node may directly rival TSMC, per management</span></li></ul></div>
+<div class="pan gl pb"><h4><span class="i-ar">الخطر</span><span class="i-en">Risks</span></h4><ul>
+<li><span class="i-ar">خسائر تشغيلية ضخمة مستمرة بقطاع التصنيع</span><span class="i-en">Continued massive operating losses in manufacturing</span></li>
+<li><span class="i-ar">تسريح ربع القوى العاملة تقريبًا خلال عام واحد</span><span class="i-en">Nearly a quarter of the workforce cut in a single year</span></li>
+<li><span class="i-ar">السهم تراجع 30% عن قمم يونيو وسط قلق من التقييم والمنافسة</span><span class="i-en">The stock is down 30% from June highs amid valuation and competition concerns</span></li>
+<li><span class="i-ar">تدخل حكومي مباشر بالملكية يثير تساؤلات حول الحوكمة المستقلة</span><span class="i-en">Direct government ownership raises questions about independent governance</span></li></ul></div>
+</div>
+</section>
+
+<section class="rv" id="s-takeaways">
+<div class="eyeb"><b><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></b><span>4</span><div class="ln"></div></div>
+<div class="gl pad" id="tks"></div>
+</section>
+</main>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+</footer>
+
+</div>
+<script>
+function toggleForce(el){var open=el.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
+var CUR=localStorage.getItem("lang")||"ar";
+var D=null,NEWSCACHE=null;
+var L={ar:{gov_stake:"حصة الحكومة",gov_investment:"الاستثمار الحكومي",layoffs_2025:"تسريحات 2025",foundry_loss:"خسارة التصنيع",yield_gain:"تحسن العائد الإنتاجي",q2_revenue_est:"توقع إيرادات الربع الثاني",stock_from_high:"عن قمة يونيو",next_earnings:"الأرباح القادمة"},
+en:{gov_stake:"Gov't stake",gov_investment:"Gov't investment",layoffs_2025:"2025 layoffs",foundry_loss:"Foundry loss",yield_gain:"Yield improvement",q2_revenue_est:"Q2 revenue est.",stock_from_high:"From June high",next_earnings:"Next earnings"}};
+var VEN={next_earnings:"Jul 23, 2026"};
+var SICO={
+gov_stake:'<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 010 18z" fill="currentColor" stroke="none" opacity=".35"/>',
+gov_investment:'<rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M3 9h2M19 9h2M3 15h2M19 15h2"/>',
+layoffs_2025:'<circle cx="9" cy="8" r="3"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16 4.5a3 3 0 010 6M21.5 20a6 6 0 00-5-6"/>',
+foundry_loss:'<path d="M4 4l6 10 4-4 6 10"/>',
+yield_gain:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+q2_revenue_est:'<path d="M4 20V10M12 20V4M20 20v-7"/>',
+stock_from_high:'<path d="M4 4l16 16M20 4L4 20"/>',
+next_earnings:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'
+};
+var TLEN=[{when:"Aug 2025",what:"The US government becomes top shareholder",note:"$8.9B investment via converting CHIPS Act grants into a 10% equity stake"},{when:"2025",what:"Massive layoff wave",note:"Over 24,000 jobs cut — nearly a quarter of the workforce"},{when:"Feb 2026",what:"Lip-Bu Tan unveils turnaround roadmap",note:"Focus on improving the 18A manufacturing node and winning outside foundry customers"},{when:"May 2026",what:"Notable 18A improvement",note:"Yield improves 7-8% monthly after previously weak performance"},{when:"Jun 2026",what:"18A-P production begins",note:"A step closer to a possible manufacturing deal with Apple"},{when:"Jul 2026",what:"Another layoff round",note:"Fresh job cuts in Oregon as cost reduction continues"}];
+var NEN=[{text:"The US government takes a 10% stake in Intel with an $8.9B investment via converting CHIPS Act grants into equity",src:"CNBC",link:"https://www.cnbc.com/2025/08/22/intel-goverment-equity-stake.html"},{text:"CEO Lip-Bu Tan: 18A yield improving 7-8% monthly after previously \"not good\" performance",src:"MarketBeat",link:"https://www.marketbeat.com/instant-alerts/intel-conference-lip-bu-tan-talks-foundry-turnaround-18a-yield-gains-and-14a-roadmap-push-2026-02-03/"},{text:"Intel begins 18A-P production, edging closer to a possible manufacturing deal with Apple after earlier deals with Tesla and Google",src:"CNBC",link:"https://www.cnbc.com/2026/06/16/intel-begins-production-of-18a-p-inches-closer-to-possible-apple-deal.html"},{text:"Lip-Bu Tan calls the foundry business a \"national treasure\" as outside customer interest grows after the 18A turnaround",src:"WCCFTech",link:"https://wccftech.com/intel-ceo-lip-bu-tan-calls-foundry-a-national-treasure-as-external-customers-knock-on-his-door-after-18a-yield-turnaround/"},{text:"Intel slashes $1.5B in operating expenses with more layoffs expected",src:"ChannelInsider",link:"https://www.channelinsider.com/news-and-trends/intel-slashes-billions-layoffs-expected/"},{text:"Tan: the upcoming 14A node could directly rival TSMC — \"it will be the same time as TSMC, that's a major breakthrough\"",src:"CNBC",link:"https://www.cnbc.com/2026/05/18/intel-ceo-says-foundry-is-gaining-momentum-as-customer-interest-grows.html"}];
+function staticNewsHtml(list){return list.map(function(n){
+var head='<span class="arb">'+n.text+'</span>';
+var meta='<div class="nmeta"><span class="src">'+n.src+'</span></div>';
+return n.link?('<li><a href="'+n.link+'" target="_blank" rel="noopener">'+head+meta+'</a></li>'):('<li>'+head+meta+'</li>');
+}).join("")}
+var TKEN=["The US government is now Intel's largest shareholder — unprecedented state intervention in a private tech company","The manufacturing recovery is real, but it came after cutting roughly a quarter of the workforce","The company's future hinges on the 18A and 14A nodes winning outside customers like Apple","This is as much a national-rescue story as an investment story — and execution risk remains high"];
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+var qnavLinks=document.querySelectorAll(".qnav a");
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+var link=document.querySelector('.qnav a[href="#'+e.target.id+'"]');
+if(!link)return;
+if(e.isIntersecting){qnavLinks.forEach(function(a){a.classList.remove("on")});link.classList.add("on")}
+})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(function(el){spy.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+renderDyn();renderNews();}
+function renderDyn(){if(!D)return;
+document.getElementById("mc").textContent=D.market_cap;
+var tl=(CUR==="ar")?D.timeline:TLEN;
+document.getElementById("tl").innerHTML=tl.map(function(t){return '<div class="ts"><div class="w">'+t.when+'</div><div class="t">'+t.what+'</div><div class="n">'+t.note+'</div></div>'}).join("");
+document.getElementById("stats").innerHTML=Object.keys(D.stats).map(function(k){
+var v=(CUR==="en"&&VEN[k])?VEN[k]:D.stats[k];
+var ic=SICO[k]?'<svg class="sti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SICO[k]+'</svg>':'';
+return '<div class="st gl">'+ic+'<b>'+v+'</b><span>'+(L[CUR][k]||k)+'</span></div>'}).join("");
+var tk=(CUR==="ar")?D.takeaways:TKEN;
+document.getElementById("tks").innerHTML=tk.map(function(t,i){return '<div class="tk"><i>0'+(i+1)+'</i><div>'+t+'</div></div>'}).join("");
+sp(window.__LASTP||D.price_fallback,!!window.__LIVE);}
+function initData(d){
+D=d;window.__PREV=d.prev_close||d.price_fallback;
+if(CUR!=="ar")setLang(CUR);else{renderDyn();}
+document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?d.news:NEN);
+livePrice();liveNews();
+}
+var FALLBACK_DATA={"last_updated":"2026-07-20","price_fallback":97.00,"prev_close":98.05,"market_cap":"$419B","stats":{"gov_stake":"10%","gov_investment":"8.9B$","layoffs_2025":"24,000+","foundry_loss":"-3B$","yield_gain":"+7-8%","q2_revenue_est":"14.42B$","stock_from_high":"-30%","next_earnings":"23 يوليو 2026"},"timeline":[{"when":"أغسطس 2025","what":"الحكومة الأمريكية تصبح أكبر مساهم","note":"استثمار 8.9 مليار دولار مقابل تحويل منح CHIPS Act إلى حصة ملكية 10%"},{"when":"2025","what":"موجة تسريح ضخمة","note":"تسريح أكثر من 24,000 موظف — ربع القوى العاملة تقريبًا"},{"when":"فبراير 2026","what":"ليب-بو تان يكشف خارطة طريق الإنقاذ","note":"التركيز على تحسين عقدة تصنيع 18A وجذب عملاء خارجيين للمصانع"},{"when":"مايو 2026","what":"تحسن ملحوظ بعقدة 18A","note":"تحسن العائد الإنتاجي 7-8% شهريًا بعد أن كان الأداء ضعيفًا"},{"when":"يونيو 2026","what":"بدء إنتاج 18A-P","note":"خطوة تقرّب إنتل من صفقة تصنيع محتملة مع أبل"},{"when":"يوليو 2026","what":"موجة تسريح جديدة","note":"دفعة إضافية من التسريحات في أوريغون ضمن خفض التكاليف المستمر"}],"news":[{"text":"الحكومة الأمريكية تستحوذ على حصة 10% من إنتل باستثمار 8.9 مليار دولار عبر تحويل منح CHIPS Act إلى أسهم","src":"CNBC","link":"https://www.cnbc.com/2025/08/22/intel-goverment-equity-stake.html"},{"text":"الرئيس التنفيذي ليب-بو تان: تحسن العائد الإنتاجي لعقدة 18A بمعدل 7-8% شهريًا بعد أن كان الأداء «غير جيد»","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/intel-conference-lip-bu-tan-talks-foundry-turnaround-18a-yield-gains-and-14a-roadmap-push-2026-02-03/"},{"text":"إنتل تبدأ إنتاج عقدة 18A-P وتقترب من صفقة تصنيع محتملة مع أبل بعد اتفاقيات سابقة مع تسلا وجوجل","src":"CNBC","link":"https://www.cnbc.com/2026/06/16/intel-begins-production-of-18a-p-inches-closer-to-possible-apple-deal.html"},{"text":"ليب-بو تان يصف أعمال التصنيع بـ«ثروة وطنية» مع تزايد اهتمام عملاء خارجيين بعد تحسن أداء 18A","src":"WCCFTech","link":"https://wccftech.com/intel-ceo-lip-bu-tan-calls-foundry-a-national-treasure-as-external-customers-knock-on-his-door-after-18a-yield-turnaround/"},{"text":"إنتل تعلن خفض 1.5 مليار دولار من المصاريف التشغيلية مع توقع مزيد من التسريحات","src":"ChannelInsider","link":"https://www.channelinsider.com/news-and-trends/intel-slashes-billions-layoffs-expected/"},{"text":"تان: عقدة 14A القادمة قد تنافس TSMC مباشرة — «ستكون بنفس التوقيت، وهذا اختراق كبير»","src":"CNBC","link":"https://www.cnbc.com/2026/05/18/intel-ceo-says-foundry-is-gaining-momentum-as-customer-interest-grows.html"}],"takeaways":["الحكومة الأمريكية صارت أكبر مساهم في إنتل — تدخل غير مسبوق في شركة تقنية خاصة","التعافي حقيقي بمصانع التصنيع، لكنه يأتي بعد تسريح ربع القوى العاملة تقريبًا","مستقبل الشركة معلّق على نجاح عقدتي 18A و14A بجذب عملاء خارجيين مثل أبل","هذه رواية إنقاذ وطني بقدر ما هي قصة استثمارية — والمخاطر التنفيذية لا تزال مرتفعة"]};
+fetch("intc-data.json?v="+Date.now()).then(function(r){return r.json()}).then(initData).catch(function(){initData(FALLBACK_DATA)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/INTC?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;window.__LIVE=true;sp(p,true);
+var pc=m.chartPreviousClose||m.previousClose;
+if(pc){window.__PREV=pc;var ch=((p-pc)/pc*100).toFixed(2);
+document.getElementById("pm").innerHTML='<span class="ldot live" aria-hidden="true"></span>'+(CUR==="ar"?"حي · اليوم ":"Live · today ")+'<span class="en">'+(ch>0?"+":"")+ch+"%</span>"}}
+}).catch(function(){document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر سعر محفوظ":"last saved price")})}
+function trTxt(t){
+return fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ar&dt=t&q="+encodeURIComponent(t))
+.then(function(r){return r.json()}).then(function(j){return j[0].map(function(s){return s[0]}).join("")})
+.catch(function(){return fetch("https://api.mymemory.translated.net/get?q="+encodeURIComponent(t)+"&langpair=en|ar")
+.then(function(r){return r.json()}).then(function(j){return (j.responseData&&j.responseData.translatedText)||t})
+.catch(function(){return t})})}
+var SRC={"finance.yahoo.com":"Yahoo Finance","yahoo.com":"Yahoo","reuters.com":"Reuters","bloomberg.com":"Bloomberg","cnbc.com":"CNBC","wsj.com":"WSJ","ft.com":"Financial Times","barrons.com":"Barrons","marketwatch.com":"MarketWatch","investors.com":"IBD","fool.com":"Motley Fool","seekingalpha.com":"Seeking Alpha","benzinga.com":"Benzinga","businessinsider.com":"Business Insider","forbes.com":"Forbes","techcrunch.com":"TechCrunch","theverge.com":"The Verge","apnews.com":"AP","nytimes.com":"NY Times","cnn.com":"CNN","bbc.com":"BBC","wccftech.com":"WCCFTech","channelinsider.com":"ChannelInsider","marketbeat.com":"MarketBeat"};
+function srcName(item,link){
+var s=item.querySelector("source");
+if(s&&s.textContent.trim())return s.textContent.trim();
+try{var h=new URL(link).hostname.replace(/^www\./,"");
+if(SRC[h])return SRC[h];
+var base=h.split(".").slice(-2).join(".");
+if(SRC[base])return SRC[base];
+var nm=base.split(".")[0];return nm.charAt(0).toUpperCase()+nm.slice(1);
+}catch(e){return "Source"}}
+function agoTxt(t){
+if(!t)return "";
+var m=Math.round((Date.now()-t)/60000);
+if(CUR==="ar"){
+if(m<1)return "الآن";if(m<60)return "قبل "+m+" دقيقة";
+var h=Math.round(m/60);if(h<24)return "قبل "+h+" ساعة";
+var d=Math.round(h/24);return d===1?"أمس":"قبل "+d+" يوم";}
+if(m<1)return "now";if(m<60)return m+"m ago";
+var h2=Math.round(m/60);if(h2<24)return h2+"h ago";
+var d2=Math.round(h2/24);return d2+"d ago";}
+function renderNews(){
+if(!NEWSCACHE){if(D)document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?D.news:NEN);return;}
+document.getElementById("news").innerHTML=NEWSCACHE.map(function(n){
+var head=(CUR==="ar")?('<span class="arb">'+n.ar+'</span><span class="osrc">'+n.en+'</span>')
+:('<span class="arb" style="direction:ltr;display:block;text-align:left">'+n.en+'</span>');
+return '<li><a href="'+n.link+'" target="_blank">'+head+'<div class="nmeta"><span class="src">'+n.src+'</span><span class="ndate">'+agoTxt(n.t)+'</span></div></a></li>'}).join("")}
+function liveNews(){
+fetchViaProxies("https://feeds.finance.yahoo.com/rss/2.0/headline?s=INTC&region=US&lang=en-US").then(function(t){
+var doc=new DOMParser().parseFromString(t,"text/xml");
+var items=Array.prototype.slice.call(doc.querySelectorAll("item"),0,6);
+if(!items.length)return;
+Promise.all(items.map(function(i){
+var ti=i.querySelector("title"),li=i.querySelector("link"),pd=i.querySelector("pubDate");
+var en=ti?ti.textContent:"";var link=li?li.textContent:"#";
+var tm=pd?new Date(pd.textContent).getTime():0;if(isNaN(tm))tm=0;
+return trTxt(en).then(function(a){return {ar:a,en:en,link:link,src:srcName(i,link),t:tm}})
+})).then(function(list){NEWSCACHE=list;renderNews()})
+}).catch(function(){})}
+function sp(p,live){var e=document.getElementById("px"),prev=window.__PREV||p,up=p>=prev;
+e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg");
+if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+setInterval(livePrice,10000);
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "last_updated": "2026-07-20",
+  "price_fallback": 97.00,
+  "prev_close": 98.05,
+  "market_cap": "$419B",
+  "stats": {
+    "gov_stake": "10%",
+    "gov_investment": "8.9B$",
+    "layoffs_2025": "24,000+",
+    "foundry_loss": "-3B$",
+    "yield_gain": "+7-8%",
+    "q2_revenue_est": "14.42B$",
+    "stock_from_high": "-30%",
+    "next_earnings": "23 يوليو 2026"
+  },
+  "timeline": [
+    {"when":"أغسطس 2025","what":"الحكومة الأمريكية تصبح أكبر مساهم","note":"استثمار 8.9 مليار دولار مقابل تحويل منح CHIPS Act إلى حصة ملكية 10%"},
+    {"when":"2025","what":"موجة تسريح ضخمة","note":"تسريح أكثر من 24,000 موظف — ربع القوى العاملة تقريبًا"},
+    {"when":"فبراير 2026","what":"ليب-بو تان يكشف خارطة طريق الإنقاذ","note":"التركيز على تحسين عقدة تصنيع 18A وجذب عملاء خارجيين للمصانع"},
+    {"when":"مايو 2026","what":"تحسن ملحوظ بعقدة 18A","note":"تحسن العائد الإنتاجي 7-8% شهريًا بعد أن كان الأداء ضعيفًا"},
+    {"when":"يونيو 2026","what":"بدء إنتاج 18A-P","note":"خطوة تقرّب إنتل من صفقة تصنيع محتملة مع أبل"},
+    {"when":"يوليو 2026","what":"موجة تسريح جديدة","note":"دفعة إضافية من التسريحات في أوريغون ضمن خفض التكاليف المستمر"}
+  ],
+  "news": [
+    {"text":"الحكومة الأمريكية تستحوذ على حصة 10% من إنتل باستثمار 8.9 مليار دولار عبر تحويل منح CHIPS Act إلى أسهم","src":"CNBC","link":"https://www.cnbc.com/2025/08/22/intel-goverment-equity-stake.html"},
+    {"text":"الرئيس التنفيذي ليب-بو تان: تحسن العائد الإنتاجي لعقدة 18A بمعدل 7-8% شهريًا بعد أن كان الأداء «غير جيد»","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/intel-conference-lip-bu-tan-talks-foundry-turnaround-18a-yield-gains-and-14a-roadmap-push-2026-02-03/"},
+    {"text":"إنتل تبدأ إنتاج عقدة 18A-P وتقترب من صفقة تصنيع محتملة مع أبل بعد اتفاقيات سابقة مع تسلا وجوجل","src":"CNBC","link":"https://www.cnbc.com/2026/06/16/intel-begins-production-of-18a-p-inches-closer-to-possible-apple-deal.html"},
+    {"text":"ليب-بو تان يصف أعمال التصنيع بـ«ثروة وطنية» مع تزايد اهتمام عملاء خارجيين بعد تحسن أداء 18A","src":"WCCFTech","link":"https://wccftech.com/intel-ceo-lip-bu-tan-calls-foundry-a-national-treasure-as-external-customers-knock-on-his-door-after-18a-yield-turnaround/"},
+    {"text":"إنتل تعلن خفض 1.5 مليار دولار من المصاريف التشغيلية مع توقع مزيد من التسريحات","src":"ChannelInsider","link":"https://www.channelinsider.com/news-and-trends/intel-slashes-billions-layoffs-expected/"},
+    {"text":"تان: عقدة 14A القادمة قد تنافس TSMC مباشرة — «ستكون بنفس التوقيت، وهذا اختراق كبير»","src":"CNBC","link":"https://www.cnbc.com/2026/05/18/intel-ceo-says-foundry-is-gaining-momentum-as-customer-interest-grows.html"}
+  ],
+  "takeaways": [
+    "الحكومة الأمريكية صارت أكبر مساهم في إنتل — تدخل غير مسبوق في شركة تقنية خاصة",
+    "التعافي حقيقي بمصانع التصنيع، لكنه يأتي بعد تسريح ربع القوى العاملة تقريبًا",
+    "مستقبل الشركة معلّق على نجاح عقدتي 18A و14A بجذب عملاء خارجيين مثل أبل",
+    "هذه رواية إنقاذ وطني بقدر ما هي قصة استثمارية — والمخاطر التنفيذية لا تزال مرتفعة"
+  ]
+}

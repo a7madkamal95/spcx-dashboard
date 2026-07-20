@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMD — المتحدي الذي لحق بالركب · الراصد</title>
+<meta name="description" content="تحليل استثماري حي لسهم AMD من الراصد: ليزا سو وقصة الإنقاذ، سباق الرقائق مع إنتل وNvidia، وطموحات مراكز البيانات — بأرقام حية وأخبار حقيقية.">
+<meta name="theme-color" content="#08090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Jomhuria&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#08090b;--ink:#f2f2f0;--mut:#93938f;
+--red:#ed1c24;--redDeep:#8a0f14;--green:#3ce8a6;
+--glass:rgba(255,255,255,.045);--glassH:rgba(237,28,36,.1);
+--edge:rgba(237,28,36,.32);--edgeTop:rgba(237,28,36,.5);
+--focus:#ed1c24;
+--disp:'Jomhuria',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Rajdhani',sans-serif;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r4:4px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Rajdhani',sans-serif;--body:'Rajdhani','Segoe UI',sans-serif}
+.en,.num,#px,.st b,.ts .w,.tk i{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.speedbg{position:fixed;inset:0;z-index:-3;background:var(--void)}
+.speedbg::before{content:"";position:absolute;inset:0;opacity:.09;
+background-image:repeating-linear-gradient(-35deg,rgba(237,28,36,.7) 0 2px,transparent 2px 60px);
+mask-image:radial-gradient(ellipse 75% 55% at 50% 15%,#000 40%,transparent 92%)}
+.glow{position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:65vw;height:65vw;z-index:-2;
+background:radial-gradient(circle,rgba(237,28,36,.16),transparent 65%);filter:blur(75px)}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(237,28,36,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(14px) saturate(120%);-webkit-backdrop-filter:blur(14px) saturate(120%);
+border:1px solid var(--edge);border-inline-start:3px solid var(--red);
+border-radius:var(--r4);box-shadow:0 14px 36px rgba(0,0,0,.55);
+clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);
+position:relative;overflow:hidden}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--red)}
+.bar .brand:hover{color:var(--red)}
+.bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
+.bar .sym{font-family:var(--num);font-weight:600;letter-spacing:.03em;font-size:13px;color:var(--mut)}
+.bar .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red);animation:pl 1.6s infinite;flex-shrink:0}
+@keyframes pl{50%{opacity:.35}}
+#px{font-family:var(--num);font-weight:700;font-size:23px;direction:ltr}
+.neg{color:var(--red)}.pos{color:var(--green)}
+#pm{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.ldot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pl 1.6s infinite}
+.ldot.wait{background:#ffb020;animation:pl 1s infinite}
+.en{direction:ltr;display:inline-block;font-family:var(--num)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.08em;
+color:var(--ink);background:rgba(255,255,255,.08);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(237,28,36,.2);transform:translateY(-1px)}
+.lng:active{transform:translateY(0)}
+.qnav{position:sticky;top:calc(var(--sp3) + 58px);z-index:49;display:flex;gap:6px;padding:7px;margin-top:10px;
+overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.qnav::-webkit-scrollbar{display:none}
+.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mut);
+text-decoration:none;padding:9px 16px;min-height:38px;border-radius:4px;white-space:nowrap;
+transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+.qnav a svg{width:15px;height:15px;flex-shrink:0}
+.qnav a:hover{color:var(--ink);background:rgba(255,255,255,.07)}
+.qnav a.on{color:var(--void);background:var(--red)}
+.hero{padding:56px 0 var(--sp4);display:grid;grid-template-columns:1.08fr .92fr;gap:var(--sp6);align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
+.kick{font-family:var(--num);font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--red)}
+h1{font-family:var(--disp);font-weight:400;font-size:clamp(44px,7.5vw,72px);line-height:1.08;margin-top:var(--sp2)}
+h1 .grad{background:linear-gradient(92deg,var(--red),#ff8080);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:17px;line-height:1.75;max-width:48ch;margin-top:var(--sp4)}
+@media(max-width:780px){.lead{margin-inline:auto}}
+.gauge{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:var(--sp4)}
+.gauge svg{width:100%;height:100%;overflow:visible}
+section{margin-top:var(--sp8)}
+.eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
+.eyeb .ln{flex:1;height:2px;background:repeating-linear-gradient(-35deg,var(--red) 0 4px,transparent 4px 9px)}
+.eyeb b{font-family:var(--disp);font-weight:400;font-size:32px;letter-spacing:.01em}
+.eyeb span{font-family:var(--num);font-size:11px;letter-spacing:.12em;color:var(--red);font-weight:700}
+.pad{padding:var(--sp6)}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+@media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+.ts{padding:var(--sp4);border-radius:3px;background:rgba(255,255,255,.04);border:1px solid var(--edge);border-inline-start:2px solid var(--red)}
+.ts .w{font-family:var(--num);font-size:11px;color:var(--red);letter-spacing:.03em;font-weight:700}
+.ts .t{font-family:var(--disp);font-weight:400;font-size:20px;margin-top:2px}
+.ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
+.forces{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
+@media(max-width:900px){.forces{grid-template-columns:1fr}}
+.force{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.force:hover{transform:translateY(-5px);background:var(--glassH)}
+.force .icwrap{width:44px;height:44px;border-radius:4px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px solid var(--edge)}
+.force .icwrap svg{width:23px;height:23px}
+.force h3{font-family:var(--disp);font-weight:400;font-size:26px;margin-top:var(--sp3)}
+.tag{display:inline-block;font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.03em;border-radius:3px;padding:4px 10px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.04)}
+.t1{color:var(--red);border-color:rgba(237,28,36,.5)}.t2{color:#ff8080;border-color:rgba(255,128,128,.5)}.t3{color:var(--green);border-color:rgba(60,232,166,.5)}
+.force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
+.force .dtl{display:none}
+.force.open .dtl{display:block}
+.force h5{font-family:var(--disp);font-size:18px;font-weight:400;color:var(--red);margin-top:var(--sp4);letter-spacing:.02em}
+.force table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--sp2)}
+.force td{padding:8px 4px;border-top:1px solid var(--edge);vertical-align:top;line-height:1.7}
+.force td:first-child{font-family:var(--num);font-size:12px;font-weight:700;white-space:nowrap;direction:ltr;color:var(--red)}
+html[data-lang=ar] .force td:first-child{text-align:right}
+html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px}
+.more{font-size:12px;color:var(--red);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
+.more svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
+.force.open .more svg{transform:rotate(180deg)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
+@media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+.st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.st:hover{transform:translateY(-4px);background:var(--glassH)}
+.st .sti{width:20px;height:20px;color:var(--red);opacity:.9;margin-bottom:6px}
+.st b{display:block;font-family:var(--num);font-size:26px;font-weight:700;direction:ltr;color:var(--red)}
+.st span{font-size:12.5px;color:var(--mut)}
+#news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}
+#news li:first-child{border-top:none}
+#news a{color:inherit;text-decoration:none;display:block;border-radius:4px}
+#news a:hover .arb{color:var(--red)}
+.arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.6}
+.osrc{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
+.nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
+.src{font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--red);border:1px solid rgba(237,28,36,.4);border-radius:3px;padding:3px 10px;background:rgba(237,28,36,.08);direction:ltr}
+.ndate{font-size:12px;color:var(--mut)}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
+@media(max-width:640px){.sc{grid-template-columns:1fr}}
+.pan{padding:var(--sp5);font-size:13.5px}
+.pan h4{font-family:var(--disp);font-weight:400;font-size:24px;margin-bottom:var(--sp3);display:flex;align-items:center;gap:8px}
+.pg h4{color:var(--green)}.pb h4{color:var(--red)}
+.pan li{list-style:none;padding:6px 0;border-top:1px dashed var(--edge);line-height:1.7}
+.pan li:first-of-type{border-top:none}
+.tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px solid var(--edge);font-size:15.5px;line-height:1.7}
+.tk:first-child{border-top:none}
+.tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--red);font-size:13px;border:1px solid rgba(237,28,36,.5);border-radius:3px;padding:2px 9px;margin-top:3px;background:rgba(237,28,36,.08);flex-shrink:0}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(12,10,10,.96)}}
+</style>
+</head>
+<body>
+<div class="speedbg" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap">
+<div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<span class="sep" aria-hidden="true"></span>
+<span class="dot" aria-hidden="true"></span><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg" alt="AMD" style="height:14px;filter:brightness(0) invert(1);opacity:.92;flex-shrink:0"><span class="sym">NASDAQ · AMD</span>
+<span id="px">…</span><span id="mc" class="en" style="color:var(--red);font-weight:700"></span>
+<span id="pm" aria-live="polite"></span>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<nav class="qnav gl rv" aria-label="Section navigation">
+<a href="#s-timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="i-ar">الأحداث</span><span class="i-en">Milestones</span></a>
+<a href="#s-forces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="i-ar">القوى الثلاث</span><span class="i-en">Three Forces</span></a>
+<a href="#s-numbers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span class="i-ar">الأرقام</span><span class="i-en">Numbers</span></a>
+<a href="#s-news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg><span class="i-ar">الأخبار</span><span class="i-en">News</span></a>
+<a href="#s-balance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 006 0l-3-6zM19 7l-3 6a3 3 0 006 0l-3-6zM5 7h14"/></svg><span class="i-ar">الميزان</span><span class="i-en">Balance</span></a>
+<a href="#s-takeaways"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></a>
+</nav>
+
+<main>
+<div class="hero">
+<div class="rv">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg" alt="AMD" style="height:26px;filter:brightness(0) invert(1);opacity:.95;margin-bottom:var(--sp4)">
+<div class="kick"><span class="i-ar">تحليل استثماري حي · يتحدث تلقائيًا</span><span class="i-en">LIVE INVESTOR INTELLIGENCE · AUTO-UPDATING</span></div>
+<h1><span class="i-ar">المتحدي الذي<br><span class="grad">لحق بالركب</span></span><span class="i-en">The Challenger<br>That <span class="grad">Caught Up</span></span></h1>
+<p class="lead"><span class="i-ar">شركة كانت على حافة الإفلاس بسهم أقل من 3 دولارات، تحولت اليوم لمنافس حقيقي يزاحم إنتل بالمعالجات ويطارد Nvidia بمسرّعات الذكاء الاصطناعي — بقيادة مهندسة واحدة غيّرت كل شي.</span><span class="i-en">A company once on the brink of bankruptcy at under $3 a share is now a real rival squeezing Intel in processors and chasing Nvidia in AI accelerators — led by one engineer who changed everything.</span></p>
+</div>
+<div class="gauge gl rv">
+<svg viewBox="0 0 420 330" role="img" aria-label="Stylized gauge representing AMD's climbing market share">
+<defs>
+<linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#8a0f14"/>
+<stop offset="100%" stop-color="#ff8080"/>
+</linearGradient>
+</defs>
+<text x="210" y="30" text-anchor="middle" fill="#ed1c24" font-family="'Rajdhani',sans-serif" font-size="13" font-weight="700" letter-spacing="3">MARKET SHARE</text>
+<circle cx="366" cy="24" r="4" fill="#ed1c24"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+<text x="378" y="28" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="9" font-weight="700">LIVE</text>
+<path d="M60,250 A150,150 0 0,1 360,250" fill="none" stroke="url(#arcGrad)" stroke-width="14" stroke-linecap="round"/>
+<g stroke="#93938f" stroke-width="2">
+<line x1="60" y1="250" x2="72" y2="250"/>
+<line x1="104" y1="144" x2="112.4" y2="152.4"/>
+<line x1="210" y1="100" x2="210" y2="112"/>
+<line x1="316" y1="144" x2="307.6" y2="152.4"/>
+<line x1="360" y1="250" x2="348" y2="250"/>
+</g>
+<line x1="210" y1="250" x2="316.5" y2="175.4" stroke="#f2f2f0" stroke-width="4" stroke-linecap="round" style="filter:drop-shadow(0 0 8px rgba(237,28,36,.7))"/>
+<circle cx="210" cy="250" r="10" fill="#ed1c24"/>
+<text x="90" y="280" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="11" font-weight="700">CPU</text>
+<text x="195" y="90" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="11" font-weight="700">SERVER</text>
+<text x="300" y="280" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="11" font-weight="700">AI GPU</text>
+<text x="210" y="300" text-anchor="middle" fill="#f2f2f0" font-family="'Rajdhani',sans-serif" font-size="22" font-weight="700">CLIMBING ↑</text>
+<text x="210" y="320" text-anchor="middle" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="9">SHARE GAINS (ILLUSTRATIVE)</text>
+</svg>
+</div>
+</div>
+
+<section class="rv" id="s-timeline">
+<div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>2014 → 2026</span><div class="ln"></div></div>
+<div class="gl pad"><div class="tl" id="tl"></div></div>
+</section>
+
+<section class="rv" id="s-forces">
+<div class="eyeb"><b><span class="i-ar">القوى الثلاث المحركة للسهم</span><span class="i-en">The Three Forces Driving The Stock</span></b><div class="ln"></div></div>
+<div class="forces">
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ed1c24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg></div>
+<h3><span class="i-ar">ليزا سو</span><span class="i-en">Lisa Su</span></h3><span class="tag t1">UNDERDOG TO ICON</span>
+<p><span class="i-ar">مهندسة تولت شركة على حافة الانهيار عام 2014 وحولتها لمنافس حقيقي بسوق نصف تريليون دولار</span><span class="i-en">An engineer who took over a company on the brink of collapse in 2014 and turned it into a real half-trillion-dollar rival</span></p>
+<div class="dtl">
+<h5><span class="i-ar">قصة الإنقاذ</span><span class="i-en">The Turnaround Story</span></h5>
+<table>
+<tr><td>2014</td><td><span class="i-ar">تولت القيادة والسهم كان أقل من 3 دولارات وسط شكوك بقدرة الشركة على البقاء</span><span class="i-en">Took the helm when the stock was under $3, amid doubts the company would survive</span></td></tr>
+<tr><td><span class="en">Today</span></td><td><span class="i-ar">قادت تطوير معالجات EPYC وRyzen ومسرّعات Instinct لمنافسة إنتل وNvidia مباشرة</span><span class="i-en">Led development of EPYC, Ryzen, and Instinct to directly rival Intel and Nvidia</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ff8080" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l6-6 4 4 6-6"/><path d="M20 5v6h-6"/></svg></div>
+<h3><span class="i-ar">سباق الرقائق</span><span class="i-en">The Chip Race</span></h3><span class="tag t2">$5.8B DATA CENTER</span>
+<p><span class="i-ar">تتفوق على إنتل بإيرادات مراكز البيانات لأول مرة، لكنها لا تزال بعيدة عن هيمنة Nvidia بالذكاء الاصطناعي</span><span class="i-en">Overtakes Intel in data center revenue for the first time, but still far from Nvidia's AI dominance</span></p>
+<div class="dtl">
+<h5><span class="i-ar">مقارنة مباشرة</span><span class="i-en">Head to Head</span></h5>
+<table>
+<tr><td>$5.8B vs $5.1B</td><td><span class="i-ar">إيرادات مراكز بيانات AMD تتجاوز إنتل بالربع الأول 2026</span><span class="i-en">AMD's data center revenue surpasses Intel's in Q1 2026</span></td></tr>
+<tr><td>5-7% vs 78%</td><td><span class="i-ar">حصة AMD من سوق مسرّعات الذكاء الاصطناعي مقابل هيمنة Nvidia</span><span class="i-en">AMD's AI accelerator market share versus Nvidia's dominance</span></td></tr>
+<tr><td><span class="en">Jul 22-23</span></td><td><span class="i-ar">فعالية Advancing AI تكشف تحديثات MI450 ومنصة Helios ومعالج Zen 6 Venice</span><span class="i-en">The Advancing AI event reveals MI450 updates, the Helios platform, and Zen 6 Venice</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#3ce8a6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg></div>
+<h3><span class="i-ar">طموحات بلا حدود؟</span><span class="i-en">Sky-High Ambitions</span></h3><span class="tag t3">$584.73 ATH</span>
+<p><span class="i-ar">سهم بلغ أعلى مستوياته التاريخية ثم تصحح 17%، وسط توقعات نمو جريئة حتى 2030</span><span class="i-en">A stock that hit an all-time high then corrected 17%, amid bold growth targets through 2030</span></p>
+<div class="dtl">
+<h5><span class="i-ar">الصعود والتصحيح</span><span class="i-en">Rise and Correction</span></h5>
+<table>
+<tr><td><span class="en">Jun 30, 2026</span></td><td><span class="i-ar">أعلى سعر تاريخي عند 584.73 دولار</span><span class="i-en">All-time high of $584.73</span></td></tr>
+<tr><td>-17%</td><td><span class="i-ar">تصحيح عن القمة وسط حذر عام من تقييمات قطاع الذكاء الاصطناعي</span><span class="i-en">Correction from the peak amid general caution on AI-sector valuations</span></td></tr>
+</table>
+<h5><span class="i-ar">هدف 2030</span><span class="i-en">The 2030 Target</span></h5>
+<table>
+<tr><td>$120B</td><td><span class="i-ar">إيرادات معالجات الخوادم المتوقعة وحدها بحلول 2030 بنمو سنوي يصل 35%</span><span class="i-en">Projected server CPU revenue alone by 2030, growing up to 35% annually</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+</div>
+</section>
+
+<section class="rv" id="s-numbers">
+<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>LIVE DATA</span><div class="ln"></div></div>
+<div class="stats" id="stats"></div>
+</section>
+
+<section class="rv" id="s-news">
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="gl pad"><ul id="news"></ul></div>
+</section>
+
+<section class="rv" id="s-balance">
+<div class="eyeb"><b><span class="i-ar">الميزان</span><span class="i-en">The Balance</span></b><span>PRO VIEW</span><div class="ln"></div></div>
+<div class="sc">
+<div class="pan gl pg"><h4><span class="i-ar">القوة</span><span class="i-en">Strengths</span></h4><ul>
+<li><span class="i-ar">تجاوزت إنتل بإيرادات مراكز البيانات لأول مرة بتاريخها</span><span class="i-en">Surpassed Intel in data center revenue for the first time ever</span></li>
+<li><span class="i-ar">نمو 57% بمراكز البيانات مدفوعًا بمعالجات EPYC ومسرّعات MI350</span><span class="i-en">57% data center growth driven by EPYC and MI350 accelerators</span></li>
+<li><span class="i-ar">هامش إجمالي قوي 53% وأرباح صافية إيجابية</span><span class="i-en">Strong 53% gross margin and positive net income</span></li>
+<li><span class="i-ar">قيادة تنفيذية موثوقة بسجل إنقاذ مثبت منذ 2014</span><span class="i-en">Trusted executive leadership with a proven turnaround record since 2014</span></li></ul></div>
+<div class="pan gl pb"><h4><span class="i-ar">الخطر</span><span class="i-en">Risks</span></h4><ul>
+<li><span class="i-ar">حصة صغيرة جدًا بسوق مسرّعات الذكاء الاصطناعي مقابل هيمنة Nvidia</span><span class="i-en">A tiny AI accelerator market share versus Nvidia's dominance</span></li>
+<li><span class="i-ar">السهم تصحح 17% عن قمته التاريخية</span><span class="i-en">The stock has corrected 17% from its all-time high</span></li>
+<li><span class="i-ar">أهداف 2030 الطموحة تفترض تنفيذًا شبه مثالي لسنوات مقبلة</span><span class="i-en">Ambitious 2030 targets assume near-flawless execution for years ahead</span></li>
+<li><span class="i-ar">منافسة شرسة من إنتل وNvidia معًا على جبهتين مختلفتين</span><span class="i-en">Fierce competition from both Intel and Nvidia on two different fronts</span></li></ul></div>
+</div>
+</section>
+
+<section class="rv" id="s-takeaways">
+<div class="eyeb"><b><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></b><span>4</span><div class="ln"></div></div>
+<div class="gl pad" id="tks"></div>
+</section>
+</main>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+</footer>
+
+</div>
+<script>
+function toggleForce(el){var open=el.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
+var CUR=localStorage.getItem("lang")||"ar";
+var D=null,NEWSCACHE=null;
+var L={ar:{revenue_q1:"إيرادات الربع الأول",datacenter_rev:"إيرادات مراكز البيانات",datacenter_growth:"نمو مراكز البيانات",ai_gpu_share:"حصة مسرّعات الذكاء الاصطناعي",server_cpu_2030:"هدف معالجات الخوادم 2030",from_ath:"عن القمة التاريخية",gross_margin:"الهامش الإجمالي",next_earnings:"الأرباح القادمة"},
+en:{revenue_q1:"Q1 revenue",datacenter_rev:"Data center revenue",datacenter_growth:"Data center growth",ai_gpu_share:"AI GPU share",server_cpu_2030:"2030 server CPU target",from_ath:"From all-time high",gross_margin:"Gross margin",next_earnings:"Next earnings"}};
+var VEN={next_earnings:"Aug 4, 2026"};
+var SICO={
+revenue_q1:'<path d="M4 20V10M12 20V4M20 20v-7"/>',
+datacenter_rev:'<rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><circle cx="8" cy="7" r=".8"/><circle cx="8" cy="17" r=".8"/>',
+datacenter_growth:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+ai_gpu_share:'<rect x="4" y="4" width="16" height="16" rx="3"/><rect x="9" y="9" width="6" height="6"/>',
+server_cpu_2030:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+from_ath:'<path d="M4 4l16 16M20 4L4 20"/>',
+gross_margin:'<circle cx="12" cy="12" r="9"/><path d="M9 9h3.5a2 2 0 010 4H9M9 13h6M12 7v2M12 15v2"/>',
+next_earnings:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'
+};
+var TLEN=[{when:"2014",what:"Lisa Su takes the helm",note:"The company was on the brink of bankruptcy, trading under $3 a share"},{when:"Jan 2026",what:"MI450 roadmap unveiled",note:"The new generation of Instinct AI accelerators aimed at rivaling Nvidia"},{when:"May 2026",what:"Data center revenue jumps 57%",note:"$5.8B driven by EPYC processors and MI350 accelerators"},{when:"Jun 30, 2026",what:"All-time high: $584.73",note:"Peak of AI momentum before the correction"},{when:"Jul 2026",what:"17% pullback from the peak",note:"The stock corrects amid broad caution on AI-sector valuations"},{when:"Jul 22-23, 2026",what:"Advancing AI event",note:"MI450 updates, the Helios server platform, and the Zen 6 Venice launch"}];
+var NEN=[{text:"AMD unveils MI450 accelerator updates and the Helios server platform at Advancing AI 2026",src:"TradingKey",link:"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},{text:"Data center revenue jumps 57% to $5.8B, surpassing Intel's revenue in the same segment",src:"Data Center Dynamics",link:"https://www.datacenterdynamics.com/en/news/amd-posts-q1-2026-data-center-revenue-of-58bn-forecasts-120bn-server-cpu-income-by-2030/"},{text:"AMD raises its server CPU market forecast to 35% annual growth, targeting $120B in revenue by 2030",src:"Data Center Dynamics",link:"https://www.datacenterdynamics.com/en/news/amd-posts-q1-2026-data-center-revenue-of-58bn-forecasts-120bn-server-cpu-income-by-2030/"},{text:"Q1 results: $10.3B revenue, 53% gross margin, and $1.4B net income",src:"AMD Newsroom",link:"https://www.amd.com/en/newsroom/press-releases/2026-5-5-amd-reports-first-quarter-2026-financial-results.html"},{text:"The stock pulls back 17% from its all-time high of $584.73 set in late June amid broad AI-valuation caution",src:"TradingKey",link:"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},{text:"AMD's AI accelerator market share sits at 5-7%, versus Nvidia's roughly 75-81% dominance",src:"CommandLinux",link:"https://commandlinux.com/statistics/ai-gpu-market-share-nvidia-vs-amd-vs-intel"}];
+function staticNewsHtml(list){return list.map(function(n){
+var head='<span class="arb">'+n.text+'</span>';
+var meta='<div class="nmeta"><span class="src">'+n.src+'</span></div>';
+return n.link?('<li><a href="'+n.link+'" target="_blank" rel="noopener">'+head+meta+'</a></li>'):('<li>'+head+meta+'</li>');
+}).join("")}
+var TKEN=["Lisa Su turned a company on the brink of bankruptcy into a real rival in a market worth over half a trillion dollars","AMD beats Intel in data center revenue, but remains far from Nvidia's AI dominance","The ambition is huge: $120 billion projected from server CPUs alone by 2030","The stock swings hard on every AI-sector headline — both up and down"];
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+var qnavLinks=document.querySelectorAll(".qnav a");
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+var link=document.querySelector('.qnav a[href="#'+e.target.id+'"]');
+if(!link)return;
+if(e.isIntersecting){qnavLinks.forEach(function(a){a.classList.remove("on")});link.classList.add("on")}
+})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(function(el){spy.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+renderDyn();renderNews();}
+function renderDyn(){if(!D)return;
+document.getElementById("mc").textContent=D.market_cap;
+var tl=(CUR==="ar")?D.timeline:TLEN;
+document.getElementById("tl").innerHTML=tl.map(function(t){return '<div class="ts"><div class="w">'+t.when+'</div><div class="t">'+t.what+'</div><div class="n">'+t.note+'</div></div>'}).join("");
+document.getElementById("stats").innerHTML=Object.keys(D.stats).map(function(k){
+var v=(CUR==="en"&&VEN[k])?VEN[k]:D.stats[k];
+var ic=SICO[k]?'<svg class="sti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SICO[k]+'</svg>':'';
+return '<div class="st gl">'+ic+'<b>'+v+'</b><span>'+(L[CUR][k]||k)+'</span></div>'}).join("");
+var tk=(CUR==="ar")?D.takeaways:TKEN;
+document.getElementById("tks").innerHTML=tk.map(function(t,i){return '<div class="tk"><i>0'+(i+1)+'</i><div>'+t+'</div></div>'}).join("");
+sp(window.__LASTP||D.price_fallback,!!window.__LIVE);}
+function initData(d){
+D=d;window.__PREV=d.prev_close||d.price_fallback;
+if(CUR!=="ar")setLang(CUR);else{renderDyn();}
+document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?d.news:NEN);
+livePrice();liveNews();
+}
+var FALLBACK_DATA={"last_updated":"2026-07-20","price_fallback":492.10,"prev_close":486.27,"market_cap":"$797B","stats":{"revenue_q1":"10.3B$","datacenter_rev":"5.8B$","datacenter_growth":"+57%","ai_gpu_share":"5-7%","server_cpu_2030":"120B$","from_ath":"-17%","gross_margin":"53%","next_earnings":"4 أغسطس 2026"},"timeline":[{"when":"2014","what":"ليزا سو تتولى القيادة","note":"الشركة كانت على حافة الإفلاس بسهم أقل من 3 دولارات"},{"when":"يناير 2026","what":"إطلاق خارطة طريق MI450","note":"الجيل الجديد من مسرّعات الذكاء الاصطناعي Instinct لمنافسة Nvidia"},{"when":"مايو 2026","what":"إيرادات مراكز البيانات تقفز 57%","note":"5.8 مليار دولار مدفوعة بمعالجات EPYC ومسرّعات MI350"},{"when":"30 يونيو 2026","what":"أعلى سعر تاريخي: 584.73$","note":"ذروة زخم الذكاء الاصطناعي قبل التصحيح"},{"when":"يوليو 2026","what":"تراجع 17% عن القمة","note":"السهم يتصحح وسط حذر عام من تقييمات قطاع الذكاء الاصطناعي"},{"when":"22-23 يوليو 2026","what":"فعالية Advancing AI","note":"الكشف عن تحديثات MI450 ومنصة الخوادم Helios، وإطلاق معالج Zen 6 Venice"}],"news":[{"text":"AMD تطلق تحديثات مسرّعات MI450 ومنصة خوادم Helios ضمن فعالية Advancing AI 2026","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},{"text":"إيرادات مراكز البيانات تقفز 57% إلى 5.8 مليار دولار متجاوزة إيرادات إنتل من نفس القطاع","src":"Data Center Dynamics","link":"https://www.datacenterdynamics.com/en/news/amd-posts-q1-2026-data-center-revenue-of-58bn-forecasts-120bn-server-cpu-income-by-2030/"},{"text":"AMD ترفع توقعاتها لسوق معالجات الخوادم إلى نمو سنوي 35% وتستهدف 120 مليار دولار إيرادات بحلول 2030","src":"Data Center Dynamics","link":"https://www.datacenterdynamics.com/en/news/amd-posts-q1-2026-data-center-revenue-of-58bn-forecasts-120bn-server-cpu-income-by-2030/"},{"text":"نتائج الربع الأول: إيرادات 10.3 مليار دولار وهامش إجمالي 53% وأرباح صافية 1.4 مليار دولار","src":"AMD Newsroom","link":"https://www.amd.com/en/newsroom/press-releases/2026-5-5-amd-reports-first-quarter-2026-financial-results.html"},{"text":"السهم يتراجع 17% عن قمته التاريخية 584.73$ المسجلة أواخر يونيو وسط حذر عام من تقييمات الذكاء الاصطناعي","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},{"text":"حصة AMD من سوق مسرّعات الذكاء الاصطناعي تتراوح بين 5-7% مقابل هيمنة Nvidia بنحو 75-81%","src":"CommandLinux","link":"https://commandlinux.com/statistics/ai-gpu-market-share-nvidia-vs-amd-vs-intel"}],"takeaways":["ليزا سو حوّلت شركة على حافة الإفلاس إلى منافس حقيقي بسوق يتجاوز نصف تريليون دولار","AMD تتفوق على إنتل بإيرادات مراكز البيانات لأول مرة، لكنها لا تزال بعيدة عن هيمنة Nvidia بالذكاء الاصطناعي","الطموح ضخم: 120 مليار دولار متوقعة من معالجات الخوادم وحدها بحلول 2030","السهم يتحرك بعنف مع كل حدث بقطاع الذكاء الاصطناعي — صعودًا وهبوطًا"]};
+fetch("amd-data.json?v="+Date.now()).then(function(r){return r.json()}).then(initData).catch(function(){initData(FALLBACK_DATA)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/AMD?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;window.__LIVE=true;sp(p,true);
+var pc=m.chartPreviousClose||m.previousClose;
+if(pc){window.__PREV=pc;var ch=((p-pc)/pc*100).toFixed(2);
+document.getElementById("pm").innerHTML='<span class="ldot live" aria-hidden="true"></span>'+(CUR==="ar"?"حي · اليوم ":"Live · today ")+'<span class="en">'+(ch>0?"+":"")+ch+"%</span>"}}
+}).catch(function(){document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر سعر محفوظ":"last saved price")})}
+function trTxt(t){
+return fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ar&dt=t&q="+encodeURIComponent(t))
+.then(function(r){return r.json()}).then(function(j){return j[0].map(function(s){return s[0]}).join("")})
+.catch(function(){return fetch("https://api.mymemory.translated.net/get?q="+encodeURIComponent(t)+"&langpair=en|ar")
+.then(function(r){return r.json()}).then(function(j){return (j.responseData&&j.responseData.translatedText)||t})
+.catch(function(){return t})})}
+var SRC={"finance.yahoo.com":"Yahoo Finance","yahoo.com":"Yahoo","reuters.com":"Reuters","bloomberg.com":"Bloomberg","cnbc.com":"CNBC","wsj.com":"WSJ","ft.com":"Financial Times","barrons.com":"Barrons","marketwatch.com":"MarketWatch","investors.com":"IBD","fool.com":"Motley Fool","seekingalpha.com":"Seeking Alpha","benzinga.com":"Benzinga","businessinsider.com":"Business Insider","forbes.com":"Forbes","techcrunch.com":"TechCrunch","theverge.com":"The Verge","apnews.com":"AP","nytimes.com":"NY Times","cnn.com":"CNN","bbc.com":"BBC","tradingkey.com":"TradingKey","datacenterdynamics.com":"Data Center Dynamics","amd.com":"AMD Newsroom","commandlinux.com":"CommandLinux"};
+function srcName(item,link){
+var s=item.querySelector("source");
+if(s&&s.textContent.trim())return s.textContent.trim();
+try{var h=new URL(link).hostname.replace(/^www\./,"");
+if(SRC[h])return SRC[h];
+var base=h.split(".").slice(-2).join(".");
+if(SRC[base])return SRC[base];
+var nm=base.split(".")[0];return nm.charAt(0).toUpperCase()+nm.slice(1);
+}catch(e){return "Source"}}
+function agoTxt(t){
+if(!t)return "";
+var m=Math.round((Date.now()-t)/60000);
+if(CUR==="ar"){
+if(m<1)return "الآن";if(m<60)return "قبل "+m+" دقيقة";
+var h=Math.round(m/60);if(h<24)return "قبل "+h+" ساعة";
+var d=Math.round(h/24);return d===1?"أمس":"قبل "+d+" يوم";}
+if(m<1)return "now";if(m<60)return m+"m ago";
+var h2=Math.round(m/60);if(h2<24)return h2+"h ago";
+var d2=Math.round(h2/24);return d2+"d ago";}
+function renderNews(){
+if(!NEWSCACHE){if(D)document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?D.news:NEN);return;}
+document.getElementById("news").innerHTML=NEWSCACHE.map(function(n){
+var head=(CUR==="ar")?('<span class="arb">'+n.ar+'</span><span class="osrc">'+n.en+'</span>')
+:('<span class="arb" style="direction:ltr;display:block;text-align:left">'+n.en+'</span>');
+return '<li><a href="'+n.link+'" target="_blank">'+head+'<div class="nmeta"><span class="src">'+n.src+'</span><span class="ndate">'+agoTxt(n.t)+'</span></div></a></li>'}).join("")}
+function liveNews(){
+fetchViaProxies("https://feeds.finance.yahoo.com/rss/2.0/headline?s=AMD&region=US&lang=en-US").then(function(t){
+var doc=new DOMParser().parseFromString(t,"text/xml");
+var items=Array.prototype.slice.call(doc.querySelectorAll("item"),0,6);
+if(!items.length)return;
+Promise.all(items.map(function(i){
+var ti=i.querySelector("title"),li=i.querySelector("link"),pd=i.querySelector("pubDate");
+var en=ti?ti.textContent:"";var link=li?li.textContent:"#";
+var tm=pd?new Date(pd.textContent).getTime():0;if(isNaN(tm))tm=0;
+return trTxt(en).then(function(a){return {ar:a,en:en,link:link,src:srcName(i,link),t:tm}})
+})).then(function(list){NEWSCACHE=list;renderNews()})
+}).catch(function(){})}
+function sp(p,live){var e=document.getElementById("px"),prev=window.__PREV||p,up=p>=prev;
+e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg");
+if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+setInterval(livePrice,10000);
+</script>
+</body>
+</html>

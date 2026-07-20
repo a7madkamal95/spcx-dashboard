@@ -176,7 +176,7 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/9/9e/SpaceX_Falcon_9_Starlink_4-7_Launch_%2851860439246%29.jpg)" role="img" aria-label="Falcon 9 launch"></div>
 <div class="sc-body">
 <div class="sc-top">
-<span class="sc-ticker">NASDAQ · SPCX</span>
+<span style="display:flex;align-items:center;gap:7px"><img src="https://upload.wikimedia.org/wikipedia/commons/d/de/SpaceX-Logo.svg" alt="SpaceX" style="height:11px;filter:brightness(0) invert(1);opacity:.9"><span class="sc-ticker">NASDAQ · SPCX</span></span>
 <span class="sc-fav"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><span class="i-ar">مفضل</span><span class="i-en">Favorite</span></span>
 </div>
 <h3><span class="i-ar">سبيس إكس</span><span class="i-en">SpaceX</span></h3>
@@ -190,7 +190,7 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/8/89/GameStop_Retail_Store_-_Vallejo_-_California_%2850906730711%29.jpg)" role="img" aria-label="GameStop storefront"></div>
 <div class="sc-body">
 <div class="sc-top">
-<span class="sc-ticker" style="color:#ff5060">NYSE · GME</span>
+<span style="display:flex;align-items:center;gap:7px"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/GameStop_Logo.svg" alt="GameStop" style="height:12px;filter:brightness(0) invert(1);opacity:.9"><span class="sc-ticker" style="color:#ff5060">NYSE · GME</span></span>
 <span class="sc-fav"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><span class="i-ar">مفضل</span><span class="i-en">Favorite</span></span>
 </div>
 <h3><span class="i-ar">جيم ستوب</span><span class="i-en">GameStop</span></h3>
@@ -270,7 +270,7 @@ var m=y.chart.result[0].meta,p=m.regularMarketPrice;
 if(p>0){window.__LASTP=p;showPrice({ipo_price:window.__IPO,price_fallback:p})}
 }).catch(function(){})}
 fetch("data.json?v="+Date.now()).then(function(r){return r.json()}).then(function(d){showPrice(d);livePrice()}).catch(function(){showPrice(FALLBACK_PRICE);livePrice()});
-setInterval(livePrice,20000);
+setInterval(livePrice,10000);
 
 function showPrice2(p,prev){
 var up=p>=prev;
@@ -287,7 +287,7 @@ var m=y.chart.result[0].meta,p=m.regularMarketPrice,pc=m.chartPreviousClose||m.p
 if(p>0)showPrice2(p,pc);
 }).catch(function(){})}
 showPrice2(GME_FALLBACK,GME_PREV);livePrice2();
-setInterval(livePrice2,20000);
+setInterval(livePrice2,10000);
 </script>
 </body>
 </html>

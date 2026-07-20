@@ -159,7 +159,7 @@ background:linear-gradient(90deg,var(--red),var(--amber));-webkit-background-cli
 <div class="bar gl rv">
 <a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
 <span class="sep" aria-hidden="true"></span>
-<span class="dot" aria-hidden="true"></span><span class="sym">NYSE · GME</span>
+<span class="dot" aria-hidden="true"></span><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/GameStop_Logo.svg" alt="GameStop" style="height:14px;filter:brightness(0) invert(1);opacity:.92;flex-shrink:0"><span class="sym">NYSE · GME</span>
 <span id="px">…</span><span id="mc" class="en" style="color:var(--amber);font-weight:700"></span>
 <span id="pm" aria-live="polite"></span>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
@@ -457,7 +457,7 @@ function sp(p,live){var e=document.getElementById("px"),prev=window.__PREV||p,up
 e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg");
 if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
-setInterval(livePrice,20000);
+setInterval(livePrice,10000);
 </script>
 </body>
 </html>

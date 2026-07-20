@@ -180,6 +180,7 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 <main>
 <div class="hero">
 <div class="rv">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Blackberry_Logo.svg" alt="BlackBerry" style="height:26px;filter:brightness(0) invert(1);opacity:.95;margin-bottom:var(--sp4)">
 <div class="kick"><span class="i-ar">تحليل استثماري حي · يتحدث تلقائيًا</span><span class="i-en">LIVE INVESTOR INTELLIGENCE · AUTO-UPDATING</span></div>
 <h1><span class="i-ar">الشبح الذي<br>يعود <span class="grad">بصمت</span></span><span class="i-en">The Ghost That<br>Returns <span class="grad">Quietly</span></span></h1>
 <p class="lead"><span class="i-ar">شركة هواتف ماتت علنًا أمام أعين العالم، لكنها لم تختفِ — تحولت لبرمجيات تشغّل أنظمة السيارات الحرجة وتُؤمّن اتصالات الحكومات، وحققت للتو أول تدفق نقدي تشغيلي إيجابي بربع أول منذ تسع سنوات.</span><span class="i-en">A phone company that died in public didn't disappear — it became the software running safety-critical car systems and securing government communications, and just posted its first positive Q1 operating cash flow in nine years.</span></p>
@@ -318,11 +319,14 @@ function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
 function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
 function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
 ];
-function fetchViaProxies(url,i){
-i=i||0;
-if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
-return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
-.catch(function(){return fetchViaProxies(url,i+1)});
+function fetchViaProxies(url){
+var attempts=PROXIES.map(function(mk){
+var ctl=new AbortController();
+var timer=setTimeout(function(){ctl.abort()},8000);
+return fetch(mk(url),{signal:ctl.signal}).then(function(r){clearTimeout(timer);if(!r.ok)throw new Error("bad status");return r.text()}).catch(function(e){clearTimeout(timer);throw e});
+});
+if(Promise.any)return Promise.any(attempts);
+return new Promise(function(res,rej){var left=attempts.length,failed=0;attempts.forEach(function(p){p.then(res).catch(function(){failed++;if(failed>=left)rej(new Error("all proxies failed"))})})});
 }
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});

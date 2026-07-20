@@ -115,11 +115,14 @@ function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
 function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
 function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
 ];
-function fetchViaProxies(url,i){
-i=i||0;
-if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
-return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
-.catch(function(){return fetchViaProxies(url,i+1)});
+function fetchViaProxies(url){
+var attempts=PROXIES.map(function(mk){
+var ctl=new AbortController();
+var timer=setTimeout(function(){ctl.abort()},8000);
+return fetch(mk(url),{signal:ctl.signal}).then(function(r){clearTimeout(timer);if(!r.ok)throw new Error("bad status");return r.text()}).catch(function(e){clearTimeout(timer);throw e});
+});
+if(Promise.any)return Promise.any(attempts);
+return new Promise(function(res,rej){var left=attempts.length,failed=0;attempts.forEach(function(p){p.then(res).catch(function(){failed++;if(failed>=left)rej(new Error("all proxies failed"))})})});
 }
 document.title=(CUR==="ar"?"الراصد — ":"Rasid — ")+TICKER;
 var cacheKey="stock:"+TICKER;

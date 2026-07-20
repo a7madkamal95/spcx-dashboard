@@ -131,19 +131,23 @@ if(cached){
 try{var m=JSON.parse(cached);window.__M=m;render(m);}catch(e){}
 }
 var sym=encodeURIComponent(TICKER);
-Promise.all([
-fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1d").then(function(t){return JSON.parse(t).chart.result[0].meta}),
-fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1y").then(function(t){return JSON.parse(t).chart.result[0].meta}).catch(function(){return null})
-]).then(function(res){
-var m=res[0];
+function fetchMeta(range){
+return fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range="+range)
+.then(function(t){var j=JSON.parse(t);if(!j.chart||!j.chart.result||!j.chart.result[0])throw new Error("no result");return j.chart.result[0].meta})
+.catch(function(){return null});
+}
+Promise.all([fetchMeta("1d"),fetchMeta("1y")]).then(function(res){
+var m=res[0]||res[1];
+if(!m){
+if(!window.__M){
+document.getElementById("content").innerHTML='<div class="err"><span class="i-ar">تعذر جلب بيانات السهم — تأكد من الرمز أو حاول لاحقًا</span><span class="i-en">Couldn\'t fetch stock data — check the symbol or try again later</span></div>';
+}
+return;
+}
 if(res[1]){m.fiftyTwoWeekHigh=res[1].fiftyTwoWeekHigh;m.fiftyTwoWeekLow=res[1].fiftyTwoWeekLow;}
 window.__M=m;
 sessionStorage.setItem(cacheKey,JSON.stringify(m));
 render(m);
-}).catch(function(){
-if(!window.__M){
-document.getElementById("content").innerHTML='<div class="err"><span class="i-ar">تعذر جلب بيانات السهم — تأكد من الرمز أو حاول لاحقًا</span><span class="i-en">Couldn\'t fetch stock data — check the symbol or try again later</span></div>';
-}
 });
 function fmt(n){if(n==null)return "—";return "$"+(+n).toFixed(2)}
 function fmtN(n){if(n==null)return "—";if(n>=1e12)return "$"+(n/1e12).toFixed(2)+"T";if(n>=1e9)return "$"+(n/1e9).toFixed(2)+"B";if(n>=1e6)return "$"+(n/1e6).toFixed(2)+"M";return "$"+n.toFixed(0)}

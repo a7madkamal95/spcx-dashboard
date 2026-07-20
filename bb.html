@@ -50,17 +50,17 @@ position:relative;overflow:hidden}
 .bar .brand svg{width:17px;height:17px;color:var(--violet)}
 .bar .brand:hover{color:var(--violet)}
 .bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
-.bar .sym{font-family:var(--num);font-weight:600;letter-spacing:.03em;font-size:13px;color:var(--mut)}
+.bar .sym{font-family:var(--num);font-weight:600;letter-spacing:.03em;font-size:15px;color:var(--mut)}
 .bar .dot{width:8px;height:8px;border-radius:50%;background:var(--violet);box-shadow:0 0 14px var(--violet);animation:pl 1.6s infinite;flex-shrink:0}
 @keyframes pl{50%{opacity:.35}}
 #px{font-family:var(--num);font-weight:700;font-size:23px;direction:ltr}
 .neg{color:var(--red)}.pos{color:var(--green)}
-#pm{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+#pm{font-size:15px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
 .ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
 .ldot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pl 1.6s infinite}
 .ldot.wait{background:var(--magenta);animation:pl 1s infinite}
 .en{direction:ltr;display:inline-block;font-family:var(--num)}
-.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.06em;
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:.06em;
 color:var(--ink);background:rgba(124,92,255,.1);border:1px solid var(--edgeTop);border-radius:var(--r99);
 padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
 .lng:hover{background:rgba(124,92,255,.2);transform:translateY(-1px)}
@@ -68,7 +68,7 @@ padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:backg
 .qnav{position:sticky;top:calc(var(--sp3) + 58px);z-index:49;display:flex;gap:6px;padding:7px;margin-top:10px;
 overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
 .qnav::-webkit-scrollbar{display:none}
-.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mut);
+.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:15px;font-weight:600;color:var(--mut);
 text-decoration:none;padding:9px 16px;min-height:38px;border-radius:8px;white-space:nowrap;
 transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
 .qnav a svg{width:15px;height:15px;flex-shrink:0}
@@ -76,7 +76,7 @@ transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ea
 .qnav a.on{color:var(--void);background:var(--violet)}
 .hero{padding:56px 0 var(--sp4);display:grid;grid-template-columns:1.08fr .92fr;gap:var(--sp6);align-items:center}
 @media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
-.kick{font-family:var(--num);font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--violet)}
+.kick{font-family:var(--num);font-size:15px;font-weight:600;letter-spacing:.1em;color:var(--violet)}
 h1{font-family:var(--disp);font-weight:800;font-size:clamp(36px,6.2vw,58px);line-height:1.18;margin-top:var(--sp2)}
 h1 .grad{background:linear-gradient(92deg,var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{color:var(--mut);font-size:17px;line-height:1.8;max-width:48ch;margin-top:var(--sp4)}
@@ -85,21 +85,21 @@ h1 .grad{background:linear-gradient(92deg,var(--violet),var(--magenta));-webkit-
 .shot-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(1.05) contrast(1.05)}
 .shot-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,20,.1) 0%,rgba(10,7,20,.35) 62%,rgba(10,7,20,.88) 100%)}
 .shot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:var(--sp4)}
-.shot-kick{align-self:flex-end;display:flex;align-items:center;gap:6px;font-family:var(--num);font-size:12px;letter-spacing:.06em;color:var(--violet);font-weight:700;background:rgba(10,7,20,.65);backdrop-filter:blur(4px);padding:5px 12px;border-radius:99px;border:1px solid rgba(124,92,255,.45)}
+.shot-kick{align-self:flex-end;display:flex;align-items:center;gap:6px;font-family:var(--num);font-size:14px;letter-spacing:.06em;color:var(--violet);font-weight:700;background:rgba(10,7,20,.65);backdrop-filter:blur(4px);padding:5px 12px;border-radius:99px;border:1px solid rgba(124,92,255,.45)}
 .shot-dot{width:6px;height:6px;border-radius:50%;background:var(--violet);box-shadow:0 0 8px var(--violet);animation:pl 1.6s infinite}
-.shot-cap{font-family:var(--num);font-size:13px;letter-spacing:.02em;color:var(--ink);background:rgba(10,7,20,.6);backdrop-filter:blur(4px);padding:7px 14px;border-radius:8px;align-self:flex-start;border:1px solid rgba(124,92,255,.4)}
+.shot-cap{font-family:var(--num);font-size:15px;letter-spacing:.02em;color:var(--ink);background:rgba(10,7,20,.6);backdrop-filter:blur(4px);padding:7px 14px;border-radius:8px;align-self:flex-start;border:1px solid rgba(124,92,255,.4)}
 section{margin-top:var(--sp8)}
 .eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
 .eyeb .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--violet),rgba(124,92,255,.3) 70%,transparent)}
 .eyeb b{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:.01em}
-.eyeb span{font-family:var(--num);font-size:12px;letter-spacing:.1em;color:var(--violet);font-weight:700}
+.eyeb span{font-family:var(--num);font-size:14px;letter-spacing:.1em;color:var(--violet);font-weight:700}
 .pad{padding:var(--sp6)}
 .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
 @media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
 .ts{padding:var(--sp4);border-radius:8px;background:rgba(124,92,255,.05);border:1px solid var(--edge)}
-.ts .w{font-family:var(--num);font-size:12px;color:var(--violet);letter-spacing:.02em;font-weight:700}
+.ts .w{font-family:var(--num);font-size:14px;color:var(--violet);letter-spacing:.02em;font-weight:700}
 .ts .t{font-family:var(--disp);font-weight:800;font-size:17px;margin-top:4px}
-.ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
+.ts .n{font-size:15px;color:var(--mut);line-height:1.7;margin-top:4px}
 .forces{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
 @media(max-width:900px){.forces{grid-template-columns:1fr}}
 .force{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
@@ -107,18 +107,18 @@ section{margin-top:var(--sp8)}
 .force .icwrap{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(124,92,255,.08);border:1px solid var(--edge)}
 .force .icwrap svg{width:23px;height:23px}
 .force h3{font-family:var(--disp);font-weight:800;font-size:21px;margin-top:var(--sp3)}
-.tag{display:inline-block;font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.03em;border-radius:6px;padding:4px 10px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.04)}
+.tag{display:inline-block;font-family:var(--num);font-size:13px;font-weight:700;letter-spacing:.03em;border-radius:6px;padding:4px 10px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.04)}
 .t1{color:var(--violet);border-color:rgba(124,92,255,.5)}.t2{color:var(--magenta);border-color:rgba(255,63,164,.5)}.t3{color:var(--green);border-color:rgba(60,232,166,.5)}
 .force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
 .force .dtl{display:none}
 .force.open .dtl{display:block}
 .force h5{font-family:var(--disp);font-size:15px;font-weight:800;color:var(--violet);margin-top:var(--sp4);letter-spacing:.02em}
-.force table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--sp2)}
+.force table{width:100%;border-collapse:collapse;font-size:15px;margin-top:var(--sp2)}
 .force td{padding:8px 4px;border-top:1px solid var(--edge);vertical-align:top;line-height:1.7}
-.force td:first-child{font-family:var(--num);font-size:12px;font-weight:700;white-space:nowrap;direction:ltr;color:var(--violet)}
+.force td:first-child{font-family:var(--num);font-size:14px;font-weight:700;white-space:nowrap;direction:ltr;color:var(--violet)}
 html[data-lang=ar] .force td:first-child{text-align:right}
 html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px}
-.more{font-size:12px;color:var(--violet);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
+.more{font-size:14px;color:var(--violet);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
 .more svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
 .force.open .more svg{transform:rotate(180deg)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
@@ -133,10 +133,10 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 #news a{color:inherit;text-decoration:none;display:block;border-radius:8px}
 #news a:hover .arb{color:var(--violet)}
 .arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.6}
-.osrc{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
+.osrc{font-family:var(--num);font-size:14px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
 .nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
-.src{font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--violet);border:1px solid rgba(124,92,255,.4);border-radius:6px;padding:3px 10px;background:rgba(124,92,255,.08);direction:ltr}
-.ndate{font-size:12px;color:var(--mut)}
+.src{font-family:var(--num);font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--violet);border:1px solid rgba(124,92,255,.4);border-radius:6px;padding:3px 10px;background:rgba(124,92,255,.08);direction:ltr}
+.ndate{font-size:14px;color:var(--mut)}
 .sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
 @media(max-width:640px){.sc{grid-template-columns:1fr}}
 .pan{padding:var(--sp5);font-size:13.5px}
@@ -146,7 +146,7 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 .pan li:first-of-type{border-top:none}
 .tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px solid var(--edge);font-size:15.5px;line-height:1.7}
 .tk:first-child{border-top:none}
-.tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--violet);font-size:13px;border:1px solid rgba(124,92,255,.5);border-radius:6px;padding:2px 9px;margin-top:3px;background:rgba(124,92,255,.08);flex-shrink:0}
+.tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--violet);font-size:15px;border:1px solid rgba(124,92,255,.5);border-radius:6px;padding:2px 9px;margin-top:3px;background:rgba(124,92,255,.08);flex-shrink:0}
 .dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
 .rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
 .rv.on{opacity:1;transform:none}
@@ -185,10 +185,10 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 <p class="lead"><span class="i-ar">شركة هواتف ماتت علنًا أمام أعين العالم، لكنها لم تختفِ — تحولت لبرمجيات تشغّل أنظمة السيارات الحرجة وتُؤمّن اتصالات الحكومات، وحققت للتو أول تدفق نقدي تشغيلي إيجابي بربع أول منذ تسع سنوات.</span><span class="i-en">A phone company that died in public didn't disappear — it became the software running safety-critical car systems and securing government communications, and just posted its first positive Q1 operating cash flow in nine years.</span></p>
 </div>
 <div class="shot gl rv">
-<div class="shot-photo" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/a/a1/BlackBerry_Bold_Touch_9900.jpg)" role="img" aria-label="Real photo of a classic BlackBerry Bold Touch 9900 with its physical keyboard"></div>
+<div class="shot-photo" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/0/06/BlackBerry_8820%2C_BlackBerry_Bold_9900_and_BlackBerry_Classic.jpg)" role="img" aria-label="Real photo of three BlackBerry generations side by side: the 8820, Bold 9900, and Classic"></div>
 <div class="shot-overlay">
 <div class="shot-kick"><span class="shot-dot" aria-hidden="true"></span>LIVE</div>
-<div class="shot-cap"><span class="i-ar">BlackBerry Bold — ذروة عصر لوحة المفاتيح</span><span class="i-en">BlackBerry Bold — peak of the keyboard era</span></div>
+<div class="shot-cap"><span class="i-ar">ثلاثة أجيال من BlackBerry جنبًا إلى جنب</span><span class="i-en">Three generations of BlackBerry, side by side</span></div>
 </div>
 </div>
 </div>
@@ -282,8 +282,8 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 
 <footer>
 <p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
-<p class="dsc" style="margin-top:8px;font-size:11px;opacity:.7">
-<span class="i-ar">صورة: </span><span class="i-en">Photo: </span><a href="https://commons.wikimedia.org/wiki/File:BlackBerry_Bold_Touch_9900.jpg" target="_blank" rel="noopener" style="color:inherit">Steven H. Keys</a> (CC BY 4.0) — Wikimedia Commons
+<p class="dsc" style="margin-top:8px;font-size:13px;opacity:.7">
+<span class="i-ar">صورة: </span><span class="i-en">Photo: </span><a href="https://commons.wikimedia.org/wiki/File:BlackBerry_8820,_BlackBerry_Bold_9900_and_BlackBerry_Classic.jpg" target="_blank" rel="noopener" style="color:inherit">Kt38138</a> (CC BY-SA 4.0) — Wikimedia Commons
 </p>
 </footer>
 

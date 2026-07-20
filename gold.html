@@ -176,6 +176,8 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 .chartHoverDot{opacity:0}
 .chartTip{position:absolute;pointer-events:none;background:rgba(10,12,20,.92);border:1px solid var(--edge);border-radius:8px;padding:6px 10px;font-family:var(--num);font-size:12px;color:var(--ink);white-space:nowrap;opacity:0;transform:translate(-50%,-115%);transition:opacity .1s ease}
 :root{--chart-accent:var(--gold)}
+.kwd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+@media(max-width:780px){.kwd-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -192,6 +194,7 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 </div>
 
 <nav class="qnav gl rv" aria-label="Section navigation">
+<a href="#s-kwd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9.5a1.5 2 0 013 0c0 1.2-1.5 1.5-1.5 2.5m0 3h.01"/></svg><span class="i-ar">بالدينار الكويتي</span><span class="i-en">In KWD</span></a>
 <a href="#s-timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="i-ar">الأحداث</span><span class="i-en">Milestones</span></a>
 <a href="#s-forces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="i-ar">القوى الثلاث</span><span class="i-en">Three Forces</span></a>
 <a href="#s-invest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 10h18M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span class="i-ar">طرق الاستثمار</span><span class="i-en">How to Invest</span></a>
@@ -217,6 +220,26 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 </div>
 </div>
 </div>
+
+<section class="rv" id="s-kwd">
+<div class="eyeb"><b><span class="i-ar">أسعار المعادن بالدينار الكويتي</span><span class="i-en">Metal Prices in Kuwaiti Dinar</span></b><span><span class="ldot live" aria-hidden="true" style="display:inline-block;margin-inline-end:4px"></span>LIVE</span><div class="ln"></div></div>
+<div class="gl pad">
+<div class="kwd-grid" id="kwdGrid">
+<div class="st gl"><b id="kwd24">…</b><span><span class="i-ar">ذهب عيار 24 (بالجرام)</span><span class="i-en">Gold 24K (per gram)</span></span></div>
+<div class="st gl"><b id="kwd22">…</b><span><span class="i-ar">ذهب عيار 22 (بالجرام)</span><span class="i-en">Gold 22K (per gram)</span></span></div>
+<div class="st gl"><b id="kwd21">…</b><span><span class="i-ar">ذهب عيار 21 (بالجرام)</span><span class="i-en">Gold 21K (per gram)</span></span></div>
+<div class="st gl"><b id="kwd18">…</b><span><span class="i-ar">ذهب عيار 18 (بالجرام)</span><span class="i-en">Gold 18K (per gram)</span></span></div>
+<div class="st gl"><b id="kwdSilver">…</b><span><span class="i-ar">الفضة (بالكيلوغرام)</span><span class="i-en">Silver (per kg)</span></span></div>
+<div class="st gl"><b id="kwdPlat">…</b><span><span class="i-ar">البلاتين (بالجرام)</span><span class="i-en">Platinum (per gram)</span></span></div>
+</div>
+<div style="margin-top:var(--sp5);margin-bottom:var(--sp3);font-family:var(--num);font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px">
+<span class="ldot live" aria-hidden="true"></span><span class="i-ar">عيار 24 مباشر · آخر 10 دقائق · يتحدث كل 10 ثوانٍ</span><span class="i-en">24K live · last 10 minutes · updates every 10s</span>
+</div>
+<div class="chartSvgWrap" id="kwdChartWrap">
+<div class="chartState"><span class="i-ar">جاري جمع البيانات الحية…</span><span class="i-en">Collecting live data…</span></div>
+</div>
+</div>
+</section>
 
 <section class="rv" id="s-timeline">
 <div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>2026</span><div class="ln"></div></div>
@@ -541,6 +564,74 @@ Array.prototype.forEach.call(tabsEl.querySelectorAll('button'),function(b){
 function boot(){
   if(typeof fetchViaProxies!=='function'||typeof CUR==='undefined')return setTimeout(boot,200);
   load('6mo','1d',tabsEl.querySelector('button.on'));
+}
+boot();
+})();
+</script>
+
+<script>
+(function(){
+var KWD_HIST=[];
+var MAX_POINTS=60;
+var OZ_TO_G=31.1034768;
+function fmt3(n){return n.toFixed(3)}
+function getMeta(t){
+return fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(t)+"?interval=1d&range=1d")
+.then(function(txt){var j=JSON.parse(txt);var r=j.chart&&j.chart.result&&j.chart.result[0];if(!r)throw new Error("no result");return r.meta})
+.catch(function(){return null});
+}
+function setTxt(id,v){var e=document.getElementById(id);if(e)e.textContent=v}
+function tick(){
+Promise.all([getMeta("GC=F"),getMeta("SI=F"),getMeta("PL=F"),getMeta("KWD=X")]).then(function(res){
+var gold=res[0],silver=res[1],plat=res[2],fx=res[3];
+if(!gold||!fx||!gold.regularMarketPrice||!fx.regularMarketPrice)return;
+var rate=fx.regularMarketPrice;
+var g24=(gold.regularMarketPrice/OZ_TO_G)*rate;
+var g22=g24*22/24,g21=g24*21/24,g18=g24*18/24;
+setTxt("kwd24",fmt3(g24)+" KWD");
+setTxt("kwd22",fmt3(g22)+" KWD");
+setTxt("kwd21",fmt3(g21)+" KWD");
+setTxt("kwd18",fmt3(g18)+" KWD");
+if(silver&&silver.regularMarketPrice)setTxt("kwdSilver",fmt3((silver.regularMarketPrice/OZ_TO_G)*1000*rate)+" KWD");
+if(plat&&plat.regularMarketPrice)setTxt("kwdPlat",fmt3((plat.regularMarketPrice/OZ_TO_G)*rate)+" KWD");
+KWD_HIST.push([Date.now(),g24]);
+if(KWD_HIST.length>MAX_POINTS)KWD_HIST.shift();
+drawKwdChart();
+});
+}
+function drawKwdChart(){
+var wrap=document.getElementById("kwdChartWrap");
+if(!wrap||KWD_HIST.length<2)return;
+var W=1000,H=260,PAD_T=16,PAD_B=24,PAD_L=4,PAD_R=4;
+var vals=KWD_HIST.map(function(p){return p[1]});
+var min=Math.min.apply(null,vals),max=Math.max.apply(null,vals);
+if(min===max){min-=0.01;max+=0.01;}
+var t0=KWD_HIST[0][0],t1=KWD_HIST[KWD_HIST.length-1][0];
+var innerW=W-PAD_L-PAD_R,innerH=H-PAD_T-PAD_B;
+function xOf(t){return PAD_L+(t1===t0?innerW:(t-t0)/(t1-t0))*innerW;}
+function yOf(v){return PAD_T+(1-(v-min)/(max-min))*innerH;}
+var d="";
+KWD_HIST.forEach(function(p,i){d+=(i===0?"M":"L")+xOf(p[0]).toFixed(2)+","+yOf(p[1]).toFixed(2)+" ";});
+var areaD=d+"L"+xOf(t1).toFixed(2)+","+(H-PAD_B)+" L"+xOf(t0).toFixed(2)+","+(H-PAD_B)+" Z";
+var last=KWD_HIST[KWD_HIST.length-1];
+var lx=xOf(last[0]),ly=yOf(last[1]);
+var timeFmt=function(ms){var d=new Date(ms);var hh=d.getHours(),mm=d.getMinutes();return (hh<10?"0":"")+hh+":"+(mm<10?"0":"")+mm;};
+wrap.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true">'+
+'<defs><linearGradient id="kwdGrad" x1="0" y1="0" x2="0" y2="1">'+
+'<stop offset="0%" stop-color="var(--gold)" stop-opacity="0.35"/>'+
+'<stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/></linearGradient></defs>'+
+'<line x1="'+PAD_L+'" y1="'+yOf(max).toFixed(2)+'" x2="'+(W-PAD_R)+'" y2="'+yOf(max).toFixed(2)+'" stroke="rgba(255,255,255,.07)" stroke-width="1"/>'+
+'<line x1="'+PAD_L+'" y1="'+yOf(min).toFixed(2)+'" x2="'+(W-PAD_R)+'" y2="'+yOf(min).toFixed(2)+'" stroke="rgba(255,255,255,.07)" stroke-width="1"/>'+
+'<path d="'+areaD+'" fill="url(#kwdGrad)" stroke="none"/>'+
+'<path d="'+d+'" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'+
+'<circle cx="'+lx.toFixed(2)+'" cy="'+ly.toFixed(2)+'" r="4.5" fill="var(--gold)" stroke="var(--void)" stroke-width="2"><animate attributeName="opacity" values="1;.4;1" dur="1.6s" repeatCount="indefinite"/></circle>'+
+"</svg>"+
+'<div class="chartMeta" style="margin-top:10px"><span>'+timeFmt(t0)+'</span><span><b>'+(CUR==="ar"?"الأدنى":"Low")+":</b> "+fmt3(min)+' &nbsp; <b>'+(CUR==="ar"?"الأعلى":"High")+":</b> "+fmt3(max)+'</span><span>'+timeFmt(t1)+"</span></div>";
+}
+function boot(){
+if(typeof fetchViaProxies!=="function")return setTimeout(boot,300);
+tick();
+setInterval(tick,10000);
 }
 boot();
 })();

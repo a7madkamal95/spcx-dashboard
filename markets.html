@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مستكشف الأسهم — الراصد</title>
+<meta name="description" content="استكشف أهم الأسهم العالمية من الراصد: اضغط أي سهم لتشوف سعره الحي، تغيره اليومي، ونطاقه السعري خلال 52 أسبوعًا.">
+<meta name="theme-color" content="#05060d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#05060d;--ink:#f5f7ff;--mut:#b7bfdd;
+--a1:#17bf8e;--a2:#5b8def;--mint:#3ce8a6;--coral:#ff6b6b;--gold:#ffd166;
+--glass:rgba(255,255,255,.055);--glassH:rgba(255,255,255,.11);
+--edge:rgba(255,255,255,.15);--edgeTop:rgba(255,255,255,.34);
+--focus:#5b8def;
+--disp:'Cairo',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Space Grotesk',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r16:16px;--r20:20px;--r24:24px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Space Grotesk',sans-serif;--body:'Space Grotesk','Segoe UI',sans-serif}
+.en,.num{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.databg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.databg .glow{position:absolute;border-radius:50%;filter:blur(80px)}
+.databg .g1{width:38vw;height:38vw;background:radial-gradient(circle,rgba(23,191,142,.17),transparent 65%);top:-14%;left:2%}
+.databg .g2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(91,141,239,.14),transparent 65%);bottom:-18%;right:6%}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+background-image:radial-gradient(rgba(255,255,255,.5) .6px,transparent .6px);background-size:110px 110px;opacity:.1}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(23,191,142,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+border:1px solid var(--edge);border-top-color:var(--edgeTop);
+border-radius:var(--r24);box-shadow:0 18px 50px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08);
+position:relative;overflow:hidden}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--a2)}
+.bar .brand:hover{color:var(--a2)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.08em;
+color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
+.lng:active{transform:translateY(0)}
+.hero{padding:56px 0 var(--sp5)}
+.kick{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--a2)}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(28px,5vw,42px);line-height:1.25;margin-top:var(--sp3)}
+h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:16px;line-height:1.8;max-width:60ch;margin-top:var(--sp3)}
+.search{margin-top:var(--sp5);display:flex;align-items:center;gap:10px;padding:14px 18px}
+.search svg{width:18px;height:18px;color:var(--mut);flex-shrink:0}
+.search input{flex:1;background:none;border:none;outline:none;color:var(--ink);font-family:var(--body);font-size:15px}
+.search input::placeholder{color:var(--mut)}
+section{margin-top:var(--sp7)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--sp3)}
+.tk{padding:0;cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease);text-align:start}
+.tk-head{display:flex;align-items:center;justify-content:space-between;padding:var(--sp4) var(--sp4);width:100%;background:none;border:none;color:inherit;cursor:pointer;font-family:inherit;text-align:start}
+.tk-head:hover{background:var(--glassH)}
+.tk-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tk-sym{font-family:var(--num);font-weight:700;font-size:13px;color:var(--a2);letter-spacing:.03em}
+.tk-name{font-size:14.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tk-arrow{width:14px;height:14px;color:var(--mut);flex-shrink:0;transition:transform var(--dur-med) var(--ease)}
+.tk.open .tk-arrow{transform:rotate(180deg)}
+.tk-detail{display:none;padding:0 var(--sp4) var(--sp4);border-top:1px solid var(--edge);margin-top:2px;padding-top:var(--sp3)}
+.tk.open .tk-detail{display:block}
+.tk-price{font-family:var(--num);font-size:22px;font-weight:700;direction:ltr}
+.tk-price.pos{color:var(--mint)}.tk-price.neg{color:var(--coral)}
+.tk-chg{font-family:var(--num);font-size:13px;margin-inline-start:8px}
+.tk-rows{margin-top:var(--sp3);display:flex;flex-direction:column;gap:6px}
+.tk-row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mut)}
+.tk-row b{color:var(--ink);font-family:var(--num);direction:ltr;font-weight:600}
+.tk-loading{font-size:12.5px;color:var(--mut);margin-top:var(--sp3);display:flex;align-items:center;gap:6px}
+.spin{width:12px;height:12px;border-radius:50%;border:2px solid var(--edge);border-top-color:var(--a2);animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(18,22,42,.94)}}
+</style>
+</head>
+<body>
+<div class="databg" aria-hidden="true"><div class="glow g1"></div><div class="glow g2"></div></div>
+<div class="wrap">
+<div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<section class="hero rv">
+<div class="kick"><span class="i-ar">أرقام حية · يتحدث تلقائيًا</span><span class="i-en">LIVE DATA · AUTO-UPDATING</span></div>
+<h1><span class="i-ar">استكشف أهم <span class="grad">الأسهم العالمية</span></span><span class="i-en">Explore the World's <span class="grad">Biggest Stocks</span></span></h1>
+<p class="lead"><span class="i-ar">اضغط أي سهم لتشوف سعره الحي وتغيره اليومي ونطاقه السعري خلال 52 أسبوعًا — تفاصيل سريعة ومباشرة بدون تحليل طويل.</span><span class="i-en">Click any stock to see its live price, daily change, and 52-week range — quick, direct details with no long analysis.</span></p>
+<label class="search gl">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+<input type="text" id="searchBox" oninput="filterTickers(this.value)" placeholder="ابحث بالاسم أو الرمز… / Search by name or ticker…">
+</label>
+</section>
+
+<section class="rv">
+<div class="grid" id="grid"></div>
+</section>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+</footer>
+</div>
+
+<script>
+var CUR=localStorage.getItem("lang")||"ar";
+var TICKERS=[
+{t:"AAPL",ar:"أبل",en:"Apple"},
+{t:"MSFT",ar:"مايكروسوفت",en:"Microsoft"},
+{t:"GOOGL",ar:"ألفابت (غوغل)",en:"Alphabet (Google)"},
+{t:"AMZN",ar:"أمازون",en:"Amazon"},
+{t:"META",ar:"ميتا",en:"Meta"},
+{t:"TSLA",ar:"تسلا",en:"Tesla"},
+{t:"BRK-B",ar:"بيركشاير هاثاواي",en:"Berkshire Hathaway"},
+{t:"V",ar:"فيزا",en:"Visa"},
+{t:"MA",ar:"ماستركارد",en:"Mastercard"},
+{t:"JPM",ar:"جيه بي مورغان تشيس",en:"JPMorgan Chase"},
+{t:"JNJ",ar:"جونسون آند جونسون",en:"Johnson & Johnson"},
+{t:"WMT",ar:"وول مارت",en:"Walmart"},
+{t:"PG",ar:"بروكتر آند غامبل",en:"Procter & Gamble"},
+{t:"KO",ar:"كوكاكولا",en:"Coca-Cola"},
+{t:"DIS",ar:"ديزني",en:"Disney"},
+{t:"NFLX",ar:"نتفليكس",en:"Netflix"},
+{t:"ORCL",ar:"أوراكل",en:"Oracle"},
+{t:"CRM",ar:"سيلزفورس",en:"Salesforce"},
+{t:"XOM",ar:"إكسون موبيل",en:"ExxonMobil"},
+{t:"CVX",ar:"شيفرون",en:"Chevron"},
+{t:"UNH",ar:"يونايتد هيلث",en:"UnitedHealth"},
+{t:"HD",ar:"هوم ديبوت",en:"Home Depot"},
+{t:"MCD",ar:"ماكدونالدز",en:"McDonald's"},
+{t:"NKE",ar:"نايكي",en:"Nike"},
+{t:"BA",ar:"بوينغ",en:"Boeing"},
+{t:"PFE",ar:"فايزر",en:"Pfizer"},
+{t:"ADBE",ar:"أدوبي",en:"Adobe"},
+{t:"COST",ar:"كوستكو",en:"Costco"},
+{t:"AVGO",ar:"برودكوم",en:"Broadcom"},
+{t:"LLY",ar:"إيلاي ليلي",en:"Eli Lilly"}
+];
+var CACHE={};
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+function renderGrid(){
+document.getElementById("grid").innerHTML=TICKERS.map(function(x,i){
+return '<div class="tk gl" data-t="'+x.t+'" data-q="'+(x.ar+" "+x.en+" "+x.t).toLowerCase()+'">'+
+'<button class="tk-head" onclick="toggleTicker('+i+')">'+
+'<span class="tk-info"><span class="tk-sym">'+x.t+'</span><span class="tk-name">'+(CUR==="ar"?x.ar:x.en)+'</span></span>'+
+'<svg class="tk-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>'+
+'</button>'+
+'<div class="tk-detail" id="detail-'+i+'"></div>'+
+'</div>';
+}).join("");
+}
+function toggleTicker(i){
+var el=document.querySelector('.tk[data-t="'+TICKERS[i].t+'"]');
+var open=el.classList.toggle("open");
+if(!open)return;
+var detail=document.getElementById("detail-"+i);
+if(CACHE[TICKERS[i].t]){renderDetail(i,CACHE[TICKERS[i].t]);return}
+detail.innerHTML='<div class="tk-loading"><span class="spin" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب…":"loading…")+'</div>';
+var sym=encodeURIComponent(TICKERS[i].t);
+Promise.all([
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1d").then(function(t){return JSON.parse(t).chart.result[0].meta}),
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1y").then(function(t){return JSON.parse(t).chart.result[0].meta}).catch(function(){return null})
+]).then(function(res){
+var m=res[0];
+if(res[1]){m.fiftyTwoWeekHigh=res[1].fiftyTwoWeekHigh;m.fiftyTwoWeekLow=res[1].fiftyTwoWeekLow;}
+CACHE[TICKERS[i].t]=m;
+renderDetail(i,m);
+}).catch(function(){detail.innerHTML='<div class="tk-loading">'+(CUR==="ar"?"تعذر الجلب الحي، حاول لاحقًا":"couldn't fetch live data, try again later")+'</div>'});
+}
+function renderDetail(i,m){
+var detail=document.getElementById("detail-"+i);
+var p=m.regularMarketPrice,pc=m.chartPreviousClose||m.previousClose,up=(pc?p>=pc:true);
+var ch=pc?((p-pc)/pc*100).toFixed(2):null;
+var rows=[
+[CUR==="ar"?"نطاق اليوم":"Day range", (m.regularMarketDayLow!=null&&m.regularMarketDayHigh!=null)?("$"+m.regularMarketDayLow.toFixed(2)+" – $"+m.regularMarketDayHigh.toFixed(2)):"—"],
+[CUR==="ar"?"نطاق 52 أسبوعًا":"52-week range", (m.fiftyTwoWeekLow!=null&&m.fiftyTwoWeekHigh!=null)?("$"+m.fiftyTwoWeekLow.toFixed(2)+" – $"+m.fiftyTwoWeekHigh.toFixed(2)):"—"],
+[CUR==="ar"?"البورصة":"Exchange", m.fullExchangeName||m.exchangeName||"—"],
+[CUR==="ar"?"العملة":"Currency", m.currency||"—"]
+];
+detail.innerHTML='<div><span class="tk-price '+(up?"pos":"neg")+'">$'+(+p).toFixed(2)+(up?" ▲":" ▼")+'</span>'+(ch!=null?'<span class="tk-chg '+(up?"pos":"neg")+'">'+(ch>0?"+":"")+ch+"%</span>":"")+'</div>'+
+'<div class="tk-rows">'+rows.map(function(r){return '<div class="tk-row"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>'}).join("")+'</div>';
+}
+function filterTickers(q){
+q=q.toLowerCase();
+document.querySelectorAll(".tk").forEach(function(el){
+el.style.display=el.getAttribute("data-q").indexOf(q)>-1?"":"none";
+});
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+renderGrid();
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");
+document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+renderGrid();
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

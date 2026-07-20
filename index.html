@@ -74,6 +74,18 @@ h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webk
 @keyframes hz{to{transform:scale(1.08)}}
 @media(max-width:780px){.hero-vis{max-width:340px;margin-inline:auto;width:100%}}
 section{margin-top:var(--sp7)}
+.explore-cta{display:flex;align-items:center;gap:var(--sp4);padding:var(--sp5);text-decoration:none;color:inherit;margin-top:var(--sp7);
+transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.explore-cta:hover{transform:translateY(-3px);background:var(--glassH)}
+.explore-ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--a2),var(--a1));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.explore-ic svg{width:24px;height:24px;color:var(--void)}
+.explore-txt{flex:1;min-width:0}
+.explore-txt b{display:block;font-family:var(--disp);font-weight:800;font-size:17px}
+.explore-txt span{display:block;font-size:13px;color:var(--mut);margin-top:3px;line-height:1.6}
+.explore-arrow{width:16px;height:16px;color:var(--a2);flex-shrink:0;transition:transform var(--dur-med) var(--ease)}
+.explore-cta:hover .explore-arrow{transform:translateX(-4px)}
+html[dir=ltr] .explore-cta:hover .explore-arrow{transform:translateX(4px)}
+@media(max-width:600px){.explore-txt span{display:none}}
 .tabs{display:flex;gap:8px;margin-bottom:var(--sp5)}
 .tab{font-family:var(--body);font-weight:700;font-size:14px;color:var(--mut);background:rgba(255,255,255,.05);
 border:1px solid var(--edge);border-radius:var(--r99);padding:10px 22px;min-height:44px;cursor:pointer;
@@ -161,6 +173,15 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <div class="hero-vis-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/6/66/NASDAQ_stock_market_display.jpg)" role="img" aria-label="NASDAQ stock market display board"></div>
 </div>
 </section>
+
+<a href="markets.html" class="explore-cta gl rv">
+<div class="explore-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
+<div class="explore-txt">
+<b><span class="i-ar">استكشف أهم الأسهم العالمية</span><span class="i-en">Explore the World's Biggest Stocks</span></b>
+<span><span class="i-ar">اضغط أي سهم لتشوف سعره الحي وتفاصيله السريعة — أبل، مايكروسوفت، أمازون، وأكثر</span><span class="i-en">Click any stock for its live price and quick details — Apple, Microsoft, Amazon, and more</span></span>
+</div>
+<svg class="explore-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+</a>
 
 <section class="rv">
 <div class="tabs">

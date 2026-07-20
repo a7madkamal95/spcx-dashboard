@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الذهب — الملاذ الذي يتحدى نفسه · الراصد</title>
+<meta name="description" content="تحليل حي لسوق الذهب من الراصد: البنوك المركزية، سياسة الفيدرالي والدولار، وطرق الاستثمار بالذهب — بأرقام حية وأخبار حقيقية.">
+<meta name="theme-color" content="#0b0904">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Amiri:wght@700&family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#0b0904;--ink:#f5efe0;--mut:#a89b7d;
+--gold:#d4af37;--goldDeep:#8a6d1f;--goldBright:#f4d874;--green:#4a9d6f;--red:#c23b3b;
+--glass:rgba(255,248,230,.04);--glassH:rgba(212,175,55,.09);
+--edge:rgba(212,175,55,.3);--edgeTop:rgba(212,175,55,.5);
+--focus:#d4af37;
+--disp:'Amiri',serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Cormorant Garamond',serif;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r14:14px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Playfair Display',serif;--body:'Cormorant Garamond','Segoe UI',serif}
+.en,.num,#px,.st b,.ts .w,.tk i{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.vaultbg{position:fixed;inset:0;z-index:-3;background:var(--void)}
+.vaultbg::before{content:"";position:absolute;inset:0;opacity:.05;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.glow{position:fixed;top:-12%;left:50%;transform:translateX(-50%);width:70vw;height:70vw;z-index:-2;
+background:radial-gradient(circle,rgba(212,175,55,.15),transparent 65%);filter:blur(80px)}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(212,175,55,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(12px) saturate(120%);-webkit-backdrop-filter:blur(12px) saturate(120%);
+border:1px solid var(--edge);
+border-radius:var(--r14);box-shadow:0 16px 40px rgba(0,0,0,.5);
+position:relative;overflow:hidden}
+.gl::before{content:"";position:absolute;top:0;right:8%;left:8%;height:1px;
+background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--gold)}
+.bar .brand:hover{color:var(--gold)}
+.bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
+.bar .sym{font-family:var(--num);font-weight:600;letter-spacing:.03em;font-size:14px;color:var(--mut)}
+.bar .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold);animation:pl 1.6s infinite;flex-shrink:0}
+@keyframes pl{50%{opacity:.35}}
+#px{font-family:var(--num);font-weight:700;font-size:25px;direction:ltr}
+.neg{color:var(--red)}.pos{color:var(--green)}
+#pm{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.ldot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pl 1.6s infinite}
+.ldot.wait{background:var(--gold);animation:pl 1s infinite}
+.en{direction:ltr;display:inline-block;font-family:var(--num)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:14px;letter-spacing:.06em;
+color:var(--ink);background:rgba(212,175,55,.08);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(212,175,55,.18);transform:translateY(-1px)}
+.lng:active{transform:translateY(0)}
+.qnav{position:sticky;top:calc(var(--sp3) + 58px);z-index:49;display:flex;gap:6px;padding:7px;margin-top:10px;
+overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.qnav::-webkit-scrollbar{display:none}
+.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mut);
+text-decoration:none;padding:9px 16px;min-height:38px;border-radius:var(--r99);white-space:nowrap;
+transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+.qnav a svg{width:15px;height:15px;flex-shrink:0}
+.qnav a:hover{color:var(--ink);background:rgba(212,175,55,.08)}
+.qnav a.on{color:var(--void);background:var(--gold)}
+.hero{padding:56px 0 var(--sp4);display:grid;grid-template-columns:1.08fr .92fr;gap:var(--sp6);align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
+.kick{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--gold)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(38px,6.6vw,60px);line-height:1.2;margin-top:var(--sp2)}
+h1 .grad{background:linear-gradient(92deg,var(--gold),var(--goldBright));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:17px;line-height:1.8;max-width:48ch;margin-top:var(--sp4)}
+@media(max-width:780px){.lead{margin-inline:auto}}
+.vault{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:0;overflow:hidden}
+.vault-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(1.1) contrast(1.05)}
+.vault-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,9,4,.1) 0%,rgba(11,9,4,.3) 65%,rgba(11,9,4,.8) 100%)}
+.vault-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:var(--sp4)}
+.vault-kick{align-self:flex-end;display:flex;align-items:center;gap:6px;font-family:var(--num);font-size:12px;letter-spacing:.06em;color:var(--gold);font-weight:700;background:rgba(11,9,4,.6);backdrop-filter:blur(4px);padding:5px 12px;border-radius:99px;border:1px solid rgba(212,175,55,.4)}
+.vault-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:pl 1.6s infinite}
+.vault-cap{font-family:var(--num);font-size:13px;letter-spacing:.02em;color:var(--ink);background:rgba(11,9,4,.55);backdrop-filter:blur(4px);padding:7px 14px;border-radius:8px;align-self:flex-start;border:1px solid rgba(212,175,55,.35)}
+section{margin-top:var(--sp8)}
+.eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
+.eyeb .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),rgba(212,175,55,.3) 70%,transparent)}
+.eyeb b{font-family:var(--disp);font-weight:700;font-size:27px;letter-spacing:.01em}
+.eyeb span{font-family:var(--num);font-size:13px;letter-spacing:.1em;color:var(--gold);font-weight:700}
+.pad{padding:var(--sp6)}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+@media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+.ts{padding:var(--sp4);border-radius:10px;background:rgba(212,175,55,.04);border:1px solid var(--edge)}
+.ts .w{font-family:var(--num);font-size:13px;color:var(--gold);letter-spacing:.02em;font-weight:700}
+.ts .t{font-family:var(--disp);font-weight:700;font-size:17px;margin-top:4px}
+.ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
+.forces{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
+@media(max-width:900px){.forces{grid-template-columns:1fr}}
+.force{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.force:hover{transform:translateY(-5px);background:var(--glassH)}
+.force .icwrap{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(212,175,55,.06);border:1px solid var(--edge)}
+.force .icwrap svg{width:23px;height:23px}
+.force h3{font-family:var(--disp);font-weight:700;font-size:21px;margin-top:var(--sp3)}
+.tag{display:inline-block;font-family:var(--num);font-size:12px;font-weight:700;letter-spacing:.02em;border-radius:6px;padding:4px 11px;border:1px solid;margin-top:var(--sp2);background:rgba(212,175,55,.05)}
+.t1{color:var(--gold);border-color:rgba(212,175,55,.5)}.t2{color:var(--goldBright);border-color:rgba(244,216,116,.5)}.t3{color:var(--mut);border-color:rgba(168,155,125,.5)}
+.force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
+.force .dtl{display:none}
+.force.open .dtl{display:block}
+.force h5{font-family:var(--disp);font-size:15px;font-weight:700;color:var(--gold);margin-top:var(--sp4);letter-spacing:.02em}
+.force table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--sp2)}
+.force td{padding:8px 4px;border-top:1px solid var(--edge);vertical-align:top;line-height:1.7}
+.force td:first-child{font-family:var(--num);font-size:13px;font-weight:700;white-space:nowrap;direction:ltr;color:var(--gold)}
+html[data-lang=ar] .force td:first-child{text-align:right}
+html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px}
+.more{font-size:12px;color:var(--gold);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
+.more svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
+.force.open .more svg{transform:rotate(180deg)}
+.invest{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
+@media(max-width:780px){.invest{grid-template-columns:repeat(2,1fr)}}
+.iv{padding:var(--sp4);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.iv:hover{transform:translateY(-4px);background:var(--glassH)}
+.iv .ivi{width:26px;height:26px;color:var(--gold);margin-bottom:var(--sp2)}
+.iv h4{font-family:var(--disp);font-weight:700;font-size:16px}
+.iv p{font-size:12.5px;color:var(--mut);margin-top:6px;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
+@media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+.st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.st:hover{transform:translateY(-4px);background:var(--glassH)}
+.st .sti{width:20px;height:20px;color:var(--gold);opacity:.9;margin-bottom:6px}
+.st b{display:block;font-family:var(--num);font-size:27px;font-weight:700;direction:ltr;color:var(--gold)}
+.st span{font-size:12.5px;color:var(--mut)}
+#news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}
+#news li:first-child{border-top:none}
+#news a{color:inherit;text-decoration:none;display:block;border-radius:8px}
+#news a:hover .arb{color:var(--gold)}
+.arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.7}
+.osrc{font-family:var(--num);font-size:13px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
+.nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
+.src{font-family:var(--num);font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--gold);border:1px solid rgba(212,175,55,.4);border-radius:6px;padding:3px 11px;background:rgba(212,175,55,.07);direction:ltr}
+.ndate{font-size:12px;color:var(--mut)}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
+@media(max-width:640px){.sc{grid-template-columns:1fr}}
+.pan{padding:var(--sp5);font-size:13.5px}
+.pan h4{font-family:var(--disp);font-weight:700;font-size:20px;margin-bottom:var(--sp3);display:flex;align-items:center;gap:8px}
+.pg h4{color:var(--green)}.pb h4{color:var(--red)}
+.pan li{list-style:none;padding:6px 0;border-top:1px dashed var(--edge);line-height:1.7}
+.pan li:first-of-type{border-top:none}
+.tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px solid var(--edge);font-size:15.5px;line-height:1.75}
+.tk:first-child{border-top:none}
+.tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--gold);font-size:14px;border:1px solid rgba(212,175,55,.45);border-radius:8px;padding:2px 10px;margin-top:3px;background:rgba(212,175,55,.06);flex-shrink:0}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(16,13,8,.96)}}
+</style>
+</head>
+<body>
+<div class="vaultbg" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap">
+<div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<span class="sep" aria-hidden="true"></span>
+<span class="dot" aria-hidden="true"></span><span class="sym">COMEX · GOLD</span>
+<span id="px">…</span>
+<span id="pm" aria-live="polite"></span>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<nav class="qnav gl rv" aria-label="Section navigation">
+<a href="#s-timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="i-ar">الأحداث</span><span class="i-en">Milestones</span></a>
+<a href="#s-forces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="i-ar">القوى الثلاث</span><span class="i-en">Three Forces</span></a>
+<a href="#s-invest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 10h18M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span class="i-ar">طرق الاستثمار</span><span class="i-en">How to Invest</span></a>
+<a href="#s-numbers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span class="i-ar">الأرقام</span><span class="i-en">Numbers</span></a>
+<a href="#s-news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg><span class="i-ar">الأخبار</span><span class="i-en">News</span></a>
+<a href="#s-balance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 006 0l-3-6zM19 7l-3 6a3 3 0 006 0l-3-6zM5 7h14"/></svg><span class="i-ar">الميزان</span><span class="i-en">Balance</span></a>
+<a href="#s-takeaways"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></a>
+</nav>
+
+<main>
+<div class="hero">
+<div class="rv">
+<div class="kick"><span class="i-ar">تحليل حي لسوق الذهب · يتحدث تلقائيًا</span><span class="i-en">LIVE GOLD MARKET INTELLIGENCE · AUTO-UPDATING</span></div>
+<h1><span class="i-ar">الملاذ الذي<br>يتحدى <span class="grad">نفسه</span></span><span class="i-en">The Haven That<br>Defies <span class="grad">Itself</span></span></h1>
+<p class="lead"><span class="i-ar">معدن يُفترض أن يهدأ وقت الأزمات، لكنه اليوم يتراجع رغم توتر الشرق الأوسط — لأن الدولار القوي وسياسة الفيدرالي صارا أقوى من الخوف نفسه. ومع هذا، البنوك المركزية لا تتوقف عن الشراء.</span><span class="i-en">A metal that's supposed to calm crises, yet today it falls despite Middle East tension — because a strong dollar and Fed policy have become stronger than fear itself. And still, central banks won't stop buying.</span></p>
+</div>
+<div class="vault gl rv">
+<div class="vault-photo" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/3/34/400-oz-Gold-Bars-AB-01.jpg)" role="img" aria-label="Real photo of stacked 400oz gold bullion bars"></div>
+<div class="vault-overlay">
+<div class="vault-kick"><span class="vault-dot" aria-hidden="true"></span>LIVE</div>
+<div class="vault-cap"><span class="i-ar">سبائك ذهب 400 أونصة</span><span class="i-en">400oz Gold Bars</span></div>
+</div>
+</div>
+</div>
+
+<section class="rv" id="s-timeline">
+<div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>2026</span><div class="ln"></div></div>
+<div class="gl pad"><div class="tl" id="tl"></div></div>
+</section>
+
+<section class="rv" id="s-forces">
+<div class="eyeb"><b><span class="i-ar">القوى الثلاث المحركة للسعر</span><span class="i-en">The Three Forces Driving The Price</span></b><div class="ln"></div></div>
+<div class="forces">
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg></div>
+<h3><span class="i-ar">شراء البنوك المركزية</span><span class="i-en">Central Bank Buying</span></h3><span class="tag t1">863 TONNES</span>
+<p><span class="i-ar">أكبر مشترٍ هيكلي بالسوق اليوم — شراء قياسي مدفوع بنزع الدولرة والمخاوف الجيوسياسية</span><span class="i-en">The market's largest structural buyer today — record purchases driven by de-dollarization and geopolitical concern</span></p>
+<div class="dtl">
+<h5><span class="i-ar">حجم الشراء</span><span class="i-en">Scale of Buying</span></h5>
+<table>
+<tr><td>863t</td><td><span class="i-ar">إجمالي شراء البنوك المركزية عالميًا خلال 2025</span><span class="i-en">Total global central bank purchases in 2025</span></td></tr>
+<tr><td>244t</td><td><span class="i-ar">شراء صافٍ بالربع الأول من 2026 وحده</span><span class="i-en">Net purchases in Q1 2026 alone</span></td></tr>
+</table>
+<h5><span class="i-ar">تحوّل تاريخي</span><span class="i-en">A Historic Shift</span></h5>
+<table>
+<tr><td><span class="en">1996</span></td><td><span class="i-ar">الذهب يتفوق على السندات الأمريكية كحصة من احتياطيات البنوك المركزية لأول مرة منذ هذا العام</span><span class="i-en">Gold overtakes US Treasuries as a share of central bank reserves for the first time since this year</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#f4d874" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9h3.5a2 2 0 010 4H9M9 13h6M12 7v2M12 15v2"/></svg></div>
+<h3><span class="i-ar">سياسة الفيدرالي والدولار</span><span class="i-en">Fed Policy &amp; the Dollar</span></h3><span class="tag t2">RATE FEARS</span>
+<p><span class="i-ar">توقعات فائدة متشددة ترفع الدولار وتضغط على الذهب أكثر من أي عامل آخر حاليًا</span><span class="i-en">Hawkish rate expectations lift the dollar and pressure gold more than any other factor right now</span></p>
+<div class="dtl">
+<h5><span class="i-ar">العلاقة العكسية</span><span class="i-en">The Inverse Relationship</span></h5>
+<table>
+<tr><td>3.8%</td><td><span class="i-ar">توقع الفيدرالي لسعر الفائدة بنهاية 2026 — مرتفع عن توقع سابق 3.4%</span><span class="i-en">The Fed's dot-plot rate projection for end-2026 — up from a prior 3.4%</span></td></tr>
+<tr><td><span class="en">Jun 2026</span></td><td><span class="i-ar">الدولار يبلغ أعلى مستوى بعام مع تراجع توقعات خفض الفائدة</span><span class="i-en">The dollar hits a one-year high as rate-cut expectations fade</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#a89b7d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+<h3><span class="i-ar">مفارقة الملاذ الآمن</span><span class="i-en">The Safe-Haven Paradox</span></h3><span class="tag t3">-3.2% WEEK</span>
+<p><span class="i-ar">توتر الشرق الأوسط لم يمنع أكبر خسارة أسبوعية للذهب خلال 6 أسابيع — الدولار والعوائد أقوى من الخوف</span><span class="i-en">Middle East tension didn't stop gold's biggest weekly loss in 6 weeks — the dollar and yields outweigh fear</span></p>
+<div class="dtl">
+<h5><span class="i-ar">ما حدث</span><span class="i-en">What Happened</span></h5>
+<table>
+<tr><td><span class="en">Jul 17</span></td><td><span class="i-ar">الذهب يكسر حاجز 4,000$ رغم التوترات الجيوسياسية المستمرة</span><span class="i-en">Gold breaks below $4,000 despite ongoing geopolitical tensions</span></td></tr>
+<tr><td>-16%</td><td><span class="i-ar">التصحيح من القمة التاريخية 5,589$ في يناير إلى 4,483$ في مايو</span><span class="i-en">The correction from January's record $5,589 to $4,483 in May</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+</div>
+</section>
+
+<section class="rv" id="s-invest">
+<div class="eyeb"><b><span class="i-ar">طرق الاستثمار بالذهب</span><span class="i-en">Ways to Invest in Gold</span></b><div class="ln"></div></div>
+<div class="gl pad">
+<div class="invest">
+<div class="iv"><svg class="ivi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="10" rx="2"/><path d="M3 12h18"/></svg>
+<h4><span class="i-ar">السبائك والعملات</span><span class="i-en">Physical Bullion</span></h4>
+<p><span class="i-ar">ملكية مباشرة بلا مخاطر طرف مقابل، لكن مع تكاليف تخزين وتأمين وعلاوة سعر عند الشراء</span><span class="i-en">Direct ownership with no counterparty risk, but storage, insurance, and dealer premiums apply</span></p></div>
+<div class="iv"><svg class="ivi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+<h4><span class="i-ar">صناديق الذهب المتداولة</span><span class="i-en">Gold ETFs</span></h4>
+<p><span class="i-ar">مثل GLD — تُشترى وتُباع كالأسهم وتقتني الذهب المادي فعليًا، بأدنى عتبة دخول للمستثمرين</span><span class="i-en">Like GLD — traded like stocks, backed by physical gold, with the lowest entry barrier</span></p></div>
+<div class="iv"><svg class="ivi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+<h4><span class="i-ar">العقود الآجلة</span><span class="i-en">Futures Contracts</span></h4>
+<p><span class="i-ar">تتبع سعر الذهب مباشرة برافعة مالية، لكنها أكثر تعقيدًا وتحمل مخاطر أعلى من الأسهم</span><span class="i-en">Track gold's price directly with leverage, but are more complex and riskier than stocks</span></p></div>
+<div class="iv"><svg class="ivi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="4"/></svg>
+<h4><span class="i-ar">أسهم شركات التعدين</span><span class="i-en">Mining Stocks</span></h4>
+<p><span class="i-ar">تعرّض غير مباشر لسعر الذهب عبر شركات مثل Newmont وBarrick، بمخاطر تشغيلية إضافية</span><span class="i-en">Indirect exposure via companies like Newmont and Barrick, with added operational risk</span></p></div>
+</div>
+</div>
+</section>
+
+<section class="rv" id="s-numbers">
+<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>LIVE DATA</span><div class="ln"></div></div>
+<div class="stats" id="stats"></div>
+</section>
+
+<section class="rv" id="s-news">
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="gl pad"><ul id="news"></ul></div>
+</section>
+
+<section class="rv" id="s-balance">
+<div class="eyeb"><b><span class="i-ar">الميزان</span><span class="i-en">The Balance</span></b><span>PRO VIEW</span><div class="ln"></div></div>
+<div class="sc">
+<div class="pan gl pg"><h4><span class="i-ar">أسباب الشراء</span><span class="i-en">Reasons to Buy</span></h4><ul>
+<li><span class="i-ar">تحوّط تاريخي ضد التضخم وتراجع قيمة العملات</span><span class="i-en">A historic hedge against inflation and currency devaluation</span></li>
+<li><span class="i-ar">طلب هيكلي مستمر من البنوك المركزية عالميًا</span><span class="i-en">Ongoing structural demand from central banks worldwide</span></li>
+<li><span class="i-ar">ارتباط ضعيف تاريخيًا بأداء الأسهم — تنويع حقيقي للمحفظة</span><span class="i-en">Historically low correlation with stocks — genuine portfolio diversification</span></li>
+<li><span class="i-ar">أصل ملموس بلا مخاطر طرف مقابل عند الاقتناء المادي</span><span class="i-en">A tangible asset with no counterparty risk when held physically</span></li></ul></div>
+<div class="pan gl pb"><h4><span class="i-ar">أسباب الحذر</span><span class="i-en">Reasons for Caution</span></h4><ul>
+<li><span class="i-ar">لا يوزع أرباحًا أو فوائد — تكلفة فرصة بديلة عند ارتفاع أسعار الفائدة</span><span class="i-en">Pays no dividend or interest — an opportunity cost when rates are high</span></li>
+<li><span class="i-ar">تقلب حاد قصير المدى: تصحيح 16% خلال أشهر قليلة بـ2026</span><span class="i-en">Sharp short-term volatility: a 16% correction within a few months in 2026</span></li>
+<li><span class="i-ar">حساس جدًا لقوة الدولار وقرارات الفيدرالي</span><span class="i-en">Highly sensitive to dollar strength and Fed decisions</span></li>
+<li><span class="i-ar">تكاليف تخزين وتأمين وعلاوة سعر عند الاقتناء المادي</span><span class="i-en">Storage, insurance, and dealer-premium costs when held physically</span></li></ul></div>
+</div>
+</section>
+
+<section class="rv" id="s-takeaways">
+<div class="eyeb"><b><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></b><span>4</span><div class="ln"></div></div>
+<div class="gl pad" id="tks"></div>
+</section>
+</main>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+<p class="dsc" style="margin-top:8px;font-size:11px;opacity:.7">
+<span class="i-ar">صورة: </span><span class="i-en">Photo: </span><a href="https://commons.wikimedia.org/wiki/File:400-oz-Gold-Bars-AB-01.jpg" target="_blank" rel="noopener" style="color:inherit">Andrzej Barabasz</a> (CC BY-SA 4.0) — Wikimedia Commons
+</p>
+</footer>
+
+</div>
+<script>
+function toggleForce(el){var open=el.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
+var CUR=localStorage.getItem("lang")||"ar";
+var D=null,NEWSCACHE=null;
+var L={ar:{ath:"القمة التاريخية",pullback:"التصحيح الأقصى",week_change:"تغير الأسبوع",cb_2025:"شراء البنوك 2025",cb_2026e:"توقع شراء 2026",jpm_target:"هدف جي بي مورغان",gs_target:"هدف غولدمان ساكس",fed_rate_end26:"توقع فائدة الفيدرالي"},
+en:{ath:"All-time high",pullback:"Max pullback",week_change:"Week change",cb_2025:"2025 CB buying",cb_2026e:"2026E CB buying",jpm_target:"JPMorgan target",gs_target:"Goldman Sachs target",fed_rate_end26:"Fed rate projection"}};
+var VEN={};
+var SICO={
+ath:'<path d="M4 4l6 10 4-4 6 10"/>',
+pullback:'<path d="M4 4l16 16M20 4L4 20"/>',
+week_change:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+cb_2025:'<path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6"/>',
+cb_2026e:'<path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6"/>',
+jpm_target:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+gs_target:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>',
+fed_rate_end26:'<circle cx="12" cy="12" r="9"/><path d="M9 9h3.5a2 2 0 010 4H9M9 13h6M12 7v2M12 15v2"/>'
+};
+var TLEN=[{when:"Jan 28, 2026",what:"All-time record high",note:"Gold reaches $5,589.38 an ounce — its highest level ever"},{when:"Apr 2026",what:"Central banks keep buying",note:"244 tonnes net purchases in Q1 despite a slight uptick in selling"},{when:"May 18, 2026",what:"Sharp correction",note:"Price falls 16% from the peak to $4,483"},{when:"Jun 23, 2026",what:"The dollar pressures gold",note:"Hawkish Fed rate bets lift the dollar to a one-year high"},{when:"Jul 17, 2026",what:"Breaking the $4,000 floor",note:"Gold falls below $4,000 despite Middle East tension, its biggest weekly loss in 6 weeks"}];
+var NEN=[{text:"Spot gold trades at $4,009.37 an ounce, slightly above Friday's close",src:"CNBC",link:"https://www.cnbc.com/select/the-price-of-gold-today-july-20-2026/"},{text:"JPMorgan projects gold reaching $6,300 by end-2026, versus Goldman Sachs' more conservative $4,900 target",src:"AOL",link:"https://www.aol.com/articles/jp-morgan-predicts-gold-price-232746253.html"},{text:"Gold overtakes US Treasuries as a share of central bank reserves for the first time since 1996 amid accelerating de-dollarization",src:"Discovery Alert",link:"https://discoveryalert.com.au/central-bank-gold-buying-record-prices-sovereign-demand-2026/"},{text:"Gold falls as the dollar climbs to a one-year high amid expectations of Fed tightening",src:"CNBC",link:"https://www.cnbc.com/2026/06/23/gold-falls-as-dollar-holds-firm-on-fed-rate-hike-expectations.html"},{text:"Gold breaks below $4,000 as bond yields overpower safe-haven demand",src:"Invezz",link:"https://invezz.com/news/2026/07/17/gold-price-breaks-below-4000-as-bond-yields-overpower-safe-haven-demand/"},{text:"Why isn't gold acting like a safe haven despite Middle East tensions? A strong dollar and bond yields outweigh geopolitical fear",src:"FX Leaders",link:"https://www.fxleaders.com/news/2026/07/17/gold-price-forecast-xau-usd-slips-below-4000-why-isnt-gold-acting-like-a-safe-haven/"}];
+function staticNewsHtml(list){return list.map(function(n){
+var head='<span class="arb">'+n.text+'</span>';
+var meta='<div class="nmeta"><span class="src">'+n.src+'</span></div>';
+return n.link?('<li><a href="'+n.link+'" target="_blank" rel="noopener">'+head+meta+'</a></li>'):('<li>'+head+meta+'</li>');
+}).join("")}
+var TKEN=["Gold has historically overtaken US Treasuries as a share of central bank reserves for the first time since 1996","US rate policy and dollar strength are moving the price today more than geopolitical tension itself","Major banks are sharply divided on year-end targets — from $4,900 to $6,300","Sustained central bank buying provides structural support even amid sharp short-term swings"];
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+var qnavLinks=document.querySelectorAll(".qnav a");
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+var link=document.querySelector('.qnav a[href="#'+e.target.id+'"]');
+if(!link)return;
+if(e.isIntersecting){qnavLinks.forEach(function(a){a.classList.remove("on")});link.classList.add("on")}
+})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(function(el){spy.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+renderDyn();renderNews();}
+function renderDyn(){if(!D)return;
+var tl=(CUR==="ar")?D.timeline:TLEN;
+document.getElementById("tl").innerHTML=tl.map(function(t){return '<div class="ts"><div class="w">'+t.when+'</div><div class="t">'+t.what+'</div><div class="n">'+t.note+'</div></div>'}).join("");
+document.getElementById("stats").innerHTML=Object.keys(D.stats).map(function(k){
+var v=(CUR==="en"&&VEN[k])?VEN[k]:D.stats[k];
+var ic=SICO[k]?'<svg class="sti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SICO[k]+'</svg>':'';
+return '<div class="st gl">'+ic+'<b>'+v+'</b><span>'+(L[CUR][k]||k)+'</span></div>'}).join("");
+var tk=(CUR==="ar")?D.takeaways:TKEN;
+document.getElementById("tks").innerHTML=tk.map(function(t,i){return '<div class="tk"><i>0'+(i+1)+'</i><div>'+t+'</div></div>'}).join("");
+sp(window.__LASTP||D.price_fallback,!!window.__LIVE);}
+function initData(d){
+D=d;window.__PREV=d.prev_close||d.price_fallback;
+if(CUR!=="ar")setLang(CUR);else{renderDyn();}
+document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?d.news:NEN);
+livePrice();
+}
+var FALLBACK_DATA={"last_updated":"2026-07-21","price_fallback":4009.37,"prev_close":4001.06,"stats":{"ath":"5,589$","pullback":"-16%","week_change":"-3.2%","cb_2025":"863 طن","cb_2026e":"700-900 طن","jpm_target":"6,300$","gs_target":"4,900$","fed_rate_end26":"3.8%"},"timeline":[{"when":"28 يناير 2026","what":"أعلى سعر تاريخي","note":"الذهب يسجل 5,589.38$ للأونصة — أعلى مستوى بتاريخه"},{"when":"أبريل 2026","what":"البنوك المركزية تواصل الشراء","note":"244 طن شراء صافي بالربع الأول رغم تصاعد بيع محدود"},{"when":"18 مايو 2026","what":"تصحيح حاد","note":"السعر يهبط 16% عن القمة إلى 4,483$"},{"when":"23 يونيو 2026","what":"الدولار يضغط على الذهب","note":"توقعات فائدة متشددة من الفيدرالي ترفع الدولار لأعلى مستوى بعام"},{"when":"17 يوليو 2026","what":"كسر حاجز الـ4000","note":"الذهب يهبط دون 4,000$ رغم توتر الشرق الأوسط، بأكبر خسارة أسبوعية خلال 6 أسابيع"}],"news":[{"text":"سعر الذهب الفوري يبلغ 4,009.37 دولار للأونصة، بارتفاع طفيف عن إغلاق الجمعة","src":"CNBC","link":"https://www.cnbc.com/select/the-price-of-gold-today-july-20-2026/"},{"text":"جي بي مورغان يتوقع وصول الذهب إلى 6,300 دولار بنهاية 2026 مقابل توقعات غولدمان ساكس الأكثر تحفظًا عند 4,900 دولار","src":"AOL","link":"https://www.aol.com/articles/jp-morgan-predicts-gold-price-232746253.html"},{"text":"الذهب يتفوق على السندات الأمريكية كحصة من احتياطيات البنوك المركزية لأول مرة منذ 1996 وسط تسارع نزع الدولرة","src":"Discovery Alert","link":"https://discoveryalert.com.au/central-bank-gold-buying-record-prices-sovereign-demand-2026/"},{"text":"الذهب يتراجع مع صعود الدولار لأعلى مستوى بعام وسط توقعات تشديد نقدي من الفيدرالي","src":"CNBC","link":"https://www.cnbc.com/2026/06/23/gold-falls-as-dollar-holds-firm-on-fed-rate-hike-expectations.html"},{"text":"الذهب يكسر حاجز 4,000 دولار مع تغلّب عوائد السندات على الطلب كملاذ آمن","src":"Invezz","link":"https://invezz.com/news/2026/07/17/gold-price-breaks-below-4000-as-bond-yields-overpower-safe-haven-demand/"},{"text":"لماذا لا يتصرف الذهب كملاذ آمن رغم توترات الشرق الأوسط؟ الدولار القوي وعوائد السندات يطغيان على المخاوف الجيوسياسية","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/17/gold-price-forecast-xau-usd-slips-below-4000-why-isnt-gold-acting-like-a-safe-haven/"}],"takeaways":["الذهب تجاوز تاريخيًا حصة السندات الأمريكية بمحافظ البنوك المركزية لأول مرة منذ 1996","سياسة الفائدة الأمريكية وقوة الدولار تحرك السعر اليوم أكثر من التوترات الجغرافية نفسها","البنوك الكبرى منقسمة بشدة على توقعات نهاية العام: من 4,900 إلى 6,300 دولار","شراء البنوك المركزية المستمر يوفر دعمًا هيكليًا حتى مع تقلبات السعر الحادة قصيرة المدى"]};
+fetch("gold-data.json?v="+Date.now()).then(function(r){return r.json()}).then(initData).catch(function(){initData(FALLBACK_DATA)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/GC=F?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;window.__LIVE=true;sp(p,true);
+var pc=m.chartPreviousClose||m.previousClose;
+if(pc){window.__PREV=pc;var ch=((p-pc)/pc*100).toFixed(2);
+document.getElementById("pm").innerHTML='<span class="ldot live" aria-hidden="true"></span>'+(CUR==="ar"?"حي · اليوم ":"Live · today ")+'<span class="en">'+(ch>0?"+":"")+ch+"%</span>"}}
+}).catch(function(){document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر سعر محفوظ":"last saved price")})}
+function sp(p,live){var e=document.getElementById("px"),prev=window.__PREV||p,up=p>=prev;
+e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg");
+if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+setInterval(livePrice,10000);
+</script>
+</body>
+</html>

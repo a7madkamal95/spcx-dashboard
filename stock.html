@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الراصد — تفاصيل السهم</title>
+<meta name="theme-color" content="#05060d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#05060d;--ink:#f5f7ff;--mut:#b7bfdd;
+--a1:#17bf8e;--a2:#5b8def;--mint:#3ce8a6;--coral:#ff6b6b;--gold:#ffd166;
+--glass:rgba(255,255,255,.055);--glassH:rgba(255,255,255,.11);
+--edge:rgba(255,255,255,.15);--edgeTop:rgba(255,255,255,.34);
+--focus:#5b8def;
+--disp:'Cairo',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Space Grotesk',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r16:16px;--r20:20px;--r24:24px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Space Grotesk',sans-serif;--body:'Space Grotesk','Segoe UI',sans-serif}
+.en,.num{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.databg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.databg .glow{position:absolute;border-radius:50%;filter:blur(80px)}
+.databg .g1{width:38vw;height:38vw;background:radial-gradient(circle,rgba(23,191,142,.17),transparent 65%);top:-14%;left:2%}
+.databg .g2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(91,141,239,.14),transparent 65%);bottom:-18%;right:6%}
+.wrap{max-width:840px;margin:0 auto;padding:0 var(--sp5) 90px}
+.gl{background:var(--glass);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+border:1px solid var(--edge);border-top-color:var(--edgeTop);
+border-radius:var(--r24);box-shadow:0 18px 50px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08);
+position:relative;overflow:hidden}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--a2)}
+.bar .brand:hover{color:var(--a2)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.08em;
+color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
+main{padding:var(--sp7) 0 var(--sp5)}
+.head{padding:var(--sp6) var(--sp6) var(--sp5)}
+.ticker-row{display:flex;align-items:center;gap:var(--sp3);flex-wrap:wrap}
+.ticker-sym{font-family:var(--num);font-weight:800;font-size:15px;letter-spacing:.06em;color:var(--a2);border:1px solid rgba(91,141,239,.4);border-radius:var(--r99);padding:5px 14px;background:rgba(91,141,239,.08);direction:ltr}
+.ticker-ex{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(28px,4.6vw,42px);line-height:1.2;margin-top:var(--sp3)}
+.price-row{margin-top:var(--sp4);display:flex;align-items:baseline;gap:var(--sp3);flex-wrap:wrap}
+.price{font-family:var(--num);font-weight:700;font-size:clamp(36px,6vw,52px);direction:ltr}
+.price.pos{color:var(--mint)}.price.neg{color:var(--coral)}
+.chg{font-family:var(--num);font-size:19px;font-weight:600}
+.chg.pos{color:var(--mint)}.chg.neg{color:var(--coral)}
+.live-dot{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--mut);margin-inline-start:auto}
+.live-dot .d{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pl 1.6s infinite}
+@keyframes pl{50%{opacity:.35}}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--sp3);padding:0 var(--sp6) var(--sp6)}
+.st{padding:var(--sp4);background:rgba(255,255,255,.04);border:1px solid var(--edge);border-radius:14px}
+.st .lbl{font-size:12.5px;color:var(--mut);margin-bottom:4px}
+.st .val{font-family:var(--num);font-weight:700;font-size:17px;color:var(--ink);direction:ltr}
+.loading{text-align:center;padding:var(--sp7);color:var(--mut);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:var(--sp3)}
+.spin{width:20px;height:20px;border-radius:50%;border:2.5px solid var(--edge);border-top-color:var(--a2);animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.err{text-align:center;padding:var(--sp6);color:var(--coral);font-size:14px}
+.back{margin-top:var(--sp5);display:inline-flex;align-items:center;gap:6px;color:var(--a2);text-decoration:none;font-size:14px;font-weight:600}
+.back:hover{color:var(--mint)}
+.back svg{width:14px;height:14px}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+</style>
+</head>
+<body>
+<div class="databg" aria-hidden="true"><div class="glow g1"></div><div class="glow g2"></div></div>
+<div class="wrap">
+
+<div class="bar gl">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<main>
+<div class="gl" id="content">
+<div class="loading">
+<div class="spin"></div>
+<div class="i-ar">جاري تحميل بيانات السهم…</div>
+<div class="i-en">Loading stock data…</div>
+</div>
+</div>
+<a href="index.html" class="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg><span class="i-ar">رجوع للبحث</span><span class="i-en">Back to search</span></a>
+</main>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+</footer>
+
+</div>
+<script>
+var CUR=localStorage.getItem("lang")||"ar";
+var TICKER_NAMES=JSON.parse(sessionStorage.getItem("tickerNames")||"{}");
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+if(window.__M)render(window.__M);}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");
+document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+var params=new URLSearchParams(location.search);
+var TICKER=(params.get("t")||"").toUpperCase();
+if(!TICKER){location.replace("index.html");}
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+document.title=(CUR==="ar"?"الراصد — ":"Rasid — ")+TICKER;
+var cacheKey="stock:"+TICKER;
+var cached=sessionStorage.getItem(cacheKey);
+if(cached){
+try{var m=JSON.parse(cached);window.__M=m;render(m);}catch(e){}
+}
+var sym=encodeURIComponent(TICKER);
+Promise.all([
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1d").then(function(t){return JSON.parse(t).chart.result[0].meta}),
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1y").then(function(t){return JSON.parse(t).chart.result[0].meta}).catch(function(){return null})
+]).then(function(res){
+var m=res[0];
+if(res[1]){m.fiftyTwoWeekHigh=res[1].fiftyTwoWeekHigh;m.fiftyTwoWeekLow=res[1].fiftyTwoWeekLow;}
+window.__M=m;
+sessionStorage.setItem(cacheKey,JSON.stringify(m));
+render(m);
+}).catch(function(){
+if(!window.__M){
+document.getElementById("content").innerHTML='<div class="err"><span class="i-ar">تعذر جلب بيانات السهم — تأكد من الرمز أو حاول لاحقًا</span><span class="i-en">Couldn\'t fetch stock data — check the symbol or try again later</span></div>';
+}
+});
+function fmt(n){if(n==null)return "—";return "$"+(+n).toFixed(2)}
+function fmtN(n){if(n==null)return "—";if(n>=1e12)return "$"+(n/1e12).toFixed(2)+"T";if(n>=1e9)return "$"+(n/1e9).toFixed(2)+"B";if(n>=1e6)return "$"+(n/1e6).toFixed(2)+"M";return "$"+n.toFixed(0)}
+function render(m){
+var name=TICKER_NAMES[TICKER];
+var displayName=name?(CUR==="ar"?name.ar:name.en):(m.longName||m.shortName||TICKER);
+document.title=(CUR==="ar"?"الراصد — ":"Rasid — ")+displayName;
+var p=m.regularMarketPrice,pc=m.chartPreviousClose||m.previousClose;
+var up=pc?p>=pc:true;
+var ch=pc?((p-pc)/pc*100).toFixed(2):null;
+var chAbs=pc?(p-pc).toFixed(2):null;
+var stats=[
+[CUR==="ar"?"سعر الافتتاح":"Open",fmt(m.regularMarketOpen)],
+[CUR==="ar"?"الإغلاق السابق":"Previous close",fmt(pc)],
+[CUR==="ar"?"نطاق اليوم":"Day range",(m.regularMarketDayLow!=null?fmt(m.regularMarketDayLow)+" – "+fmt(m.regularMarketDayHigh):"—")],
+[CUR==="ar"?"نطاق 52 أسبوعًا":"52-week range",(m.fiftyTwoWeekLow!=null?fmt(m.fiftyTwoWeekLow)+" – "+fmt(m.fiftyTwoWeekHigh):"—")],
+[CUR==="ar"?"حجم التداول":"Volume",m.regularMarketVolume!=null?m.regularMarketVolume.toLocaleString("en-US"):"—"],
+[CUR==="ar"?"البورصة":"Exchange",m.fullExchangeName||m.exchangeName||"—"],
+[CUR==="ar"?"العملة":"Currency",m.currency||"—"],
+[CUR==="ar"?"المنطقة الزمنية":"Timezone",m.exchangeTimezoneShortName||m.exchangeTimezoneName||"—"]
+];
+document.getElementById("content").innerHTML=
+'<div class="head">'+
+'<div class="ticker-row"><span class="ticker-sym">'+(m.exchangeName||"")+" · "+TICKER+'</span><span class="live-dot"><span class="d"></span>'+(CUR==="ar"?"حي":"Live")+'</span></div>'+
+'<h1>'+displayName+'</h1>'+
+'<div class="price-row"><span class="price '+(up?"pos":"neg")+'">$'+(+p).toFixed(2)+(up?" ▲":" ▼")+'</span>'+
+(ch!=null?'<span class="chg '+(up?"pos":"neg")+'">'+(chAbs>0?"+":"")+chAbs+" ("+(ch>0?"+":"")+ch+'%)</span>':"")+
+'</div>'+
+'</div>'+
+'<div class="stats-grid">'+
+stats.map(function(r){return '<div class="st"><div class="lbl">'+r[0]+'</div><div class="val">'+r[1]+'</div></div>'}).join("")+
+'</div>';
+}
+setInterval(function(){
+if(!window.__M)return;
+var sym=encodeURIComponent(TICKER);
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1d").then(function(t){
+var m=JSON.parse(t).chart.result[0].meta;
+if(window.__M){m.fiftyTwoWeekHigh=window.__M.fiftyTwoWeekHigh;m.fiftyTwoWeekLow=window.__M.fiftyTwoWeekLow;}
+window.__M=m;
+sessionStorage.setItem(cacheKey,JSON.stringify(m));
+render(m);
+}).catch(function(){});
+},15000);
+</script>
+</body>
+</html>

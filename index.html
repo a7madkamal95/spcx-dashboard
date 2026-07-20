@@ -102,6 +102,7 @@ section{margin-top:var(--sp7)}
 .sd-spin{width:11px;height:11px;border-radius:50%;border:2px solid var(--edge);border-top-color:var(--a2);animation:sdspin .7s linear infinite;flex-shrink:0}
 @keyframes sdspin{to{transform:rotate(360deg)}}
 .sd-empty{padding:16px 18px;text-align:center;color:var(--mut);font-size:13px}
+.fav-heading{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,32px);margin-bottom:var(--sp5)}
 .tabs{display:flex;gap:8px;margin-bottom:var(--sp5)}
 .tab{font-family:var(--body);font-weight:700;font-size:14px;color:var(--mut);background:rgba(255,255,255,.05);
 border:1px solid var(--edge);border-radius:var(--r99);padding:10px 22px;min-height:44px;cursor:pointer;
@@ -200,13 +201,7 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 </section>
 
 <section class="rv">
-<div class="tabs">
-<button class="tab on" data-f="all" onclick="setTab(this)"><span class="i-ar">الكل</span><span class="i-en">All</span></button>
-<button class="tab" data-f="fav" onclick="setTab(this)">
-<svg style="width:12px;height:12px;display:inline;vertical-align:-1px;margin-inline-end:4px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-<span class="i-ar">المفضلة</span><span class="i-en">Favorites</span>
-</button>
-</div>
+<h2 class="fav-heading"><span class="i-ar">الأسهم المفضلة</span><span class="i-en">Favorite Stocks</span></h2>
 <div class="stocks-grid" id="grid">
 
 <a href="spcx.html" class="stock-card gl" data-fav="true" data-q="سبيس اكس سبيس إكس spacex spcx nasdaq">
@@ -341,15 +336,6 @@ function setLang(l){CUR=l;localStorage.setItem("lang",l);
 document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
 document.documentElement.setAttribute("data-lang",l);
 document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");}
-function setTab(el){
-document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("on")});
-el.classList.add("on");
-var f=el.getAttribute("data-f");
-document.querySelectorAll("#grid > *").forEach(function(c){
-var show=(f==="all")||(c.getAttribute("data-fav")==="true");
-c.style.display=show?"":"none";
-});
-}
 var SEARCH_TICKERS=[
 {t:"SPCX",ar:"سبيس إكس",en:"SpaceX",page:"spcx.html"},
 {t:"GME",ar:"جيم ستوب",en:"GameStop",page:"gme.html"},
@@ -447,55 +433,203 @@ var SEARCH_TICKERS=[
 {t:"SHEL",ar:"شل",en:"Shell"},
 {t:"BP",ar:"بي بي",en:"BP"},
 {t:"UL",ar:"يونيليفر",en:"Unilever"},
-{t:"RY",ar:"رويال بنك أوف كندا",en:"Royal Bank of Canada"}
+{t:"RY",ar:"رويال بنك أوف كندا",en:"Royal Bank of Canada"},
+{t:"TD",ar:"تورونتو دومينيون",en:"Toronto-Dominion Bank"},
+{t:"MUFG",ar:"ميتسوبيشي يو إف جي",en:"Mitsubishi UFJ"},
+{t:"BHP",ar:"بي إتش بي",en:"BHP Group"},
+{t:"RIO",ar:"ريو تينتو",en:"Rio Tinto"},
+{t:"AZN",ar:"أسترازينيكا",en:"AstraZeneca"},
+{t:"GSK",ar:"غلاكسو سميث كلاين",en:"GSK"},
+{t:"SNY",ar:"سانوفي",en:"Sanofi"},
+{t:"RHHBY",ar:"روش",en:"Roche"},
+{t:"NSRGY",ar:"نستله",en:"Nestlé"},
+{t:"MC.PA",ar:"إل في إم إتش",en:"LVMH"},
+{t:"BUD",ar:"أنهيوزر بوش إنبيف",en:"Anheuser-Busch InBev"},
+{t:"BTI",ar:"بريتش أمريكان توباكو",en:"British American Tobacco"},
+{t:"E",ar:"إيني",en:"Eni"},
+{t:"EQNR",ar:"إكوينور",en:"Equinor"},
+{t:"PBR",ar:"بتروبراس",en:"Petrobras"},
+{t:"VALE",ar:"فالي",en:"Vale"},
+{t:"ITUB",ar:"إيتاو أونيبانكو",en:"Itaú Unibanco"},
+{t:"MELI",ar:"ميركادو ليبري",en:"MercadoLibre"},
+{t:"NU",ar:"نو هولدنغز",en:"Nu Holdings"},
+{t:"JD",ar:"جيه دي دوت كوم",en:"JD.com"},
+{t:"PDD",ar:"بي دي دي",en:"PDD Holdings"},
+{t:"NIO",ar:"نيو",en:"NIO"},
+{t:"LI",ar:"لي أوتو",en:"Li Auto"},
+{t:"XPEV",ar:"إكس بينغ",en:"XPeng"},
+{t:"BIDU",ar:"بايدو",en:"Baidu"},
+{t:"NTES",ar:"نت إيز",en:"NetEase"},
+{t:"HKD",ar:"هونغ كونغ",en:"HKD"},
+{t:"BILI",ar:"بيليبيلي",en:"Bilibili"},
+{t:"TCEHY",ar:"تنسنت",en:"Tencent"},
+{t:"BYDDY",ar:"بي واي دي",en:"BYD"},
+{t:"NEE",ar:"نكست إيرا إنرجي",en:"NextEra Energy"},
+{t:"DUK",ar:"ديوك إنرجي",en:"Duke Energy"},
+{t:"SO",ar:"ساوثرن كومباني",en:"Southern Company"},
+{t:"D",ar:"دومينيون إنرجي",en:"Dominion Energy"},
+{t:"EOG",ar:"إي أو جي ريسورسز",en:"EOG Resources"},
+{t:"OXY",ar:"أوكسيدنتال بتروليوم",en:"Occidental Petroleum"},
+{t:"MPC",ar:"ماراثون بتروليوم",en:"Marathon Petroleum"},
+{t:"PSX",ar:"فيليبس 66",en:"Phillips 66"},
+{t:"VLO",ar:"فاليرو",en:"Valero Energy"},
+{t:"KMI",ar:"كيندر مورغان",en:"Kinder Morgan"},
+{t:"WMB",ar:"ويليامز كومبانيز",en:"Williams Companies"},
+{t:"APD",ar:"إير برودكتس",en:"Air Products"},
+{t:"LIN",ar:"ليندي",en:"Linde"},
+{t:"SHW",ar:"شيروين وليامز",en:"Sherwin-Williams"},
+{t:"DD",ar:"ديو بونت",en:"DuPont"},
+{t:"NEM",ar:"نيومونت",en:"Newmont"},
+{t:"FCX",ar:"فريبورت ماكموران",en:"Freeport-McMoRan"},
+{t:"MU",ar:"مايكرون",en:"Micron"},
+{t:"AMAT",ar:"أبلايد ماتيريالز",en:"Applied Materials"},
+{t:"LRCX",ar:"لام ريسيرش",en:"Lam Research"},
+{t:"KLAC",ar:"كيه إل إيه",en:"KLA Corporation"},
+{t:"ARM",ar:"آرم هولدنغز",en:"Arm Holdings"},
+{t:"MRVL",ar:"مارفل تكنولوجي",en:"Marvell Technology"},
+{t:"ADI",ar:"أنالوغ ديفايسز",en:"Analog Devices"},
+{t:"SNOW",ar:"سنو فليك",en:"Snowflake"},
+{t:"DDOG",ar:"داتا دوغ",en:"Datadog"},
+{t:"NET",ar:"كلاود فلير",en:"Cloudflare"},
+{t:"MDB",ar:"مونغو دي بي",en:"MongoDB"},
+{t:"CRWD",ar:"كراود سترايك",en:"CrowdStrike"},
+{t:"ZS",ar:"زي سكيلر",en:"Zscaler"},
+{t:"OKTA",ar:"أوكتا",en:"Okta"},
+{t:"PANW",ar:"بالو ألتو نتوركس",en:"Palo Alto Networks"},
+{t:"FTNT",ar:"فورتينت",en:"Fortinet"},
+{t:"TEAM",ar:"أتلاسيان",en:"Atlassian"},
+{t:"WDAY",ar:"ورك داي",en:"Workday"},
+{t:"ZM",ar:"زووم",en:"Zoom"},
+{t:"DOCU",ar:"دوكيوساين",en:"DocuSign"},
+{t:"HUBS",ar:"هاب سبوت",en:"HubSpot"},
+{t:"TWLO",ar:"توليو",en:"Twilio"},
+{t:"ROKU",ar:"روكو",en:"Roku"},
+{t:"PINS",ar:"بينترست",en:"Pinterest"},
+{t:"SNAP",ar:"سناب",en:"Snap"},
+{t:"RDDT",ar:"ريديت",en:"Reddit"},
+{t:"COIN",ar:"كوين بيس",en:"Coinbase"},
+{t:"HOOD",ar:"روبن هود",en:"Robinhood"},
+{t:"SOFI",ar:"سوفاي",en:"SoFi"},
+{t:"AFRM",ar:"أفيرم",en:"Affirm"},
+{t:"DASH",ar:"دور داش",en:"DoorDash"},
+{t:"LYFT",ar:"ليفت",en:"Lyft"},
+{t:"RIVN",ar:"ريفيان",en:"Rivian"},
+{t:"LCID",ar:"لوسيد موتورز",en:"Lucid Motors"},
+{t:"NKLA",ar:"نيكولا",en:"Nikola"},
+{t:"MRNA",ar:"موديرنا",en:"Moderna"},
+{t:"BNTX",ar:"بيونتك",en:"BioNTech"},
+{t:"GILD",ar:"جيلياد",en:"Gilead Sciences"},
+{t:"AMGN",ar:"أمجن",en:"Amgen"},
+{t:"REGN",ar:"ريجينيرون",en:"Regeneron"},
+{t:"VRTX",ar:"فيرتكس",en:"Vertex Pharmaceuticals"},
+{t:"BMY",ar:"بريستول مايرز",en:"Bristol-Myers Squibb"},
+{t:"CI",ar:"سيغنا",en:"Cigna"},
+{t:"CVS",ar:"سي في إس",en:"CVS Health"},
+{t:"HUM",ar:"هيومانا",en:"Humana"},
+{t:"ELV",ar:"إليفانس هيلث",en:"Elevance Health"},
+{t:"ANTM",ar:"أنثم",en:"Anthem"},
+{t:"ISRG",ar:"إنتويتف سيرجيكال",en:"Intuitive Surgical"},
+{t:"BSX",ar:"بوسطن ساينتفيك",en:"Boston Scientific"},
+{t:"SYK",ar:"سترايكر",en:"Stryker"},
+{t:"DHR",ar:"دانهر",en:"Danaher"},
+{t:"ZTS",ar:"زوتيس",en:"Zoetis"},
+{t:"MO",ar:"ألتريا",en:"Altria"},
+{t:"PM",ar:"فيليب موريس",en:"Philip Morris"},
+{t:"WBD",ar:"وارنر بروس ديسكفري",en:"Warner Bros Discovery"},
+{t:"PARA",ar:"باراماونت",en:"Paramount"},
+{t:"CHTR",ar:"تشارتر كوميونيكيشنز",en:"Charter Communications"},
+{t:"SIRI",ar:"سيريوس إكس إم",en:"Sirius XM"},
+{t:"EA",ar:"إلكترونيك آرتس",en:"Electronic Arts"},
+{t:"TTWO",ar:"تيك تو إنتراكتيف",en:"Take-Two Interactive"},
+{t:"ATVI",ar:"أكتيفجن بليزارد",en:"Activision Blizzard"},
+{t:"RBLX",ar:"روبلوكس",en:"Roblox"},
+{t:"U",ar:"يونيتي",en:"Unity"},
+{t:"PLNT",ar:"بلانت فيتنس",en:"Planet Fitness"},
+{t:"CMG",ar:"شيبوتلي",en:"Chipotle"},
+{t:"YUM",ar:"يام براندز",en:"Yum! Brands"},
+{t:"DPZ",ar:"دومينوز بيتزا",en:"Domino's Pizza"},
+{t:"MDLZ",ar:"موندليز",en:"Mondelez"},
+{t:"KHC",ar:"كرافت هاينز",en:"Kraft Heinz"},
+{t:"GIS",ar:"جنرال ميلز",en:"General Mills"},
+{t:"K",ar:"كيلوغز",en:"Kellogg"},
+{t:"HSY",ar:"هيرشي",en:"Hershey"},
+{t:"CL",ar:"كولجيت بالموليف",en:"Colgate-Palmolive"},
+{t:"CLX",ar:"كلوروكس",en:"Clorox"},
+{t:"KMB",ar:"كيمبرلي كلارك",en:"Kimberly-Clark"},
+{t:"BKNG",ar:"بوكينغ هولدنغز",en:"Booking Holdings"},
+{t:"MAR",ar:"ماريوت",en:"Marriott"},
+{t:"HLT",ar:"هيلتون",en:"Hilton"},
+{t:"AAL",ar:"أمريكان إيرلاينز",en:"American Airlines"},
+{t:"DAL",ar:"دلتا إيرلاينز",en:"Delta Air Lines"},
+{t:"UAL",ar:"يونايتد إيرلاينز",en:"United Airlines"},
+{t:"LUV",ar:"ساوثويست إيرلاينز",en:"Southwest Airlines"},
+{t:"FDX",ar:"فيديكس",en:"FedEx"},
+{t:"NOC",ar:"نورثروب غرومان",en:"Northrop Grumman"},
+{t:"GD",ar:"جنرال ديناميكس",en:"General Dynamics"},
+{t:"WM",ar:"ويست منجمنت",en:"Waste Management"},
+{t:"CSX",ar:"سي إس إكس",en:"CSX"},
+{t:"NSC",ar:"نورفوك ساذرن",en:"Norfolk Southern"},
+{t:"ODFL",ar:"أولد دومينيون فريت",en:"Old Dominion Freight"},
+{t:"URI",ar:"يونايتد رينتالز",en:"United Rentals"},
+{t:"PLD",ar:"برولوجيس",en:"Prologis"},
+{t:"AMT",ar:"أمريكان تاور",en:"American Tower"},
+{t:"CCI",ar:"كراون كاسل",en:"Crown Castle"},
+{t:"EQIX",ar:"إكوينكس",en:"Equinix"},
+{t:"SPG",ar:"سايمون بروبرتي",en:"Simon Property"},
+{t:"O",ar:"ريالتي إنكم",en:"Realty Income"},
+{t:"PSA",ar:"بابليك ستوريج",en:"Public Storage"},
+{t:"SLV",ar:"صندوق الفضة",en:"Silver ETF"},
+{t:"USO",ar:"صندوق النفط",en:"US Oil Fund"},
+{t:"UNG",ar:"صندوق الغاز الطبيعي",en:"Natural Gas Fund"},
+{t:"SPY",ar:"إس آند بي 500 (SPY)",en:"S&P 500 ETF"},
+{t:"QQQ",ar:"ناسداك 100 (QQQ)",en:"Nasdaq-100 ETF"},
+{t:"DIA",ar:"داو جونز (DIA)",en:"Dow Jones ETF"},
+{t:"IWM",ar:"راسل 2000 (IWM)",en:"Russell 2000 ETF"},
+{t:"VTI",ar:"فانغارد الإجمالي",en:"Vanguard Total Market"},
+{t:"VOO",ar:"فانغارد إس آند بي",en:"Vanguard S&P 500"},
+{t:"BTC-USD",ar:"بيتكوين",en:"Bitcoin"},
+{t:"ETH-USD",ar:"إيثيريوم",en:"Ethereum"},
+{t:"SOL-USD",ar:"سولانا",en:"Solana"},
+{t:"XRP-USD",ar:"ريبل",en:"XRP"},
+{t:"DOGE-USD",ar:"دوجكوين",en:"Dogecoin"},
+{t:"BNB-USD",ar:"بينانس كوين",en:"BNB"},
+{t:"ADA-USD",ar:"كاردانو",en:"Cardano"}
 ];
-var SEARCH_CACHE={};
+(function(){var names={};SEARCH_TICKERS.forEach(function(x){names[x.t]={ar:x.ar,en:x.en}});
+try{sessionStorage.setItem("tickerNames",JSON.stringify(names));}catch(e){}})();
 function handleSearchInput(q){
 q=q.trim().toLowerCase();
 var dd=document.getElementById("searchDropdown");
 if(!q){dd.classList.remove("show");dd.innerHTML="";return;}
-var matches=SEARCH_TICKERS.filter(function(x){return (x.ar+" "+x.en+" "+x.t).toLowerCase().indexOf(q)>-1}).slice(0,10);
+var scored=[];
+SEARCH_TICKERS.forEach(function(x){
+var tl=x.t.toLowerCase(),arl=x.ar.toLowerCase(),enl=x.en.toLowerCase();
+var score=-1;
+if(tl===q)score=0;
+else if(tl.indexOf(q)===0)score=1;
+else if(enl.indexOf(q)===0||arl.indexOf(q)===0)score=2;
+else if(tl.indexOf(q)>-1||enl.indexOf(q)>-1||arl.indexOf(q)>-1)score=3;
+if(score>-1)scored.push([score,x]);
+});
+scored.sort(function(a,b){return a[0]-b[0]});
+var matches=scored.slice(0,10).map(function(s){return s[1]});
 if(!matches.length){dd.innerHTML='<div class="sd-empty">'+(CUR==="ar"?"ما فيه نتائج":"No results")+'</div>';dd.classList.add("show");return;}
 dd.innerHTML=matches.map(function(x){
-if(x.page){
-return '<a href="'+x.page+'" class="sd-item"><span class="sd-head"><span class="sd-info"><span class="sd-sym">'+x.t+'</span><span class="sd-name">'+(CUR==="ar"?x.ar:x.en)+'</span></span><span class="sd-badge">'+(CUR==="ar"?"التحليل الكامل ›":"Full analysis ›")+'</span></span></a>';
-}
-return '<div class="sd-item" data-t="'+x.t+'"><button class="sd-head" onclick="toggleSearchItem(this,\''+x.t+'\')"><span class="sd-info"><span class="sd-sym">'+x.t+'</span><span class="sd-name">'+(CUR==="ar"?x.ar:x.en)+'</span></span><svg class="sd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="sd-detail"></div></div>';
+var href=x.page||("stock.html?t="+encodeURIComponent(x.t));
+var badge=x.page?(CUR==="ar"?"التحليل الكامل ›":"Full analysis ›"):(CUR==="ar"?"عرض السعر ›":"View price ›");
+return '<a href="'+href+'" class="sd-item"><span class="sd-head"><span class="sd-info"><span class="sd-sym">'+x.t+'</span><span class="sd-name">'+(CUR==="ar"?x.ar:x.en)+'</span></span><span class="sd-badge">'+badge+'</span></span></a>';
 }).join("");
 dd.classList.add("show");
-}
-function toggleSearchItem(btn,ticker){
-var item=btn.closest(".sd-item");
-var open=item.classList.toggle("open");
-if(!open)return;
-var detail=item.querySelector(".sd-detail");
-if(SEARCH_CACHE[ticker]){renderSearchDetail(detail,SEARCH_CACHE[ticker]);return;}
-detail.innerHTML='<div class="sd-loading"><span class="sd-spin" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب…":"loading…")+'</div>';
-var sym=encodeURIComponent(ticker);
-Promise.all([
-fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1d").then(function(t){return JSON.parse(t).chart.result[0].meta}),
-fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+"?interval=1d&range=1y").then(function(t){return JSON.parse(t).chart.result[0].meta}).catch(function(){return null})
-]).then(function(res){
-var m=res[0];
-if(res[1]){m.fiftyTwoWeekHigh=res[1].fiftyTwoWeekHigh;m.fiftyTwoWeekLow=res[1].fiftyTwoWeekLow;}
-SEARCH_CACHE[ticker]=m;
-renderSearchDetail(detail,m);
-}).catch(function(){detail.innerHTML='<div class="sd-loading">'+(CUR==="ar"?"تعذر الجلب الحي، حاول لاحقًا":"couldn't fetch live data, try again later")+'</div>'});
-}
-function renderSearchDetail(detail,m){
-var p=m.regularMarketPrice,pc=m.chartPreviousClose||m.previousClose,up=(pc?p>=pc:true);
-var ch=pc?((p-pc)/pc*100).toFixed(2):null;
-var rows=[
-[CUR==="ar"?"نطاق اليوم":"Day range",(m.regularMarketDayLow!=null&&m.regularMarketDayHigh!=null)?("$"+m.regularMarketDayLow.toFixed(2)+" – $"+m.regularMarketDayHigh.toFixed(2)):"—"],
-[CUR==="ar"?"نطاق 52 أسبوعًا":"52-week range",(m.fiftyTwoWeekLow!=null&&m.fiftyTwoWeekHigh!=null)?("$"+m.fiftyTwoWeekLow.toFixed(2)+" – $"+m.fiftyTwoWeekHigh.toFixed(2)):"—"],
-[CUR==="ar"?"البورصة":"Exchange",m.fullExchangeName||m.exchangeName||"—"]
-];
-detail.innerHTML='<div><span class="sd-price '+(up?"pos":"neg")+'">$'+(+p).toFixed(2)+(up?" ▲":" ▼")+'</span>'+(ch!=null?'<span class="sd-chg '+(up?"pos":"neg")+'">'+(ch>0?"+":"")+ch+"%</span>":"")+'</div>'+
-'<div class="sd-rows">'+rows.map(function(r){return '<div class="sd-row"><span>'+r[0]+'</span><b>'+r[1]+'</b></div>'}).join("")+'</div>';
 }
 document.addEventListener("click",function(e){
 if(!e.target.closest(".stock-search")&&!e.target.closest("#searchDropdown")){
 document.getElementById("searchDropdown").classList.remove("show");
+}
+});
+document.getElementById("stockSearch").addEventListener("keydown",function(e){
+if(e.key==="Enter"){
+var first=document.querySelector("#searchDropdown .sd-item");
+if(first)location.href=first.getAttribute("href");
 }
 });
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");

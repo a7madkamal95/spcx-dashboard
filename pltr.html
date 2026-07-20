@@ -150,6 +150,22 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 .forces{align-items:stretch}
 .force{display:flex;flex-direction:column}
 .force .more{margin-top:auto}
+
+/* native-chart */
+.chartcard{padding:var(--sp5)}
+.chartTabs{display:flex;gap:6px;margin-bottom:var(--sp4);flex-wrap:wrap}
+.chartTabs button{font-family:var(--num);font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--mut);background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:var(--r99);padding:7px 16px;cursor:pointer;transition:background .15s ease,color .15s ease;min-height:32px}
+.chartTabs button:hover{background:rgba(255,255,255,.11)}
+.chartTabs button.on{color:var(--void);background:var(--chart-accent)}
+.chartSvgWrap{position:relative;width:100%;touch-action:pan-y}
+.chartSvgWrap svg{width:100%;height:auto;display:block;overflow:visible}
+.chartMeta{display:flex;justify-content:space-between;font-family:var(--num);font-size:12px;color:var(--mut);margin-top:10px}
+.chartMeta b{color:var(--ink);font-weight:700}
+.chartState{text-align:center;color:var(--mut);font-size:13px;padding:70px 0}
+.chartHoverLine{stroke:var(--mut);stroke-width:1;stroke-dasharray:3,3;opacity:0}
+.chartHoverDot{opacity:0}
+.chartTip{position:absolute;pointer-events:none;background:rgba(10,12,20,.92);border:1px solid var(--edge);border-radius:8px;padding:6px 10px;font-family:var(--num);font-size:12px;color:var(--ink);white-space:nowrap;opacity:0;transform:translate(-50%,-115%);transition:opacity .1s ease}
+:root{--chart-accent:var(--amber)}
 </style>
 </head>
 <body>
@@ -299,8 +315,20 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 </section>
 
 <section class="rv" id="s-chart">
-<div class="eyeb"><b><span class="i-ar">الرسم البياني الحي</span><span class="i-en">Live Chart</span></b><span>HIGHCHARTS · 1Y</span><div class="ln"></div></div>
-<div class="gl" style="padding:16px"><div id="hc-chart" style="height:480px;width:100%"></div></div>
+<div class="eyeb"><b><span class="i-ar">الرسم البياني الحي</span><span class="i-en">Live Chart</span></b><span>YAHOO FINANCE</span><div class="ln"></div></div>
+<div class="gl chartcard">
+<div class="chartTabs" id="chartTabs" role="tablist">
+<button data-range="1mo" data-interval="1d"><span class="i-ar">شهر</span><span class="i-en">1M</span></button>
+<button data-range="3mo" data-interval="1d"><span class="i-ar">3 أشهر</span><span class="i-en">3M</span></button>
+<button data-range="6mo" data-interval="1d" class="on"><span class="i-ar">6 أشهر</span><span class="i-en">6M</span></button>
+<button data-range="1y" data-interval="1wk"><span class="i-ar">سنة</span><span class="i-en">1Y</span></button>
+<button data-range="5y" data-interval="1wk"><span class="i-ar">5 سنوات</span><span class="i-en">5Y</span></button>
+</div>
+<div class="chartSvgWrap" id="chartSvgWrap">
+<div class="chartState" id="chartState"><span class="i-ar">جاري تحميل الرسم البياني…</span><span class="i-en">Loading chart…</span></div>
+</div>
+<div class="chartMeta" id="chartMeta" style="display:none"></div>
+</div>
 </section>
 
 <section class="rv" id="s-news">
@@ -466,65 +494,109 @@ if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="
 setInterval(livePrice,10000);
 </script>
 
-<script src="https://code.highcharts.com/stock/highstock.js"></script>
 <script>
 (function(){
 var TK="PLTR";
-function draw(){
-  if(!window.Highcharts||!window.fetchViaProxies)return setTimeout(draw,300);
-  var el=document.getElementById('hc-chart');
-  if(!el)return;
-  window.fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(TK)+"?interval=1d&range=1y").then(function(t){
-    var d=JSON.parse(t).chart.result[0];
-    if(!d||!d.timestamp)throw new Error('no data');
-    var ts=d.timestamp,q=d.indicators.quote[0];
-    var ohlc=[],vol=[];
-    for(var i=0;i<ts.length;i++){
-      if(q.open[i]==null)continue;
-      var ms=ts[i]*1000;
-      ohlc.push([ms,q.open[i],q.high[i],q.low[i],q.close[i]]);
-      vol.push([ms,q.volume[i]||0]);
-    }
-    if(!ohlc.length)throw new Error('empty');
-    Highcharts.stockChart('hc-chart',{
-      chart:{backgroundColor:'transparent',style:{fontFamily:'inherit'}},
-      credits:{enabled:false},
-      rangeSelector:{
-        selected:4,
-        buttons:[{type:'month',count:1,text:'1M'},{type:'month',count:3,text:'3M'},{type:'month',count:6,text:'6M'},{type:'ytd',text:'YTD'},{type:'year',count:1,text:'1Y'}],
-        buttonTheme:{fill:'rgba(255,255,255,0.06)',stroke:'rgba(255,255,255,0.1)',style:{color:'#b7bfdd',fontWeight:'600'},states:{select:{fill:'#5b8def',style:{color:'#0a0f1e'}},hover:{fill:'rgba(91,141,239,0.2)'}}},
-        inputStyle:{color:'#b7bfdd',backgroundColor:'transparent'},
-        labelStyle:{color:'#b7bfdd'}
-      },
-      navigator:{maskFill:'rgba(91,141,239,0.15)',outlineColor:'rgba(255,255,255,0.15)',series:{color:'#5b8def',lineColor:'#5b8def'},xAxis:{gridLineColor:'rgba(255,255,255,0.04)',labels:{style:{color:'#8a91ad'}}}},
-      scrollbar:{enabled:false},
-      xAxis:{labels:{style:{color:'#b7bfdd'}},lineColor:'rgba(255,255,255,0.15)',tickColor:'rgba(255,255,255,0.15)',gridLineColor:'rgba(255,255,255,0.04)'},
-      yAxis:[{
-        labels:{align:'right',x:-3,style:{color:'#b7bfdd'}},
-        gridLineColor:'rgba(255,255,255,0.06)',
-        height:'72%',lineWidth:0,
-        title:{text:''}
-      },{
-        labels:{align:'right',x:-3,style:{color:'#8a91ad'}},
-        gridLineColor:'rgba(255,255,255,0.06)',
-        top:'78%',height:'22%',offset:0,lineWidth:0,
-        title:{text:''}
-      }],
-      tooltip:{backgroundColor:'rgba(15,20,35,0.95)',borderColor:'rgba(255,255,255,0.15)',style:{color:'#f5f7ff'},split:true},
-      series:[{
-        type:'candlestick',name:TK,data:ohlc,
-        color:'#ff6b6b',lineColor:'#ff6b6b',
-        upColor:'#3ce8a6',upLineColor:'#3ce8a6'
-      },{
-        type:'column',name:'Volume',data:vol,yAxis:1,
-        color:'rgba(120,140,180,0.55)'
-      }]
-    });
+var wrap=document.getElementById('chartSvgWrap');
+var stateEl=document.getElementById('chartState');
+var metaEl=document.getElementById('chartMeta');
+var tabsEl=document.getElementById('chartTabs');
+var W=1000,H=340,PAD_T=16,PAD_B=28,PAD_L=4,PAD_R=4;
+var cache={};
+function fmtDate(ms){
+  var d=new Date(ms);
+  var months=(CUR==='ar')?['ينا','فبر','مار','أبر','ماي','يون','يول','أغس','سبت','أكت','نوف','ديس']:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return months[d.getUTCMonth()]+' '+d.getUTCDate()+(CUR==='ar'?'':', ')+(CUR==='ar'?'':d.getUTCFullYear());
+}
+function load(range,interval,btn){
+  Array.prototype.forEach.call(tabsEl.querySelectorAll('button'),function(b){b.classList.remove('on')});
+  if(btn)btn.classList.add('on');
+  var key=range+'_'+interval;
+  if(cache[key]){draw(cache[key]);return;}
+  wrap.innerHTML='';
+  stateEl=document.createElement('div');
+  stateEl.className='chartState';
+  stateEl.innerHTML='<span class="i-ar">جاري تحميل الرسم البياني…</span><span class="i-en">Loading chart…</span>';
+  wrap.appendChild(stateEl);
+  metaEl.style.display='none';
+  fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(TK)+"?interval="+interval+"&range="+range)
+  .then(function(t){
+    var j=JSON.parse(t);
+    var r=j.chart&&j.chart.result&&j.chart.result[0];
+    if(!r||!r.timestamp)throw new Error('no data');
+    var ts=r.timestamp,close=r.indicators.quote[0].close;
+    var pts=[];
+    for(var i=0;i<ts.length;i++){if(close[i]!=null)pts.push([ts[i]*1000,close[i]]);}
+    if(pts.length<2)throw new Error('not enough points');
+    cache[key]=pts;
+    draw(pts);
   }).catch(function(){
-    el.innerHTML='<div style="text-align:center;color:var(--mut);padding:80px 20px;font-size:14px"><span class="i-ar">تعذر تحميل بيانات الرسم البياني لهذا الرمز</span><span class="i-en">Chart data unavailable for this symbol</span></div>';
+    wrap.innerHTML='<div class="chartState"><span class="i-ar">تعذر تحميل بيانات الرسم البياني</span><span class="i-en">Couldn\'t load chart data</span></div>';
   });
 }
-draw();
+function draw(pts){
+  var prices=pts.map(function(p){return p[1]});
+  var min=Math.min.apply(null,prices),max=Math.max.apply(null,prices);
+  if(min===max){min-=1;max+=1;}
+  var t0=pts[0][0],t1=pts[pts.length-1][0];
+  var innerW=W-PAD_L-PAD_R,innerH=H-PAD_T-PAD_B;
+  function xOf(t){return PAD_L+(t1===t0?0:(t-t0)/(t1-t0))*innerW;}
+  function yOf(v){return PAD_T+(1-(v-min)/(max-min))*innerH;}
+  var d='';
+  pts.forEach(function(p,i){d+=(i===0?'M':'L')+xOf(p[0]).toFixed(2)+','+yOf(p[1]).toFixed(2)+' ';});
+  var areaD=d+'L'+xOf(t1).toFixed(2)+','+(H-PAD_B)+' L'+xOf(t0).toFixed(2)+','+(H-PAD_B)+' Z';
+  var up=pts[pts.length-1][1]>=pts[0][1];
+  var lineColor="var(--amber)";
+  var svg='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true">'+
+    '<defs><linearGradient id="cg-pltr" x1="0" y1="0" x2="0" y2="1">'+
+    '<stop offset="0%" stop-color="'+lineColor+'" stop-opacity="0.35"/>'+
+    '<stop offset="100%" stop-color="'+lineColor+'" stop-opacity="0"/>'+
+    '</linearGradient></defs>'+
+    '<line x1="'+PAD_L+'" y1="'+yOf(max)+'" x2="'+(W-PAD_R)+'" y2="'+yOf(max)+'" stroke="rgba(255,255,255,.07)" stroke-width="1"/>'+
+    '<line x1="'+PAD_L+'" y1="'+yOf(min)+'" x2="'+(W-PAD_R)+'" y2="'+yOf(min)+'" stroke="rgba(255,255,255,.07)" stroke-width="1"/>'+
+    '<path d="'+areaD+'" fill="url(#cg-pltr)" stroke="none"/>'+
+    '<path d="'+d+'" fill="none" stroke="'+lineColor+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'+
+    '<line class="chartHoverLine" id="chvLine" x1="0" y1="'+PAD_T+'" x2="0" y2="'+(H-PAD_B)+'"/>'+
+    '<circle class="chartHoverDot" id="chvDot" r="4.5" fill="'+lineColor+'" stroke="var(--void)" stroke-width="2"/>'+
+    '</svg><div class="chartTip" id="chartTip"></div>';
+  wrap.innerHTML=svg;
+  var svgEl=wrap.querySelector('svg');
+  var tip=document.getElementById('chartTip');
+  var hvLine=document.getElementById('chvLine');
+  var hvDot=document.getElementById('chvDot');
+  function onMove(clientX){
+    var rect=svgEl.getBoundingClientRect();
+    var relX=(clientX-rect.left)/rect.width*W;
+    relX=Math.max(PAD_L,Math.min(W-PAD_R,relX));
+    var frac=(relX-PAD_L)/innerW;
+    var idx=Math.round(frac*(pts.length-1));
+    idx=Math.max(0,Math.min(pts.length-1,idx));
+    var p=pts[idx];
+    var px=xOf(p[0]),py=yOf(p[1]);
+    hvLine.setAttribute('x1',px);hvLine.setAttribute('x2',px);hvLine.style.opacity=1;
+    hvDot.setAttribute('cx',px);hvDot.setAttribute('cy',py);hvDot.style.opacity=1;
+    var pctRect=rect.width/W;
+    tip.style.left=(px*pctRect)+'px';
+    tip.style.top=(py*(rect.height/H))+'px';
+    tip.innerHTML='<b>$'+p[1].toFixed(2)+'</b> · '+fmtDate(p[0]);
+    tip.style.opacity=1;
+  }
+  function onLeave(){hvLine.style.opacity=0;hvDot.style.opacity=0;tip.style.opacity=0;}
+  svgEl.addEventListener('mousemove',function(e){onMove(e.clientX)});
+  svgEl.addEventListener('mouseleave',onLeave);
+  svgEl.addEventListener('touchmove',function(e){if(e.touches[0])onMove(e.touches[0].clientX)},{passive:true});
+  svgEl.addEventListener('touchend',onLeave);
+  metaEl.style.display='flex';
+  metaEl.innerHTML='<span>'+fmtDate(t0)+'</span><span><b>'+(CUR==='ar'?'الأدنى':'Low')+':</b> $'+min.toFixed(2)+' &nbsp; <b>'+(CUR==='ar'?'الأعلى':'High')+':</b> $'+max.toFixed(2)+'</span><span>'+fmtDate(t1)+'</span>';
+}
+Array.prototype.forEach.call(tabsEl.querySelectorAll('button'),function(b){
+  b.addEventListener('click',function(){load(b.getAttribute('data-range'),b.getAttribute('data-interval'),b)});
+});
+function boot(){
+  if(typeof fetchViaProxies!=='function'||typeof CUR==='undefined')return setTimeout(boot,200);
+  load('6mo','1d',tabsEl.querySelector('button.on'));
+}
+boot();
 })();
 </script>
 </body>

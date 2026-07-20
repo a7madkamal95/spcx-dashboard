@@ -30,13 +30,13 @@ body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:1
 :focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
 .databg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
 .databg .glow{position:absolute;border-radius:50%;filter:blur(80px)}
-.databg .g1{width:42vw;height:42vw;background:radial-gradient(circle,rgba(139,92,255,.32),transparent 65%);top:-12%;left:2%;animation:gf1 34s ease-in-out infinite}
-.databg .g2{width:46vw;height:46vw;background:radial-gradient(circle,rgba(60,232,166,.26),transparent 65%);bottom:-16%;right:6%;animation:gf2 40s ease-in-out infinite}
+.databg .g1{width:38vw;height:38vw;background:radial-gradient(circle,rgba(139,92,255,.18),transparent 65%);top:-14%;left:2%;animation:gf1 34s ease-in-out infinite}
+.databg .g2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(60,232,166,.13),transparent 65%);bottom:-18%;right:6%;animation:gf2 40s ease-in-out infinite}
 @keyframes gf1{50%{transform:translate(4vw,6vh) scale(1.12)}}
 @keyframes gf2{50%{transform:translate(-5vw,-5vh) scale(1.08)}}
-.databg .mesh{position:absolute;top:0;left:0;width:100%;height:82vh;
--webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 96%);
-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 96%)}
+.databg .mesh{position:absolute;top:0;left:0;width:100%;height:56vh;
+-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 20%,transparent 88%);
+mask-image:linear-gradient(180deg,#000 0%,#000 20%,transparent 88%)}
 .databg .mesh svg{width:100%;height:100%;display:block}
 .wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
 ::selection{background:rgba(139,92,255,.45)}
@@ -139,14 +139,7 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <line x1="750" y1="0" x2="750" y2="700"/>
 <line x1="875" y1="0" x2="875" y2="700"/>
 </g>
-<path d="M0 480 L90 440 L180 500 L270 380 L360 430 L450 300 L540 350 L630 240 L720 300 L810 190 L900 250 L1000 150" fill="none" stroke="rgba(60,232,166,.55)" stroke-width="2.5"/>
-<path d="M0 480 L90 440 L180 500 L270 380 L360 430 L450 300 L540 350 L630 240 L720 300 L810 190 L900 250 L1000 150 L1000 700 L0 700 Z" fill="url(#meshfade)" stroke="none"/>
-<defs>
-<linearGradient id="meshfade" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0%" stop-color="rgba(60,232,166,.16)"/>
-<stop offset="100%" stop-color="rgba(60,232,166,0)"/>
-</linearGradient>
-</defs>
+<path d="M0 480 L90 440 L180 500 L270 380 L360 430 L450 300 L540 350 L630 240 L720 300 L810 190 L900 250 L1000 150" fill="none" stroke="rgba(60,232,166,.32)" stroke-width="2"/>
 </svg>
 </div>
 </div>

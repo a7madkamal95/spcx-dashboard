@@ -11,10 +11,10 @@
 <style>
 :root{
 --void:#05060d;--ink:#f5f7ff;--mut:#b7bfdd;
---a1:#8b5cff;--a2:#38d4ff;--mint:#3ce8a6;--coral:#ff6b6b;--gold:#ffd166;
+--a1:#17bf8e;--a2:#5b8def;--mint:#3ce8a6;--coral:#ff6b6b;--gold:#ffd166;
 --glass:rgba(255,255,255,.055);--glassH:rgba(255,255,255,.11);
 --edge:rgba(255,255,255,.15);--edgeTop:rgba(255,255,255,.34);
---focus:#38d4ff;
+--focus:#5b8def;
 --disp:'Cairo',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Space Grotesk',monospace;
 --sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
 --r16:16px;--r20:20px;--r24:24px;--r99:999px;
@@ -30,8 +30,8 @@ body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:1
 :focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
 .databg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
 .databg .glow{position:absolute;border-radius:50%;filter:blur(80px)}
-.databg .g1{width:38vw;height:38vw;background:radial-gradient(circle,rgba(139,92,255,.18),transparent 65%);top:-14%;left:2%;animation:gf1 34s ease-in-out infinite}
-.databg .g2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(60,232,166,.13),transparent 65%);bottom:-18%;right:6%;animation:gf2 40s ease-in-out infinite}
+.databg .g1{width:38vw;height:38vw;background:radial-gradient(circle,rgba(23,191,142,.17),transparent 65%);top:-14%;left:2%;animation:gf1 34s ease-in-out infinite}
+.databg .g2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(91,141,239,.14),transparent 65%);bottom:-18%;right:6%;animation:gf2 40s ease-in-out infinite}
 @keyframes gf1{50%{transform:translate(4vw,6vh) scale(1.12)}}
 @keyframes gf2{50%{transform:translate(-5vw,-5vh) scale(1.08)}}
 .databg .mesh{position:absolute;top:0;left:0;width:100%;height:56vh;
@@ -39,7 +39,7 @@ body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:1
 mask-image:linear-gradient(180deg,#000 0%,#000 20%,transparent 88%)}
 .databg .mesh svg{width:100%;height:100%;display:block}
 .wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
-::selection{background:rgba(139,92,255,.45)}
+::selection{background:rgba(23,191,142,.4)}
 .gl{background:var(--glass);
 backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
 border:1px solid var(--edge);border-top-color:var(--edgeTop);
@@ -66,7 +66,7 @@ padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:backg
 background:linear-gradient(92deg,var(--ink),var(--a2) 120%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brandbig i{display:block;font-style:normal;font-weight:700;font-size:14px;letter-spacing:.08em;color:var(--mut);margin-top:4px}
 h1{font-family:var(--disp);font-weight:800;font-size:clamp(26px,4.6vw,40px);line-height:1.25;margin-top:var(--sp5)}
-h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 60%,#c78bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{color:var(--mut);font-size:17px;line-height:1.8;max-width:56ch;margin-top:var(--sp4)}
 @media(max-width:780px){.lead{margin-inline:auto}}
 .hero-vis{aspect-ratio:1;overflow:hidden}
@@ -139,7 +139,7 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <line x1="750" y1="0" x2="750" y2="700"/>
 <line x1="875" y1="0" x2="875" y2="700"/>
 </g>
-<path d="M0 480 L90 440 L180 500 L270 380 L360 430 L450 300 L540 350 L630 240 L720 300 L810 190 L900 250 L1000 150" fill="none" stroke="rgba(60,232,166,.32)" stroke-width="2"/>
+<path d="M0 480 L90 440 L180 500 L270 380 L360 430 L450 300 L540 350 L630 240 L720 300 L810 190 L900 250 L1000 150" fill="none" stroke="rgba(23,191,142,.35)" stroke-width="2"/>
 </svg>
 </div>
 </div>
@@ -154,8 +154,8 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <section class="hero rv">
 <div class="hero-txt">
 <div class="brandbig"><b>PLUTO INTELLIGENCE</b><i class="i-ar">الراصد</i><i class="i-en">RASID</i></div>
-<h1><span class="i-ar">نختار لك <span class="grad">الأسهم</span> اللي تستاهل وقتك</span><span class="i-en">We pick the <span class="grad">stocks</span> worth your time</span></h1>
-<p class="lead"><span class="i-ar">مو قائمة طويلة تشتت — عدد محدود من الأسهم أراقبها عن قرب وأفكك كل قصة استثمارية فيها لأرقام حية وأخبار حقيقية بدون حشو.</span><span class="i-en">Not a long distracting list — a small set of stocks I track closely, each broken down into live numbers and real news, no filler.</span></p>
+<h1><span class="i-ar">نختار لك <span class="grad">الأسهم</span> التي تستحق وقتك</span><span class="i-en">We pick the <span class="grad">stocks</span> worth your time</span></h1>
+<p class="lead"><span class="i-ar">ليست قائمة طويلة تُشتِّت انتباهك، بل عدد محدود من الأسهم أراقبها عن قرب، وأُفصِّل كل قصة استثمارية فيها بأرقام حية وأخبار حقيقية دون حشو.</span><span class="i-en">Not a long distracting list — a small set of stocks I track closely, each broken down into live numbers and real news, no filler.</span></p>
 </div>
 <div class="hero-vis gl">
 <div class="hero-vis-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/6/66/NASDAQ_stock_market_display.jpg)" role="img" aria-label="NASDAQ stock market display board"></div>
@@ -227,7 +227,7 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v3l2 2"/></svg></div>
 <div>
 <h4><span class="i-ar">ما هو الراصد؟</span><span class="i-en">What is Rasid?</span></h4>
-<p><span class="i-ar">ما راح تلقى هنا مئات الأسهم بالجملة. أراقب عدد محدود بعناية — لكل وحد صفحة كاملة فيها الأرقام الحقيقية، القصة الاستثمارية، والمخاطر بصراحة، بدون توصيات شراء أو بيع.</span><span class="i-en">You won't find hundreds of stocks dumped here. I track a small, curated set closely — each with a full page of real numbers, the investment story, and the risks stated plainly. No buy/sell recommendations.</span></p>
+<p><span class="i-ar">لن تجد هنا مئات الأسهم بالجملة، بل عددًا محدودًا أراقبه بعناية — لكل سهم صفحة كاملة تضم الأرقام الحقيقية، والقصة الاستثمارية، والمخاطر بصراحة، دون توصيات بالشراء أو البيع.</span><span class="i-en">You won't find hundreds of stocks dumped here. I track a small, curated set closely — each with a full page of real numbers, the investment story, and the risks stated plainly. No buy/sell recommendations.</span></p>
 </div>
 </div>
 </section>

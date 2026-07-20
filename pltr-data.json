@@ -1,0 +1,38 @@
+{
+  "last_updated": "2026-07-20",
+  "price_fallback": 135.53,
+  "prev_close": 131.79,
+  "market_cap": "$322.3B",
+  "stats": {
+    "revenue_q1": "1.63B$",
+    "revenue_growth": "+85%",
+    "us_commercial_growth": "+133%",
+    "net_dollar_retention": "150%",
+    "fy26_guidance": "7.66B$+",
+    "pe_ratio": "185x",
+    "from_ath": "-35%",
+    "next_earnings": "3 أغسطس 2026"
+  },
+  "timeline": [
+    {"when":"2003","what":"التأسيس","note":"ثيل وكارب يؤسسان الشركة بتمويل مبكر من ذراع الاستثمار الاستخباراتي In-Q-Tel، وتسميتها من «أحجار الرؤية» بأساطير الخواتم"},
+    {"when":"نوفمبر 2024","what":"الانتقال لناسداك","note":"الشركة تترك NYSE وتنضم لمؤشر S&P 500"},
+    {"when":"2026","what":"عقد ICE بـ 30 مليون","note":"بناء منصة ImmigrationOS لتتبع واستهداف المهاجرين، وسط إدانة منظمات حقوقية"},
+    {"when":"2026","what":"عقد الجيش TITAN بـ 178 مليون","note":"منصة استخبارات ميدانية بالذكاء الاصطناعي لدمج بيانات المستشعرات لحظيًا"},
+    {"when":"مايو 2026","what":"بيع داخلي ضخم","note":"ثيل وكارب وكبار المدراء يبيعون أسهمًا بـ 433 مليون دولار خلال 3 أشهر"},
+    {"when":"يوليو 2026","what":"شراكة Nvidia للذكاء الاصطناعي السيادي","note":"إعلان يرفع السهم وسط تراجع مايكل بيري عن جزء من رهانه القصير"}
+  ],
+  "news": [
+    {"text":"الرئيس التنفيذي أليكس كارب يصف صناعة الذكاء الاصطناعي بـ«الجنونية» وينتقد نموذج تسعير الرموز عند OpenAI وAnthropic","src":"Forbes","link":"https://www.forbes.com/sites/tylerroush/2026/07/01/palantir-billionaire-alex-karp-calls-ai-industry-effing-insane-in-heated-interview/"},
+    {"text":"بثروة 15 مليار دولار، كارب يحذر أن ثورة الذكاء الاصطناعي سترفع ثروات القلة أضعاف ما ترفع مستوى معيشة الطبقة الوسطى","src":"Fortune","link":"https://fortune.com/2026/07/17/palantir-ceo-alex-karp-artifical-intelligence-wealth-inequality-problem-billionaire-net-worth-surge-but-middle-class-left-behind/"},
+    {"text":"كارب يدافع عن تقنيات المراقبة بينما تدفع عقود الحكومة الأمريكية المبيعات لمستويات قياسية","src":"GV Wire","link":"https://gvwire.com/2026/02/02/palantir-ceo-defends-surveillance-tech-as-us-government-contracts-boost-sales/"},
+    {"text":"سهم Palantir يتعافى بعد شراكة Nvidia للذكاء الاصطناعي السيادي، وتراجع مايكل بيري عن جزء من رهانه القصير بمليار دولار","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262020866-palantir-pltr-stock-forecast-july-2026-nvidia-burry-trump-bottom-tradingkey"},
+    {"text":"مايكل بيري (صاحب The Big Short) يخفّض رهانه القصير الضخم على سهم Palantir بعد خسائر أولية","src":"TheStreet","link":"https://www.thestreet.com/investing/stocks/pltr-palantir-michael-burry-pulls-back-on-massive-palantir-short-bet"},
+    {"text":"Palantir تحدد 3 أغسطس 2026 موعدًا لإعلان نتائج الربع الثاني وسط توقعات بنمو إيرادات 80%","src":"StockTitan","link":"https://www.stocktitan.net/news/PLTR/palantir-announces-date-of-second-quarter-2026-earnings-release-and-pb0p9gl5pf2d.html"}
+  ],
+  "takeaways": [
+    "الشركة سمّيت على حجر رؤية سحري من أساطير الخواتم — لكن اللي يشوف فعليًا هو الحكومات والجيوش",
+    "النمو حقيقي ومتسارع (+85%)، لكن التقييم يفترض تنفيذ شبه مثالي لعقد قادم كامل",
+    "مؤسسو الشركة يبيعون أسهمهم بكثافة بنفس وقت الأرقام القياسية — تناقض يستحق الانتباه",
+    "السهم صار ساحة معركة بين متفائلي الذكاء الاصطناعي ومتشائمين يشبّهونه بفقاعة الدوت كوم"
+  ]
+}

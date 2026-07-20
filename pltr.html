@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLTR — حجر الرؤية · الراصد</title>
+<meta name="description" content="تحليل استثماري حي لسهم Palantir من الراصد: أليكس كارب، عقود الحكومة والمراقبة، وجدل التقييم الفلكي — بأرقام حية وأخبار حقيقية.">
+<meta name="theme-color" content="#0a0b0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Tajawal:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#0a0b0a;--ink:#eef1ec;--mut:#8d9289;
+--amber:#ff9500;--amberDim:#7a4a00;--red:#e6303e;--green:#2ee6a6;
+--glass:rgba(255,255,255,.04);--glassH:rgba(255,255,255,.08);
+--edge:rgba(255,149,0,.3);--edgeTop:rgba(255,149,0,.5);
+--focus:#ff9500;
+--disp:'Tajawal',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'JetBrains Mono',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r8:8px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'JetBrains Mono',monospace;--body:'JetBrains Mono','Segoe UI',sans-serif}
+.en,.num,#px,.st b,.ts .w,.tk i{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.gridbg{position:fixed;inset:0;z-index:-3;background:var(--void)}
+.gridbg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,149,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,149,0,.05) 1px,transparent 1px);
+background-size:52px 52px;mask-image:radial-gradient(ellipse 70% 55% at 50% 20%,#000 40%,transparent 90%)}
+.glow{position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:60vw;height:60vw;z-index:-2;
+background:radial-gradient(circle,rgba(255,149,0,.14),transparent 65%);filter:blur(70px)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+background-image:repeating-linear-gradient(180deg,rgba(255,255,255,.03) 0px,rgba(255,255,255,.03) 1px,transparent 1px,transparent 3px);opacity:.5}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(255,149,0,.35)}
+.gl{background:var(--glass);
+backdrop-filter:blur(16px) saturate(120%);-webkit-backdrop-filter:blur(16px) saturate(120%);
+border:1px dashed var(--edge);
+border-radius:var(--r8);box-shadow:0 14px 36px rgba(0,0,0,.5);
+position:relative;overflow:hidden}
+.gl::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--amber) 20%,var(--amber) 80%,transparent)}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--amber)}
+.bar .brand:hover{color:var(--amber)}
+.bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
+.bar .sym{font-family:var(--num);font-weight:500;letter-spacing:.04em;font-size:12px;color:var(--mut)}
+.bar .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 14px var(--amber);animation:pl 1.6s infinite;flex-shrink:0}
+@keyframes pl{50%{opacity:.35}}
+#px{font-family:var(--num);font-weight:700;font-size:23px;direction:ltr}
+.neg{color:var(--red)}.pos{color:var(--green)}
+#pm{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.ldot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pl 1.6s infinite}
+.ldot.wait{background:var(--amber);animation:pl 1s infinite}
+.en{direction:ltr;display:inline-block;font-family:var(--num)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.08em;
+color:var(--ink);background:rgba(255,255,255,.08);border:1px dashed var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(255,149,0,.16);transform:translateY(-1px)}
+.lng:active{transform:translateY(0)}
+.qnav{position:sticky;top:calc(var(--sp3) + 58px);z-index:49;display:flex;gap:6px;padding:7px;margin-top:10px;
+overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.qnav::-webkit-scrollbar{display:none}
+.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mut);
+text-decoration:none;padding:9px 16px;min-height:38px;border-radius:6px;white-space:nowrap;
+transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+.qnav a svg{width:15px;height:15px;flex-shrink:0}
+.qnav a:hover{color:var(--ink);background:rgba(255,255,255,.07)}
+.qnav a.on{color:var(--void);background:var(--amber)}
+.hero{padding:56px 0 var(--sp4);display:grid;grid-template-columns:1.08fr .92fr;gap:var(--sp6);align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
+.kick{font-family:var(--num);font-size:12px;font-weight:500;letter-spacing:.1em;color:var(--amber)}
+h1{font-family:var(--disp);font-weight:900;font-size:clamp(38px,6.6vw,60px);line-height:1.16;margin-top:var(--sp2)}
+h1 .grad{background:linear-gradient(92deg,var(--amber),#ffcf70 60%,var(--ink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:17px;line-height:1.75;max-width:48ch;margin-top:var(--sp4)}
+@media(max-width:780px){.lead{margin-inline:auto}}
+.scope{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:var(--sp4)}
+.scope svg{width:100%;height:100%;overflow:visible}
+section{margin-top:var(--sp8)}
+.eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
+.eyeb .ln{flex:1;height:1px;border-radius:1px;background:repeating-linear-gradient(90deg,var(--edge) 0 6px,transparent 6px 11px)}
+.eyeb b{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:.01em}
+.eyeb span{font-family:var(--num);font-size:10.5px;letter-spacing:.12em;color:var(--amber);font-weight:500}
+.pad{padding:var(--sp6)}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+@media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+.ts{padding:var(--sp4);border-radius:6px;background:rgba(255,255,255,.03);border:1px dashed var(--edge)}
+.ts .w{font-family:var(--num);font-size:10px;color:var(--amber);letter-spacing:.05em;font-weight:500}
+.ts .t{font-family:var(--disp);font-weight:800;font-size:17px;margin-top:4px}
+.ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
+.forces{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
+@media(max-width:900px){.forces{grid-template-columns:1fr}}
+.force{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.force:hover{transform:translateY(-5px);background:var(--glassH)}
+.force::after{content:attr(data-file);position:absolute;top:8px;inset-inline-end:12px;font-family:var(--num);font-size:9px;letter-spacing:.06em;color:var(--mut);opacity:.7}
+.force .icwrap{width:44px;height:44px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px dashed var(--edge)}
+.force .icwrap svg{width:23px;height:23px}
+.force h3{font-family:var(--disp);font-weight:800;font-size:21px;margin-top:var(--sp3)}
+.tag{display:inline-block;font-family:var(--num);font-size:10px;letter-spacing:.05em;border-radius:4px;padding:4px 10px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.04)}
+.t1{color:var(--amber);border-color:rgba(255,149,0,.5)}.t2{color:var(--red);border-color:rgba(230,48,62,.5)}.t3{color:var(--mut);border-color:rgba(141,146,137,.5)}
+.force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
+.force .dtl{display:none}
+.force.open .dtl{display:block}
+.force h5{font-family:var(--disp);font-size:14px;font-weight:800;color:var(--amber);margin-top:var(--sp4);letter-spacing:.02em}
+.force table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--sp2)}
+.force td{padding:8px 4px;border-top:1px dashed var(--edge);vertical-align:top;line-height:1.7}
+.force td:first-child{font-family:var(--num);font-size:11px;white-space:nowrap;direction:ltr;font-weight:700;color:var(--amber)}
+html[data-lang=ar] .force td:first-child{text-align:right}
+html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px}
+.more{font-size:12px;color:var(--amber);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
+.more svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
+.force.open .more svg{transform:rotate(180deg)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
+@media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+.st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.st:hover{transform:translateY(-4px);background:var(--glassH)}
+.st .sti{width:20px;height:20px;color:var(--amber);opacity:.9;margin-bottom:6px}
+.st b{display:block;font-family:var(--num);font-size:25px;font-weight:700;direction:ltr;color:var(--amber)}
+.st span{font-size:12.5px;color:var(--mut)}
+#news li{list-style:none;padding:var(--sp4) 0;border-top:1px dashed var(--edge);font-size:15px}
+#news li:first-child{border-top:none}
+#news a{color:inherit;text-decoration:none;display:block;border-radius:6px}
+#news a:hover .arb{color:var(--amber)}
+.arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.6}
+.osrc{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
+.nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
+.src{font-family:var(--num);font-size:10.5px;letter-spacing:.03em;color:var(--amber);border:1px solid rgba(255,149,0,.4);border-radius:4px;padding:3px 10px;background:rgba(255,149,0,.07);direction:ltr}
+.ndate{font-size:12px;color:var(--mut)}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
+@media(max-width:640px){.sc{grid-template-columns:1fr}}
+.pan{padding:var(--sp5);font-size:13.5px}
+.pan h4{font-family:var(--disp);font-weight:800;font-size:19px;margin-bottom:var(--sp3);display:flex;align-items:center;gap:8px}
+.pg h4{color:var(--green)}.pb h4{color:var(--red)}
+.pan li{list-style:none;padding:6px 0;border-top:1px dashed var(--edge);line-height:1.7}
+.pan li:first-of-type{border-top:none}
+.tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px dashed var(--edge);font-size:15.5px;line-height:1.7}
+.tk:first-child{border-top:none}
+.tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--amber);font-size:12px;border:1px dashed rgba(255,149,0,.5);border-radius:5px;padding:2px 9px;margin-top:3px;background:rgba(255,149,0,.06);flex-shrink:0}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(14,15,14,.96)}}
+</style>
+</head>
+<body>
+<div class="gridbg" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<div class="wrap">
+<div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<span class="sep" aria-hidden="true"></span>
+<span class="dot" aria-hidden="true"></span><img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Palantir_Technologies_logo.svg" alt="Palantir" style="height:12px;filter:brightness(0) invert(1);opacity:.92;flex-shrink:0"><span class="sym">NASDAQ · PLTR</span>
+<span id="px">…</span><span id="mc" class="en" style="color:var(--amber);font-weight:700"></span>
+<span id="pm" aria-live="polite"></span>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<nav class="qnav gl rv" aria-label="Section navigation">
+<a href="#s-timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="i-ar">الأحداث</span><span class="i-en">Milestones</span></a>
+<a href="#s-forces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="i-ar">القوى الثلاث</span><span class="i-en">Three Forces</span></a>
+<a href="#s-numbers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span class="i-ar">الأرقام</span><span class="i-en">Numbers</span></a>
+<a href="#s-news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg><span class="i-ar">الأخبار</span><span class="i-en">News</span></a>
+<a href="#s-balance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 006 0l-3-6zM19 7l-3 6a3 3 0 006 0l-3-6zM5 7h14"/></svg><span class="i-ar">الميزان</span><span class="i-en">Balance</span></a>
+<a href="#s-takeaways"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></a>
+</nav>
+
+<main>
+<div class="hero">
+<div class="rv">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Palantir_Technologies_logo.svg" alt="Palantir" style="height:22px;filter:brightness(0) invert(1);opacity:.95;margin-bottom:var(--sp4)">
+<div class="kick"><span class="i-ar">تحليل استثماري حي · يتحدث تلقائيًا</span><span class="i-en">LIVE INVESTOR INTELLIGENCE · AUTO-UPDATING</span></div>
+<h1><span class="i-ar">حجر الرؤية<br>الذي <span class="grad">يشاهد الجميع</span></span><span class="i-en">The Seeing Stone<br>That <span class="grad">Watches Everyone</span></span></h1>
+<p class="lead"><span class="i-ar">شركة سُميت على حجر سحري من أساطير الخواتم يكشف أحداثًا بعيدة — لكن اللي يشوف فعليًا اليوم هو الحكومات والجيوش، بينما مؤسسوها يبيعون أسهمهم ومايكل بيري يراهن بمليار دولار على انهيارها.</span><span class="i-en">A company named after a magical stone that sees distant events — except today it's governments and militaries doing the watching, while its founders keep selling shares and Michael Burry bets a billion dollars it all comes crashing down.</span></p>
+</div>
+<div class="scope gl rv">
+<svg viewBox="0 0 420 420" role="img" aria-label="Stylized radar sweep representing Palantir's surveillance and intelligence business">
+<defs>
+<linearGradient id="sweepGrad" gradientUnits="userSpaceOnUse" x1="210" y1="210" x2="210" y2="60">
+<stop offset="0%" stop-color="#ff9500" stop-opacity=".55"/>
+<stop offset="100%" stop-color="#ff9500" stop-opacity="0"/>
+</linearGradient>
+</defs>
+<rect x="10" y="10" width="400" height="400" rx="4" fill="rgba(255,255,255,.015)" stroke="rgba(255,149,0,.35)" stroke-width="1.5" stroke-dasharray="6 5"/>
+<circle cx="210" cy="210" r="150" fill="none" stroke="rgba(255,149,0,.28)" stroke-width="1"/>
+<circle cx="210" cy="210" r="100" fill="none" stroke="rgba(255,149,0,.22)" stroke-width="1"/>
+<circle cx="210" cy="210" r="50" fill="none" stroke="rgba(255,149,0,.18)" stroke-width="1"/>
+<line x1="60" y1="210" x2="360" y2="210" stroke="rgba(255,149,0,.15)" stroke-width="1"/>
+<line x1="210" y1="60" x2="210" y2="360" stroke="rgba(255,149,0,.15)" stroke-width="1"/>
+<text x="210" y="40" text-anchor="middle" fill="#ff9500" font-family="'JetBrains Mono',monospace" font-size="10" letter-spacing="2">STATUS: WATCHING</text>
+<circle cx="368" cy="36" r="4" fill="#ff9500"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+<text x="380" y="40" fill="#8d9289" font-family="'JetBrains Mono',monospace" font-size="8">LIVE</text>
+<g>
+<path d="M210,210 L210,60 A150,150 0 0,1 273.4,74.1 Z" fill="url(#sweepGrad)">
+<animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="4s" repeatCount="indefinite"/>
+</path>
+</g>
+<circle cx="210" cy="210" r="7" fill="#ff9500" style="filter:drop-shadow(0 0 10px rgba(255,149,0,.8))"/>
+<g fill="#ff9500">
+<circle cx="106.6" cy="172.4" r="3.5"/>
+<circle cx="278.9" cy="152.2" r="3.5"/>
+<circle cx="275" cy="322.6" r="3.5"/>
+<circle cx="149.4" cy="245" r="3.5"/>
+</g>
+<g fill="#eef1ec" font-family="'JetBrains Mono',monospace" font-size="8.5">
+<text x="106.6" y="164">GOV</text>
+<text x="278.9" y="144">DEFENSE</text>
+<text x="275" y="335">COMMERCIAL</text>
+<text x="149.4" y="260">AI</text>
+</g>
+<text x="210" y="400" text-anchor="middle" fill="#8d9289" font-family="'JetBrains Mono',monospace" font-size="7">REAL-TIME INTELLIGENCE FEED (ILLUSTRATIVE)</text>
+</svg>
+</div>
+</div>
+
+<section class="rv" id="s-timeline">
+<div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>2003 → 2026</span><div class="ln"></div></div>
+<div class="gl pad"><div class="tl" id="tl"></div></div>
+</section>
+
+<section class="rv" id="s-forces">
+<div class="eyeb"><b><span class="i-ar">القوى الثلاث المحركة للسهم</span><span class="i-en">The Three Forces Driving The Stock</span></b><div class="ln"></div></div>
+<div class="forces">
+
+<div class="force gl" data-file="FILE-01" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ff9500" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10a3 3 0 116 0c0 2-3 2-3 4"/><circle cx="12" cy="17.5" r=".6" fill="#ff9500" stroke="none"/></svg></div>
+<h3><span class="i-ar">أليكس كارب</span><span class="i-en">Alex Karp</span></h3><span class="tag t1">PHILOSOPHER CEO</span>
+<p><span class="i-ar">رئيس تنفيذي مثير للجدل يهاجم صناعة الذكاء الاصطناعي علنًا بينما يقود واحدة من أكبر شركاتها</span><span class="i-en">A controversial CEO who publicly attacks the AI industry while running one of its biggest companies</span></p>
+<div class="dtl">
+<h5><span class="i-ar">تصريحات لافتة</span><span class="i-en">Notable Statements</span></h5>
+<table>
+<tr><td><span class="en">Jul 2026</span></td><td><span class="i-ar">وصف صناعة الذكاء الاصطناعي بـ«الجنونية فعليًا» وانتقد نموذج تسعير الرموز عند OpenAI وAnthropic</span><span class="i-en">Called the AI industry "effing insane," criticized OpenAI and Anthropic's token pricing model</span></td></tr>
+<tr><td>$15B</td><td><span class="i-ar">ثروته الشخصية، وحذّر أن الذكاء الاصطناعي سيثري القلة أضعاف ما يرفع معيشة البقية</span><span class="i-en">His personal net worth; he warned AI will enrich the few far more than it lifts everyone else</span></td></tr>
+</table>
+<h5><span class="i-ar">الخلفية</span><span class="i-en">Background</span></h5>
+<table>
+<tr><td>2003</td><td><span class="i-ar">أسس الشركة مع بيتر ثيل بتمويل مبكر من ذراع استثمار وكالة الاستخبارات المركزية</span><span class="i-en">Co-founded the company with Peter Thiel, seeded early by the CIA's venture arm</span></td></tr>
+<tr><td><span class="en">Jul 2026</span></td><td><span class="i-ar">قاد صفقة شراكة مع Nvidia لدعم استخدام الحكومة الأمريكية للذكاء الاصطناعي بأمان أكبر</span><span class="i-en">Led a partnership deal with Nvidia to help the US government use AI more securely</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" data-file="FILE-02" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#e6303e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+<h3><span class="i-ar">الحكومة والمراقبة</span><span class="i-en">Government &amp; Surveillance</span></h3><span class="tag t2">SURVEILLANCE STATE</span>
+<p><span class="i-ar">عقود مليارية مع الجيش وهيئات الهجرة تغذي النمو، وسط جدل أخلاقي حاد حول استخدام البيانات</span><span class="i-en">Multi-billion-dollar military and immigration contracts fuel growth amid sharp ethical controversy over data use</span></p>
+<div class="dtl">
+<h5><span class="i-ar">العقود البارزة</span><span class="i-en">Notable Contracts</span></h5>
+<table>
+<tr><td>$30M</td><td><span class="i-ar">عقد مع ICE لبناء منصة ImmigrationOS لتتبع واستهداف المهاجرين</span><span class="i-en">ICE contract to build "ImmigrationOS" for tracking and targeting migrants</span></td></tr>
+<tr><td>$178M</td><td><span class="i-ar">عقد الجيش الأمريكي لمنصة TITAN للاستخبارات الميدانية بالذكاء الاصطناعي</span><span class="i-en">US Army contract for TITAN, an AI-powered battlefield intelligence platform</span></td></tr>
+</table>
+<h5><span class="i-ar">الجدل</span><span class="i-en">The Controversy</span></h5>
+<table>
+<tr><td><span class="en">Amnesty</span></td><td><span class="i-ar">منظمة العفو الدولية أدانت دور الشركة بتسهيل عمليات الترحيل وفصل العائلات</span><span class="i-en">Amnesty International condemned the company's role in facilitating deportations and family separations</span></td></tr>
+<tr><td><span class="en">Origin</span></td><td><span class="i-ar">جذور الشركة استخباراتية منذ التأسيس، والحكومة تبقى أكبر عميل تاريخيًا</span><span class="i-en">The company's roots are intelligence-community from day one; government remains its largest historical customer</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+</div>
+
+<div class="force gl" data-file="FILE-03" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#8d9289" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 3l-4 10-3-3-10 4"/></svg></div>
+<h3><span class="i-ar">جدل التقييم</span><span class="i-en">The Valuation Fight</span></h3><span class="tag t3">$1.1B SHORT BET</span>
+<p><span class="i-ar">نمو إيرادات مذهل يقابله مضاعف ربحية فلكي، وبيع داخلي ضخم، ورهان بمليار دولار على الانهيار</span><span class="i-en">Stunning revenue growth meets an astronomical valuation, heavy insider selling, and a billion-dollar bet on collapse</span></p>
+<div class="dtl">
+<h5><span class="i-ar">الأرقام المتناقضة</span><span class="i-en">The Contradiction</span></h5>
+<table>
+<tr><td>185x</td><td><span class="i-ar">مضاعف الربحية — من أعلى مضاعفات السوق لشركة بهذا الحجم</span><span class="i-en">Price-to-earnings multiple — among the market's highest for a company this size</span></td></tr>
+<tr><td>$433M</td><td><span class="i-ar">قيمة الأسهم التي باعها المؤسسون وكبار المدراء خلال 3 أشهر فقط</span><span class="i-en">Value of shares founders and top executives sold in just 3 months</span></td></tr>
+</table>
+<h5><span class="i-ar">الرهان القصير</span><span class="i-en">The Short Bet</span></h5>
+<table>
+<tr><td><span class="en">M. Burry</span></td><td><span class="i-ar">راهن بما يقارب $1.1 مليار عبر خيارات بيع على Palantir وNvidia معًا، شبّهها بفقاعة الدوت كوم</span><span class="i-en">Bet roughly $1.1B via put options on Palantir and Nvidia combined, comparing it to the dot-com bubble</span></td></tr>
+<tr><td><span class="en">Jul 2026</span></td><td><span class="i-ar">خفّض نصف مركزه القصير بعد ارتفاع السهم مع صفقة Nvidia</span><span class="i-en">Halved his short position after the stock rallied on the Nvidia deal</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+</div>
+</section>
+
+<section class="rv" id="s-numbers">
+<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>LIVE DATA</span><div class="ln"></div></div>
+<div class="stats" id="stats"></div>
+</section>
+
+<section class="rv" id="s-news">
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="gl pad"><ul id="news"></ul></div>
+</section>
+
+<section class="rv" id="s-balance">
+<div class="eyeb"><b><span class="i-ar">الميزان</span><span class="i-en">The Balance</span></b><span>PRO VIEW</span><div class="ln"></div></div>
+<div class="sc">
+<div class="pan gl pg"><h4><span class="i-ar">القوة</span><span class="i-en">Strengths</span></h4><ul>
+<li><span class="i-ar">نمو إيرادات مذهل: +85% بالربع الأول وتوقعات مرفوعة لـ $7.66 مليار</span><span class="i-en">Stunning revenue growth: +85% in Q1, guidance raised to $7.66B</span></li>
+<li><span class="i-ar">صافي احتفاظ بالعملاء 150% — توسع هائل بالعقود الحالية</span><span class="i-en">150% net dollar retention — massive expansion within existing contracts</span></li>
+<li><span class="i-ar">طلب حكومي وعسكري متسارع يضمن إيرادات طويلة الأمد</span><span class="i-en">Accelerating government and defense demand secures long-term revenue</span></li>
+<li><span class="i-ar">شراكة Nvidia بالذكاء الاصطناعي السيادي تفتح أسواقًا جديدة</span><span class="i-en">The Nvidia sovereign-AI partnership opens new markets</span></li></ul></div>
+<div class="pan gl pb"><h4><span class="i-ar">الخطر</span><span class="i-en">Risks</span></h4><ul>
+<li><span class="i-ar">تقييم فلكي: مضاعف ربحية يتجاوز 185×</span><span class="i-en">Astronomical valuation: a P/E multiple above 185x</span></li>
+<li><span class="i-ar">بيع داخلي ضخم من المؤسسين والإدارة: $433 مليون خلال 3 أشهر</span><span class="i-en">Heavy insider selling from founders and management: $433M in 3 months</span></li>
+<li><span class="i-ar">مايكل بيري يراهن بنحو مليار دولار على انهيار السهم</span><span class="i-en">Michael Burry is betting roughly $1B on the stock's collapse</span></li>
+<li><span class="i-ar">الجدل الأخلاقي حول عقود المراقبة والترحيل يهدد السمعة</span><span class="i-en">Ethical controversy over surveillance and deportation contracts threatens its reputation</span></li></ul></div>
+</div>
+</section>
+
+<section class="rv" id="s-takeaways">
+<div class="eyeb"><b><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></b><span>4</span><div class="ln"></div></div>
+<div class="gl pad" id="tks"></div>
+</section>
+</main>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+</footer>
+
+</div>
+<script>
+function toggleForce(el){var open=el.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
+var CUR=localStorage.getItem("lang")||"ar";
+var D=null,NEWSCACHE=null;
+var L={ar:{revenue_q1:"إيرادات الربع الأول",revenue_growth:"نمو الإيرادات",us_commercial_growth:"نمو تجاري أمريكي",net_dollar_retention:"احتفاظ العملاء",fy26_guidance:"توقعات 2026",pe_ratio:"مضاعف الربحية",from_ath:"عن القمة التاريخية",next_earnings:"الأرباح القادمة"},
+en:{revenue_q1:"Q1 revenue",revenue_growth:"Revenue growth",us_commercial_growth:"US commercial growth",net_dollar_retention:"Net dollar retention",fy26_guidance:"FY26 guidance",pe_ratio:"P/E ratio",from_ath:"From all-time high",next_earnings:"Next earnings"}};
+var VEN={next_earnings:"Aug 3, 2026"};
+var SICO={
+revenue_q1:'<path d="M4 20V10M12 20V4M20 20v-7"/>',
+revenue_growth:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+us_commercial_growth:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 15l3-3 3 2 4-5"/>',
+net_dollar_retention:'<circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/>',
+fy26_guidance:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+pe_ratio:'<circle cx="12" cy="12" r="9"/><path d="M9 9h3.5a2 2 0 010 4H9M9 13h6M12 7v2M12 15v2"/>',
+from_ath:'<path d="M4 4l6 10 4-4 6 10"/>',
+next_earnings:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'
+};
+var TLEN=[{when:"2003",what:"Founding",note:"Thiel and Karp found the company, seeded early by the CIA's In-Q-Tel; named after Tolkien's seeing-stones"},{when:"Nov 2024",what:"Move to Nasdaq",note:"The company leaves the NYSE and joins the S&P 500"},{when:"2026",what:"$30M ICE contract",note:"Builds \"ImmigrationOS\" to track and target migrants, amid condemnation from rights groups"},{when:"2026",what:"$178M Army TITAN contract",note:"An AI-powered battlefield intelligence platform fusing sensor data in real time"},{when:"May 2026",what:"Massive insider selling",note:"Thiel, Karp and top executives sell $433M in shares over 3 months"},{when:"Jul 2026",what:"Nvidia sovereign-AI partnership",note:"Announcement lifts the stock as Michael Burry pulls back part of his short bet"}];
+var NEN=[{text:"CEO Alex Karp calls the AI industry \"effing insane\" and criticizes OpenAI and Anthropic's token pricing model",src:"Forbes",link:"https://www.forbes.com/sites/tylerroush/2026/07/01/palantir-billionaire-alex-karp-calls-ai-industry-effing-insane-in-heated-interview/"},{text:"With a $15B net worth, Karp warns the AI boom will enrich the few far more than it lifts the middle class",src:"Fortune",link:"https://fortune.com/2026/07/17/palantir-ceo-alex-karp-artifical-intelligence-wealth-inequality-problem-billionaire-net-worth-surge-but-middle-class-left-behind/"},{text:"Karp defends surveillance tech as US government contracts push sales to record levels",src:"GV Wire",link:"https://gvwire.com/2026/02/02/palantir-ceo-defends-surveillance-tech-as-us-government-contracts-boost-sales/"},{text:"Palantir stock recovers after Nvidia sovereign-AI partnership as Michael Burry pulls back part of his $1B short bet",src:"TradingKey",link:"https://www.tradingkey.com/analysis/stocks/us-stocks/262020866-palantir-pltr-stock-forecast-july-2026-nvidia-burry-trump-bottom-tradingkey"},{text:"Michael Burry (of The Big Short) pulls back his massive short bet against Palantir after early losses",src:"TheStreet",link:"https://www.thestreet.com/investing/stocks/pltr-palantir-michael-burry-pulls-back-on-massive-palantir-short-bet"},{text:"Palantir sets August 3, 2026 as its Q2 earnings date amid expectations of 80% revenue growth",src:"StockTitan",link:"https://www.stocktitan.net/news/PLTR/palantir-announces-date-of-second-quarter-2026-earnings-release-and-pb0p9gl5pf2d.html"}];
+function staticNewsHtml(list){return list.map(function(n){
+var head='<span class="arb">'+n.text+'</span>';
+var meta='<div class="nmeta"><span class="src">'+n.src+'</span></div>';
+return n.link?('<li><a href="'+n.link+'" target="_blank" rel="noopener">'+head+meta+'</a></li>'):('<li>'+head+meta+'</li>');
+}).join("")}
+var TKEN=["The company is named after a magical seeing-stone from Tolkien — but today it's governments and militaries doing the watching","Growth is real and accelerating (+85%), but the valuation assumes near-flawless execution for a decade ahead","The founders keep selling large blocks of stock at the same time the numbers hit records — a contradiction worth watching","The stock has become a battleground between AI optimists and bears who compare it to the dot-com bubble"];
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+var qnavLinks=document.querySelectorAll(".qnav a");
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+var link=document.querySelector('.qnav a[href="#'+e.target.id+'"]');
+if(!link)return;
+if(e.isIntersecting){qnavLinks.forEach(function(a){a.classList.remove("on")});link.classList.add("on")}
+})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(function(el){spy.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+renderDyn();renderNews();}
+function renderDyn(){if(!D)return;
+document.getElementById("mc").textContent=D.market_cap;
+var tl=(CUR==="ar")?D.timeline:TLEN;
+document.getElementById("tl").innerHTML=tl.map(function(t){return '<div class="ts"><div class="w">'+t.when+'</div><div class="t">'+t.what+'</div><div class="n">'+t.note+'</div></div>'}).join("");
+document.getElementById("stats").innerHTML=Object.keys(D.stats).map(function(k){
+var v=(CUR==="en"&&VEN[k])?VEN[k]:D.stats[k];
+var ic=SICO[k]?'<svg class="sti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SICO[k]+'</svg>':'';
+return '<div class="st gl">'+ic+'<b>'+v+'</b><span>'+(L[CUR][k]||k)+'</span></div>'}).join("");
+var tk=(CUR==="ar")?D.takeaways:TKEN;
+document.getElementById("tks").innerHTML=tk.map(function(t,i){return '<div class="tk"><i>0'+(i+1)+'</i><div>'+t+'</div></div>'}).join("");
+sp(window.__LASTP||D.price_fallback,!!window.__LIVE);}
+function initData(d){
+D=d;window.__PREV=d.prev_close||d.price_fallback;
+if(CUR!=="ar")setLang(CUR);else{renderDyn();}
+document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?d.news:NEN);
+livePrice();liveNews();
+}
+var FALLBACK_DATA={"last_updated":"2026-07-20","price_fallback":135.53,"prev_close":131.79,"market_cap":"$322.3B","stats":{"revenue_q1":"1.63B$","revenue_growth":"+85%","us_commercial_growth":"+133%","net_dollar_retention":"150%","fy26_guidance":"7.66B$+","pe_ratio":"185x","from_ath":"-35%","next_earnings":"3 أغسطس 2026"},"timeline":[{"when":"2003","what":"التأسيس","note":"ثيل وكارب يؤسسان الشركة بتمويل مبكر من ذراع الاستثمار الاستخباراتي In-Q-Tel، وتسميتها من «أحجار الرؤية» بأساطير الخواتم"},{"when":"نوفمبر 2024","what":"الانتقال لناسداك","note":"الشركة تترك NYSE وتنضم لمؤشر S&P 500"},{"when":"2026","what":"عقد ICE بـ 30 مليون","note":"بناء منصة ImmigrationOS لتتبع واستهداف المهاجرين، وسط إدانة منظمات حقوقية"},{"when":"2026","what":"عقد الجيش TITAN بـ 178 مليون","note":"منصة استخبارات ميدانية بالذكاء الاصطناعي لدمج بيانات المستشعرات لحظيًا"},{"when":"مايو 2026","what":"بيع داخلي ضخم","note":"ثيل وكارب وكبار المدراء يبيعون أسهمًا بـ 433 مليون دولار خلال 3 أشهر"},{"when":"يوليو 2026","what":"شراكة Nvidia للذكاء الاصطناعي السيادي","note":"إعلان يرفع السهم وسط تراجع مايكل بيري عن جزء من رهانه القصير"}],"news":[{"text":"الرئيس التنفيذي أليكس كارب يصف صناعة الذكاء الاصطناعي بـ«الجنونية» وينتقد نموذج تسعير الرموز عند OpenAI وAnthropic","src":"Forbes","link":"https://www.forbes.com/sites/tylerroush/2026/07/01/palantir-billionaire-alex-karp-calls-ai-industry-effing-insane-in-heated-interview/"},{"text":"بثروة 15 مليار دولار، كارب يحذر أن ثورة الذكاء الاصطناعي سترفع ثروات القلة أضعاف ما ترفع مستوى معيشة الطبقة الوسطى","src":"Fortune","link":"https://fortune.com/2026/07/17/palantir-ceo-alex-karp-artifical-intelligence-wealth-inequality-problem-billionaire-net-worth-surge-but-middle-class-left-behind/"},{"text":"كارب يدافع عن تقنيات المراقبة بينما تدفع عقود الحكومة الأمريكية المبيعات لمستويات قياسية","src":"GV Wire","link":"https://gvwire.com/2026/02/02/palantir-ceo-defends-surveillance-tech-as-us-government-contracts-boost-sales/"},{"text":"سهم Palantir يتعافى بعد شراكة Nvidia للذكاء الاصطناعي السيادي، وتراجع مايكل بيري عن جزء من رهانه القصير بمليار دولار","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262020866-palantir-pltr-stock-forecast-july-2026-nvidia-burry-trump-bottom-tradingkey"},{"text":"مايكل بيري (صاحب The Big Short) يخفّض رهانه القصير الضخم على سهم Palantir بعد خسائر أولية","src":"TheStreet","link":"https://www.thestreet.com/investing/stocks/pltr-palantir-michael-burry-pulls-back-on-massive-palantir-short-bet"},{"text":"Palantir تحدد 3 أغسطس 2026 موعدًا لإعلان نتائج الربع الثاني وسط توقعات بنمو إيرادات 80%","src":"StockTitan","link":"https://www.stocktitan.net/news/PLTR/palantir-announces-date-of-second-quarter-2026-earnings-release-and-pb0p9gl5pf2d.html"}],"takeaways":["الشركة سمّيت على حجر رؤية سحري من أساطير الخواتم — لكن اللي يشوف فعليًا هو الحكومات والجيوش","النمو حقيقي ومتسارع (+85%)، لكن التقييم يفترض تنفيذ شبه مثالي لعقد قادم كامل","مؤسسو الشركة يبيعون أسهمهم بكثافة بنفس وقت الأرقام القياسية — تناقض يستحق الانتباه","السهم صار ساحة معركة بين متفائلي الذكاء الاصطناعي ومتشائمين يشبّهونه بفقاعة الدوت كوم"]};
+fetch("pltr-data.json?v="+Date.now()).then(function(r){return r.json()}).then(initData).catch(function(){initData(FALLBACK_DATA)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/PLTR?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;window.__LIVE=true;sp(p,true);
+var pc=m.chartPreviousClose||m.previousClose;
+if(pc){window.__PREV=pc;var ch=((p-pc)/pc*100).toFixed(2);
+document.getElementById("pm").innerHTML='<span class="ldot live" aria-hidden="true"></span>'+(CUR==="ar"?"حي · اليوم ":"Live · today ")+'<span class="en">'+(ch>0?"+":"")+ch+"%</span>"}}
+}).catch(function(){document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر سعر محفوظ":"last saved price")})}
+function trTxt(t){
+return fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ar&dt=t&q="+encodeURIComponent(t))
+.then(function(r){return r.json()}).then(function(j){return j[0].map(function(s){return s[0]}).join("")})
+.catch(function(){return fetch("https://api.mymemory.translated.net/get?q="+encodeURIComponent(t)+"&langpair=en|ar")
+.then(function(r){return r.json()}).then(function(j){return (j.responseData&&j.responseData.translatedText)||t})
+.catch(function(){return t})})}
+var SRC={"finance.yahoo.com":"Yahoo Finance","yahoo.com":"Yahoo","reuters.com":"Reuters","bloomberg.com":"Bloomberg","cnbc.com":"CNBC","wsj.com":"WSJ","ft.com":"Financial Times","barrons.com":"Barrons","marketwatch.com":"MarketWatch","investors.com":"IBD","fool.com":"Motley Fool","seekingalpha.com":"Seeking Alpha","benzinga.com":"Benzinga","businessinsider.com":"Business Insider","forbes.com":"Forbes","techcrunch.com":"TechCrunch","theverge.com":"The Verge","apnews.com":"AP","nytimes.com":"NY Times","cnn.com":"CNN","bbc.com":"BBC","gvwire.com":"GV Wire","tradingkey.com":"TradingKey","thestreet.com":"TheStreet","stocktitan.net":"StockTitan","fortune.com":"Fortune"};
+function srcName(item,link){
+var s=item.querySelector("source");
+if(s&&s.textContent.trim())return s.textContent.trim();
+try{var h=new URL(link).hostname.replace(/^www\./,"");
+if(SRC[h])return SRC[h];
+var base=h.split(".").slice(-2).join(".");
+if(SRC[base])return SRC[base];
+var nm=base.split(".")[0];return nm.charAt(0).toUpperCase()+nm.slice(1);
+}catch(e){return "Source"}}
+function agoTxt(t){
+if(!t)return "";
+var m=Math.round((Date.now()-t)/60000);
+if(CUR==="ar"){
+if(m<1)return "الحين";if(m<60)return "قبل "+m+" دقيقة";
+var h=Math.round(m/60);if(h<24)return "قبل "+h+" ساعة";
+var d=Math.round(h/24);return d===1?"أمس":"قبل "+d+" يوم";}
+if(m<1)return "now";if(m<60)return m+"m ago";
+var h2=Math.round(m/60);if(h2<24)return h2+"h ago";
+var d2=Math.round(h2/24);return d2+"d ago";}
+function renderNews(){
+if(!NEWSCACHE){if(D)document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?D.news:NEN);return;}
+document.getElementById("news").innerHTML=NEWSCACHE.map(function(n){
+var head=(CUR==="ar")?('<span class="arb">'+n.ar+'</span><span class="osrc">'+n.en+'</span>')
+:('<span class="arb" style="direction:ltr;display:block;text-align:left">'+n.en+'</span>');
+return '<li><a href="'+n.link+'" target="_blank">'+head+'<div class="nmeta"><span class="src">'+n.src+'</span><span class="ndate">'+agoTxt(n.t)+'</span></div></a></li>'}).join("")}
+function liveNews(){
+fetchViaProxies("https://feeds.finance.yahoo.com/rss/2.0/headline?s=PLTR&region=US&lang=en-US").then(function(t){
+var doc=new DOMParser().parseFromString(t,"text/xml");
+var items=Array.prototype.slice.call(doc.querySelectorAll("item"),0,6);
+if(!items.length)return;
+Promise.all(items.map(function(i){
+var ti=i.querySelector("title"),li=i.querySelector("link"),pd=i.querySelector("pubDate");
+var en=ti?ti.textContent:"";var link=li?li.textContent:"#";
+var tm=pd?new Date(pd.textContent).getTime():0;if(isNaN(tm))tm=0;
+return trTxt(en).then(function(a){return {ar:a,en:en,link:link,src:srcName(i,link),t:tm}})
+})).then(function(list){NEWSCACHE=list;renderNews()})
+}).catch(function(){})}
+function sp(p,live){var e=document.getElementById("px"),prev=window.__PREV||p,up=p>=prev;
+e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg");
+if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+setInterval(livePrice,10000);
+</script>
+</body>
+</html>

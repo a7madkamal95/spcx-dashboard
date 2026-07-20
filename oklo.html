@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oklo — الرهان الذري على مستقبل الذكاء الاصطناعي · الراصد</title>
+<meta name="description" content="تحليل استثماري حي لسهم Oklo من الراصد: مفاعل Aurora المصغّر، رهان سام ألتمان، صفقة الطاقة مع Switch، والمسار التنظيمي — بأرقام حية وأخبار حقيقية.">
+<meta name="theme-color" content="#040910">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=Share+Tech+Mono&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#040910;--ink:#eaf6ff;--mut:#7d93a6;
+--cyan:#3ddbff;--cyanDeep:#0f6e91;--amber:#ffb020;--green:#3ce8a6;--red:#ff5c5c;
+--glass:rgba(255,255,255,.04);--glassH:rgba(61,219,255,.1);
+--edge:rgba(61,219,255,.28);--edgeTop:rgba(61,219,255,.48);
+--focus:#3ddbff;
+--disp:'Reem Kufi',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Share Tech Mono',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r10:10px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Share Tech Mono',monospace;--body:'Share Tech Mono','Segoe UI',sans-serif}
+.en,.num,#px,.st b,.ts .w,.tk i{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.hexbg{position:fixed;inset:0;z-index:-3;background:var(--void)}
+.hexbg::before{content:"";position:absolute;inset:0;opacity:.1;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cg fill='none' stroke='%233ddbff' stroke-width='1'%3E%3Cpath d='M28 0L56 16V48L28 64L0 48V16Z'/%3E%3Cpath d='M28 33L56 49V81L28 97L0 81V49Z'/%3E%3C/g%3E%3C/svg%3E");
+mask-image:radial-gradient(ellipse 75% 55% at 50% 10%,#000 40%,transparent 92%)}
+.glow{position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:65vw;height:65vw;z-index:-2;
+background:radial-gradient(circle,rgba(61,219,255,.16),transparent 65%);filter:blur(80px)}
+.glow2{position:fixed;bottom:-15%;right:-8%;width:48vw;height:48vw;z-index:-2;
+background:radial-gradient(circle,rgba(255,176,32,.1),transparent 65%);filter:blur(90px)}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(61,219,255,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%);
+border:1px solid var(--edge);
+border-radius:var(--r10);box-shadow:0 14px 36px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.05);
+position:relative;overflow:hidden}
+.gl::before{content:"";position:absolute;top:0;right:8%;left:8%;height:1px;
+background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--cyan)}
+.bar .brand:hover{color:var(--cyan)}
+.bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
+.bar .sym{font-family:var(--num);font-weight:600;letter-spacing:.03em;font-size:13px;color:var(--mut)}
+.bar .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan);animation:pl 1.6s infinite;flex-shrink:0}
+@keyframes pl{50%{opacity:.35}}
+#px{font-family:var(--num);font-weight:700;font-size:23px;direction:ltr}
+.neg{color:var(--red)}.pos{color:var(--green)}
+#pm{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.ldot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pl 1.6s infinite}
+.ldot.wait{background:var(--amber);animation:pl 1s infinite}
+.en{direction:ltr;display:inline-block;font-family:var(--num)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.06em;
+color:var(--ink);background:rgba(61,219,255,.1);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(61,219,255,.2);transform:translateY(-1px)}
+.lng:active{transform:translateY(0)}
+.qnav{position:sticky;top:calc(var(--sp3) + 58px);z-index:49;display:flex;gap:6px;padding:7px;margin-top:10px;
+overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.qnav::-webkit-scrollbar{display:none}
+.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mut);
+text-decoration:none;padding:9px 16px;min-height:38px;border-radius:8px;white-space:nowrap;
+transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+.qnav a svg{width:15px;height:15px;flex-shrink:0}
+.qnav a:hover{color:var(--ink);background:rgba(61,219,255,.08)}
+.qnav a.on{color:var(--void);background:var(--cyan)}
+.hero{padding:56px 0 var(--sp4);display:grid;grid-template-columns:1.08fr .92fr;gap:var(--sp6);align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
+.kick{font-family:var(--num);font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--cyan)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(36px,6.2vw,58px);line-height:1.18;margin-top:var(--sp2)}
+h1 .grad{background:linear-gradient(92deg,var(--cyan),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:17px;line-height:1.8;max-width:48ch;margin-top:var(--sp4)}
+@media(max-width:780px){.lead{margin-inline:auto}}
+.shot{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:0;overflow:hidden}
+.shot-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(1.15) contrast(1.05)}
+.shot-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,9,16,.08) 0%,rgba(4,9,16,.32) 60%,rgba(4,9,16,.88) 100%)}
+.shot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:var(--sp4)}
+.shot-kick{align-self:flex-end;display:flex;align-items:center;gap:6px;font-family:var(--num);font-size:12px;letter-spacing:.06em;color:var(--cyan);font-weight:700;background:rgba(4,9,16,.65);backdrop-filter:blur(4px);padding:5px 12px;border-radius:99px;border:1px solid rgba(61,219,255,.45)}
+.shot-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pl 1.6s infinite}
+.shot-cap{font-family:var(--num);font-size:13px;letter-spacing:.02em;color:var(--ink);background:rgba(4,9,16,.6);backdrop-filter:blur(4px);padding:7px 14px;border-radius:8px;align-self:flex-start;border:1px solid rgba(61,219,255,.4)}
+section{margin-top:var(--sp8)}
+.eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
+.eyeb .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--cyan),rgba(61,219,255,.3) 70%,transparent)}
+.eyeb b{font-family:var(--disp);font-weight:700;font-size:27px;letter-spacing:.01em}
+.eyeb span{font-family:var(--num);font-size:12px;letter-spacing:.1em;color:var(--cyan);font-weight:700}
+.pad{padding:var(--sp6)}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+@media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+.ts{padding:var(--sp4);border-radius:8px;background:rgba(61,219,255,.05);border:1px solid var(--edge)}
+.ts .w{font-family:var(--num);font-size:12px;color:var(--cyan);letter-spacing:.02em;font-weight:700}
+.ts .t{font-family:var(--disp);font-weight:700;font-size:17px;margin-top:4px}
+.ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
+.forces{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
+@media(max-width:900px){.forces{grid-template-columns:1fr}}
+.force{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.force:hover{transform:translateY(-5px);background:var(--glassH)}
+.force .icwrap{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(61,219,255,.08);border:1px solid var(--edge)}
+.force .icwrap svg{width:23px;height:23px}
+.force h3{font-family:var(--disp);font-weight:700;font-size:21px;margin-top:var(--sp3)}
+.tag{display:inline-block;font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.03em;border-radius:6px;padding:4px 10px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.04)}
+.t1{color:var(--cyan);border-color:rgba(61,219,255,.5)}.t2{color:var(--amber);border-color:rgba(255,176,32,.5)}.t3{color:var(--mut);border-color:rgba(125,147,166,.5)}
+.force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
+.force .dtl{display:none}
+.force.open .dtl{display:block}
+.force h5{font-family:var(--disp);font-size:15px;font-weight:700;color:var(--cyan);margin-top:var(--sp4);letter-spacing:.02em}
+.force table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--sp2)}
+.force td{padding:8px 4px;border-top:1px solid var(--edge);vertical-align:top;line-height:1.7}
+.force td:first-child{font-family:var(--num);font-size:12px;font-weight:700;white-space:nowrap;direction:ltr;color:var(--cyan)}
+html[data-lang=ar] .force td:first-child{text-align:right}
+html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px}
+.more{font-size:12px;color:var(--cyan);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
+.more svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
+.force.open .more svg{transform:rotate(180deg)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
+@media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+.st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.st:hover{transform:translateY(-4px);background:var(--glassH)}
+.st .sti{width:20px;height:20px;color:var(--cyan);opacity:.9;margin-bottom:6px}
+.st b{display:block;font-family:var(--num);font-size:25px;font-weight:700;direction:ltr;color:var(--cyan)}
+.st span{font-size:12.5px;color:var(--mut)}
+#news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}
+#news li:first-child{border-top:none}
+#news a{color:inherit;text-decoration:none;display:block;border-radius:8px}
+#news a:hover .arb{color:var(--cyan)}
+.arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.6}
+.osrc{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
+.nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
+.src{font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--cyan);border:1px solid rgba(61,219,255,.4);border-radius:6px;padding:3px 10px;background:rgba(61,219,255,.08);direction:ltr}
+.ndate{font-size:12px;color:var(--mut)}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
+@media(max-width:640px){.sc{grid-template-columns:1fr}}
+.pan{padding:var(--sp5);font-size:13.5px}
+.pan h4{font-family:var(--disp);font-weight:700;font-size:22px;margin-bottom:var(--sp3);display:flex;align-items:center;gap:8px}
+.pg h4{color:var(--green)}.pb h4{color:var(--red)}
+.pan li{list-style:none;padding:6px 0;border-top:1px dashed var(--edge);line-height:1.7}
+.pan li:first-of-type{border-top:none}
+.tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px solid var(--edge);font-size:15.5px;line-height:1.75}
+.tk:first-child{border-top:none}
+.tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--cyan);font-size:14px;border:1px solid rgba(61,219,255,.45);border-radius:8px;padding:2px 10px;margin-top:3px;background:rgba(61,219,255,.06);flex-shrink:0}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(6,12,18,.96)}}
+</style>
+</head>
+<body>
+<div class="hexbg" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<div class="glow2" aria-hidden="true"></div>
+<div class="wrap">
+<div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<span class="sep" aria-hidden="true"></span>
+<span class="dot" aria-hidden="true"></span><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Oklo_Inc_logo.png" alt="Oklo" style="height:15px;filter:brightness(0) invert(1);opacity:.92;flex-shrink:0"><span class="sym">NYSE · OKLO</span>
+<span id="px">…</span><span id="mc" class="en" style="color:var(--cyan);font-weight:700"></span>
+<span id="pm" aria-live="polite"></span>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<nav class="qnav gl rv" aria-label="Section navigation">
+<a href="#s-timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="i-ar">الأحداث</span><span class="i-en">Milestones</span></a>
+<a href="#s-forces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="i-ar">القوى الثلاث</span><span class="i-en">Three Forces</span></a>
+<a href="#s-numbers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span class="i-ar">الأرقام</span><span class="i-en">Numbers</span></a>
+<a href="#s-news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg><span class="i-ar">الأخبار</span><span class="i-en">News</span></a>
+<a href="#s-balance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 006 0l-3-6zM19 7l-3 6a3 3 0 006 0l-3-6zM5 7h14"/></svg><span class="i-ar">الميزان</span><span class="i-en">Balance</span></a>
+<a href="#s-takeaways"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></a>
+</nav>
+
+<main>
+<div class="hero">
+<div class="rv">
+<div class="kick"><span class="i-ar">تحليل استثماري حي · يتحدث تلقائيًا</span><span class="i-en">LIVE INVESTOR INTELLIGENCE · AUTO-UPDATING</span></div>
+<h1><span class="i-ar">الرهان الذري<br>على <span class="grad">مستقبل الطاقة</span></span><span class="i-en">The Atomic Bet<br>on <span class="grad">Energy's Future</span></span></h1>
+<p class="lead"><span class="i-ar">شركة أسسها مهندسا طاقة نووية من MIT لبناء مفاعلات انشطارية مصغّرة، راهن عليها سام ألتمان مبكرًا ودخلت البورصة عبر اندماج بقيادته — رهان أن الذكاء الاصطناعي سيحتاج طاقة لا تستطيع الشبكة الحالية توفيرها.</span><span class="i-en">A company founded by two MIT nuclear engineers to build compact fast-fission microreactors, backed early by Sam Altman and taken public via a merger he led — a bet that AI will need power the current grid simply can't supply.</span></p>
+</div>
+<div class="shot gl rv">
+<div class="shot-photo" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Advanced_Test_Reactor.jpg)" role="img" aria-label="Real photo of the Cherenkov radiation blue glow inside a nuclear reactor core at Idaho National Laboratory"></div>
+<div class="shot-overlay">
+<div class="shot-kick"><span class="shot-dot" aria-hidden="true"></span>LIVE</div>
+<div class="shot-cap"><span class="i-ar">توهج تشرينكوف — مختبر آيداهو الوطني</span><span class="i-en">Cherenkov glow — Idaho National Laboratory</span></div>
+</div>
+</div>
+</div>
+
+<section class="rv" id="s-timeline">
+<div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>2013 → 2026</span><div class="ln"></div></div>
+<div class="gl pad"><div class="tl" id="tl"></div></div>
+</section>
+
+<section class="rv" id="s-forces">
+<div class="eyeb"><b><span class="i-ar">القوى الثلاث المحركة للسهم</span><span class="i-en">The Three Forces Driving The Stock</span></b><div class="ln"></div></div>
+<div class="forces">
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#3ddbff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+<h3><span class="i-ar">الرهان الذري لسام ألتمان</span><span class="i-en">Sam Altman's Atomic Bet</span></h3><span class="tag t1">AI POWER THESIS</span>
+<p><span class="i-ar">شركة أسسها مهندسا طاقة نووية من MIT ورآهن عليها سام ألتمان مبكرًا، قبل أن تدخل البورصة عبر اندماج SPAC بقيادته</span><span class="i-en">Founded by two MIT nuclear engineers and backed early by Sam Altman, before going public via a SPAC merger he led</span></p>
+<div class="dtl">
+<h5><span class="i-ar">من التأسيس إلى البورصة</span><span class="i-en">From Founding to Public Markets</span></h5>
+<table>
+<tr><td>2013</td><td><span class="i-ar">جايكوب ديويت وكارولين كوكرن يؤسسان Oklo لبناء مفاعلات انشطارية سريعة مصغّرة</span><span class="i-en">Jacob DeWitte and Caroline Cochran found Oklo to build compact fast-fission microreactors</span></td></tr>
+<tr><td><span class="en">May 2024</span></td><td><span class="i-ar">اندماج مع AltC Acquisition Corp بقيادة سام ألتمان يجمع 306 مليون دولار ويدرج السهم بالبورصة</span><span class="i-en">A merger with Sam Altman-led AltC Acquisition Corp raises $306M and lists the stock</span></td></tr>
+<tr><td><span class="en">Apr 2025</span></td><td><span class="i-ar">ألتمان يتنحى عن رئاسة مجلس الإدارة تجنبًا لتضارب المصالح مع احتياجات OpenAI من الطاقة</span><span class="i-en">Altman steps down as chairman to avoid a conflict of interest with OpenAI's power needs</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ffb020" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+<h3><span class="i-ar">صفقة الطاقة الضخمة</span><span class="i-en">The Giant Power Deal</span></h3><span class="tag t2">12 GW · SWITCH</span>
+<p><span class="i-ar">اتفاقية طويلة الأمد مع مشغّل مراكز بيانات لتزويدها بما يصل إلى 12 غيغاواط من الطاقة النووية — أكبر دليل حتى الآن على جدية الطلب</span><span class="i-en">A long-term deal with a data-center operator to supply up to 12 GW of nuclear power — the clearest sign yet that demand is real</span></p>
+<div class="dtl">
+<h5><span class="i-ar">أرقام الصفقة</span><span class="i-en">Deal Numbers</span></h5>
+<table>
+<tr><td>12 GW</td><td><span class="i-ar">الطاقة المستهدفة بالاتفاقية طويلة الأمد مع مشغّل مراكز البيانات Switch</span><span class="i-en">Target power capacity under the long-term agreement with data-center operator Switch</span></td></tr>
+<tr><td>2030</td><td><span class="i-ar">العام الذي لا يتوقع محللو Guggenheim تحقيق أرباح تشغيلية إيجابية (EBITDA) قبله</span><span class="i-en">The year Guggenheim analysts don't expect positive EBITDA before</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#7d93a6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3M9 11l2 2 4-4"/></svg></div>
+<h3><span class="i-ar">سباق الترخيص مقابل الفيزياء</span><span class="i-en">The License Race vs. Physics</span></h3><span class="tag t3">PRE-REVENUE</span>
+<p><span class="i-ar">التقدم التنظيمي حقيقي، لكن أول تشغيل تجاري لمفاعل Aurora لن يحدث قبل 2027 أو 2028 — والشركة ما زالت بلا إيرادات</span><span class="i-en">Regulatory progress is real, but Aurora's first commercial operation won't happen before 2027 or 2028 — and the company is still pre-revenue</span></p>
+<div class="dtl">
+<h5><span class="i-ar">المسار حتى الآن</span><span class="i-en">The Path So Far</span></h5>
+<table>
+<tr><td><span class="en">Sep 2025</span></td><td><span class="i-ar">وضع حجر الأساس لمفاعل Aurora بمختبر آيداهو الوطني</span><span class="i-en">Groundbreaking for the Aurora reactor at Idaho National Laboratory</span></td></tr>
+<tr><td><span class="en">Jul 1, 2026</span></td><td><span class="i-ar">وزارة الطاقة توافق على تحليل السلامة لمفاعل اختبار النظائر Groves، بهدف أول حرجية هذا الشهر</span><span class="i-en">DOE approves the safety analysis for the Groves isotope test reactor, targeting first criticality this month</span></td></tr>
+<tr><td>73.6M$</td><td><span class="i-ar">صافي الخسارة للسنة المالية 2024 لشركة ما زالت بلا إيرادات تجارية</span><span class="i-en">FY2024 net loss for a company still without commercial revenue</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+</div>
+</section>
+
+<section class="rv" id="s-numbers">
+<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>LIVE DATA</span><div class="ln"></div></div>
+<div class="stats" id="stats"></div>
+</section>
+
+<section class="rv" id="s-news">
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="gl pad"><ul id="news"></ul></div>
+</section>
+
+<section class="rv" id="s-balance">
+<div class="eyeb"><b><span class="i-ar">الميزان</span><span class="i-en">Balance</span></b><span>PRO VIEW</span><div class="ln"></div></div>
+<div class="sc">
+<div class="pan gl pg"><h4><span class="i-ar">القوة</span><span class="i-en">Strengths</span></h4><ul>
+<li><span class="i-ar">دعم مبكر ورئاسة مجلس إدارة سابقة لسام ألتمان، بموقع مباشر على موجة طلب الذكاء الاصطناعي على الطاقة</span><span class="i-en">Early Sam Altman backing and a former board chairmanship put it directly on the AI power-demand wave</span></li>
+<li><span class="i-ar">اتفاقية تاريخية تصل إلى 12 غيغاواط مع مشغّل مراكز بيانات Switch</span><span class="i-en">A landmark deal for up to 12 GW with data-center operator Switch</span></li>
+<li><span class="i-ar">زخم تنظيمي حقيقي: موافقة وزارة الطاقة على اتفاقية التصميم الآمن، وطلب ترخيص يتقدّم لدى الهيئة النووية</span><span class="i-en">Real regulatory momentum: DOE approval of the safety design agreement, and an NRC application making progress</span></li>
+<li><span class="i-ar">موقع ريادي بمفاعلات الانشطار السريع المصغّرة تزامنًا مع انفجار طلب الطاقة للذكاء الاصطناعي</span><span class="i-en">First-mover positioning in fast-fission microreactors just as AI power demand explodes</span></li></ul></div>
+<div class="pan gl pb"><h4><span class="i-ar">الخطر</span><span class="i-en">Risks</span></h4><ul>
+<li><span class="i-ar">شركة بلا إيرادات تجارية بعد، بخسارة صافية 73.6 مليون دولار للسنة المالية 2024</span><span class="i-en">Still fully pre-revenue, with a $73.6M FY2024 net loss</span></li>
+<li><span class="i-ar">السهم فقد نحو 80% من قمته التاريخية 193.84 دولارًا — تقلب حاد للغاية</span><span class="i-en">The stock has crashed nearly 80% from its all-time high of $193.84 — extreme volatility</span></li>
+<li><span class="i-ar">برنامج قروض وزارة الطاقة البالغ 17.5 مليار دولار يميل أكثر نحو المفاعلات الكبيرة لا المصغّرة مثل Oklo</span><span class="i-en">The DOE's $17.5B loan program increasingly favors large reactors over small designs like Oklo's</span></li>
+<li><span class="i-ar">أول تشغيل تجاري لمفاعل Aurora لن يحدث قبل أواخر 2027 أو مطلع 2028 — سنوات من مخاطر التنفيذ</span><span class="i-en">Aurora's first commercial operation isn't targeted until late 2027 or early 2028 — years of execution risk remain</span></li></ul></div>
+</div>
+</section>
+
+<section class="rv" id="s-takeaways">
+<div class="eyeb"><b><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></b><span>4</span><div class="ln"></div></div>
+<div class="gl pad" id="tks"></div>
+</section>
+</main>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+<p class="dsc" style="margin-top:8px;font-size:11px;opacity:.7">
+<span class="i-ar">صورة: </span><span class="i-en">Photo: </span><a href="https://commons.wikimedia.org/wiki/File:Advanced_Test_Reactor.jpg" target="_blank" rel="noopener" style="color:inherit">Argonne National Laboratory</a> (CC BY-SA 2.0) — Wikimedia Commons
+</p>
+</footer>
+
+</div>
+<script>
+function toggleForce(el){var open=el.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
+var CUR=localStorage.getItem("lang")||"ar";
+var D=null,NEWSCACHE=null;
+var L={ar:{market_cap:"القيمة السوقية",fifty2_high:"أعلى سعر بـ52 أسبوعًا",fifty2_low:"أدنى سعر بـ52 أسبوعًا",ytd_change:"التغير منذ بداية العام",net_loss:"صافي الخسارة 2024",switch_deal:"صفقة Switch",ebitda_target:"هدف الربحية التشغيلية",first_criticality:"أول حرجية مستهدفة"},
+en:{market_cap:"Market cap",fifty2_high:"52-week high",fifty2_low:"52-week low",ytd_change:"YTD change",net_loss:"FY2024 net loss",switch_deal:"Switch deal",ebitda_target:"EBITDA-positive target",first_criticality:"Targeted first criticality"}};
+var VEN={};
+var SICO={
+market_cap:'<rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><circle cx="8" cy="7" r=".8"/><circle cx="8" cy="17" r=".8"/>',
+fifty2_high:'<path d="M4 4l6 10 4-4 6 10"/>',
+fifty2_low:'<path d="M4 20l6-10 4 4 6-10"/>',
+ytd_change:'<path d="M20 4l-16 16M4 12v8h8"/>',
+net_loss:'<circle cx="12" cy="12" r="9"/><path d="M8 12h8"/>',
+switch_deal:'<path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>',
+ebitda_target:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+first_criticality:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>'
+};
+var TLEN=[{when:"2013",what:"The company is founded",note:"Jacob DeWitte and Caroline Cochran, MIT nuclear engineers, found Oklo to build compact fast-fission microreactors"},{when:"May 10, 2024",what:"Public via SPAC",note:"A merger with Sam Altman co-founded AltC Acquisition Corp raises $306M and lists the stock as OKLO"},{when:"Apr 2025",what:"Altman steps down as chairman",note:"Sam Altman leaves the Oklo board chair to avoid a conflict of interest with OpenAI's power needs"},{when:"Sep 2025",what:"Aurora groundbreaking",note:"Construction begins at Idaho National Laboratory, targeting commercial operation in late 2027 or early 2028"},{when:"2025-2026",what:"Real regulatory progress",note:"The DOE approves the reactor's safety design agreement, and the NRC license application advances"},{when:"Jul 1, 2026",what:"Safety analysis approved",note:"The DOE approves the safety analysis for the Groves isotope test reactor, targeting first criticality this month"}];
+var NEN=[{text:"Oklo stock scores a major regulatory win, with 2026 still shaping up as its breakout year",src:"Barchart",link:"https://www.barchart.com/story/news/3144294/oklo-stock-just-got-a-major-win-2026-could-still-be-its-breakout-year"},{text:"Analysts see up to 100% upside in Oklo over 12 months, even as the pre-revenue nuclear company stays volatile",src:"24/7 Wall St.",link:"https://247wallst.com/investing/2026/07/10/one-nuclear-energy-stock-with-a-100-upside-potential/"},{text:"Oklo shares drop 16% as attention shifts to the reactor test milestone expected in July",src:"ts2.tech",link:"https://ts2.tech/en/oklo-nyseoklo-drops-16-as-focus-shifts-to-july-reactor-milestone-for-next-key-test/"},{text:"Why the DOE's July 4 reactor deadline matters for nuclear stocks including Oklo",src:"Yahoo Finance",link:"https://finance.yahoo.com/energy/articles/why-does-july-4-reactor-123000275.html"},{text:"Oklo could be a very different stock after July, for one reason tied to its upcoming reactor test",src:"Motley Fool",link:"https://www.fool.com/investing/2026/06/02/im-calling-it-oklo-will-be-a-very-different-stock/"},{text:"Sam Altman-backed Oklo signs a major deal to supply data-center operator Switch with up to 12 GW of nuclear power",src:"Newsweek",link:"https://www.newsweek.com/sam-altman-oklo-nuclear-energy-switch-powerhouse-2003168"}];
+function staticNewsHtml(list){return list.map(function(n){
+var head='<span class="arb">'+n.text+'</span>';
+var meta='<div class="nmeta"><span class="src">'+n.src+'</span></div>';
+return n.link?('<li><a href="'+n.link+'" target="_blank" rel="noopener">'+head+meta+'</a></li>'):('<li>'+head+meta+'</li>');
+}).join("")}
+var TKEN=["Oklo is betting that AI will need small, fast-to-deploy nuclear power — and Sam Altman was the first to bet with it, as its former board chairman","A deal for up to 12 GW with data-center operator Switch is the clearest sign yet that AI power demand for nuclear is real","Regulatory progress is genuinely advancing, but Aurora's first commercial reactor won't run before 2027 or 2028","The stock 10x'd, then lost nearly 80% from its peak — the AI-nuclear bet remains a highly volatile wager on a pre-revenue company"];
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+var qnavLinks=document.querySelectorAll(".qnav a");
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+var link=document.querySelector('.qnav a[href="#'+e.target.id+'"]');
+if(!link)return;
+if(e.isIntersecting){qnavLinks.forEach(function(a){a.classList.remove("on")});link.classList.add("on")}
+})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(function(el){spy.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+renderDyn();renderNews();}
+function renderDyn(){if(!D)return;
+document.getElementById("mc").textContent=D.market_cap;
+var tl=(CUR==="ar")?D.timeline:TLEN;
+document.getElementById("tl").innerHTML=tl.map(function(t){return '<div class="ts"><div class="w">'+t.when+'</div><div class="t">'+t.what+'</div><div class="n">'+t.note+'</div></div>'}).join("");
+document.getElementById("stats").innerHTML=Object.keys(D.stats).map(function(k){
+var v=(CUR==="en"&&VEN[k])?VEN[k]:D.stats[k];
+var ic=SICO[k]?'<svg class="sti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SICO[k]+'</svg>':'';
+return '<div class="st gl">'+ic+'<b>'+v+'</b><span>'+(L[CUR][k]||k)+'</span></div>'}).join("");
+var tk=(CUR==="ar")?D.takeaways:TKEN;
+document.getElementById("tks").innerHTML=tk.map(function(t,i){return '<div class="tk"><i>0'+(i+1)+'</i><div>'+t+'</div></div>'}).join("");
+sp(window.__LASTP||D.price_fallback,!!window.__LIVE);}
+function initData(d){
+D=d;window.__PREV=d.prev_close||d.price_fallback;
+if(CUR!=="ar")setLang(CUR);else{renderDyn();}
+document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?d.news:NEN);
+livePrice();liveNews();
+}
+var FALLBACK_DATA={"last_updated":"2026-07-21","price_fallback":41.10,"prev_close":40.95,"market_cap":"7.16B$","stats":{"market_cap":"7.16B$","fifty2_high":"193.84$","fifty2_low":"39.53$","ytd_change":"-31%","net_loss":"73.6M$","switch_deal":"12 GW","ebitda_target":"2030","first_criticality":"يوليو 2026"},"timeline":[{"when":"2013","what":"تأسيس الشركة","note":"جايكوب ديويت وكارولين كوكرن، مهندسا طاقة نووية من معهد MIT، يؤسسان Oklo لبناء مفاعلات انشطارية مصغّرة"},{"when":"10 مايو 2024","what":"الطرح العام عبر SPAC","note":"اندماج مع AltC Acquisition Corp التي شارك سام ألتمان في تأسيسها، يجمع 306 مليون دولار ويبدأ تداول السهم بالرمز OKLO"},{"when":"أبريل 2025","what":"ألتمان يتنحى عن رئاسة المجلس","note":"سام ألتمان يترك منصب رئيس مجلس إدارة Oklo تجنبًا لتضارب المصالح مع احتياجات OpenAI من الطاقة"},{"when":"سبتمبر 2025","what":"وضع حجر الأساس لمفاعل Aurora","note":"بدء الإنشاء بمختبر آيداهو الوطني، بهدف تشغيل تجاري أواخر 2027 أو مطلع 2028"},{"when":"2025-2026","what":"تقدّم تنظيمي حقيقي","note":"وزارة الطاقة توافق على اتفاقية التصميم الآمن للمفاعل، وطلب الترخيص لدى الهيئة النووية يتقدّم بمراجعته"},{"when":"1 يوليو 2026","what":"الموافقة على تحليل السلامة","note":"وزارة الطاقة تعتمد تحليل السلامة الموثق لمفاعل اختبار النظائر Groves، بهدف بلوغ أول حرجية هذا الشهر"}],"news":[{"text":"سهم Oklo يحقق مكسبًا تنظيميًا مهمًا، وسط تقديرات بأن 2026 قد يبقى عام الانطلاقة الحقيقي للشركة","src":"Barchart","link":"https://www.barchart.com/story/news/3144294/oklo-stock-just-got-a-major-win-2026-could-still-be-its-breakout-year"},{"text":"محللون يرون في Oklo فرصة صعود تصل إلى 100% خلال 12 شهرًا، رغم كونها شركة طاقة نووية بلا إيرادات بعد","src":"24/7 Wall St.","link":"https://247wallst.com/investing/2026/07/10/one-nuclear-energy-stock-with-a-100-upside-potential/"},{"text":"سهم Oklo يتراجع 16% مع تحوّل الأنظار نحو محطة اختبار المفاعل المرتقبة بيوليو","src":"ts2.tech","link":"https://ts2.tech/en/oklo-nyseoklo-drops-16-as-focus-shifts-to-july-reactor-milestone-for-next-key-test/"},{"text":"لماذا يُعد الموعد النهائي لوزارة الطاقة في 4 يوليو محطة مهمة لأسهم الطاقة النووية بما فيها Oklo","src":"Yahoo Finance","link":"https://finance.yahoo.com/energy/articles/why-does-july-4-reactor-123000275.html"},{"text":"تحليل يرى أن سهم Oklo سيصبح مختلفًا تمامًا بعد يوليو لسبب واحد يتعلق بمحطة اختبار المفاعل المقبلة","src":"Motley Fool","link":"https://www.fool.com/investing/2026/06/02/im-calling-it-oklo-will-be-a-very-different-stock/"},{"text":"شركة Oklo المدعومة من سام ألتمان توقّع اتفاقية ضخمة لتزويد مراكز بيانات Switch بما يصل إلى 12 غيغاواط من الطاقة النووية","src":"Newsweek","link":"https://www.newsweek.com/sam-altman-oklo-nuclear-energy-switch-powerhouse-2003168"}],"takeaways":["Oklo تراهن أن الذكاء الاصطناعي سيحتاج طاقة نووية صغيرة الحجم وسريعة النشر — وسام ألتمان كان أول من راهن معها كرئيس مجلس إدارة سابق","صفقة تصل إلى 12 غيغاواط مع مشغّل مراكز بيانات Switch أكبر دليل حتى الآن على جدية طلب الذكاء الاصطناعي على الطاقة النووية","المسار التنظيمي يتقدّم فعليًا بموافقات من وزارة الطاقة، لكن أول تشغيل تجاري لمفاعل Aurora لن يحدث قبل 2027 أو 2028","السهم تضاعف عشر مرات ثم فقد نحو 80% من قمته التاريخية — رهان الطاقة النووية للذكاء الاصطناعي ما زال مقامرة عالية التقلب على شركة بلا إيرادات"]};
+fetch("oklo-data.json?v="+Date.now()).then(function(r){return r.json()}).then(initData).catch(function(){initData(FALLBACK_DATA)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/OKLO?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;window.__LIVE=true;sp(p,true);
+var pc=m.chartPreviousClose||m.previousClose;
+if(pc){window.__PREV=pc;var ch=((p-pc)/pc*100).toFixed(2);
+document.getElementById("pm").innerHTML='<span class="ldot live" aria-hidden="true"></span>'+(CUR==="ar"?"حي · اليوم ":"Live · today ")+'<span class="en">'+(ch>0?"+":"")+ch+"%</span>"}}
+}).catch(function(){document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر سعر محفوظ":"last saved price")})}
+function trTxt(t){
+return fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ar&dt=t&q="+encodeURIComponent(t))
+.then(function(r){return r.json()}).then(function(j){return j[0].map(function(s){return s[0]}).join("")})
+.catch(function(){return fetch("https://api.mymemory.translated.net/get?q="+encodeURIComponent(t)+"&langpair=en|ar")
+.then(function(r){return r.json()}).then(function(j){return (j.responseData&&j.responseData.translatedText)||t})
+.catch(function(){return t})})}
+var SRC={"finance.yahoo.com":"Yahoo Finance","yahoo.com":"Yahoo","reuters.com":"Reuters","bloomberg.com":"Bloomberg","cnbc.com":"CNBC","wsj.com":"WSJ","ft.com":"Financial Times","barrons.com":"Barrons","marketwatch.com":"MarketWatch","investors.com":"IBD","fool.com":"Motley Fool","seekingalpha.com":"Seeking Alpha","benzinga.com":"Benzinga","businessinsider.com":"Business Insider","forbes.com":"Forbes","techcrunch.com":"TechCrunch","theverge.com":"The Verge","apnews.com":"AP","nytimes.com":"NY Times","cnn.com":"CNN","bbc.com":"BBC","barchart.com":"Barchart","247wallst.com":"24/7 Wall St.","ts2.tech":"ts2.tech","newsweek.com":"Newsweek"};
+function srcName(item,link){
+var s=item.querySelector("source");
+if(s&&s.textContent.trim())return s.textContent.trim();
+try{var h=new URL(link).hostname.replace(/^www\./,"");
+if(SRC[h])return SRC[h];
+var base=h.split(".").slice(-2).join(".");
+if(SRC[base])return SRC[base];
+var nm=base.split(".")[0];return nm.charAt(0).toUpperCase()+nm.slice(1);
+}catch(e){return "Source"}}
+function agoTxt(t){
+if(!t)return "";
+var m=Math.round((Date.now()-t)/60000);
+if(CUR==="ar"){
+if(m<1)return "الآن";if(m<60)return "قبل "+m+" دقيقة";
+var h=Math.round(m/60);if(h<24)return "قبل "+h+" ساعة";
+var d=Math.round(h/24);return d===1?"أمس":"قبل "+d+" يوم";}
+if(m<1)return "now";if(m<60)return m+"m ago";
+var h2=Math.round(m/60);if(h2<24)return h2+"h ago";
+var d2=Math.round(h2/24);return d2+"d ago";}
+function renderNews(){
+if(!NEWSCACHE){if(D)document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?D.news:NEN);return;}
+document.getElementById("news").innerHTML=NEWSCACHE.map(function(n){
+var head=(CUR==="ar")?('<span class="arb">'+n.ar+'</span><span class="osrc">'+n.en+'</span>')
+:('<span class="arb" style="direction:ltr;display:block;text-align:left">'+n.en+'</span>');
+return '<li><a href="'+n.link+'" target="_blank">'+head+'<div class="nmeta"><span class="src">'+n.src+'</span><span class="ndate">'+agoTxt(n.t)+'</span></div></a></li>'}).join("")}
+function liveNews(){
+fetchViaProxies("https://feeds.finance.yahoo.com/rss/2.0/headline?s=OKLO&region=US&lang=en-US").then(function(t){
+var doc=new DOMParser().parseFromString(t,"text/xml");
+var items=Array.prototype.slice.call(doc.querySelectorAll("item"),0,6);
+if(!items.length)return;
+Promise.all(items.map(function(i){
+var ti=i.querySelector("title"),li=i.querySelector("link"),pd=i.querySelector("pubDate");
+var en=ti?ti.textContent:"";var link=li?li.textContent:"#";
+var tm=pd?new Date(pd.textContent).getTime():0;if(isNaN(tm))tm=0;
+return trTxt(en).then(function(a){return {ar:a,en:en,link:link,src:srcName(i,link),t:tm}})
+})).then(function(list){NEWSCACHE=list;renderNews()})
+}).catch(function(){})}
+function sp(p,live){var e=document.getElementById("px"),prev=window.__PREV||p,up=p>=prev;
+e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg");
+if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+setInterval(livePrice,10000);
+</script>
+</body>
+</html>

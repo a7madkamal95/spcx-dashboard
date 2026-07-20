@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlackBerry — الشبح الذي يعود بصمت · الراصد</title>
+<meta name="description" content="تحليل استثماري حي لسهم BlackBerry من الراصد: تحوّل QNX والاتصالات الآمنة، قصة الانهيار والعودة، وأول تدفق نقدي إيجابي منذ 9 سنوات — بأرقام حية وأخبار حقيقية.">
+<meta name="theme-color" content="#0a0714">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@700;800;900&family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#0a0714;--ink:#f1eefc;--mut:#9691b8;
+--violet:#7c5cff;--violetDeep:#4a2fb8;--magenta:#ff3fa4;--green:#3ce8a6;--red:#ff4d6d;
+--glass:rgba(255,255,255,.045);--glassH:rgba(124,92,255,.12);
+--edge:rgba(124,92,255,.32);--edgeTop:rgba(124,92,255,.5);
+--focus:#7c5cff;
+--disp:'Noto Kufi Arabic',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'IBM Plex Mono',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r10:10px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'IBM Plex Mono',monospace;--body:'IBM Plex Mono','Segoe UI',sans-serif}
+.en,.num,#px,.st b,.ts .w,.tk i{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.keybg{position:fixed;inset:0;z-index:-3;background:var(--void)}
+.keybg::before{content:"";position:absolute;inset:0;opacity:.07;
+background-image:radial-gradient(rgba(124,92,255,.9) 1.4px,transparent 1.4px);
+background-size:26px 26px;
+mask-image:radial-gradient(ellipse 70% 55% at 50% 10%,#000 40%,transparent 92%)}
+.glow{position:fixed;top:-10%;left:50%;transform:translateX(-50%);width:65vw;height:65vw;z-index:-2;
+background:radial-gradient(circle,rgba(124,92,255,.18),transparent 65%);filter:blur(80px)}
+.glow2{position:fixed;bottom:-15%;right:-10%;width:50vw;height:50vw;z-index:-2;
+background:radial-gradient(circle,rgba(255,63,164,.1),transparent 65%);filter:blur(90px)}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(124,92,255,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%);
+border:1px solid var(--edge);
+border-radius:var(--r10);box-shadow:0 14px 36px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06);
+position:relative;overflow:hidden}
+.gl::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(124,92,255,.08);pointer-events:none}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;flex-shrink:0}
+.bar .brand svg{width:17px;height:17px;color:var(--violet)}
+.bar .brand:hover{color:var(--violet)}
+.bar .sep{width:1px;height:18px;background:var(--edge);flex-shrink:0}
+.bar .sym{font-family:var(--num);font-weight:600;letter-spacing:.03em;font-size:13px;color:var(--mut)}
+.bar .dot{width:8px;height:8px;border-radius:50%;background:var(--violet);box-shadow:0 0 14px var(--violet);animation:pl 1.6s infinite;flex-shrink:0}
+@keyframes pl{50%{opacity:.35}}
+#px{font-family:var(--num);font-weight:700;font-size:23px;direction:ltr}
+.neg{color:var(--red)}.pos{color:var(--green)}
+#pm{font-size:13px;color:var(--mut);display:inline-flex;align-items:center;gap:6px}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.ldot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pl 1.6s infinite}
+.ldot.wait{background:var(--magenta);animation:pl 1s infinite}
+.en{direction:ltr;display:inline-block;font-family:var(--num)}
+.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.06em;
+color:var(--ink);background:rgba(124,92,255,.1);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(124,92,255,.2);transform:translateY(-1px)}
+.lng:active{transform:translateY(0)}
+.qnav{position:sticky;top:calc(var(--sp3) + 58px);z-index:49;display:flex;gap:6px;padding:7px;margin-top:10px;
+overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.qnav::-webkit-scrollbar{display:none}
+.qnav a{flex-shrink:0;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--mut);
+text-decoration:none;padding:9px 16px;min-height:38px;border-radius:8px;white-space:nowrap;
+transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease)}
+.qnav a svg{width:15px;height:15px;flex-shrink:0}
+.qnav a:hover{color:var(--ink);background:rgba(255,255,255,.07)}
+.qnav a.on{color:var(--void);background:var(--violet)}
+.hero{padding:56px 0 var(--sp4);display:grid;grid-template-columns:1.08fr .92fr;gap:var(--sp6);align-items:center}
+@media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
+.kick{font-family:var(--num);font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--violet)}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(36px,6.2vw,58px);line-height:1.18;margin-top:var(--sp2)}
+h1 .grad{background:linear-gradient(92deg,var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:17px;line-height:1.8;max-width:48ch;margin-top:var(--sp4)}
+@media(max-width:780px){.lead{margin-inline:auto}}
+.shot{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:0;overflow:hidden}
+.shot-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(1.05) contrast(1.05)}
+.shot-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,7,20,.1) 0%,rgba(10,7,20,.35) 62%,rgba(10,7,20,.88) 100%)}
+.shot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:var(--sp4)}
+.shot-kick{align-self:flex-end;display:flex;align-items:center;gap:6px;font-family:var(--num);font-size:12px;letter-spacing:.06em;color:var(--violet);font-weight:700;background:rgba(10,7,20,.65);backdrop-filter:blur(4px);padding:5px 12px;border-radius:99px;border:1px solid rgba(124,92,255,.45)}
+.shot-dot{width:6px;height:6px;border-radius:50%;background:var(--violet);box-shadow:0 0 8px var(--violet);animation:pl 1.6s infinite}
+.shot-cap{font-family:var(--num);font-size:13px;letter-spacing:.02em;color:var(--ink);background:rgba(10,7,20,.6);backdrop-filter:blur(4px);padding:7px 14px;border-radius:8px;align-self:flex-start;border:1px solid rgba(124,92,255,.4)}
+section{margin-top:var(--sp8)}
+.eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
+.eyeb .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--violet),rgba(124,92,255,.3) 70%,transparent)}
+.eyeb b{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:.01em}
+.eyeb span{font-family:var(--num);font-size:12px;letter-spacing:.1em;color:var(--violet);font-weight:700}
+.pad{padding:var(--sp6)}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
+@media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+.ts{padding:var(--sp4);border-radius:8px;background:rgba(124,92,255,.05);border:1px solid var(--edge)}
+.ts .w{font-family:var(--num);font-size:12px;color:var(--violet);letter-spacing:.02em;font-weight:700}
+.ts .t{font-family:var(--disp);font-weight:800;font-size:17px;margin-top:4px}
+.ts .n{font-size:13px;color:var(--mut);line-height:1.7;margin-top:4px}
+.forces{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:start}
+@media(max-width:900px){.forces{grid-template-columns:1fr}}
+.force{padding:var(--sp5);cursor:pointer;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.force:hover{transform:translateY(-5px);background:var(--glassH)}
+.force .icwrap{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(124,92,255,.08);border:1px solid var(--edge)}
+.force .icwrap svg{width:23px;height:23px}
+.force h3{font-family:var(--disp);font-weight:800;font-size:21px;margin-top:var(--sp3)}
+.tag{display:inline-block;font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.03em;border-radius:6px;padding:4px 10px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.04)}
+.t1{color:var(--violet);border-color:rgba(124,92,255,.5)}.t2{color:var(--magenta);border-color:rgba(255,63,164,.5)}.t3{color:var(--green);border-color:rgba(60,232,166,.5)}
+.force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
+.force .dtl{display:none}
+.force.open .dtl{display:block}
+.force h5{font-family:var(--disp);font-size:15px;font-weight:800;color:var(--violet);margin-top:var(--sp4);letter-spacing:.02em}
+.force table{width:100%;border-collapse:collapse;font-size:13px;margin-top:var(--sp2)}
+.force td{padding:8px 4px;border-top:1px solid var(--edge);vertical-align:top;line-height:1.7}
+.force td:first-child{font-family:var(--num);font-size:12px;font-weight:700;white-space:nowrap;direction:ltr;color:var(--violet)}
+html[data-lang=ar] .force td:first-child{text-align:right}
+html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px}
+.more{font-size:12px;color:var(--violet);margin-top:var(--sp3);font-weight:700;display:flex;align-items:center;gap:4px}
+.more svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
+.force.open .more svg{transform:rotate(180deg)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
+@media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+.st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
+.st:hover{transform:translateY(-4px);background:var(--glassH)}
+.st .sti{width:20px;height:20px;color:var(--violet);opacity:.9;margin-bottom:6px}
+.st b{display:block;font-family:var(--num);font-size:25px;font-weight:700;direction:ltr;color:var(--violet)}
+.st span{font-size:12.5px;color:var(--mut)}
+#news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}
+#news li:first-child{border-top:none}
+#news a{color:inherit;text-decoration:none;display:block;border-radius:8px}
+#news a:hover .arb{color:var(--violet)}
+.arb{transition:color var(--dur-fast) var(--ease);font-weight:500;line-height:1.6}
+.osrc{font-family:var(--num);font-size:12px;color:var(--mut);direction:ltr;display:block;text-align:left;margin-top:3px;opacity:.8}
+.nmeta{display:flex;gap:var(--sp2);align-items:center;flex-wrap:wrap;margin-top:var(--sp2)}
+.src{font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--violet);border:1px solid rgba(124,92,255,.4);border-radius:6px;padding:3px 10px;background:rgba(124,92,255,.08);direction:ltr}
+.ndate{font-size:12px;color:var(--mut)}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
+@media(max-width:640px){.sc{grid-template-columns:1fr}}
+.pan{padding:var(--sp5);font-size:13.5px}
+.pan h4{font-family:var(--disp);font-weight:800;font-size:22px;margin-bottom:var(--sp3);display:flex;align-items:center;gap:8px}
+.pg h4{color:var(--green)}.pb h4{color:var(--red)}
+.pan li{list-style:none;padding:6px 0;border-top:1px dashed var(--edge);line-height:1.7}
+.pan li:first-of-type{border-top:none}
+.tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px solid var(--edge);font-size:15.5px;line-height:1.7}
+.tk:first-child{border-top:none}
+.tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--violet);font-size:13px;border:1px solid rgba(124,92,255,.5);border-radius:6px;padding:2px 9px;margin-top:3px;background:rgba(124,92,255,.08);flex-shrink:0}
+.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(12,9,20,.96)}}
+</style>
+</head>
+<body>
+<div class="keybg" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+<div class="glow2" aria-hidden="true"></div>
+<div class="wrap">
+<div class="bar gl rv">
+<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span class="i-ar">الصفحة الرئيسية</span><span class="i-en">Home</span></a>
+<span class="sep" aria-hidden="true"></span>
+<span class="dot" aria-hidden="true"></span><img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Blackberry_Logo.svg" alt="BlackBerry" style="height:14px;filter:brightness(0) invert(1);opacity:.92;flex-shrink:0"><span class="sym">NYSE · BB</span>
+<span id="px">…</span><span id="mc" class="en" style="color:var(--violet);font-weight:700"></span>
+<span id="pm" aria-live="polite"></span>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<nav class="qnav gl rv" aria-label="Section navigation">
+<a href="#s-timeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="i-ar">الأحداث</span><span class="i-en">Milestones</span></a>
+<a href="#s-forces"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="i-ar">القوى الثلاث</span><span class="i-en">Three Forces</span></a>
+<a href="#s-numbers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg><span class="i-ar">الأرقام</span><span class="i-en">Numbers</span></a>
+<a href="#s-news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg><span class="i-ar">الأخبار</span><span class="i-en">News</span></a>
+<a href="#s-balance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 006 0l-3-6zM19 7l-3 6a3 3 0 006 0l-3-6zM5 7h14"/></svg><span class="i-ar">الميزان</span><span class="i-en">Balance</span></a>
+<a href="#s-takeaways"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></a>
+</nav>
+
+<main>
+<div class="hero">
+<div class="rv">
+<div class="kick"><span class="i-ar">تحليل استثماري حي · يتحدث تلقائيًا</span><span class="i-en">LIVE INVESTOR INTELLIGENCE · AUTO-UPDATING</span></div>
+<h1><span class="i-ar">الشبح الذي<br>يعود <span class="grad">بصمت</span></span><span class="i-en">The Ghost That<br>Returns <span class="grad">Quietly</span></span></h1>
+<p class="lead"><span class="i-ar">شركة هواتف ماتت علنًا أمام أعين العالم، لكنها لم تختفِ — تحولت لبرمجيات تشغّل أنظمة السيارات الحرجة وتُؤمّن اتصالات الحكومات، وحققت للتو أول تدفق نقدي تشغيلي إيجابي بربع أول منذ تسع سنوات.</span><span class="i-en">A phone company that died in public didn't disappear — it became the software running safety-critical car systems and securing government communications, and just posted its first positive Q1 operating cash flow in nine years.</span></p>
+</div>
+<div class="shot gl rv">
+<div class="shot-photo" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/a/a1/BlackBerry_Bold_Touch_9900.jpg)" role="img" aria-label="Real photo of a classic BlackBerry Bold Touch 9900 with its physical keyboard"></div>
+<div class="shot-overlay">
+<div class="shot-kick"><span class="shot-dot" aria-hidden="true"></span>LIVE</div>
+<div class="shot-cap"><span class="i-ar">BlackBerry Bold — ذروة عصر لوحة المفاتيح</span><span class="i-en">BlackBerry Bold — peak of the keyboard era</span></div>
+</div>
+</div>
+</div>
+
+<section class="rv" id="s-timeline">
+<div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>1984 → 2026</span><div class="ln"></div></div>
+<div class="gl pad"><div class="tl" id="tl"></div></div>
+</section>
+
+<section class="rv" id="s-forces">
+<div class="eyeb"><b><span class="i-ar">القوى الثلاث المحركة للسهم</span><span class="i-en">The Three Forces Driving The Stock</span></b><div class="ln"></div></div>
+<div class="forces">
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#7c5cff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-7a2 2 0 00-2-1.6H8.5a2 2 0 00-2 1.6L5 17z"/><circle cx="8" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/><path d="M9 10V7a3 3 0 016 0v3"/></svg></div>
+<h3><span class="i-ar">QNX تقود صناعة السيارات</span><span class="i-en">QNX Leads the Auto Industry</span></h3><span class="tag t1">235M+ VEHICLES</span>
+<p><span class="i-ar">نظام تشغيل حرج التوقيت مدمج بأكثر من 235 مليون مركبة حول العالم، ويكبر بمعدل 20 مليون مركبة إضافية سنويًا</span><span class="i-en">A real-time operating system embedded in over 235 million vehicles worldwide, growing by 20 million more each year</span></p>
+<div class="dtl">
+<h5><span class="i-ar">الحجم والنمو</span><span class="i-en">Scale &amp; Growth</span></h5>
+<table>
+<tr><td>235M+</td><td><span class="i-ar">مركبة تعمل ببرمجيات QNX حول العالم، بزيادة 20 مليون خلال عام</span><span class="i-en">Vehicles running QNX worldwide, up 20 million in a year</span></td></tr>
+<tr><td>72.3M$</td><td><span class="i-ar">إيرادات قسم QNX بالربع الأول بنمو 26% سنويًا، وأرباح تشغيلية معدلة 19.3 مليون دولار بنمو 52%</span><span class="i-en">QNX segment Q1 revenue, up 26% YoY, with adjusted EBITDA of $19.3M up 52%</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3fa4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8.5-7 9-4-.5-7-4-7-9V6l7-3z"/><path d="M10 12l1.5 1.5L15 10"/></svg></div>
+<h3><span class="i-ar">الاتصالات الآمنة للحكومات</span><span class="i-en">Secure Communications for Governments</span></h3><span class="tag t2">+110% EBITDA</span>
+<p><span class="i-ar">قطاع يخدم الحكومات والمؤسسات بمنصات اتصال مشفرة، وأرباحه التشغيلية تضاعفت أكثر من مرة خلال عام واحد</span><span class="i-en">A segment serving governments and enterprises with encrypted communication platforms, whose operating profit more than doubled in a single year</span></p>
+<div class="dtl">
+<h5><span class="i-ar">النمو والربحية</span><span class="i-en">Growth &amp; Profitability</span></h5>
+<table>
+<tr><td>73.6M$</td><td><span class="i-ar">إيرادات القسم بالربع الأول بنمو 24% سنويًا</span><span class="i-en">Segment Q1 revenue, up 24% year over year</span></td></tr>
+<tr><td>+110%</td><td><span class="i-ar">نمو الأرباح التشغيلية المعدلة إلى 20.2 مليون دولار</span><span class="i-en">Adjusted operating profit growth to $20.2M</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+<div class="force gl" tabindex="0" role="button" aria-expanded="false" onclick="toggleForce(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleForce(this)}">
+<div class="icwrap"><svg viewBox="0 0 24 24" fill="none" stroke="#3ce8a6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+<h3><span class="i-ar">التحول المالي الحقيقي</span><span class="i-en">The Real Financial Turnaround</span></h3><span class="tag t3">9-YEAR FIRST</span>
+<p><span class="i-ar">بعد سنوات من الخسائر، حققت الشركة أول تدفق نقدي تشغيلي إيجابي بربع مالي أول منذ تسع سنوات، والسهم ارتفع قرابة 187% منذ بداية العام</span><span class="i-en">After years of losses, the company posted its first positive Q1 operating cash flow in nine years, and the stock is up roughly 187% year to date</span></p>
+<div class="dtl">
+<h5><span class="i-ar">نتائج الربع الأول</span><span class="i-en">Q1 Results</span></h5>
+<table>
+<tr><td>152.9M$</td><td><span class="i-ar">إيرادات الربع بنمو 26% سنويًا، متجاوزة توقعات المحللين البالغة 138.2 مليون دولار</span><span class="i-en">Quarterly revenue up 26% YoY, beating the $138.2M analyst consensus</span></td></tr>
+<tr><td>4.6M$</td><td><span class="i-ar">أول تدفق نقدي تشغيلي إيجابي بربع أول منذ 9 سنوات (باستثناء بيع براءات اختراع 2024)</span><span class="i-en">First positive Q1 operating cash flow in 9 years (excluding a 2024 patent sale)</span></td></tr>
+<tr><td>8.50$ → 10$</td><td><span class="i-ar">CIBC يرفع هدف سعره للسهم ويؤكد تصنيف تفوق على السوق</span><span class="i-en">CIBC raises its price target and reaffirms an Outperform rating</span></td></tr>
+</table>
+</div>
+<div class="more"><span class="i-ar">التفاصيل الكاملة</span><span class="i-en">Full details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+</div>
+
+</div>
+</section>
+
+<section class="rv" id="s-numbers">
+<div class="eyeb"><b><span class="i-ar">لوحة الأرقام</span><span class="i-en">The Numbers</span></b><span>LIVE DATA</span><div class="ln"></div></div>
+<div class="stats" id="stats"></div>
+</section>
+
+<section class="rv" id="s-news">
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="gl pad"><ul id="news"></ul></div>
+</section>
+
+<section class="rv" id="s-balance">
+<div class="eyeb"><b><span class="i-ar">الميزان</span><span class="i-en">Balance</span></b><span>PRO VIEW</span><div class="ln"></div></div>
+<div class="sc">
+<div class="pan gl pg"><h4><span class="i-ar">القوة</span><span class="i-en">Strengths</span></h4><ul>
+<li><span class="i-ar">QNX مدمجة بأكثر من 235 مليون مركبة — موقع راسخ ببرمجيات السيارات الحرجة</span><span class="i-en">QNX is embedded in 235M+ vehicles — an entrenched position in safety-critical auto software</span></li>
+<li><span class="i-ar">أرباح قطاع الاتصالات الآمنة تضاعفت أكثر من مرة (+110%) خدمة للحكومات</span><span class="i-en">Secure Communications profit more than doubled (+110%) serving governments</span></li>
+<li><span class="i-ar">أول تدفق نقدي تشغيلي إيجابي بربع أول منذ 9 سنوات — تحوّل مالي حقيقي</span><span class="i-en">First positive Q1 operating cash flow in 9 years — a genuine fundamental turnaround</span></li>
+<li><span class="i-ar">السهم ارتفع 186.8% منذ بداية العام مع رفع محللين لتوقعاتهم</span><span class="i-en">The stock is up 186.8% YTD with analyst price-target upgrades</span></li></ul></div>
+<div class="pan gl pb"><h4><span class="i-ar">الخطر</span><span class="i-en">Risks</span></h4><ul>
+<li><span class="i-ar">تاريخ حافل بتقلبات السهم الميمي عام 2021 يُذكّر بأن المعنويات قد تسبق الأساسيات</span><span class="i-en">A history of 2021 meme-stock volatility is a reminder that sentiment can outrun fundamentals</span></li>
+<li><span class="i-ar">بيع Cylance بخسارة كبيرة مقابل سعر الشراء 1.4 مليار دولار — أخطاء تخصيص رأسمال سابقة</span><span class="i-en">Cylance was sold at a steep loss versus its $1.4B purchase price — past capital-allocation missteps</span></li>
+<li><span class="i-ar">الإيرادات لا تزال متواضعة (152.9 مليون دولار بالربع) مقابل منافسين أكبر بكثير</span><span class="i-en">Revenue remains modest ($152.9M a quarter) against far larger rivals</span></li>
+<li><span class="i-ar">اعتماد كبير على دورات تصميم السيارات التي قد تكون بطيئة ومتقطعة</span><span class="i-en">Heavy dependence on automotive design-win cycles that can be slow and lumpy</span></li></ul></div>
+</div>
+</section>
+
+<section class="rv" id="s-takeaways">
+<div class="eyeb"><b><span class="i-ar">الخلاصة</span><span class="i-en">Takeaways</span></b><span>4</span><div class="ln"></div></div>
+<div class="gl pad" id="tks"></div>
+</section>
+</main>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+<p class="dsc" style="margin-top:8px;font-size:11px;opacity:.7">
+<span class="i-ar">صورة: </span><span class="i-en">Photo: </span><a href="https://commons.wikimedia.org/wiki/File:BlackBerry_Bold_Touch_9900.jpg" target="_blank" rel="noopener" style="color:inherit">Steven H. Keys</a> (CC BY 4.0) — Wikimedia Commons
+</p>
+</footer>
+
+</div>
+<script>
+function toggleForce(el){var open=el.classList.toggle("open");el.setAttribute("aria-expanded",open?"true":"false");}
+var CUR=localStorage.getItem("lang")||"ar";
+var D=null,NEWSCACHE=null;
+var L={ar:{revenue_q1:"إيرادات الربع الأول",yoy_growth:"نمو سنوي",qnx_rev:"إيرادات QNX",seccomm_rev:"إيرادات الاتصالات الآمنة",adj_ebitda:"الأرباح المعدلة",vehicles:"مركبات تعمل بـQNX",ytd_return:"العائد منذ بداية العام",market_cap:"القيمة السوقية"},
+en:{revenue_q1:"Q1 revenue",yoy_growth:"YoY growth",qnx_rev:"QNX revenue",seccomm_rev:"Secure Comms revenue",adj_ebitda:"Adjusted EBITDA",vehicles:"Vehicles running QNX",ytd_return:"YTD return",market_cap:"Market cap"}};
+var VEN={};
+var SICO={
+revenue_q1:'<path d="M4 20V10M12 20V4M20 20v-7"/>',
+yoy_growth:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+qnx_rev:'<path d="M5 17h14l-1.5-7a2 2 0 00-2-1.6H8.5a2 2 0 00-2 1.6L5 17z"/><circle cx="8" cy="19" r="1.2"/><circle cx="16" cy="19" r="1.2"/>',
+seccomm_rev:'<path d="M12 3l7 3v6c0 5-3 8.5-7 9-4-.5-7-4-7-9V6l7-3z"/>',
+adj_ebitda:'<circle cx="12" cy="12" r="9"/><path d="M9 9h3.5a2 2 0 010 4H9M9 13h6M12 7v2M12 15v2"/>',
+vehicles:'<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M12 8v8"/>',
+ytd_return:'<path d="M4 4l6 10 4-4 6 10"/>',
+market_cap:'<rect x="4" y="4" width="16" height="6" rx="1.5"/><rect x="4" y="14" width="16" height="6" rx="1.5"/><circle cx="8" cy="7" r=".8"/><circle cx="8" cy="17" r=".8"/>'
+};
+var TLEN=[{when:"1984",what:"The company is founded",note:"Mike Lazaridis founds Research In Motion in Waterloo, Canada"},{when:"2009-2011",what:"Peak dominance",note:"BlackBerry phones capture nearly 20% of the global smartphone market, becoming the standard device for governments and enterprises"},{when:"2013",what:"Collapse and the pivot begins",note:"iPhone and Android crush the phone business; the company renames itself BlackBerry Limited and begins its shift to software"},{when:"Jan 2021",what:"A meme stock",note:"The WallStreetBets community drives the stock to multi-year highs amid daily volume topping 300 million shares"},{when:"May 2023",what:"The patent sale",note:"A deal worth up to $900M with Malikie Innovations for BlackBerry's non-core patent portfolio"},{when:"Jun 2026",what:"First positive cash flow in 9 years",note:"Fiscal Q1 2027 results beat estimates, sending the stock up nearly 21% in a single session"}];
+var NEN=[{text:"BlackBerry stock surges after Q1 results top analyst estimates on QNX and Secure Communications growth",src:"Proactive Investors",link:"https://www.proactiveinvestors.com/companies/news/1094518/blackberry-stock-surges-as-first-quarter-results-top-estimates-on-qnx-cybersecurity-strength-1094518.html"},{text:"Quarterly revenue reached $152.9M, up 26% year over year, beating the $138.2M analyst consensus",src:"Yahoo Finance",link:"https://finance.yahoo.com/markets/stocks/articles/blackberry-stock-surges-first-quarter-155700162.html"},{text:"BlackBerry stock hits a 52-week high amid growing momentum from investors and analysts",src:"Benzinga",link:"https://www.benzinga.com/trading-ideas/movers/26/07/60220689/blackberry-stock-hits-52-week-highs-what-investors-need-to-know"},{text:"Strong growth and powerful catalysts make BlackBerry stock attractive as QNX and cybersecurity accelerate",src:"ClearanceJobs",link:"https://news.clearancejobs.com/2026/07/08/blackberrys-strong-growth-powerful-catalysts-make-bb-stock-very-attractive/"},{text:"Analysts raise targets on BlackBerry as QNX and cybersecurity push ahead; CIBC lifts its target to $10",src:"StocksToTrade",link:"https://stockstotrade.com/news/blackberry-limited-bb-news-2026_06_22/"},{text:"BlackBerry QNX software is now embedded in over 235 million vehicles worldwide, up 20 million in a year",src:"Automotive World",link:"https://www.automotiveworld.com/news-releases/blackberry-software-is-now-embedded-in-over-235-million-vehicles/"}];
+function staticNewsHtml(list){return list.map(function(n){
+var head='<span class="arb">'+n.text+'</span>';
+var meta='<div class="nmeta"><span class="src">'+n.src+'</span></div>';
+return n.link?('<li><a href="'+n.link+'" target="_blank" rel="noopener">'+head+meta+'</a></li>'):('<li>'+head+meta+'</li>');
+}).join("")}
+var TKEN=["A phone company that nearly vanished became a supplier of critical cybersecurity and safety software, just posting its first positive Q1 operating cash flow in 9 years","QNX leads safety-critical automotive software with 235M+ vehicles running it","Secure Communications serves governments and enterprises and more than doubled its operating profit in a year","The 2021 meme-stock memory is a reminder that sentiment can outrun fundamentals — but 2026's numbers are built on real financial results"];
+var PROXIES=[
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+];
+function fetchViaProxies(url,i){
+i=i||0;
+if(i>=PROXIES.length)return Promise.reject(new Error("all proxies failed"));
+return fetch(PROXIES[i](url)).then(function(r){if(!r.ok)throw new Error("bad status");return r.text()})
+.catch(function(){return fetchViaProxies(url,i+1)});
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+var qnavLinks=document.querySelectorAll(".qnav a");
+var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+var link=document.querySelector('.qnav a[href="#'+e.target.id+'"]');
+if(!link)return;
+if(e.isIntersecting){qnavLinks.forEach(function(a){a.classList.remove("on")});link.classList.add("on")}
+})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(function(el){spy.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+renderDyn();renderNews();}
+function renderDyn(){if(!D)return;
+document.getElementById("mc").textContent=D.market_cap;
+var tl=(CUR==="ar")?D.timeline:TLEN;
+document.getElementById("tl").innerHTML=tl.map(function(t){return '<div class="ts"><div class="w">'+t.when+'</div><div class="t">'+t.what+'</div><div class="n">'+t.note+'</div></div>'}).join("");
+document.getElementById("stats").innerHTML=Object.keys(D.stats).map(function(k){
+var v=(CUR==="en"&&VEN[k])?VEN[k]:D.stats[k];
+var ic=SICO[k]?'<svg class="sti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SICO[k]+'</svg>':'';
+return '<div class="st gl">'+ic+'<b>'+v+'</b><span>'+(L[CUR][k]||k)+'</span></div>'}).join("");
+var tk=(CUR==="ar")?D.takeaways:TKEN;
+document.getElementById("tks").innerHTML=tk.map(function(t,i){return '<div class="tk"><i>0'+(i+1)+'</i><div>'+t+'</div></div>'}).join("");
+sp(window.__LASTP||D.price_fallback,!!window.__LIVE);}
+function initData(d){
+D=d;window.__PREV=d.prev_close||d.price_fallback;
+if(CUR!=="ar")setLang(CUR);else{renderDyn();}
+document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?d.news:NEN);
+livePrice();liveNews();
+}
+var FALLBACK_DATA={"last_updated":"2026-07-21","price_fallback":8.77,"prev_close":8.62,"market_cap":"5.14B$","stats":{"revenue_q1":"152.9M$","yoy_growth":"+26%","qnx_rev":"72.3M$","seccomm_rev":"73.6M$","adj_ebitda":"36.3M$","vehicles":"235M+","ytd_return":"+186.8%","market_cap":"5.14B$"},"timeline":[{"when":"1984","what":"تأسيس الشركة","note":"مايك لازاريدس يؤسس Research In Motion في مدينة واترلو الكندية"},{"when":"2009-2011","what":"ذروة الهيمنة","note":"هواتف BlackBerry تستحوذ على نحو 20% من سوق الهواتف الذكية عالميًا، وتصبح الجهاز الرسمي للحكومات والشركات"},{"when":"2013","what":"الانهيار وبداية التحول","note":"آيفون وأندرويد يسحقان قسم الهواتف، والشركة تُعيد تسمية نفسها BlackBerry Limited وتبدأ التحول نحو البرمجيات"},{"when":"يناير 2021","what":"سهم ميمي","note":"مجتمع WallStreetBets يدفع السهم لأعلى مستوياته منذ سنوات وسط تداول يومي تجاوز 300 مليون سهم"},{"when":"مايو 2023","what":"بيع براءات الاختراع","note":"صفقة تصل قيمتها إلى 900 مليون دولار مع Malikie Innovations مقابل المحفظة غير الأساسية من براءات الاختراع"},{"when":"يونيو 2026","what":"أول تدفق نقدي إيجابي منذ 9 سنوات","note":"نتائج الربع الأول للسنة المالية 2027 تتجاوز التوقعات وتدفع السهم للقفز نحو 21% بجلسة واحدة"}],"news":[{"text":"سهم BlackBerry يقفز بعدما تجاوزت نتائج الربع الأول توقعات المحللين بدعم من نمو QNX والاتصالات الآمنة","src":"Proactive Investors","link":"https://www.proactiveinvestors.com/companies/news/1094518/blackberry-stock-surges-as-first-quarter-results-top-estimates-on-qnx-cybersecurity-strength-1094518.html"},{"text":"إيرادات الربع بلغت 152.9 مليون دولار بنمو 26% سنويًا، متجاوزة توقعات المحللين البالغة 138.2 مليون دولار","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/stocks/articles/blackberry-stock-surges-first-quarter-155700162.html"},{"text":"سهم BlackBerry يسجل أعلى مستوى له خلال 52 أسبوعًا وسط زخم متصاعد من مستثمرين ومحللين","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/movers/26/07/60220689/blackberry-stock-hits-52-week-highs-what-investors-need-to-know"},{"text":"نمو قوي وحفّازات واعدة تجعل سهم BlackBerry خيارًا جذابًا بحسب محللين وسط تسارع أعمال QNX والأمن السيبراني","src":"ClearanceJobs","link":"https://news.clearancejobs.com/2026/07/08/blackberrys-strong-growth-powerful-catalysts-make-bb-stock-very-attractive/"},{"text":"محللون يرفعون توقعاتهم لسهم BlackBerry مع استمرار دفع أعمال QNX وقطاع الأمن السيبراني، وCIBC يرفع هدفه إلى 10 دولارات","src":"StocksToTrade","link":"https://stockstotrade.com/news/blackberry-limited-bb-news-2026_06_22/"},{"text":"برمجيات BlackBerry QNX أصبحت مدمجة في أكثر من 235 مليون مركبة حول العالم، بزيادة 20 مليون مركبة خلال عام واحد","src":"Automotive World","link":"https://www.automotiveworld.com/news-releases/blackberry-software-is-now-embedded-in-over-235-million-vehicles/"}],"takeaways":["شركة هواتف كادت تندثر تحولت إلى مزوّد برمجيات أمن سيبراني وقيادة حرجة، وحققت للتو أول تدفق نقدي تشغيلي إيجابي بربع أول منذ 9 سنوات","QNX تقود سوق البرمجيات الحرجة بصناعة السيارات بأكثر من 235 مليون مركبة تعمل بنظامها","قطاع الاتصالات الآمنة يخدم الحكومات والمؤسسات وضاعف ربحيته التشغيلية أكثر من مرة خلال عام","ذاكرة السهم الميمي بـ2021 تُذكّر أن المعنويات قد تسبق الأساسيات — لكن أرقام 2026 مبنية على نتائج مالية حقيقية"]};
+fetch("bb-data.json?v="+Date.now()).then(function(r){return r.json()}).then(initData).catch(function(){initData(FALLBACK_DATA)});
+function livePrice(){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/BB?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice;
+if(p>0){window.__LASTP=p;window.__LIVE=true;sp(p,true);
+var pc=m.chartPreviousClose||m.previousClose;
+if(pc){window.__PREV=pc;var ch=((p-pc)/pc*100).toFixed(2);
+document.getElementById("pm").innerHTML='<span class="ldot live" aria-hidden="true"></span>'+(CUR==="ar"?"حي · اليوم ":"Live · today ")+'<span class="en">'+(ch>0?"+":"")+ch+"%</span>"}}
+}).catch(function(){document.getElementById("pm").innerHTML='<span class="ldot" aria-hidden="true"></span>'+(CUR==="ar"?"آخر سعر محفوظ":"last saved price")})}
+function trTxt(t){
+return fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ar&dt=t&q="+encodeURIComponent(t))
+.then(function(r){return r.json()}).then(function(j){return j[0].map(function(s){return s[0]}).join("")})
+.catch(function(){return fetch("https://api.mymemory.translated.net/get?q="+encodeURIComponent(t)+"&langpair=en|ar")
+.then(function(r){return r.json()}).then(function(j){return (j.responseData&&j.responseData.translatedText)||t})
+.catch(function(){return t})})}
+var SRC={"finance.yahoo.com":"Yahoo Finance","yahoo.com":"Yahoo","reuters.com":"Reuters","bloomberg.com":"Bloomberg","cnbc.com":"CNBC","wsj.com":"WSJ","ft.com":"Financial Times","barrons.com":"Barrons","marketwatch.com":"MarketWatch","investors.com":"IBD","fool.com":"Motley Fool","seekingalpha.com":"Seeking Alpha","benzinga.com":"Benzinga","businessinsider.com":"Business Insider","forbes.com":"Forbes","techcrunch.com":"TechCrunch","theverge.com":"The Verge","apnews.com":"AP","nytimes.com":"NY Times","cnn.com":"CNN","bbc.com":"BBC","proactiveinvestors.com":"Proactive Investors","clearancejobs.com":"ClearanceJobs","stockstotrade.com":"StocksToTrade","automotiveworld.com":"Automotive World"};
+function srcName(item,link){
+var s=item.querySelector("source");
+if(s&&s.textContent.trim())return s.textContent.trim();
+try{var h=new URL(link).hostname.replace(/^www\./,"");
+if(SRC[h])return SRC[h];
+var base=h.split(".").slice(-2).join(".");
+if(SRC[base])return SRC[base];
+var nm=base.split(".")[0];return nm.charAt(0).toUpperCase()+nm.slice(1);
+}catch(e){return "Source"}}
+function agoTxt(t){
+if(!t)return "";
+var m=Math.round((Date.now()-t)/60000);
+if(CUR==="ar"){
+if(m<1)return "الآن";if(m<60)return "قبل "+m+" دقيقة";
+var h=Math.round(m/60);if(h<24)return "قبل "+h+" ساعة";
+var d=Math.round(h/24);return d===1?"أمس":"قبل "+d+" يوم";}
+if(m<1)return "now";if(m<60)return m+"m ago";
+var h2=Math.round(m/60);if(h2<24)return h2+"h ago";
+var d2=Math.round(h2/24);return d2+"d ago";}
+function renderNews(){
+if(!NEWSCACHE){if(D)document.getElementById("news").innerHTML=staticNewsHtml(CUR==="ar"?D.news:NEN);return;}
+document.getElementById("news").innerHTML=NEWSCACHE.map(function(n){
+var head=(CUR==="ar")?('<span class="arb">'+n.ar+'</span><span class="osrc">'+n.en+'</span>')
+:('<span class="arb" style="direction:ltr;display:block;text-align:left">'+n.en+'</span>');
+return '<li><a href="'+n.link+'" target="_blank">'+head+'<div class="nmeta"><span class="src">'+n.src+'</span><span class="ndate">'+agoTxt(n.t)+'</span></div></a></li>'}).join("")}
+function liveNews(){
+fetchViaProxies("https://feeds.finance.yahoo.com/rss/2.0/headline?s=BB&region=US&lang=en-US").then(function(t){
+var doc=new DOMParser().parseFromString(t,"text/xml");
+var items=Array.prototype.slice.call(doc.querySelectorAll("item"),0,6);
+if(!items.length)return;
+Promise.all(items.map(function(i){
+var ti=i.querySelector("title"),li=i.querySelector("link"),pd=i.querySelector("pubDate");
+var en=ti?ti.textContent:"";var link=li?li.textContent:"#";
+var tm=pd?new Date(pd.textContent).getTime():0;if(isNaN(tm))tm=0;
+return trTxt(en).then(function(a){return {ar:a,en:en,link:link,src:srcName(i,link),t:tm}})
+})).then(function(list){NEWSCACHE=list;renderNews()})
+}).catch(function(){})}
+function sp(p,live){var e=document.getElementById("px"),prev=window.__PREV||p,up=p>=prev;
+e.textContent="$"+(+p).toFixed(2)+(up?" ▲":" ▼");e.className=(up?"pos":"neg");
+if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+setInterval(livePrice,10000);
+</script>
+</body>
+</html>

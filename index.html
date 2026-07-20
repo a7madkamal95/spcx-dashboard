@@ -302,10 +302,33 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 </div>
 </a>
 
-<div class="stock-card gl slot" data-fav="false" style="border-top-color:var(--edge)">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-<div><span class="i-ar">سهم جديد يُضاف قريبًا</span><span class="i-en">Next stock coming soon</span></div>
+<a href="bb.html" class="stock-card gl" data-fav="true" data-q="بلاك بيري blackberry bb nyse" style="border-top-color:rgba(124,92,255,.55)">
+<div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/a/a1/BlackBerry_Bold_Touch_9900.jpg)" role="img" aria-label="Classic BlackBerry phone"></div>
+<div class="sc-body">
+<div class="sc-top">
+<span style="display:flex;align-items:center;gap:7px"><img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Blackberry_Logo.svg" alt="BlackBerry" style="height:11px;filter:brightness(0) invert(1);opacity:.9"><span class="sc-ticker" style="color:#7c5cff">NYSE · BB</span></span>
+<span class="sc-fav"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><span class="i-ar">مفضل</span><span class="i-en">Favorite</span></span>
 </div>
+<h3><span class="i-ar">بلاك بيري</span><span class="i-en">BlackBerry</span></h3>
+<p><span class="i-ar">من عظام الهواتف إلى قلب الأمن السيبراني + QNX بأكثر من 235 مليون مركبة + أول تدفق نقدي إيجابي منذ 9 سنوات</span><span class="i-en">From phone graveyard to cybersecurity core + QNX in 235M+ vehicles + first positive cash flow in 9 years</span></p>
+<div class="sc-price"><b id="hp-px8">…</b><span id="hp-chg8"></span></div>
+<div class="sc-cta"><span class="i-ar">التحليل الكامل</span><span class="i-en">Full analysis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div>
+</div>
+</a>
+
+<a href="oklo.html" class="stock-card gl" data-fav="true" data-q="اوكلو أوكلو oklo nyse nuclear" style="border-top-color:rgba(61,219,255,.55)">
+<div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Advanced_Test_Reactor.jpg)" role="img" aria-label="Glowing nuclear reactor core"></div>
+<div class="sc-body">
+<div class="sc-top">
+<span style="display:flex;align-items:center;gap:7px"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Oklo_Inc_logo.png" alt="Oklo" style="height:12px;filter:brightness(0) invert(1);opacity:.9"><span class="sc-ticker" style="color:#3ddbff">NYSE · OKLO</span></span>
+<span class="sc-fav"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg><span class="i-ar">مفضل</span><span class="i-en">Favorite</span></span>
+</div>
+<h3><span class="i-ar">أوكلو</span><span class="i-en">Oklo</span></h3>
+<p><span class="i-ar">رهان سام ألتمان الذري + مفاعل Aurora المصغّر + صفقة طاقة 12 غيغاواط مع Switch + شركة بلا إيرادات بعد</span><span class="i-en">Sam Altman's atomic bet + the compact Aurora reactor + a 12 GW power deal with Switch + still pre-revenue</span></p>
+<div class="sc-price"><b id="hp-px9">…</b><span id="hp-chg9"></span></div>
+<div class="sc-cta"><span class="i-ar">التحليل الكامل</span><span class="i-en">Full analysis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div>
+</div>
+</a>
 
 </div>
 </section>
@@ -340,6 +363,8 @@ var SEARCH_TICKERS=[
 {t:"SPCX",ar:"سبيس إكس",en:"SpaceX",page:"spcx.html"},
 {t:"GME",ar:"جيم ستوب",en:"GameStop",page:"gme.html"},
 {t:"GOLD",ar:"الذهب",en:"Gold",page:"gold.html"},
+{t:"BB",ar:"بلاك بيري",en:"BlackBerry",page:"bb.html"},
+{t:"OKLO",ar:"أوكلو",en:"Oklo",page:"oklo.html"},
 {t:"NVDA",ar:"إنفيديا",en:"NVIDIA",page:"nvda.html"},
 {t:"AMD",ar:"إيه إم دي",en:"AMD",page:"amd.html"},
 {t:"INTC",ar:"إنتل",en:"Intel",page:"intc.html"},
@@ -716,6 +741,8 @@ makeCardPricer("hp-px4","hp-chg4","NVDA",203.81,202.81);
 makeCardPricer("hp-px5","hp-chg5","INTC",97.00,98.05);
 makeCardPricer("hp-px6","hp-chg6","AMD",492.10,486.27);
 makeCardPricer("hp-px7","hp-chg7","GC=F",4009.37,4001.06);
+makeCardPricer("hp-px8","hp-chg8","BB",8.77,8.62);
+makeCardPricer("hp-px9","hp-chg9","OKLO",41.10,40.95);
 </script>
 </body>
 </html>

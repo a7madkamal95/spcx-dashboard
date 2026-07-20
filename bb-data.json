@@ -1,0 +1,38 @@
+{
+  "last_updated": "2026-07-21",
+  "price_fallback": 8.77,
+  "prev_close": 8.62,
+  "market_cap": "5.14B$",
+  "stats": {
+    "revenue_q1": "152.9M$",
+    "yoy_growth": "+26%",
+    "qnx_rev": "72.3M$",
+    "seccomm_rev": "73.6M$",
+    "adj_ebitda": "36.3M$",
+    "vehicles": "235M+",
+    "ytd_return": "+186.8%",
+    "market_cap": "5.14B$"
+  },
+  "timeline": [
+    {"when":"1984","what":"تأسيس الشركة","note":"مايك لازاريدس يؤسس Research In Motion في مدينة واترلو الكندية"},
+    {"when":"2009-2011","what":"ذروة الهيمنة","note":"هواتف BlackBerry تستحوذ على نحو 20% من سوق الهواتف الذكية عالميًا، وتصبح الجهاز الرسمي للحكومات والشركات"},
+    {"when":"2013","what":"الانهيار وبداية التحول","note":"آيفون وأندرويد يسحقان قسم الهواتف، والشركة تُعيد تسمية نفسها BlackBerry Limited وتبدأ التحول نحو البرمجيات"},
+    {"when":"يناير 2021","what":"سهم ميمي","note":"مجتمع WallStreetBets يدفع السهم لأعلى مستوياته منذ سنوات وسط تداول يومي تجاوز 300 مليون سهم"},
+    {"when":"مايو 2023","what":"بيع براءات الاختراع","note":"صفقة تصل قيمتها إلى 900 مليون دولار مع Malikie Innovations مقابل المحفظة غير الأساسية من براءات الاختراع"},
+    {"when":"يونيو 2026","what":"أول تدفق نقدي إيجابي منذ 9 سنوات","note":"نتائج الربع الأول للسنة المالية 2027 تتجاوز التوقعات وتدفع السهم للقفز نحو 21% بجلسة واحدة"}
+  ],
+  "news": [
+    {"text":"سهم BlackBerry يقفز بعدما تجاوزت نتائج الربع الأول توقعات المحللين بدعم من نمو QNX والاتصالات الآمنة","src":"Proactive Investors","link":"https://www.proactiveinvestors.com/companies/news/1094518/blackberry-stock-surges-as-first-quarter-results-top-estimates-on-qnx-cybersecurity-strength-1094518.html"},
+    {"text":"إيرادات الربع بلغت 152.9 مليون دولار بنمو 26% سنويًا، متجاوزة توقعات المحللين البالغة 138.2 مليون دولار","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/stocks/articles/blackberry-stock-surges-first-quarter-155700162.html"},
+    {"text":"سهم BlackBerry يسجل أعلى مستوى له خلال 52 أسبوعًا وسط زخم متصاعد من مستثمرين ومحللين","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/movers/26/07/60220689/blackberry-stock-hits-52-week-highs-what-investors-need-to-know"},
+    {"text":"نمو قوي وحفّازات واعدة تجعل سهم BlackBerry خيارًا جذابًا بحسب محللين وسط تسارع أعمال QNX والأمن السيبراني","src":"ClearanceJobs","link":"https://news.clearancejobs.com/2026/07/08/blackberrys-strong-growth-powerful-catalysts-make-bb-stock-very-attractive/"},
+    {"text":"محللون يرفعون توقعاتهم لسهم BlackBerry مع استمرار دفع أعمال QNX وقطاع الأمن السيبراني، وCIBC يرفع هدفه إلى 10 دولارات","src":"StocksToTrade","link":"https://stockstotrade.com/news/blackberry-limited-bb-news-2026_06_22/"},
+    {"text":"برمجيات BlackBerry QNX أصبحت مدمجة في أكثر من 235 مليون مركبة حول العالم، بزيادة 20 مليون مركبة خلال عام واحد","src":"Automotive World","link":"https://www.automotiveworld.com/news-releases/blackberry-software-is-now-embedded-in-over-235-million-vehicles/"}
+  ],
+  "takeaways": [
+    "شركة هواتف كادت تندثر تحولت إلى مزوّد برمجيات أمن سيبراني وقيادة حرجة، وحققت للتو أول تدفق نقدي تشغيلي إيجابي بربع أول منذ 9 سنوات",
+    "QNX تقود سوق البرمجيات الحرجة بصناعة السيارات بأكثر من 235 مليون مركبة تعمل بنظامها",
+    "قطاع الاتصالات الآمنة يخدم الحكومات والمؤسسات وضاعف ربحيته التشغيلية أكثر من مرة خلال عام",
+    "ذاكرة السهم الميمي بـ2021 تُذكّر أن المعنويات قد تسبق الأساسيات — لكن أرقام 2026 مبنية على نتائج مالية حقيقية"
+  ]
+}

@@ -34,18 +34,10 @@ body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:1
 .databg .g2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(60,232,166,.13),transparent 65%);bottom:-18%;right:6%;animation:gf2 40s ease-in-out infinite}
 @keyframes gf1{50%{transform:translate(4vw,6vh) scale(1.12)}}
 @keyframes gf2{50%{transform:translate(-5vw,-5vh) scale(1.08)}}
-.databg .mesh{position:absolute;top:0;left:0;width:100%;height:58vh;overflow:hidden;perspective:600px;perspective-origin:50% 0%;
--webkit-mask-image:linear-gradient(180deg,#000 0%,#000 25%,transparent 92%);
-mask-image:linear-gradient(180deg,#000 0%,#000 25%,transparent 92%)}
-.databg .mesh svg{width:130%;height:120%;display:block;margin-inline-start:-15%;
-transform:rotateX(62deg);transform-origin:50% 0%;animation:meshdrift 26s ease-in-out infinite}
-@keyframes meshdrift{50%{transform:rotateX(62deg) translateY(-14px)}}
-.tilt{transform-style:preserve-3d;position:relative;transition:transform .18s cubic-bezier(.22,1,.36,1)}
-.tilt .glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;z-index:3;
-background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.18),transparent 55%);
-transition:opacity .25s ease}
-.tilt:hover .glare{opacity:1}
-@media(prefers-reduced-motion:reduce){.tilt{transition:none!important}.databg .mesh svg{animation:none}}
+.databg .mesh{position:absolute;top:0;left:0;width:100%;height:56vh;
+-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 20%,transparent 88%);
+mask-image:linear-gradient(180deg,#000 0%,#000 20%,transparent 88%)}
+.databg .mesh svg{width:100%;height:100%;display:block}
 .wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
 ::selection{background:rgba(139,92,255,.45)}
 .gl{background:var(--glass);
@@ -237,26 +229,6 @@ var show=(f==="all")||(c.getAttribute("data-fav")==="true");
 c.style.display=show?"":"none";
 });
 }
-function initTilt(sel,strength){
-strength=strength||7;
-if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-if(!window.matchMedia('(hover:hover)').matches)return;
-document.querySelectorAll(sel).forEach(function(card){
-card.classList.add('tilt');
-var glare=document.createElement('div');glare.className='glare';card.appendChild(glare);
-card.addEventListener('mousemove',function(e){
-var r=card.getBoundingClientRect();
-var x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
-var rx=(0.5-y)*strength,ry=(x-0.5)*strength;
-card.style.transform='perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-3px)';
-glare.style.setProperty('--mx',(x*100)+'%');glare.style.setProperty('--my',(y*100)+'%');
-});
-card.addEventListener('mouseleave',function(){card.style.transform=''});
-});
-}
-initTilt('.stock-card:not(.slot)',7);
-initTilt('.about',4);
-initTilt('.hero-vis',5);
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");
 document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
 var FALLBACK_PRICE={"price_fallback":124,"ipo_price":135};

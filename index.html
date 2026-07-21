@@ -887,30 +887,18 @@ makeCardPricer("hp-px8","hp-chg8","BB",8.77,8.62);
 makeCardPricer("hp-px9","hp-chg9","OKLO",41.10,40.95);
 
 var TICKER_LIST=[
-{sym:"^IXIC",ar:"ناسداك",en:"Nasdaq",fb:23400,pv:23320,idx:true},
-{sym:"^GSPC",ar:"S&P 500",en:"S&P 500",fb:6350,pv:6330,idx:true},
-{sym:"^DJI",ar:"داو جونز",en:"Dow Jones",fb:44500,pv:44350,idx:true},
-{sym:"AAPL",ar:"أبل",en:"Apple",fb:232,pv:230},
-{sym:"MSFT",ar:"مايكروسوفت",en:"Microsoft",fb:470,pv:468},
-{sym:"GOOGL",ar:"جوجل",en:"Google",fb:195,pv:193},
-{sym:"AMZN",ar:"أمازون",en:"Amazon",fb:228,pv:226},
-{sym:"NVDA",ar:"إنفيديا",en:"Nvidia",fb:203,pv:202},
-{sym:"META",ar:"ميتا",en:"Meta",fb:640,pv:635},
-{sym:"TSLA",ar:"تسلا",en:"Tesla",fb:330,pv:326},
-{sym:"AVGO",ar:"بروادكوم",en:"Broadcom",fb:250,pv:248},
-{sym:"JPM",ar:"جي بي مورغان",en:"JPMorgan",fb:245,pv:243},
-{sym:"NFLX",ar:"نتفليكس",en:"Netflix",fb:1180,pv:1172},
-{sym:"V",ar:"فيزا",en:"Visa",fb:340,pv:338},
-{sym:"MA",ar:"ماستركارد",en:"Mastercard",fb:550,pv:547},
-{sym:"BRK-B",ar:"بيركشاير هاثاواي",en:"Berkshire Hathaway",fb:475,pv:473},
-{sym:"XOM",ar:"إكسون موبيل",en:"ExxonMobil",fb:112,pv:111},
-{sym:"WMT",ar:"وول مارت",en:"Walmart",fb:98,pv:97.5},
-{sym:"LLY",ar:"إيلاي ليلي",en:"Eli Lilly",fb:790,pv:786},
-{sym:"COST",ar:"كوستكو",en:"Costco",fb:915,pv:911},
-{sym:"SPY",ar:"صندوق S&P 500",en:"SPY ETF",fb:635,pv:633},
-{sym:"QQQ",ar:"صندوق ناسداك",en:"QQQ ETF",fb:545,pv:542},
-{sym:"GLD",ar:"صندوق الذهب",en:"Gold ETF",fb:305,pv:303},
-{sym:"IWM",ar:"صندوق راسل 2000",en:"Russell 2000 ETF",fb:225,pv:224}
+{sym:"^IXIC",fb:23400,pv:23320,idx:true},
+{sym:"^GSPC",fb:6350,pv:6330,idx:true},
+{sym:"^DJI",fb:44500,pv:44350,idx:true},
+{sym:"AAPL",fb:232,pv:230},
+{sym:"MSFT",fb:470,pv:468},
+{sym:"GOOGL",fb:195,pv:193},
+{sym:"AMZN",fb:228,pv:226},
+{sym:"NVDA",fb:203,pv:202},
+{sym:"META",fb:640,pv:635},
+{sym:"TSLA",fb:330,pv:326},
+{sym:"SPY",fb:635,pv:633},
+{sym:"QQQ",fb:545,pv:542}
 ];
 function fmtTk(t,p){if(t.idx)return Math.round(+p).toLocaleString("en-US");return "$"+(+p).toFixed(2)}
 var TK_IDX_LABEL={"^IXIC":"NASDAQ","^GSPC":"S&P 500","^DJI":"DOW"};
@@ -923,7 +911,8 @@ return '<div class="tk-item" data-tk="'+t.sym+'"><b>'+tkLabel(t)+'</b><span clas
 document.getElementById("tickerTrack").innerHTML=html+html;
 }
 function loadTicker(){
-TICKER_LIST.forEach(function(t){
+TICKER_LIST.forEach(function(t,i){
+setTimeout(function(){
 fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(t.sym)+"?interval=1d&range=1d").then(function(r){return JSON.parse(r)}).then(function(y){
 var m=y.chart.result[0].meta,p=m.regularMarketPrice,pc=m.chartPreviousClose||m.previousClose||t.pv;
 if(!(p>0))return;
@@ -935,6 +924,7 @@ el.querySelector(".tk-chg").textContent=t.chgTxt;
 el.querySelector(".tk-chg").className="tk-chg "+(t.up?"pos":"neg");
 });
 }).catch(function(){});
+},i*400);
 });
 }
 renderTicker();

@@ -30,6 +30,7 @@ html[data-lang=ar] .i-en{display:none!important}
 html[data-lang=en] .i-ar{display:none!important}
 body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
 :focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.topfade{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.025) 22%,transparent 48%)}
 .databg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
 .databg .glow{position:absolute;border-radius:50%;filter:blur(80px)}
 .databg .g1{width:38vw;height:38vw;background:radial-gradient(circle,rgba(23,191,142,.17),transparent 65%);top:-14%;left:2%;animation:gf1 34s ease-in-out infinite}
@@ -65,9 +66,7 @@ padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:backg
 .ticker-wrap{overflow:hidden;position:relative;margin-top:var(--sp3);
 -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
 mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.ticker-track{display:flex;width:max-content;animation:tickerScroll 96s linear infinite}
-@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+.ticker-track{display:flex;width:max-content;will-change:transform}
 .tk-item{display:flex;align-items:baseline;gap:7px;font-family:var(--num);font-size:14.5px;white-space:nowrap;flex-shrink:0;padding:9px 20px;direction:ltr}
 .tk-item b{font-weight:800;color:var(--ink);letter-spacing:.02em}
 .tk-item .tk-px{font-weight:700;color:var(--mut)}
@@ -223,6 +222,7 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 </style>
 </head>
 <body>
+<div class="topfade" aria-hidden="true"></div>
 <div class="databg" aria-hidden="true">
 <div class="glow g1"></div><div class="glow g2"></div>
 <div class="mesh">
@@ -940,6 +940,24 @@ el.querySelector(".tk-chg").className="tk-chg "+(t.up?"pos":"neg");
 renderTicker();
 loadTicker();
 setInterval(loadTicker,96000);
+(function(){
+var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(reduced)return;
+var track=document.getElementById("tickerTrack");
+var start=null;
+function tick(ts){
+if(!start)start=ts;
+var half=track.scrollWidth/2;
+if(half>0){
+var elapsed=(ts-start)/1000;
+var speed=half/96;
+var offset=(elapsed*speed)%half;
+track.style.transform="translateX(-"+offset+"px)";
+}
+requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+})();
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

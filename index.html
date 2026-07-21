@@ -6,6 +6,8 @@
 <title>PLUTO INTELLIGENCE — الراصد</title>
 <meta name="description" content="PLUTO INTELLIGENCE (الراصد): تحليلات استثمارية مباشرة لعدد محدود من الأسهم أراقبها عن قرب — أرقام حية وأخبار حقيقية.">
 <meta name="theme-color" content="#05060d">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -50,6 +52,7 @@ background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
 .bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
 .bar .brand{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;flex-shrink:0}
 .bar .brand svg{width:19px;height:19px;color:var(--a2);flex-shrink:0}
+.bar .brand img{width:24px;height:24px;border-radius:6px;object-fit:cover;flex-shrink:0}
 .bar .brandlockup{display:flex;flex-direction:column;line-height:1.25}
 .bar .brandlockup b{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.03em}
 .bar .brandlockup i{font-style:normal;font-size:12.5px;color:var(--mut);font-weight:500}
@@ -62,6 +65,8 @@ padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:backg
 .hero{padding:64px 0 var(--sp6);display:grid;grid-template-columns:1.1fr .9fr;gap:var(--sp6);align-items:center}
 @media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
 .brandbig{line-height:1.1}
+.brandbig img{width:60px;height:60px;border-radius:15px;margin-bottom:14px}
+@media(max-width:780px){.brandbig img{margin-inline:auto}}
 .brandbig b{display:block;font-family:var(--disp);font-weight:900;font-size:clamp(26px,4.6vw,40px);letter-spacing:.01em;
 background:linear-gradient(92deg,var(--ink),var(--a2) 120%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brandbig i{display:block;font-style:normal;font-weight:700;font-size:14px;letter-spacing:.08em;color:var(--mut);margin-top:4px}
@@ -151,6 +156,7 @@ html[dir=ltr] .stock-card:hover .sc-cta svg{transform:translateX(4px)}
 .about .av{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--a2),var(--a1));
 display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .about .av svg{width:28px;height:28px;color:var(--void)}
+.about .av img{width:100%;height:100%;border-radius:16px;object-fit:cover}
 .about h4{font-family:var(--disp);font-weight:800;font-size:18px}
 .about p{font-size:14px;color:var(--mut);margin-top:6px;line-height:1.8}
 .dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
@@ -193,14 +199,14 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 <div class="wrap">
 
 <div class="bar gl rv">
-<a href="index.html" class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v3l2 2"/></svg><span class="brandlockup"><b>PLUTO INTELLIGENCE</b><i>الراصد</i></span></a>
+<a href="index.html" class="brand"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"><span class="brandlockup"><b>PLUTO INTELLIGENCE</b><i>الراصد</i></span></a>
 <span class="tagline i-ar">تحليلات استثمارية مختارة بعناية</span><span class="tagline i-en">Curated market intelligence</span>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
 </div>
 
 <section class="hero rv">
 <div class="hero-txt">
-<div class="brandbig"><b>PLUTO INTELLIGENCE</b><i class="i-ar">الراصد</i><i class="i-en">RASID</i></div>
+<div class="brandbig"><img src="assets/logo.png" alt="" aria-hidden="true"><b>PLUTO INTELLIGENCE</b><i class="i-ar">الراصد</i><i class="i-en">RASID</i></div>
 <h1><span class="i-ar">نختار لك <span class="grad">الأسهم</span> التي تستحق وقتك</span><span class="i-en">We pick the <span class="grad">stocks</span> worth your time</span></h1>
 <p class="lead"><span class="i-ar">ليست قائمة طويلة تُشتِّت انتباهك، بل عدد محدود من الأسهم أراقبها عن قرب.</span><span class="i-en">Not a long distracting list — a small set of stocks I track closely, each broken down into live numbers and real news, no filler.</span></p>
 </div>
@@ -344,7 +350,7 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
 <section class="rv">
 <div class="about gl">
-<div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v3l2 2"/></svg></div>
+<div class="av"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"></div>
 <div>
 <h4><span class="i-ar">ما هو الراصد؟</span><span class="i-en">What is Rasid?</span></h4>
 <p><span class="i-ar">لن تجد هنا مئات الأسهم بالجملة، بل عددًا محدودًا أراقبه بعناية — لكل سهم صفحة كاملة تضم الأرقام الحقيقية، والقصة الاستثمارية، والمخاطر بصراحة، دون توصيات بالشراء أو البيع.</span><span class="i-en">You won't find hundreds of stocks dumped here. I track a small, curated set closely — each with a full page of real numbers, the investment story, and the risks stated plainly. No buy/sell recommendations.</span></p>

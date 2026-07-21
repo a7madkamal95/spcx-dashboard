@@ -58,15 +58,16 @@ background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
 .bar .brandlockup b{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.03em}
 .bar .brandlockup i{font-style:normal;font-size:12.5px;color:var(--mut);font-weight:500}
 .bar .tagline{font-size:14.5px;color:var(--mut)}
-.market-status{display:flex;align-items:center;gap:8px;font-family:var(--num);font-size:14px;color:var(--mut);white-space:nowrap}
-.market-status b{font-weight:700;color:var(--ink)}
+.market-status{margin-inline-start:auto;display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:var(--num);font-size:13px;color:var(--mut);white-space:nowrap;line-height:1.35}
+.ms-row{display:flex;align-items:center;gap:6px}
+.market-status b{font-weight:700;color:var(--ink);font-size:14px}
 .ms-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 .ms-dot.open{background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pl 1.8s infinite}
 .ms-dot.closed{background:var(--coral);box-shadow:0 0 8px var(--coral)}
 @keyframes pl{50%{opacity:.4}}
-.ms-sep{opacity:.4}
 .ms-clock{direction:ltr;font-variant-numeric:tabular-nums}
-.lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:.08em;
+.ms-tz{font-size:11px;opacity:.65;letter-spacing:.04em}
+.lng{font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:.08em;
 color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
 padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
 .lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
@@ -275,10 +276,9 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <a href="index.html" class="brand"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"><span class="brandlockup"><b>PLUTO INTELLIGENCE</b></span></a>
 <span class="tagline i-ar">تحليلات استثمارية مختارة بعناية</span><span class="tagline i-en">Curated market intelligence</span>
 <div class="market-status" id="marketStatus">
-<span class="ms-dot" id="msDot"></span>
-<b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b>
-<span class="ms-sep">·</span>
-<span class="ms-clock" id="msClock"></span>
+<div class="ms-row"><span class="ms-dot" id="msDot"></span><b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b></div>
+<div class="ms-clock" id="msClock"></div>
+<div class="ms-tz"><span class="i-ar">الكويت</span><span class="i-en">Kuwait</span></div>
 </div>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
 </div>

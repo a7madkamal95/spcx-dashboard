@@ -106,7 +106,7 @@ section{margin-top:var(--sp8)}
 .force h3{font-family:var(--disp);font-weight:700;font-size:21px;margin-top:var(--sp3)}
 .tag{align-self:flex-start;display:inline-block;font-family:var(--num);font-size:14px;font-weight:700;letter-spacing:.02em;border-radius:6px;padding:4px 11px;border:1px solid;margin-top:var(--sp2);background:rgba(212,175,55,.05)}
 .t1{color:var(--gold);border-color:rgba(212,175,55,.5)}.t2{color:var(--goldBright);border-color:rgba(244,216,116,.5)}.t3{color:var(--mut);border-color:rgba(168,155,125,.5)}
-.force p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
+.force p{font-size:15.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
 .force .dtl{display:none}
 .force.open .dtl{display:block}
 .force h5{font-family:var(--disp);font-size:15px;font-weight:700;color:var(--gold);margin-top:var(--sp4);letter-spacing:.02em}
@@ -124,14 +124,14 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 .iv:hover{transform:translateY(-4px);background:var(--glassH)}
 .iv .ivi{width:26px;height:26px;color:var(--gold);margin-bottom:var(--sp2)}
 .iv h4{font-family:var(--disp);font-weight:700;font-size:16px}
-.iv p{font-size:12.5px;color:var(--mut);margin-top:6px;line-height:1.7}
+.iv p{font-size:14.5px;color:var(--mut);margin-top:6px;line-height:1.7}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
 @media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
 .st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
 .st:hover{transform:translateY(-4px);background:var(--glassH)}
 .st .sti{width:20px;height:20px;color:var(--gold);opacity:.9;margin-bottom:6px}
 .st b{display:block;font-family:var(--num);font-size:27px;font-weight:700;direction:ltr;color:var(--gold)}
-.st span{font-size:12.5px;color:var(--mut)}
+.st span{font-size:14.5px;color:var(--mut)}
 #news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}
 #news li:first-child{border-top:none}
 #news a{color:inherit;text-decoration:none;display:block;border-radius:8px}
@@ -143,7 +143,7 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 .ndate{font-size:14px;color:var(--mut)}
 .sc{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp4)}
 @media(max-width:640px){.sc{grid-template-columns:1fr}}
-.pan{padding:var(--sp5);font-size:13.5px}
+.pan{padding:var(--sp5);font-size:15.5px}
 .pan h4{font-family:var(--disp);font-weight:700;font-size:20px;margin-bottom:var(--sp3);display:flex;align-items:center;gap:8px}
 .pg h4{color:var(--green)}.pb h4{color:var(--red)}
 .pan li{list-style:none;padding:6px 0;border-top:1px dashed var(--edge);line-height:1.7}
@@ -151,7 +151,7 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 .tk{display:flex;gap:var(--sp3);align-items:flex-start;padding:var(--sp3) 0;border-top:1px solid var(--edge);font-size:15.5px;line-height:1.75}
 .tk:first-child{border-top:none}
 .tk i{font-family:var(--num);font-style:normal;font-weight:700;color:var(--gold);font-size:14px;border:1px solid rgba(212,175,55,.45);border-radius:8px;padding:2px 10px;margin-top:3px;background:rgba(212,175,55,.06);flex-shrink:0}
-.dsc{text-align:center;color:var(--mut);font-size:12.5px;margin-top:var(--sp7);line-height:1.7}
+.dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
 .rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
 .rv.on{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
@@ -164,6 +164,9 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 .kwd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
 @media(max-width:780px){.kwd-grid{grid-template-columns:repeat(2,1fr)}}
 .kwd-note{display:block;font-style:normal;font-size:14px;color:var(--mut);opacity:.8;margin-top:6px}
+.kwd-retail{margin-top:10px;padding-top:10px;border-top:1px dashed var(--edge)}
+.kwd-retail b{display:block;font-family:var(--num);font-size:19px;font-weight:700;direction:ltr;color:var(--goldBright)}
+.kwd-retail span{font-size:13px;color:var(--mut)}
 </style>
 </head>
 <body>
@@ -211,17 +214,17 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 <div class="eyeb"><b><span class="i-ar">أسعار المعادن بالدينار الكويتي</span><span class="i-en">Metal Prices in Kuwaiti Dinar</span></b><span><span class="ldot live" aria-hidden="true" style="display:inline-block;margin-inline-end:4px"></span>LIVE</span><div class="ln"></div></div>
 <div class="gl pad">
 <div class="kwd-grid" id="kwdGrid">
-<div class="st gl"><b id="kwd24">…</b><span><span class="i-ar">ذهب عيار 24 (بالجرام)</span><span class="i-en">Gold 24K (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i></div>
-<div class="st gl"><b id="kwd22">…</b><span><span class="i-ar">ذهب عيار 22 (بالجرام)</span><span class="i-en">Gold 22K (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i></div>
-<div class="st gl"><b id="kwd21">…</b><span><span class="i-ar">ذهب عيار 21 (بالجرام)</span><span class="i-en">Gold 21K (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i></div>
-<div class="st gl"><b id="kwd18">…</b><span><span class="i-ar">ذهب عيار 18 (بالجرام)</span><span class="i-en">Gold 18K (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i></div>
-<div class="st gl"><b id="kwdSilver">…</b><span><span class="i-ar">الفضة (بالكيلوغرام)</span><span class="i-en">Silver (per kg)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i></div>
-<div class="st gl"><b id="kwdPlat">…</b><span><span class="i-ar">البلاتين (بالجرام)</span><span class="i-en">Platinum (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i></div>
+<div class="st gl"><b id="kwd24">…</b><span><span class="i-ar">ذهب عيار 24 (بالجرام)</span><span class="i-en">Gold 24K (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i><div class="kwd-retail"><b id="kwd24r">…</b><span><span class="i-ar">شامل هامش السوق (تقديري)</span><span class="i-en">Incl. market premium (est.)</span></span></div></div>
+<div class="st gl"><b id="kwd22">…</b><span><span class="i-ar">ذهب عيار 22 (بالجرام)</span><span class="i-en">Gold 22K (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i><div class="kwd-retail"><b id="kwd22r">…</b><span><span class="i-ar">شامل هامش السوق (تقديري)</span><span class="i-en">Incl. market premium (est.)</span></span></div></div>
+<div class="st gl"><b id="kwd21">…</b><span><span class="i-ar">ذهب عيار 21 (بالجرام)</span><span class="i-en">Gold 21K (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i><div class="kwd-retail"><b id="kwd21r">…</b><span><span class="i-ar">شامل هامش السوق (تقديري)</span><span class="i-en">Incl. market premium (est.)</span></span></div></div>
+<div class="st gl"><b id="kwd18">…</b><span><span class="i-ar">ذهب عيار 18 (بالجرام)</span><span class="i-en">Gold 18K (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i><div class="kwd-retail"><b id="kwd18r">…</b><span><span class="i-ar">شامل هامش السوق (تقديري)</span><span class="i-en">Incl. market premium (est.)</span></span></div></div>
+<div class="st gl"><b id="kwdSilver">…</b><span><span class="i-ar">الفضة (بالكيلوغرام)</span><span class="i-en">Silver (per kg)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i><div class="kwd-retail"><b id="kwdSilverR">…</b><span><span class="i-ar">شامل هامش السوق (تقديري)</span><span class="i-en">Incl. market premium (est.)</span></span></div></div>
+<div class="st gl"><b id="kwdPlat">…</b><span><span class="i-ar">البلاتين (بالجرام)</span><span class="i-en">Platinum (per gram)</span></span><i class="kwd-note"><span class="i-ar">سعر خام، بدون مصنعية</span><span class="i-en">Raw price, no making charge</span></i><div class="kwd-retail"><b id="kwdPlatR">…</b><span><span class="i-ar">شامل هامش السوق (تقديري)</span><span class="i-en">Incl. market premium (est.)</span></span></div></div>
 </div>
 <div style="margin-top:var(--sp5);font-family:var(--num);font-size:14px;color:var(--mut);display:flex;align-items:center;gap:6px">
 <span class="ldot live" aria-hidden="true"></span><span class="i-ar">تتحدث كل 10 ثوانٍ حسب سعر الذهب الحي وسعر صرف الدولار/الدينار</span><span class="i-en">Updates every 10s from the live gold price and USD/KWD rate</span>
 </div>
-<p style="margin-top:var(--sp3);font-size:14px;color:var(--mut);line-height:1.8"><span class="i-ar">الأسعار هنا هي قيمة المعدن الخام فقط، محسوبة مباشرة من سعر الذهب العالمي — لذا تختلف عادة عن سعر محلات الذهب والصاغة، لأن سعرهم يشمل أجرة الصنعة وهامشهم التجاري فوق سعر المعدن الخام.</span><span class="i-en">These are raw metal values only, converted directly from the global gold price — they'll normally differ from jewelry-store prices, since those include manufacturing fees and dealer margin on top of the raw metal value.</span></p>
+<p style="margin-top:var(--sp3);font-size:14px;color:var(--mut);line-height:1.8"><span class="i-ar">السعر الكبير هو قيمة المعدن الخام فقط. الرقم الصغير تحته "شامل هامش السوق" هو تقدير لسعر أقرب لمحلات الصياغة (حوالي 0.7% إضافية) — لكنه يبقى تقديريًا، لأن أجرة الصنعة الفعلية تختلف حسب المحل ونوع القطعة (سبيكة أو مشغولات).</span><span class="i-en">The larger number is the raw metal value only. The smaller number below it, "incl. market premium," is an estimate closer to jewelry-shop pricing (about 0.7% added) — but it's still an estimate, since actual making charges vary by shop and item type (bullion vs. crafted jewelry).</span></p>
 </div>
 </section>
 
@@ -482,6 +485,7 @@ return fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+enco
 .catch(function(){return null});
 }
 function setTxt(id,v){var e=document.getElementById(id);if(e)e.textContent=v}
+var MARKET_PREMIUM=1.007;
 function tick(){
 Promise.all([getMeta("GC=F"),getMeta("SI=F"),getMeta("PL=F"),getMeta("KWD=X")]).then(function(res){
 var gold=res[0],silver=res[1],plat=res[2],fx=res[3];
@@ -493,8 +497,12 @@ setTxt("kwd24",fmt3(g24)+" KWD");
 setTxt("kwd22",fmt3(g22)+" KWD");
 setTxt("kwd21",fmt3(g21)+" KWD");
 setTxt("kwd18",fmt3(g18)+" KWD");
-if(silver&&silver.regularMarketPrice)setTxt("kwdSilver",fmt3((silver.regularMarketPrice/OZ_TO_G)*1000*rate)+" KWD");
-if(plat&&plat.regularMarketPrice)setTxt("kwdPlat",fmt3((plat.regularMarketPrice/OZ_TO_G)*rate)+" KWD");
+setTxt("kwd24r",fmt3(g24*MARKET_PREMIUM)+" KWD");
+setTxt("kwd22r",fmt3(g22*MARKET_PREMIUM)+" KWD");
+setTxt("kwd21r",fmt3(g21*MARKET_PREMIUM)+" KWD");
+setTxt("kwd18r",fmt3(g18*MARKET_PREMIUM)+" KWD");
+if(silver&&silver.regularMarketPrice){var sKg=(silver.regularMarketPrice/OZ_TO_G)*1000*rate;setTxt("kwdSilver",fmt3(sKg)+" KWD");setTxt("kwdSilverR",fmt3(sKg*MARKET_PREMIUM)+" KWD");}
+if(plat&&plat.regularMarketPrice){var pG=(plat.regularMarketPrice/OZ_TO_G)*rate;setTxt("kwdPlat",fmt3(pG)+" KWD");setTxt("kwdPlatR",fmt3(pG*MARKET_PREMIUM)+" KWD");}
 });
 }
 function boot(){

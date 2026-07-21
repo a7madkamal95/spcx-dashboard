@@ -65,8 +65,7 @@ padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:backg
 .ticker-wrap{overflow:hidden;position:relative;margin-top:var(--sp3);
 -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
 mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.ticker-track{display:flex;width:max-content;animation:tickerScroll 60s linear infinite}
-.ticker-wrap:hover .ticker-track{animation-play-state:paused}
+.ticker-track{display:flex;width:max-content;animation:tickerScroll 96s linear infinite}
 @keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
 .tk-item{display:flex;align-items:baseline;gap:7px;font-family:var(--num);font-size:14.5px;white-space:nowrap;flex-shrink:0;padding:9px 20px;direction:ltr}
@@ -900,9 +899,18 @@ var TICKER_LIST=[
 {sym:"TSLA",ar:"تسلا",en:"Tesla",fb:330,pv:326},
 {sym:"AVGO",ar:"بروادكوم",en:"Broadcom",fb:250,pv:248},
 {sym:"JPM",ar:"جي بي مورغان",en:"JPMorgan",fb:245,pv:243},
+{sym:"NFLX",ar:"نتفليكس",en:"Netflix",fb:1180,pv:1172},
+{sym:"V",ar:"فيزا",en:"Visa",fb:340,pv:338},
+{sym:"MA",ar:"ماستركارد",en:"Mastercard",fb:550,pv:547},
+{sym:"BRK-B",ar:"بيركشاير هاثاواي",en:"Berkshire Hathaway",fb:475,pv:473},
+{sym:"XOM",ar:"إكسون موبيل",en:"ExxonMobil",fb:112,pv:111},
+{sym:"WMT",ar:"وول مارت",en:"Walmart",fb:98,pv:97.5},
+{sym:"LLY",ar:"إيلاي ليلي",en:"Eli Lilly",fb:790,pv:786},
+{sym:"COST",ar:"كوستكو",en:"Costco",fb:915,pv:911},
 {sym:"SPY",ar:"صندوق S&P 500",en:"SPY ETF",fb:635,pv:633},
 {sym:"QQQ",ar:"صندوق ناسداك",en:"QQQ ETF",fb:545,pv:542},
-{sym:"GLD",ar:"صندوق الذهب",en:"Gold ETF",fb:305,pv:303}
+{sym:"GLD",ar:"صندوق الذهب",en:"Gold ETF",fb:305,pv:303},
+{sym:"IWM",ar:"صندوق راسل 2000",en:"Russell 2000 ETF",fb:225,pv:224}
 ];
 function fmtTk(t,p){if(t.idx)return Math.round(+p).toLocaleString("en-US");return "$"+(+p).toFixed(2)}
 function tkLabel(t){return CUR==="ar"?t.ar:t.en}
@@ -930,7 +938,7 @@ el.querySelector(".tk-chg").className="tk-chg "+(t.up?"pos":"neg");
 }
 renderTicker();
 loadTicker();
-setInterval(loadTicker,60000);
+setInterval(loadTicker,96000);
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

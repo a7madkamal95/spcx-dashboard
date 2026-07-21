@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-21",
   "price_fallback": 135.53,
   "prev_close": 131.79,
   "market_cap": "$322.3B",
@@ -22,12 +22,12 @@
     {"when":"يوليو 2026","what":"شراكة Nvidia للذكاء الاصطناعي السيادي","note":"إعلان يرفع السهم وسط تراجع مايكل بيري عن جزء من رهانه القصير"}
   ],
   "news": [
-    {"text":"الرئيس التنفيذي أليكس كارب يصف صناعة الذكاء الاصطناعي بـ«الجنونية» وينتقد نموذج تسعير الرموز عند OpenAI وAnthropic","src":"Forbes","link":"https://www.forbes.com/sites/tylerroush/2026/07/01/palantir-billionaire-alex-karp-calls-ai-industry-effing-insane-in-heated-interview/"},
-    {"text":"بثروة 15 مليار دولار، كارب يحذر أن ثورة الذكاء الاصطناعي سترفع ثروات القلة أضعاف ما ترفع مستوى معيشة الطبقة الوسطى","src":"Fortune","link":"https://fortune.com/2026/07/17/palantir-ceo-alex-karp-artifical-intelligence-wealth-inequality-problem-billionaire-net-worth-surge-but-middle-class-left-behind/"},
-    {"text":"كارب يدافع عن تقنيات المراقبة بينما تدفع عقود الحكومة الأمريكية المبيعات لمستويات قياسية","src":"GV Wire","link":"https://gvwire.com/2026/02/02/palantir-ceo-defends-surveillance-tech-as-us-government-contracts-boost-sales/"},
-    {"text":"سهم Palantir يتعافى بعد شراكة Nvidia للذكاء الاصطناعي السيادي، وتراجع مايكل بيري عن جزء من رهانه القصير بمليار دولار","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262020866-palantir-pltr-stock-forecast-july-2026-nvidia-burry-trump-bottom-tradingkey"},
-    {"text":"مايكل بيري (صاحب The Big Short) يخفّض رهانه القصير الضخم على سهم Palantir بعد خسائر أولية","src":"TheStreet","link":"https://www.thestreet.com/investing/stocks/pltr-palantir-michael-burry-pulls-back-on-massive-palantir-short-bet"},
-    {"text":"Palantir تحدد 3 أغسطس 2026 موعدًا لإعلان نتائج الربع الثاني وسط توقعات بنمو إيرادات 80%","src":"StockTitan","link":"https://www.stocktitan.net/news/PLTR/palantir-announces-date-of-second-quarter-2026-earnings-release-and-pb0p9gl5pf2d.html"}
+    {"text":"سيتي جروب يرفع السعر المستهدف لسهم Palantir إلى 225 دولارًا من 210 وسط استمرار الزخم الصاعد للشركة","src":"24/7 Wall St.","link":"https://247wallst.com/investing/2026/07/20/predicition-palantir-defies-doubters-heres-our-new-price-target/"},
+    {"text":"تصنيف بنك D.A. Davidson لسهم Palantir يرتفع إلى «شراء» مع رفع السعر المستهدف إلى 175 دولارًا، والسهم يقفز فورًا 5%","src":"AOL","link":"https://www.aol.com/finance/palantir-stock-jumps-analyst-upgrade-141251110.html"},
+    {"text":"Palantir في دائرة الضوء بعد سلسلة صفقات شراكات جديدة ونشاط تصنيفي مكثف من المحللين","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/movers/26/07/60465964/palantir-stock-in-focus-after-a-busy-stretch-of-partnerships-analyst-activity"},
+    {"text":"القيمة السوقية لـ Palantir تتجاوز 300 مليار دولار للمرة الأولى وسط زخم قوي بأعمال الذكاء الاصطناعي","src":"24/7 Wall St.","link":"https://247wallst.com/investing/2026/07/08/palantir-just-hit-300-billion-the-numbers-say-thats-only-the-start/"},
+    {"text":"سهم Palantir يقفز بشكل لافت مدفوعًا بتدفق عقود جديدة في مجالي الدفاع والذكاء الاصطناعي","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/stocks/articles/palantir-technologies-pltr-shares-skyrocket-021700934.html"},
+    {"text":"تراكم صفقات الذكاء الاصطناعي والدفاع يدفع سهم Palantir للصعود مجددًا مطلع يوليو","src":"Timothy Sykes","link":"https://www.timothysykes.com/news/palantir-technologies-inc-pltr-news-2026_07_02/"}
   ],
   "takeaways": [
     "الشركة سُمّيت على حجر رؤية سحري من أساطير الخواتم — لكن الذي يراقب فعليًا هو الحكومات والجيوش",

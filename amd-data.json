@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-21",
   "price_fallback": 492.10,
   "prev_close": 486.27,
   "market_cap": "$797B",
@@ -22,12 +22,12 @@
     {"when":"22-23 يوليو 2026","what":"فعالية Advancing AI","note":"الكشف عن تحديثات MI450 ومنصة الخوادم Helios، وإطلاق معالج Zen 6 Venice"}
   ],
   "news": [
-    {"text":"AMD تطلق تحديثات مسرّعات MI450 ومنصة خوادم Helios ضمن فعالية Advancing AI 2026","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},
-    {"text":"إيرادات مراكز البيانات تقفز 57% إلى 5.8 مليار دولار متجاوزة إيرادات إنتل من نفس القطاع","src":"Data Center Dynamics","link":"https://www.datacenterdynamics.com/en/news/amd-posts-q1-2026-data-center-revenue-of-58bn-forecasts-120bn-server-cpu-income-by-2030/"},
-    {"text":"AMD ترفع توقعاتها لسوق معالجات الخوادم إلى نمو سنوي 35% وتستهدف 120 مليار دولار إيرادات بحلول 2030","src":"Data Center Dynamics","link":"https://www.datacenterdynamics.com/en/news/amd-posts-q1-2026-data-center-revenue-of-58bn-forecasts-120bn-server-cpu-income-by-2030/"},
-    {"text":"نتائج الربع الأول: إيرادات 10.3 مليار دولار وهامش إجمالي 53% وأرباح صافية 1.4 مليار دولار","src":"AMD Newsroom","link":"https://www.amd.com/en/newsroom/press-releases/2026-5-5-amd-reports-first-quarter-2026-financial-results.html"},
-    {"text":"السهم يتراجع 17% عن قمته التاريخية 584.73$ المسجلة أواخر يونيو وسط حذر عام من تقييمات الذكاء الاصطناعي","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},
-    {"text":"حصة AMD من سوق مسرّعات الذكاء الاصطناعي تتراوح بين 5-7% مقابل هيمنة Nvidia بنحو 75-81%","src":"CommandLinux","link":"https://commandlinux.com/statistics/ai-gpu-market-share-nvidia-vs-amd-vs-intel"}
+    {"text":"شريحة MI450 من AMD تحصد أول صفقة عملاقة مع ميتا قد تصل قيمتها إلى 100 مليار دولار على عدة سنوات","src":"Motley Fool","link":"https://www.fool.com/investing/2026/02/24/amds-mi450-chip-just-landed-its-first-mega-deal-he/"},
+    {"text":"سهم AMD يتراجع 17% عن قمته في يونيو مع موجة بيع بقطاع الرقائق قبيل فعالية Advancing AI في 22 يوليو","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262037492-amd-stock-forecast-week-july-20-2026-advancing-ai-july-22-tradingkey"},
+    {"text":"AMD وميتا تكشفان تفاصيل شراكة ذكاء اصطناعي ضخمة بسعة 6 غيغاواط لمراكز البيانات","src":"ServeTheHome","link":"https://www.servethehome.com/amd-and-meta-announce-a-massive-6gw-deal/"},
+    {"text":"صفقة توريد رقائق Helios تمنح ميتا حق امتلاك ما يصل إلى 10% من أسهم AMD عبر ضمانات أداء","src":"ad-hoc-news.de","link":"https://www.ad-hoc-news.de/boerse/news/ueberblick/amd-s-pivot-from-alternative-to-accelerator-how-two-mega-clients-are/69692001"},
+    {"text":"جولدمان ساكس وستيفل يبقيان تصنيف «شراء» لسهم AMD بأهداف سعرية بين 600 و640 دولارًا مع قوة نمو مراكز البيانات","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/04/why-july-could-be-a-big-month-for-amd-stock-invest/"},
+    {"text":"سهم AMD قرب 510 دولارًا قبيل أكبر فعالياته بالذكاء الاصطناعي، و12 غيغاواط على المحك في فعالية Advancing AI بيومي 22 و23 يوليو","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262041336-amd-stock-forecast-july-20-2026-advancing-ai-july-22-meta-openai-tradingkey"}
   ],
   "takeaways": [
     "ليزا سو حوّلت شركة على حافة الإفلاس إلى منافس حقيقي بسوق يتجاوز نصف تريليون دولار",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-21",
   "price_fallback": 97.00,
   "prev_close": 98.05,
   "market_cap": "$419B",
@@ -22,12 +22,12 @@
     {"when":"يوليو 2026","what":"موجة تسريح جديدة","note":"دفعة إضافية من التسريحات في أوريغون ضمن خفض التكاليف المستمر"}
   ],
   "news": [
-    {"text":"الحكومة الأمريكية تستحوذ على حصة 10% من إنتل باستثمار 8.9 مليار دولار عبر تحويل منح CHIPS Act إلى أسهم","src":"CNBC","link":"https://www.cnbc.com/2025/08/22/intel-goverment-equity-stake.html"},
-    {"text":"الرئيس التنفيذي ليب-بو تان: تحسن العائد الإنتاجي لعقدة 18A بمعدل 7-8% شهريًا بعد أن كان الأداء «غير جيد»","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/intel-conference-lip-bu-tan-talks-foundry-turnaround-18a-yield-gains-and-14a-roadmap-push-2026-02-03/"},
-    {"text":"إنتل تبدأ إنتاج عقدة 18A-P وتقترب من صفقة تصنيع محتملة مع أبل بعد اتفاقيات سابقة مع تسلا وجوجل","src":"CNBC","link":"https://www.cnbc.com/2026/06/16/intel-begins-production-of-18a-p-inches-closer-to-possible-apple-deal.html"},
-    {"text":"ليب-بو تان يصف أعمال التصنيع بـ«ثروة وطنية» مع تزايد اهتمام عملاء خارجيين بعد تحسن أداء 18A","src":"WCCFTech","link":"https://wccftech.com/intel-ceo-lip-bu-tan-calls-foundry-a-national-treasure-as-external-customers-knock-on-his-door-after-18a-yield-turnaround/"},
-    {"text":"إنتل تعلن خفض 1.5 مليار دولار من المصاريف التشغيلية مع توقع مزيد من التسريحات","src":"ChannelInsider","link":"https://www.channelinsider.com/news-and-trends/intel-slashes-billions-layoffs-expected/"},
-    {"text":"تان: عقدة 14A القادمة قد تنافس TSMC مباشرة — «ستكون بنفس التوقيت، وهذا اختراق كبير»","src":"CNBC","link":"https://www.cnbc.com/2026/05/18/intel-ceo-says-foundry-is-gaining-momentum-as-customer-interest-grows.html"}
+    {"text":"سهم إنتل يتراجع 21% من 140 إلى 110 دولارًا خلال أسبوع واحد وسط تحذير بنك أوف أمريكا من فقاعة رقائق الذكاء الاصطناعي وتأخر تقنية 18A","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262017058-intel-intc-stock-prediction-july-2026-hsbc-200-bubble-risk-tradingkey"},
+    {"text":"توقعات ما قبل نتائج الربع الثاني: الشارع يتوقع ربحية 0.21 دولار وإيرادات 14.42 مليار دولار لإنتل قبل تقرير 23 يوليو","src":"Alphastreet","link":"https://news.alphastreet.com/intel-q2-2026-earnings-preview-july-23-street-expects-0-21-eps/"},
+    {"text":"سهم إنتل يقفز 278% خلال النصف الأول من 2026 مدفوعًا بنتائج قوية بالربع الأول وشراكات جديدة","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/20/why-intel-stock-soared-278-in-the-first-half-of-20/"},
+    {"text":"سوق الخيارات يرجح تقلبًا بنسبة 15% لسهم إنتل عقب إعلان النتائج يوم الخميس","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262042520-intel-intc-earnings-preview-july-23-2026-18a-foundry-apple-microsoft-tradingkey"},
+    {"text":"محللو TipRanks: تصنيفات متباينة لسهم إنتل قبيل الأرباح مع استمرار الرهان على تعافي 18A","src":"TipRanks","link":"https://www.tipranks.com/news/intel-stock-price-forecast-what-financial-analysts-expect-ahead-of-q2-earnings"},
+    {"text":"تأخر وصول تقنية تصنيع 18A لمرحلة العائد الربحي حتى أواخر 2026 أو 2027 يثير قلق المستثمرين قبيل الأرباح","src":"Phemex","link":"https://phemex.com/blogs/intel-stock-crash-18a-delay-amd-data-center-surge"}
   ],
   "takeaways": [
     "الحكومة الأمريكية صارت أكبر مساهم في إنتل — تدخل غير مسبوق في شركة تقنية خاصة",

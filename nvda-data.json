@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-21",
   "price_fallback": 203.81,
   "prev_close": 202.81,
   "market_cap": "$4.91T",
@@ -21,12 +21,12 @@
     {"when":"يوليو 2026","what":"أبل تخطف عرش القيمة السوقية","note":"تتفوق مؤقتًا على Nvidia وسط حذر المستثمرين من فقاعة الذكاء الاصطناعي"}
   ],
   "news": [
-    {"text":"الرئيس التنفيذي جنسن هوانغ يؤكد أن الصين لن تحصل على رقائق Blackwell أو Rubin، ويصرّ على أن أمريكا يجب أن تملك «الأفضل والأكثر أولًا»","src":"Tom's Hardware","link":"https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-ceo-jensen-huang-says-china-should-not-have-blackwell-or-rubin-ai-gpus-firmly-states-us-should-have-the-first-the-most-and-the-best-when-it-comes-to-ai-hardware"},
-    {"text":"الشيوخ الأمريكية تستدعي جنسن هوانغ للمثول أمام لجنة الخدمات المصرفية بسبب مبيعات الرقائق للصين وضوابط التصدير","src":"CNBC","link":"https://www.cnbc.com/2026/06/04/nvidia-ceo-jensen-huang-warren-senate-hearing-china-ai-chips.html"},
-    {"text":"حصة Nvidia من سوق مسرّعات الذكاء الاصطناعي بالصين تهبط إلى صفر بعد توقف شحنات H200 بالكامل","src":"Global Times","link":"https://www.globaltimes.cn/page/202603/1357291.shtml"},
-    {"text":"أبل تتفوق على Nvidia لتصبح أعلى شركة قيمة بالعالم وسط تحول المستثمرين نحو الحذر من أسهم الذكاء الاصطناعي","src":"CNBC","link":"https://www.cnbc.com/2026/07/17/apple-nvidia-aapl-nvda-market-cap.html"},
-    {"text":"هوانغ يصف مراكز البيانات المبنية من رقائق مهرّبة بـ«الطريق المسدود» وسط تصاعد ظاهرة السوق السوداء","src":"CNBC","link":"https://www.cnbc.com/2026/06/24/nvidia-huang-data-center-smuggled-chips.html"},
-    {"text":"إيرادات الربع الأول القياسية تبلغ 81.6 مليار دولار بنمو 85%، وإيرادات مراكز البيانات وحدها تشكل 92% من الإجمالي","src":"NVIDIA Newsroom","link":"https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027"}
+    {"text":"سهم إنفيديا يختبر مستوى 212 دولارًا مع تحسن آفاق الطلب على الذكاء الاصطناعي واستئناف الشحنات لسوق الصين","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/15/nvidia-nvda-stock-price-forecast-nvda-tests-212-as-ai-demand-and-china-shipments-lift-outlook/"},
+    {"text":"واشنطن توافق على تراخيص لإنفيديا لاستئناف تصدير شرائح H20 إلى الصين مجددًا","src":"Yahoo Finance","link":"https://finance.yahoo.com/news/us-licenses-nvidia-export-chips-221538864.html"},
+    {"text":"إنفيديا تنفي تأخر منصة Kyber للذكاء الاصطناعي وتؤكد التزامها بالجدول الزمني، وجولدمان ساكس يصف التقييم الحالي بالجذاب","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262015350-nvidia-nvda-stock-forecast-july-2026-kyber-denial-goldman-tradingkey"},
+    {"text":"مضاعف الأرباح المستقبلي لإنفيديا يهبط لأدنى مستوى في 7 سنوات رغم تجاوز القيمة السوقية 5.1 تريليون دولار","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/12/nvidia-stock-just-did-something-for-the-first-time/"},
+    {"text":"سهم إنفيديا يتخلف عن منافسيه في قطاع الرقائق خلال 2026 مع تباطؤ حماس الذكاء الاصطناعي، بينما يقفز AMD ومايكرون أكثر من 100%","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/04/nvidia-stock-is-flat-for-2026-time-to-cash-out-or/"},
+    {"text":"انقسام في التوقعات حول ما إذا كان سهم إنفيديا مقبلاً على انتعاش أو مزيد من التراجع خلال يوليو","src":"BeInCrypto","link":"https://beincrypto.com/nvidia-stock-price-forecast-july-2026/"}
   ],
   "takeaways": [
     "الشركة تحولت فعليًا لشركة مراكز بيانات — الألعاب والرسوميات صارت هامشًا بسيطًا من الإيرادات",

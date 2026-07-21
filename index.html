@@ -108,7 +108,13 @@ section{margin-top:var(--sp7)}
 @keyframes sdspin{to{transform:rotate(360deg)}}
 .sd-empty{padding:16px 18px;text-align:center;color:var(--mut);font-size:15px}
 .fav-heading{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,32px);margin-bottom:var(--sp5)}
-.kick{font-family:var(--num);font-weight:700;font-size:16px;letter-spacing:.06em;color:var(--a2)}
+.kick{font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:.01em;color:var(--ink)}
+.find-more{text-align:center;color:var(--mut);font-size:15.5px;padding:var(--sp5) 0}
+.find-more a{display:inline-flex;align-items:center;gap:5px;color:var(--a2);font-weight:700;text-decoration:none;margin-inline-start:6px}
+.find-more a svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
+.find-more a:hover{text-decoration:underline}
+.find-more a:hover svg{transform:translateX(-4px)}
+html[dir=ltr] .find-more a:hover svg{transform:translateX(4px)}
 .tabs{display:flex;gap:8px;margin-bottom:var(--sp5)}
 .tab{font-family:var(--body);font-weight:700;font-size:14px;color:var(--mut);background:rgba(255,255,255,.05);
 border:1px solid var(--edge);border-radius:var(--r99);padding:10px 22px;min-height:44px;cursor:pointer;
@@ -409,6 +415,14 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 
 </div>
 </section>
+
+<div class="find-more rv">
+<span class="i-ar">ما لقيت السهم اللي تدور عليه؟</span><span class="i-en">Didn't find the stock you're looking for?</span>
+<a href="#stockSearch" onclick="document.getElementById('stockSearch').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('stockSearch').focus();return false;">
+<span class="i-ar">ابحث عن سهم معين</span><span class="i-en">Search for a specific stock</span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+</a>
+</div>
 
 <section class="rv">
 <div class="about gl">

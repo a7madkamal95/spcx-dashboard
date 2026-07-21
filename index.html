@@ -73,6 +73,14 @@ padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:backg
 .board-cell .bd-chg{font-size:13px}
 .board-cell .bd-px.pos,.board-cell .bd-chg.pos{color:var(--mint)}
 .board-cell .bd-px.neg,.board-cell .bd-chg.neg{color:var(--coral)}
+.board{position:relative}
+.board-toggle{position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:30px;height:30px;border-radius:50%;
+background:var(--void);border:1px solid var(--edgeTop);color:var(--mut);display:flex;align-items:center;justify-content:center;
+cursor:pointer;transition:color var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.board-toggle:hover{color:var(--ink)}
+.board-toggle svg{width:15px;height:15px;transition:transform var(--dur-med) var(--ease)}
+.board.collapsed .board-toggle svg{transform:rotate(180deg)}
+.board.collapsed .board-cell:nth-child(n+4){display:none}
 .tk-item{display:flex;align-items:baseline;gap:7px;font-family:var(--num);font-size:14.5px;white-space:nowrap;flex-shrink:0;padding:9px 20px;direction:ltr}
 .tk-item b{font-weight:800;color:var(--ink);letter-spacing:.02em}
 .tk-item .tk-px{font-weight:700;color:var(--mut)}
@@ -261,8 +269,11 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
 </div>
 
-<div class="board gl rv" aria-hidden="true">
+<div class="board gl rv" id="boardCard">
 <div class="board-grid" id="boardGrid"></div>
+<button class="board-toggle" id="boardToggle" onclick="toggleBoard()" aria-label="Toggle board size">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+</button>
 </div>
 
 <section class="hero rv">
@@ -928,6 +939,12 @@ el.querySelector(".bd-chg").className="bd-chg "+(t.up?"pos":"neg");
 renderBoard();
 loadBoard();
 setInterval(loadBoard,10000);
+function toggleBoard(){
+var card=document.getElementById("boardCard");
+card.classList.toggle("collapsed");
+localStorage.setItem("boardCollapsed",card.classList.contains("collapsed")?"1":"0");
+}
+if(localStorage.getItem("boardCollapsed")==="1")document.getElementById("boardCard").classList.add("collapsed");
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

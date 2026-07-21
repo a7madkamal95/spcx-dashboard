@@ -62,11 +62,26 @@ color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop
 padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
 .lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
 .lng:active{transform:translateY(0)}
+.ticker-wrap{overflow:hidden;position:relative;margin-top:var(--sp3);
+-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ticker-track{display:flex;width:max-content;animation:tickerScroll 60s linear infinite}
+.ticker-wrap:hover .ticker-track{animation-play-state:paused}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+.tk-item{display:flex;align-items:baseline;gap:7px;font-family:var(--num);font-size:14.5px;white-space:nowrap;flex-shrink:0;padding:9px 20px;direction:ltr}
+.tk-item b{font-weight:800;color:var(--ink);letter-spacing:.02em}
+.tk-item .tk-px{font-weight:700;color:var(--mut)}
+.tk-item .tk-px.pos{color:var(--mint)}
+.tk-item .tk-px.neg{color:var(--coral)}
+.tk-item .tk-chg{font-size:12.5px}
+.tk-item .tk-chg.pos{color:var(--mint)}
+.tk-item .tk-chg.neg{color:var(--coral)}
 .hero{padding:64px 0 var(--sp6);display:grid;grid-template-columns:1.1fr .9fr;gap:var(--sp6);align-items:center}
 @media(max-width:780px){.hero{grid-template-columns:1fr;text-align:center}}
 .brandbig{line-height:1.1}
-.brandbig img{width:60px;height:60px;border-radius:15px;margin-bottom:14px}
-@media(max-width:780px){.brandbig img{margin-inline:auto}}
+.brandbig img{display:block;width:84px;height:84px;border-radius:20px;margin-bottom:16px;margin-left:auto}
+@media(max-width:780px){.brandbig img{margin-left:auto;margin-right:auto}}
 .brandbig b{display:block;font-family:var(--disp);font-weight:900;font-size:clamp(26px,4.6vw,40px);letter-spacing:.01em;
 background:linear-gradient(92deg,var(--ink),var(--a2) 120%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .brandbig i{display:block;font-style:normal;font-weight:700;font-size:14px;letter-spacing:.08em;color:var(--mut);margin-top:4px}
@@ -239,6 +254,10 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <a href="index.html" class="brand"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"><span class="brandlockup"><b>PLUTO INTELLIGENCE</b></span></a>
 <span class="tagline i-ar">تحليلات استثمارية مختارة بعناية</span><span class="tagline i-en">Curated market intelligence</span>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<div class="ticker-wrap rv" aria-hidden="true">
+<div class="ticker-track" id="tickerTrack"></div>
 </div>
 
 <section class="hero rv">
@@ -469,7 +488,8 @@ document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
 function setLang(l){CUR=l;localStorage.setItem("lang",l);
 document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
 document.documentElement.setAttribute("data-lang",l);
-document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");}
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+if(typeof renderTicker==="function")renderTicker();}
 var SEARCH_TICKERS=[
 {t:"SPCX",ar:"سبيس إكس",en:"SpaceX",page:"spcx.html"},
 {t:"GME",ar:"جيم ستوب",en:"GameStop",page:"gme.html"},
@@ -866,6 +886,51 @@ makeCardPricer("hp-px6","hp-chg6","AMD",492.10,486.27);
 makeCardPricer("hp-px7","hp-chg7","GC=F",4009.37,4001.06);
 makeCardPricer("hp-px8","hp-chg8","BB",8.77,8.62);
 makeCardPricer("hp-px9","hp-chg9","OKLO",41.10,40.95);
+
+var TICKER_LIST=[
+{sym:"^IXIC",ar:"ناسداك",en:"Nasdaq",fb:23400,pv:23320,idx:true},
+{sym:"^GSPC",ar:"S&P 500",en:"S&P 500",fb:6350,pv:6330,idx:true},
+{sym:"^DJI",ar:"داو جونز",en:"Dow Jones",fb:44500,pv:44350,idx:true},
+{sym:"AAPL",ar:"أبل",en:"Apple",fb:232,pv:230},
+{sym:"MSFT",ar:"مايكروسوفت",en:"Microsoft",fb:470,pv:468},
+{sym:"GOOGL",ar:"جوجل",en:"Google",fb:195,pv:193},
+{sym:"AMZN",ar:"أمازون",en:"Amazon",fb:228,pv:226},
+{sym:"NVDA",ar:"إنفيديا",en:"Nvidia",fb:203,pv:202},
+{sym:"META",ar:"ميتا",en:"Meta",fb:640,pv:635},
+{sym:"TSLA",ar:"تسلا",en:"Tesla",fb:330,pv:326},
+{sym:"AVGO",ar:"بروادكوم",en:"Broadcom",fb:250,pv:248},
+{sym:"JPM",ar:"جي بي مورغان",en:"JPMorgan",fb:245,pv:243},
+{sym:"SPY",ar:"صندوق S&P 500",en:"SPY ETF",fb:635,pv:633},
+{sym:"QQQ",ar:"صندوق ناسداك",en:"QQQ ETF",fb:545,pv:542},
+{sym:"GLD",ar:"صندوق الذهب",en:"Gold ETF",fb:305,pv:303}
+];
+function fmtTk(t,p){if(t.idx)return Math.round(+p).toLocaleString("en-US");return "$"+(+p).toFixed(2)}
+function tkLabel(t){return CUR==="ar"?t.ar:t.en}
+function renderTicker(){
+var html=TICKER_LIST.map(function(t){
+var cls=t.up===undefined?"":(t.up?"pos":"neg");
+return '<div class="tk-item" data-tk="'+t.sym+'"><b>'+tkLabel(t)+'</b><span class="tk-px '+cls+'">'+fmtTk(t,t.fb)+'</span><span class="tk-chg '+cls+'">'+(t.chgTxt||"")+'</span></div>';
+}).join("");
+document.getElementById("tickerTrack").innerHTML=html+html;
+}
+function loadTicker(){
+TICKER_LIST.forEach(function(t){
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(t.sym)+"?interval=1d&range=1d").then(function(r){return JSON.parse(r)}).then(function(y){
+var m=y.chart.result[0].meta,p=m.regularMarketPrice,pc=m.chartPreviousClose||m.previousClose||t.pv;
+if(!(p>0))return;
+t.fb=p;t.pv=pc;t.up=p>=pc;t.chgTxt=(t.up?"+":"")+((p-pc)/pc*100).toFixed(2)+"%";
+document.querySelectorAll('.tk-item[data-tk="'+t.sym+'"]').forEach(function(el){
+el.querySelector(".tk-px").textContent=fmtTk(t,p);
+el.querySelector(".tk-px").className="tk-px "+(t.up?"pos":"neg");
+el.querySelector(".tk-chg").textContent=t.chgTxt;
+el.querySelector(".tk-chg").className="tk-chg "+(t.up?"pos":"neg");
+});
+}).catch(function(){});
+});
+}
+renderTicker();
+loadTicker();
+setInterval(loadTicker,60000);
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

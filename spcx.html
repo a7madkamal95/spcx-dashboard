@@ -119,7 +119,7 @@ section{margin-top:var(--sp8)}
 .vein .icwrap{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid var(--edge);position:relative;margin-top:-36px;backdrop-filter:blur(6px)}
 .vein .icwrap svg{width:24px;height:24px}
 .vein h3{font-family:var(--disp);font-weight:800;font-size:21px;margin-top:var(--sp3)}
-.tag{display:inline-block;font-family:var(--num);font-size:13px;letter-spacing:.1em;border-radius:var(--r99);padding:3px 12px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.05)}
+.tag{align-self:flex-start;display:inline-block;font-family:var(--num);font-size:13px;letter-spacing:.1em;border-radius:var(--r99);padding:3px 12px;border:1px solid;margin-top:var(--sp2);background:rgba(255,255,255,.05)}
 .t1{color:var(--a2);border-color:rgba(56,212,255,.5)}.t2{color:var(--mint);border-color:rgba(60,232,166,.5)}.t3{color:var(--coral);border-color:rgba(255,107,107,.5)}
 .vein p{font-size:13.5px;color:var(--mut);margin-top:var(--sp3);line-height:1.7}
 .vein .dtl{display:none}
@@ -233,13 +233,46 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 </div>
 
 <section class="rv" id="s-chart">
-<div class="eyeb"><b><span class="i-ar">الرسم البياني الحي</span><span class="i-en">Live Chart</span></b><span>SPCX</span><div class="ln"></div></div>
-<div class="gl pad" style="text-align:center;padding:56px var(--sp5)">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:34px;height:34px;color:var(--mut);opacity:.6;margin-bottom:14px"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/><circle cx="19" cy="8" r="0"/></svg>
-<div style="font-family:var(--disp);font-weight:800;font-size:19px;margin-bottom:6px"><span class="i-ar">لا يوجد رسم بياني حي بعد</span><span class="i-en">No live chart yet</span></div>
-<p style="color:var(--mut);font-size:14px;max-width:44ch;margin:0 auto;line-height:1.8"><span class="i-ar">مزوّدو البيانات الماليون الحقيقيون (Yahoo Finance وTradingView) لا يملكون سجل تداول لسهم SPCX لأن سبيس إكس لم تُدرج فعليًا في أي بورصة حقيقية بعد — كل أرقام هذه الصفحة توضيحية ضمن سيناريو استثماري افتراضي.</span><span class="i-en">Real financial data providers (Yahoo Finance, TradingView) have no trading history for SPCX because SpaceX hasn't actually listed on any real exchange yet — every number on this page is illustrative, part of a hypothetical investment scenario.</span></p>
+<div class="eyeb"><b><span class="i-ar">الرسم البياني الحي</span><span class="i-en">Live Chart</span></b><span>TRADINGVIEW</span><div class="ln"></div></div>
+<div class="gl" id="tvCard" style="padding:0;overflow:hidden;max-width:100%">
+<div id="tvContainer" style="height:500px;width:100%;max-width:100%;overflow:hidden"></div>
 </div>
 </section>
+
+<script>
+(function(){
+var TV_CFG={"autosize":true,"symbol":"NASDAQ:SPCX","interval":"D","timezone":"Etc/UTC","theme":"dark","style":"1","locale":"en","allow_symbol_change":false,"hide_top_toolbar":false,"hide_legend":false,"save_image":false,"backgroundColor":"#05060d","gridColor":"rgba(255,255,255,0.06)","support_host":"https://www.tradingview.com"};
+var loaded=false;
+function loadTV(){
+if(loaded)return;loaded=true;
+var container=document.getElementById("tvContainer");
+if(!container)return;
+var widgetDiv=document.createElement("div");
+widgetDiv.className="tradingview-widget-container__widget";
+widgetDiv.style.height="100%";
+widgetDiv.style.width="100%";
+var outer=document.createElement("div");
+outer.className="tradingview-widget-container";
+outer.style.height="100%";
+outer.style.width="100%";
+outer.appendChild(widgetDiv);
+container.appendChild(outer);
+var script=document.createElement("script");
+script.type="text/javascript";
+script.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+script.async=true;
+script.text=JSON.stringify(TV_CFG);
+outer.appendChild(script);
+}
+var card=document.getElementById("tvCard");
+if(card){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){if(e.isIntersecting){loadTV();io.disconnect();}});
+},{rootMargin:"300px"});
+io.observe(card);
+}
+})();
+</script>
 
 <section class="rv" id="s-timeline">
 <div class="eyeb"><b><span class="i-ar">الأحداث المفصلية</span><span class="i-en">Key Milestones</span></b><span>2025 → 2026</span><div class="ln"></div></div>

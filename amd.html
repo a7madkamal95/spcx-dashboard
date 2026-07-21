@@ -78,8 +78,13 @@ h1{font-family:var(--disp);font-weight:400;font-size:clamp(44px,7.5vw,72px);line
 h1 .grad{background:linear-gradient(92deg,var(--red),#ff8080);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{color:var(--mut);font-size:17px;line-height:1.75;max-width:48ch;margin-top:var(--sp4)}
 @media(max-width:780px){.lead{margin-inline:auto}}
-.gauge{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:var(--sp4)}
-.gauge svg{width:100%;height:100%;overflow:visible}
+.shot{position:relative;aspect-ratio:1;max-width:400px;margin-inline:auto;width:100%;padding:0;overflow:hidden}
+.shot-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(1.1) contrast(1.05)}
+.shot-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,9,11,.1) 0%,rgba(8,9,11,.32) 62%,rgba(8,9,11,.88) 100%)}
+.shot-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:var(--sp4)}
+.shot-kick{align-self:flex-end;display:flex;align-items:center;gap:6px;font-family:var(--num);font-size:13px;letter-spacing:.06em;color:var(--red);font-weight:700;background:rgba(8,9,11,.65);backdrop-filter:blur(4px);padding:5px 12px;border-radius:99px;border:1px solid rgba(237,28,36,.45)}
+.shot-dot{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 8px var(--red);animation:pl 1.6s infinite}
+.shot-cap{font-family:var(--num);font-size:14px;letter-spacing:.02em;color:var(--ink);background:rgba(8,9,11,.6);backdrop-filter:blur(4px);padding:7px 14px;border-radius:8px;align-self:flex-start;border:1px solid rgba(237,28,36,.4)}
 section{margin-top:var(--sp8)}
 .eyeb{display:flex;align-items:center;gap:var(--sp3);margin-bottom:var(--sp4)}
 .eyeb .ln{flex:1;height:2px;background:repeating-linear-gradient(-35deg,var(--red) 0 4px,transparent 4px 9px)}
@@ -183,33 +188,12 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 <h1><span class="i-ar">المتحدي الذي<br><span class="grad">لحق بالركب</span></span><span class="i-en">The Challenger<br>That <span class="grad">Caught Up</span></span></h1>
 <p class="lead"><span class="i-ar">شركة كانت على حافة الإفلاس بسهم أقل من 3 دولارات، تحولت اليوم لمنافس حقيقي يزاحم إنتل بالمعالجات ويطارد Nvidia بمسرّعات الذكاء الاصطناعي — بقيادة مهندسة واحدة غيّرت كل شي.</span><span class="i-en">A company once on the brink of bankruptcy at under $3 a share is now a real rival squeezing Intel in processors and chasing Nvidia in AI accelerators — led by one engineer who changed everything.</span></p>
 </div>
-<div class="gauge gl rv">
-<svg viewBox="0 0 420 330" role="img" aria-label="Stylized gauge representing AMD's climbing market share">
-<defs>
-<linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
-<stop offset="0%" stop-color="#8a0f14"/>
-<stop offset="100%" stop-color="#ff8080"/>
-</linearGradient>
-</defs>
-<text x="210" y="30" text-anchor="middle" fill="#ed1c24" font-family="'Rajdhani',sans-serif" font-size="13" font-weight="700" letter-spacing="3">MARKET SHARE</text>
-<circle cx="366" cy="24" r="4" fill="#ed1c24"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
-<text x="378" y="28" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="9" font-weight="700">LIVE</text>
-<path d="M60,250 A150,150 0 0,1 360,250" fill="none" stroke="url(#arcGrad)" stroke-width="14" stroke-linecap="round"/>
-<g stroke="#93938f" stroke-width="2">
-<line x1="60" y1="250" x2="72" y2="250"/>
-<line x1="104" y1="144" x2="112.4" y2="152.4"/>
-<line x1="210" y1="100" x2="210" y2="112"/>
-<line x1="316" y1="144" x2="307.6" y2="152.4"/>
-<line x1="360" y1="250" x2="348" y2="250"/>
-</g>
-<line x1="210" y1="250" x2="316.5" y2="175.4" stroke="#f2f2f0" stroke-width="4" stroke-linecap="round" style="filter:drop-shadow(0 0 8px rgba(237,28,36,.7))"/>
-<circle cx="210" cy="250" r="10" fill="#ed1c24"/>
-<text x="90" y="280" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="11" font-weight="700">CPU</text>
-<text x="195" y="90" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="11" font-weight="700">SERVER</text>
-<text x="300" y="280" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="11" font-weight="700">AI GPU</text>
-<text x="210" y="300" text-anchor="middle" fill="#f2f2f0" font-family="'Rajdhani',sans-serif" font-size="22" font-weight="700">CLIMBING ↑</text>
-<text x="210" y="320" text-anchor="middle" fill="#93938f" font-family="'Rajdhani',sans-serif" font-size="9">SHARE GAINS (ILLUSTRATIVE)</text>
-</svg>
+<div class="shot gl rv">
+<div class="shot-photo" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/2/25/AMD_Ryzen_9_9950X.jpg)" role="img" aria-label="Real photo of an AMD Ryzen 9 9950X processor"></div>
+<div class="shot-overlay">
+<div class="shot-kick"><span class="shot-dot" aria-hidden="true"></span>LIVE</div>
+<div class="shot-cap"><span class="i-ar">معالج AMD Ryzen 9 9950X</span><span class="i-en">AMD Ryzen 9 9950X processor</span></div>
+</div>
 </div>
 </div>
 
@@ -349,6 +333,9 @@ io.observe(card);
 
 <footer>
 <p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+<p class="dsc" style="margin-top:8px;font-size:13px;opacity:.7">
+<span class="i-ar">صورة: </span><span class="i-en">Photo: </span><a href="https://commons.wikimedia.org/wiki/File:AMD_Ryzen_9_9950X.jpg" target="_blank" rel="noopener" style="color:inherit">4300streetcar</a> (CC BY 4.0) — Wikimedia Commons
+</p>
 </footer>
 
 </div>

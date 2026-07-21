@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الراصد — تفاصيل السهم</title>
+<title>PLUTO INTELLIGENCE — تفاصيل السهم</title>
 <meta name="theme-color" content="#05060d">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
@@ -131,7 +131,7 @@ return t;
 if(Promise.any)return Promise.any(attempts);
 return new Promise(function(res,rej){var left=attempts.length,failed=0;attempts.forEach(function(p){p.then(res).catch(function(){failed++;if(failed>=left)rej(new Error("all proxies failed"))})})});
 }
-document.title=(CUR==="ar"?"الراصد — ":"Rasid — ")+TICKER;
+document.title="PLUTO INTELLIGENCE — "+TICKER;
 var cacheKey="stock:"+TICKER;
 var cached=sessionStorage.getItem(cacheKey);
 if(cached){
@@ -172,7 +172,7 @@ function fmtN(n){if(n==null)return "—";if(n>=1e12)return "$"+(n/1e12).toFixed(
 function render(m){
 var name=TICKER_NAMES[TICKER];
 var displayName=name?(CUR==="ar"?name.ar:name.en):(m.longName||m.shortName||TICKER);
-document.title=(CUR==="ar"?"الراصد — ":"Rasid — ")+displayName;
+document.title="PLUTO INTELLIGENCE — "+displayName;
 var p=m.regularMarketPrice,pc=m.chartPreviousClose||m.previousClose;
 var up=pc?p>=pc:true;
 var ch=pc?((p-pc)/pc*100).toFixed(2):null;

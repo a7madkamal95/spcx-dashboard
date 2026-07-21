@@ -97,6 +97,7 @@ section{margin-top:var(--sp8)}
 .eyeb .ln{flex:1;height:1.5px;border-radius:1px;background:linear-gradient(90deg,rgba(118,185,0,.4),rgba(118,185,0,.4) 70%,transparent)}
 .eyeb b{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:.01em}
 .eyeb span{font-family:var(--num);font-size:13px;letter-spacing:.15em;color:var(--green);font-weight:500}
+.news-updated{display:block;font-size:13px;color:var(--ink);opacity:.55;margin:-10px 0 var(--sp3)}
 .pad{padding:var(--sp6)}
 .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
 @media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
@@ -314,7 +315,8 @@ io.observe(card);
 </section>
 
 <section class="rv" id="s-news">
-<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><span id="newsUpdated"></span><div class="ln"></div></div>
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="news-updated" id="newsUpdated"></div>
 <div class="gl pad"><ul id="news"></ul></div>
 </section>
 

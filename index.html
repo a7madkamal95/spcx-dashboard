@@ -1394,6 +1394,7 @@ setInterval(tickMarketStatus,1000);
 var SB_URL="https://bmcysrlzbxsytpgusqen.supabase.co";
 var SB_KEY="sb_publishable_n84xHMo8VjfQxEME4JlOFQ_9C0-bFwM";
 var sb=window.supabase.createClient(SB_URL,SB_KEY);
+var COURSE_LOCK_ACTIVE=false;
 
 function openLoginModal(){
 if(document.getElementById("adminBtn").classList.contains("logged-in")){handleLogout();return}
@@ -1431,8 +1432,14 @@ if(v){v.muted=!on;if(on){v.setAttribute("controls","")}else{v.removeAttribute("c
 });
 }
 
+if(COURSE_LOCK_ACTIVE){
+document.getElementById("adminBtn").style.display="";
 sb.auth.getSession().then(function(res){setLoggedInUI(!!(res.data&&res.data.session))});
 sb.auth.onAuthStateChange(function(_e,session){setLoggedInUI(!!session)});
+}else{
+document.getElementById("adminBtn").style.display="none";
+setLoggedInUI(true);
+}
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

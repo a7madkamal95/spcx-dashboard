@@ -109,7 +109,7 @@ section{margin-top:var(--sp7)}
 .sd-empty{padding:16px 18px;text-align:center;color:var(--mut);font-size:15px}
 .fav-heading{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,32px);margin-bottom:var(--sp5)}
 .kick{font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:.01em;color:var(--ink)}
-.find-more{text-align:center;color:var(--mut);font-size:15.5px;padding:var(--sp5) 0}
+.find-more{text-align:center;color:var(--mut);font-size:18px;padding:var(--sp5) 0}
 .find-more a{display:inline-flex;align-items:center;gap:5px;color:var(--a2);font-weight:700;text-decoration:none;margin-inline-start:6px}
 .find-more a svg{width:13px;height:13px;transition:transform var(--dur-med) var(--ease)}
 .find-more a:hover{text-decoration:underline}
@@ -167,12 +167,12 @@ html[dir=ltr] .stock-card:hover .sc-cta svg{transform:translateX(4px)}
 }
 .slot{padding:var(--sp6);text-align:center;color:var(--mut);font-size:15.5px;border-style:dashed}
 .slot svg{width:26px;height:26px;color:var(--mut);opacity:.5;margin-bottom:8px}
-.about{padding:var(--sp6);display:grid;grid-template-columns:auto 1fr;gap:var(--sp5);align-items:start}
+.about{padding:var(--sp4) var(--sp5);display:grid;grid-template-columns:auto 1fr;gap:var(--sp4);align-items:start}
 @media(max-width:600px){.about{grid-template-columns:1fr;text-align:center}.about .av{margin-inline:auto}}
-.about .av{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--a2),var(--a1));
+.about .av{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--a2),var(--a1));
 display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.about .av svg{width:28px;height:28px;color:var(--void)}
-.about .av img{width:100%;height:100%;border-radius:16px;object-fit:cover}
+.about .av svg{width:21px;height:21px;color:var(--void)}
+.about .av img{width:100%;height:100%;border-radius:12px;object-fit:cover}
 .offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:stretch}
 @media(max-width:900px){.offer-grid{grid-template-columns:1fr}}
 .offer{padding:var(--sp5);display:flex;flex-direction:column}
@@ -194,8 +194,8 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 .offer-grid-sm .offer p{font-size:13px;margin-top:6px;line-height:1.65}
 .offer-grid-sm .offer-cta{font-size:13.5px;margin-top:var(--sp3)}
 .offer-grid-sm .offer-cta svg{width:11px;height:11px}
-.about h4{font-family:var(--disp);font-weight:800;font-size:18px}
-.about p{font-size:14px;color:var(--mut);margin-top:6px;line-height:1.8}
+.about h4{font-family:var(--disp);font-weight:800;font-size:16px}
+.about p{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.7}
 .dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
 .rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
 .rv.on{opacity:1;transform:none}
@@ -304,8 +304,7 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <section class="rv">
 <div class="gl pad req-card">
 <h3><span class="i-ar">اطلب استشارة أو تحليل لسهم معين</span><span class="i-en">Request Analysis for a Specific Stock</span></h3>
-<p><span class="i-ar">سهم مو موجود بالمفضلة وتبي رأيي فيه؟ اكتب اسمه واتركلي بريدك، وأرد عليك عليه.</span><span class="i-en">A stock that's not in the favorites list? Tell me which one and leave your email — I'll get back to you.</span></p>
-<form class="req-fields" onsubmit="sendStockRequest(event)">
+<form class="req-fields" onsubmit="sendStockRequest(event)" style="margin-top:var(--sp4)">
 <input type="text" id="reqStock" required placeholder="اسم السهم أو الرمز… / Stock name or ticker…">
 <input type="email" id="reqEmail" required placeholder="بريدك الإلكتروني… / Your email…">
 <button type="submit" class="req-submit"><span class="i-ar">إرسال الطلب</span><span class="i-en">Send request</span></button>

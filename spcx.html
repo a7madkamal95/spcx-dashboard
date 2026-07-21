@@ -166,7 +166,7 @@ background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:te
 @supports not (backdrop-filter:blur(1px)){.gl{background:rgba(18,22,42,.94)}}
 /* uniform-cards */
 .veins{align-items:start}
-.vein{display:flex;flex-direction:column;min-height:300px}
+.vein{display:flex;flex-direction:column}
 .vein .vc{flex:1;display:flex;flex-direction:column}
 .vein .more{margin-top:auto}
 
@@ -542,6 +542,31 @@ document.getElementById("vi").textContent=(CUR==="ar"?((b?"تحت":"فوق")+" �
 if(!live)document.getElementById("pm").innerHTML='<span class="ldot wait" aria-hidden="true"></span>'+(CUR==="ar"?"جاري الجلب الحي…":"fetching live…")}
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
 setInterval(livePrice,10000);
+</script>
+
+<script>
+// equalize-forces
+(function(){
+function grid(){return document.querySelector('#s-forces .forces')||document.querySelector('#s-forces .veins');}
+function equalize(){
+  var g=grid(); if(!g) return;
+  var cards=[].slice.call(g.children);
+  cards.forEach(function(c){c.style.minHeight='';});
+  if(window.innerWidth<=900) return; // mobile: single column, natural height
+  var opened=cards.filter(function(c){return c.classList.contains('open');});
+  opened.forEach(function(c){c.classList.remove('open');});
+  var max=0; cards.forEach(function(c){var h=c.offsetHeight; if(h>max)max=h;});
+  cards.forEach(function(c){c.style.minHeight=max+'px';});
+  opened.forEach(function(c){c.classList.add('open');});
+}
+window.__equalizeForces=equalize;
+document.addEventListener('DOMContentLoaded',equalize);
+window.addEventListener('load',equalize);
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(equalize);}
+var rt; window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(equalize,150);});
+try{new MutationObserver(function(){equalize();setTimeout(equalize,120);}).observe(document.documentElement,{attributes:true,attributeFilter:['data-lang']});}catch(e){}
+setTimeout(equalize,400); setTimeout(equalize,1200);
+})();
 </script>
 </body>
 </html>

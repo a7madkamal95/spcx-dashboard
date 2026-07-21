@@ -1027,7 +1027,7 @@ document.getElementById("msDot").className="ms-dot "+(open?"open":"closed");
 document.getElementById("msTextAr").textContent=open?"السوق مفتوح":"السوق مغلق";
 document.getElementById("msTextEn").textContent=open?"Market Open":"Market Closed";
 var k=kuwaitParts();
-document.getElementById("msClock").textContent=k.day+" · "+pad2(k.h)+":"+pad2(k.m)+":"+pad2(k.s);
+document.getElementById("msClock").textContent=pad2(k.h)+":"+pad2(k.m)+":"+pad2(k.s);
 }
 tickMarketStatus();
 setInterval(tickMarketStatus,1000);

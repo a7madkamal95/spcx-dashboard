@@ -913,7 +913,8 @@ var TICKER_LIST=[
 {sym:"IWM",ar:"صندوق راسل 2000",en:"Russell 2000 ETF",fb:225,pv:224}
 ];
 function fmtTk(t,p){if(t.idx)return Math.round(+p).toLocaleString("en-US");return "$"+(+p).toFixed(2)}
-function tkLabel(t){return CUR==="ar"?t.ar:t.en}
+var TK_IDX_LABEL={"^IXIC":"NASDAQ","^GSPC":"S&P 500","^DJI":"DOW"};
+function tkLabel(t){return TK_IDX_LABEL[t.sym]||t.sym}
 function renderTicker(){
 var html=TICKER_LIST.map(function(t){
 var cls=t.up===undefined?"":(t.up?"pos":"neg");

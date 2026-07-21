@@ -72,6 +72,27 @@ color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop
 padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
 .lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
 .lng:active{transform:translateY(0)}
+.admin-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;
+color:var(--mut);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
+cursor:pointer;transition:background var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease)}
+.admin-btn svg{width:18px;height:18px}
+.admin-btn:hover{background:rgba(255,255,255,.17);color:var(--ink)}
+.admin-btn.logged-in{color:var(--gold);border-color:rgba(255,209,102,.5)}
+.login-backdrop{position:fixed;inset:0;background:rgba(6,8,18,.72);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:var(--sp4)}
+.login-backdrop.open{display:flex}
+.login-modal{position:relative;width:100%;max-width:360px;padding:var(--sp5);background:rgba(18,22,42,.97)}
+.login-modal h3{font-family:var(--disp);font-weight:800;font-size:19px;margin-bottom:var(--sp4)}
+.login-close{position:absolute;top:14px;inset-inline-end:14px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--mut);background:none;border:none;cursor:pointer}
+.login-close svg{width:16px;height:16px}
+.login-close:hover{color:var(--ink)}
+#loginForm{display:flex;flex-direction:column;gap:var(--sp3)}
+#loginForm input{background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:12px;padding:13px 16px;color:var(--ink);font-family:var(--body);font-size:15px;outline:none}
+#loginForm input::placeholder{color:var(--mut);font-size:14px}
+.login-submit{margin-top:4px;padding:13px;border-radius:12px;border:none;cursor:pointer;font-weight:700;font-size:15px;color:#0a0e1e;background:linear-gradient(135deg,var(--a2),var(--a1))}
+.login-submit:disabled{opacity:.6;cursor:default}
+.login-err{color:#ff8a8a;font-size:13px;min-height:16px;margin-top:2px}
+.lesson-locked.unlocked .lesson-video-bg{filter:none}
+.lesson-locked.unlocked .lesson-lock-overlay{display:none}
 .board{margin-top:var(--sp3);padding:var(--sp4) var(--sp5)}
 .board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4) var(--sp5)}
 @media(max-width:780px){.board-grid{grid-template-columns:repeat(2,1fr);gap:var(--sp3) var(--sp4)}}
@@ -297,6 +318,9 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <div class="ms-clock" id="msClock"></div>
 <div class="ms-row"><span class="ms-dot" id="msDot"></span><b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b></div>
 </div>
+<button class="admin-btn" id="adminBtn" onclick="openLoginModal()" aria-label="Admin login">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.5 12.5 19 4M19 4h-4M19 4v4"/></svg>
+</button>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
 </div>
 
@@ -524,6 +548,22 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 </footer>
 
 </div>
+
+<div class="login-backdrop" id="loginBackdrop" onclick="if(event.target===this)closeLoginModal()">
+<div class="login-modal gl">
+<button class="login-close" onclick="closeLoginModal()" aria-label="Close">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+</button>
+<h3><span class="i-ar">دخول المالك</span><span class="i-en">Owner Login</span></h3>
+<form id="loginForm" onsubmit="handleLogin(event)">
+<input type="email" id="loginEmail" required placeholder="البريد الإلكتروني… / Email…">
+<input type="password" id="loginPass" required placeholder="كلمة المرور… / Password…">
+<button type="submit" class="login-submit" id="loginSubmitBtn"><span class="i-ar">دخول</span><span class="i-en">Sign in</span></button>
+<p class="login-err" id="loginErr"></p>
+</form>
+</div>
+</div>
+
 <script>
 var CUR=localStorage.getItem("lang")||"ar";
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
@@ -1348,6 +1388,51 @@ document.getElementById("msClock").textContent=pad2(k.h)+":"+pad2(k.m)+":"+pad2(
 tickMarketStatus();
 setInterval(tickMarketStatus,1000);
 
+</script>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+var SB_URL="https://bmcysrlzbxsytpgusqen.supabase.co";
+var SB_KEY="sb_publishable_n84xHMo8VjfQxEME4JlOFQ_9C0-bFwM";
+var sb=window.supabase.createClient(SB_URL,SB_KEY);
+
+function openLoginModal(){
+if(document.getElementById("adminBtn").classList.contains("logged-in")){handleLogout();return}
+document.getElementById("loginErr").textContent="";
+document.getElementById("loginBackdrop").classList.add("open");
+}
+function closeLoginModal(){document.getElementById("loginBackdrop").classList.remove("open")}
+
+function handleLogin(ev){
+ev.preventDefault();
+var btn=document.getElementById("loginSubmitBtn");
+var errEl=document.getElementById("loginErr");
+errEl.textContent="";
+btn.disabled=true;
+var email=document.getElementById("loginEmail").value;
+var pass=document.getElementById("loginPass").value;
+sb.auth.signInWithPassword({email:email,password:pass}).then(function(res){
+btn.disabled=false;
+if(res.error){errEl.textContent=(CUR==="ar"?"بيانات الدخول غير صحيحة":"Invalid login credentials");return}
+document.getElementById("loginForm").reset();
+closeLoginModal();
+setLoggedInUI(true);
+});
+}
+
+function handleLogout(){sb.auth.signOut().then(function(){setLoggedInUI(false)})}
+
+function setLoggedInUI(on){
+var btn=document.getElementById("adminBtn");
+btn.classList.toggle("logged-in",on);
+document.querySelectorAll(".lesson-locked").forEach(function(box){
+box.classList.toggle("unlocked",on);
+var v=box.querySelector(".lesson-video-bg");
+if(v){v.muted=!on;if(on){v.setAttribute("controls","")}else{v.removeAttribute("controls")}}
+});
+}
+
+sb.auth.getSession().then(function(res){setLoggedInUI(!!(res.data&&res.data.session))});
+sb.auth.onAuthStateChange(function(_e,session){setLoggedInUI(!!session)});
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

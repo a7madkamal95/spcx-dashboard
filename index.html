@@ -63,8 +63,16 @@ color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop
 padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
 .lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
 .lng:active{transform:translateY(0)}
-.ticker-wrap{overflow:hidden;position:relative;margin-top:var(--sp3)}
-.ticker-track{display:flex;width:max-content}
+.board{margin-top:var(--sp3);padding:var(--sp4) var(--sp5)}
+.board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4) var(--sp5)}
+@media(max-width:780px){.board-grid{grid-template-columns:repeat(2,1fr);gap:var(--sp3) var(--sp4)}}
+.board-cell{display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--num);direction:ltr}
+.board-cell b{font-size:14px;font-weight:700;color:var(--mut);letter-spacing:.02em}
+.board-cell .bd-right{display:flex;align-items:baseline;gap:7px}
+.board-cell .bd-px{font-size:15.5px;font-weight:700;color:var(--ink)}
+.board-cell .bd-chg{font-size:13px}
+.board-cell .bd-px.pos,.board-cell .bd-chg.pos{color:var(--mint)}
+.board-cell .bd-px.neg,.board-cell .bd-chg.neg{color:var(--coral)}
 .tk-item{display:flex;align-items:baseline;gap:7px;font-family:var(--num);font-size:14.5px;white-space:nowrap;flex-shrink:0;padding:9px 20px;direction:ltr}
 .tk-item b{font-weight:800;color:var(--ink);letter-spacing:.02em}
 .tk-item .tk-px{font-weight:700;color:var(--mut)}
@@ -253,8 +261,8 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
 </div>
 
-<div class="ticker-wrap rv" aria-hidden="true">
-<div class="ticker-track" id="tickerTrack"></div>
+<div class="board gl rv" aria-hidden="true">
+<div class="board-grid" id="boardGrid"></div>
 </div>
 
 <section class="hero rv">
@@ -486,7 +494,7 @@ function setLang(l){CUR=l;localStorage.setItem("lang",l);
 document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
 document.documentElement.setAttribute("data-lang",l);
 document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
-if(typeof renderTicker==="function")renderTicker();}
+}
 var SEARCH_TICKERS=[
 {t:"SPCX",ar:"سبيس إكس",en:"SpaceX",page:"spcx.html"},
 {t:"GME",ar:"جيم ستوب",en:"GameStop",page:"gme.html"},
@@ -884,78 +892,42 @@ makeCardPricer("hp-px7","hp-chg7","GC=F",4009.37,4001.06);
 makeCardPricer("hp-px8","hp-chg8","BB",8.77,8.62);
 makeCardPricer("hp-px9","hp-chg9","OKLO",41.10,40.95);
 
-var TICKER_LIST=[
-{sym:"^IXIC",fb:23400,pv:23320,idx:true},
-{sym:"^GSPC",fb:6350,pv:6330,idx:true},
-{sym:"^DJI",fb:44500,pv:44350,idx:true},
-{sym:"AAPL",fb:232,pv:230},
-{sym:"MSFT",fb:470,pv:468},
-{sym:"GOOGL",fb:195,pv:193},
-{sym:"AMZN",fb:228,pv:226},
-{sym:"NVDA",fb:203,pv:202},
-{sym:"META",fb:640,pv:635},
-{sym:"TSLA",fb:330,pv:326},
-{sym:"AVGO",fb:250,pv:248},
-{sym:"JPM",fb:245,pv:243},
-{sym:"NFLX",fb:1180,pv:1172},
-{sym:"V",fb:340,pv:338},
-{sym:"MA",fb:550,pv:547},
-{sym:"BRK-B",fb:475,pv:473},
-{sym:"XOM",fb:112,pv:111},
-{sym:"WMT",fb:98,pv:97.5},
-{sym:"SPY",fb:635,pv:633},
-{sym:"QQQ",fb:545,pv:542},
-{sym:"GLD",fb:305,pv:303},
-{sym:"IWM",fb:225,pv:224}
+var BOARD_LIST=[
+{sym:"^IXIC",label:"NASDAQ",fb:23400,pv:23320,idx:true},
+{sym:"^GSPC",label:"S&P 500",fb:6350,pv:6330,idx:true},
+{sym:"^DJI",label:"DOW",fb:44500,pv:44350,idx:true},
+{sym:"AAPL",label:"AAPL",fb:232,pv:230},
+{sym:"MSFT",label:"MSFT",fb:470,pv:468},
+{sym:"GOOGL",label:"GOOGL",fb:195,pv:193},
+{sym:"AMZN",label:"AMZN",fb:228,pv:226},
+{sym:"NVDA",label:"NVDA",fb:203,pv:202},
+{sym:"TSLA",label:"TSLA",fb:330,pv:326}
 ];
-function fmtTk(t,p){if(t.idx)return Math.round(+p).toLocaleString("en-US");return "$"+(+p).toFixed(2)}
-var TK_IDX_LABEL={"^IXIC":"NASDAQ","^GSPC":"S&P 500","^DJI":"DOW"};
-function tkLabel(t){return TK_IDX_LABEL[t.sym]||t.sym}
-function renderTicker(){
-var html=TICKER_LIST.map(function(t){
+function fmtBd(t,p){if(t.idx)return Math.round(+p).toLocaleString("en-US");return "$"+(+p).toFixed(2)}
+function renderBoard(){
+document.getElementById("boardGrid").innerHTML=BOARD_LIST.map(function(t){
 var cls=t.up===undefined?"":(t.up?"pos":"neg");
-return '<div class="tk-item" data-tk="'+t.sym+'"><b>'+tkLabel(t)+'</b><span class="tk-px '+cls+'">'+fmtTk(t,t.fb)+'</span><span class="tk-chg '+cls+'">'+(t.chgTxt||"")+'</span></div>';
+return '<div class="board-cell" data-bd="'+t.sym+'"><b>'+t.label+'</b><span class="bd-right"><span class="bd-px '+cls+'">'+fmtBd(t,t.fb)+'</span><span class="bd-chg '+cls+'">'+(t.chgTxt||"")+'</span></span></div>';
 }).join("");
-document.getElementById("tickerTrack").innerHTML=html+html;
 }
-function loadTicker(){
-TICKER_LIST.forEach(function(t,i){
-setTimeout(function(){
+function loadBoard(){
+BOARD_LIST.forEach(function(t){
 fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+encodeURIComponent(t.sym)+"?interval=1d&range=1d").then(function(r){return JSON.parse(r)}).then(function(y){
 var m=y.chart.result[0].meta,p=m.regularMarketPrice,pc=m.chartPreviousClose||m.previousClose||t.pv;
 if(!(p>0))return;
 t.fb=p;t.pv=pc;t.up=p>=pc;t.chgTxt=(t.up?"+":"")+((p-pc)/pc*100).toFixed(2)+"%";
-document.querySelectorAll('.tk-item[data-tk="'+t.sym+'"]').forEach(function(el){
-el.querySelector(".tk-px").textContent=fmtTk(t,p);
-el.querySelector(".tk-px").className="tk-px "+(t.up?"pos":"neg");
-el.querySelector(".tk-chg").textContent=t.chgTxt;
-el.querySelector(".tk-chg").className="tk-chg "+(t.up?"pos":"neg");
-});
+var el=document.querySelector('.board-cell[data-bd="'+t.sym+'"]');
+if(!el)return;
+el.querySelector(".bd-px").textContent=fmtBd(t,p);
+el.querySelector(".bd-px").className="bd-px "+(t.up?"pos":"neg");
+el.querySelector(".bd-chg").textContent=t.chgTxt;
+el.querySelector(".bd-chg").className="bd-chg "+(t.up?"pos":"neg");
 }).catch(function(){});
-},i*400);
 });
 }
-renderTicker();
-loadTicker();
-setInterval(loadTicker,96000);
-(function(){
-var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if(reduced)return;
-var track=document.getElementById("tickerTrack");
-var start=null;
-function tick(ts){
-if(!start)start=ts;
-var half=track.scrollWidth/2;
-if(half>0){
-var elapsed=(ts-start)/1000;
-var speed=half/96;
-var offset=(elapsed*speed)%half;
-track.style.transform="translateX(-"+offset+"px)";
-}
-requestAnimationFrame(tick);
-}
-requestAnimationFrame(tick);
-})();
+renderBoard();
+loadBoard();
+setInterval(loadBoard,10000);
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

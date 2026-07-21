@@ -111,15 +111,20 @@ var params=new URLSearchParams(location.search);
 var TICKER=(params.get("t")||"").toUpperCase();
 if(!TICKER){location.replace("index.html");}
 var PROXIES=[
-function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
 function(u){return "https://corsproxy.io/?url="+encodeURIComponent(u)},
-function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)}
+function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},
+function(u){return "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(u)},
+function(u){return "https://thingproxy.freeboard.io/fetch/"+u},
+function(u){return "https://api.allorigins.win/get?url="+encodeURIComponent(u)+"&charset=UTF-8"}
 ];
 function fetchViaProxies(url){
-var attempts=PROXIES.map(function(mk){
+var attempts=PROXIES.map(function(mk,i){
 var ctl=new AbortController();
 var timer=setTimeout(function(){ctl.abort()},8000);
-return fetch(mk(url),{signal:ctl.signal}).then(function(r){clearTimeout(timer);if(!r.ok)throw new Error("bad status");return r.text()}).catch(function(e){clearTimeout(timer);throw e});
+return fetch(mk(url),{signal:ctl.signal}).then(function(r){clearTimeout(timer);if(!r.ok)throw new Error("bad status");return r.text()}).then(function(t){
+if(i===4){try{var w=JSON.parse(t);if(w&&typeof w.contents==="string")return w.contents;}catch(e){}}
+return t;
+}).catch(function(e){clearTimeout(timer);throw e});
 });
 if(Promise.any)return Promise.any(attempts);
 return new Promise(function(res,rej){var left=attempts.length,failed=0;attempts.forEach(function(p){p.then(res).catch(function(){failed++;if(failed>=left)rej(new Error("all proxies failed"))})})});
@@ -136,12 +141,21 @@ return fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/"+sym+
 .then(function(t){var j=JSON.parse(t);if(!j.chart||!j.chart.result||!j.chart.result[0])throw new Error("no result");return j.chart.result[0].meta})
 .catch(function(){return null});
 }
+var LOAD_TRIES=0,MAX_TRIES=6;
+function showError(){
+document.getElementById("content").innerHTML='<div class="err"><span class="i-ar">تعذّر جلب بيانات السهم حاليًا</span><span class="i-en">Couldn\'t fetch stock data right now</span><br><br><button class="lng" style="margin:0 auto" onclick="LOAD_TRIES=0;showRetrying();attemptLoad()"><span class="i-ar">أعد المحاولة</span><span class="i-en">Try again</span></button></div>';
+}
+function showRetrying(){
+if(window.__M)return;
+document.getElementById("content").innerHTML='<div class="loading"><div class="spin"></div><div class="i-ar">جاري تحميل بيانات السهم…</div><div class="i-en">Loading stock data…</div></div>';
+}
+function attemptLoad(){
+LOAD_TRIES++;
 Promise.all([fetchMeta("1d"),fetchMeta("1y")]).then(function(res){
 var m=res[0]||res[1];
 if(!m){
-if(!window.__M){
-document.getElementById("content").innerHTML='<div class="err"><span class="i-ar">تعذر جلب بيانات السهم — تأكد من الرمز أو حاول لاحقًا</span><span class="i-en">Couldn\'t fetch stock data — check the symbol or try again later</span></div>';
-}
+if(LOAD_TRIES<MAX_TRIES){setTimeout(attemptLoad,1500);return;}
+if(!window.__M)showError();
 return;
 }
 if(res[1]){m.fiftyTwoWeekHigh=res[1].fiftyTwoWeekHigh;m.fiftyTwoWeekLow=res[1].fiftyTwoWeekLow;}
@@ -149,6 +163,8 @@ window.__M=m;
 sessionStorage.setItem(cacheKey,JSON.stringify(m));
 render(m);
 });
+}
+attemptLoad();
 function fmt(n){if(n==null)return "—";return "$"+(+n).toFixed(2)}
 function fmtN(n){if(n==null)return "—";if(n>=1e12)return "$"+(n/1e12).toFixed(2)+"T";if(n>=1e9)return "$"+(n/1e9).toFixed(2)+"B";if(n>=1e6)return "$"+(n/1e6).toFixed(2)+"M";return "$"+n.toFixed(0)}
 function render(m){

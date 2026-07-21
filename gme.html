@@ -348,7 +348,7 @@ io.observe(card);
 </section>
 
 <section class="rv" id="s-news">
-<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><div class="ln"></div></div>
+<div class="eyeb"><b><span class="i-ar">آخر الأخبار</span><span class="i-en">Latest News</span></b><span id="newsUpdated"></span><div class="ln"></div></div>
 <div class="gl pad"><ul id="news"></ul></div>
 </section>
 
@@ -436,6 +436,7 @@ document.documentElement.setAttribute("data-lang",l);
 document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
 renderDyn();renderNews();}
 function renderDyn(){if(!D)return;
+document.getElementById("newsUpdated").textContent=(CUR==="ar"?"آخر تحديث ":"Updated ")+D.last_updated;
 document.getElementById("mc").textContent=D.market_cap;
 var tl=(CUR==="ar")?D.timeline:TLEN;
 document.getElementById("tl").innerHTML=tl.map(function(t){return '<div class="ts"><div class="w">'+t.when+'</div><div class="t">'+t.what+'</div><div class="n">'+t.note+'</div></div>'}).join("");

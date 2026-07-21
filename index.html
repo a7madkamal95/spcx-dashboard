@@ -63,7 +63,7 @@ background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
 .market-status b{font-weight:700;color:var(--ink);font-size:14px}
 .ms-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 .ms-dot.open{background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pl 1.8s infinite}
-.ms-dot.closed{background:var(--coral);box-shadow:0 0 8px var(--coral)}
+.ms-dot.closed{background:var(--coral);box-shadow:0 0 8px var(--coral);animation:pl 1.8s infinite}
 @keyframes pl{50%{opacity:.4}}
 .ms-clock{direction:ltr;font-variant-numeric:tabular-nums}
 .ms-tz{font-size:11px;opacity:.65;letter-spacing:.04em}
@@ -276,9 +276,9 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <a href="index.html" class="brand"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"><span class="brandlockup"><b>PLUTO INTELLIGENCE</b></span></a>
 <span class="tagline i-ar">تحليلات استثمارية مختارة بعناية</span><span class="tagline i-en">Curated market intelligence</span>
 <div class="market-status" id="marketStatus">
-<div class="ms-row"><span class="ms-dot" id="msDot"></span><b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b></div>
-<div class="ms-clock" id="msClock"></div>
 <div class="ms-tz"><span class="i-ar">الكويت</span><span class="i-en">Kuwait</span></div>
+<div class="ms-clock" id="msClock"></div>
+<div class="ms-row"><span class="ms-dot" id="msDot"></span><b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b></div>
 </div>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
 </div>
@@ -960,24 +960,64 @@ localStorage.setItem("boardCollapsed",card.classList.contains("collapsed")?"1":"
 }
 if(localStorage.getItem("boardCollapsed")==="1")document.getElementById("boardCard").classList.add("collapsed");
 
-var AR_MONTHS=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
-var EN_MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 function pad2(n){return n<10?"0"+n:""+n}
-function nyParts(){
+function nyDateParts(){
 var o={};
-new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour12:false,weekday:"short",hour:"numeric",minute:"numeric"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});
+new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour12:false,weekday:"short",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});
 var h=parseInt(o.hour,10);if(h===24)h=0;
-return {weekday:o.weekday,hour:h,minute:parseInt(o.minute,10)};
+return {weekday:o.weekday,year:parseInt(o.year,10),month:parseInt(o.month,10),day:parseInt(o.day,10),hour:h,minute:parseInt(o.minute,10)};
 }
 function kuwaitParts(){
 var o={};
-new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Kuwait",hour12:false,hour:"numeric",minute:"numeric",second:"numeric",day:"numeric",month:"numeric"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});
+new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Kuwait",hour12:false,hour:"numeric",minute:"numeric",second:"numeric",day:"numeric"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});
 var h=parseInt(o.hour,10);if(h===24)h=0;
-return {h:h,m:parseInt(o.minute,10),s:parseInt(o.second,10),day:parseInt(o.day,10),month:parseInt(o.month,10)};
+return {h:h,m:parseInt(o.minute,10),s:parseInt(o.second,10),day:parseInt(o.day,10)};
+}
+function nthWeekdayOfMonth(year,month,weekday,n){
+var first=new Date(Date.UTC(year,month-1,1)).getUTCDay();
+var offset=(weekday-first+7)%7;
+return 1+offset+(n-1)*7;
+}
+function lastWeekdayOfMonth(year,month,weekday){
+var last=new Date(Date.UTC(year,month,0));
+var offset=(last.getUTCDay()-weekday+7)%7;
+return last.getUTCDate()-offset;
+}
+function easterMonthDay(year){
+var a=year%19,b=Math.floor(year/100),c=year%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451);
+var month=Math.floor((h+l-7*m+114)/31);
+var day=((h+l-7*m+114)%31)+1;
+return [month,day];
+}
+function observedDate(year,month,day){
+var d=new Date(Date.UTC(year,month-1,day));
+var wd=d.getUTCDay();
+if(wd===6)d.setUTCDate(d.getUTCDate()-1);
+else if(wd===0)d.setUTCDate(d.getUTCDate()+1);
+return {month:d.getUTCMonth()+1,day:d.getUTCDate()};
+}
+function isNyseHoliday(year,month,day){
+var e=easterMonthDay(year);
+var gf=new Date(Date.UTC(year,e[0]-1,e[1]));
+gf.setUTCDate(gf.getUTCDate()-2);
+var list=[
+observedDate(year,1,1),
+{month:1,day:nthWeekdayOfMonth(year,1,1,3)},
+{month:2,day:nthWeekdayOfMonth(year,2,1,3)},
+{month:gf.getUTCMonth()+1,day:gf.getUTCDate()},
+{month:5,day:lastWeekdayOfMonth(year,5,1)},
+observedDate(year,6,19),
+observedDate(year,7,4),
+{month:9,day:nthWeekdayOfMonth(year,9,1,1)},
+{month:11,day:nthWeekdayOfMonth(year,11,4,4)},
+observedDate(year,12,25)
+];
+return list.some(function(hd){return hd.month===month&&hd.day===day});
 }
 function isMarketOpen(){
-var p=nyParts();
+var p=nyDateParts();
 if(p.weekday==="Sat"||p.weekday==="Sun")return false;
+if(isNyseHoliday(p.year,p.month,p.day))return false;
 var mins=p.hour*60+p.minute;
 return mins>=570&&mins<960;
 }
@@ -987,8 +1027,7 @@ document.getElementById("msDot").className="ms-dot "+(open?"open":"closed");
 document.getElementById("msTextAr").textContent=open?"السوق مفتوح":"السوق مغلق";
 document.getElementById("msTextEn").textContent=open?"Market Open":"Market Closed";
 var k=kuwaitParts();
-var monthName=(CUR==="ar"?AR_MONTHS:EN_MONTHS)[k.month-1];
-document.getElementById("msClock").textContent=k.day+" "+monthName+" · "+pad2(k.h)+":"+pad2(k.m)+":"+pad2(k.s);
+document.getElementById("msClock").textContent=k.day+" · "+pad2(k.h)+":"+pad2(k.m)+":"+pad2(k.s);
 }
 tickMarketStatus();
 setInterval(tickMarketStatus,1000);

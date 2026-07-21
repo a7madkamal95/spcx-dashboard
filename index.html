@@ -115,6 +115,15 @@ section{margin-top:var(--sp7)}
 .find-more a:hover{text-decoration:underline}
 .find-more a:hover svg{transform:translateX(-4px)}
 html[dir=ltr] .find-more a:hover svg{transform:translateX(4px)}
+.req-card h3{font-family:var(--disp);font-weight:800;font-size:19px}
+.req-card p{color:var(--mut);font-size:14.5px;margin-top:6px;line-height:1.7}
+.req-fields{display:flex;gap:var(--sp3);flex-wrap:wrap;margin-top:var(--sp4)}
+.req-fields input{flex:1;min-width:180px;background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:12px;padding:13px 16px;color:var(--ink);font-family:var(--body);font-size:15px;outline:none;transition:border-color var(--dur-fast) var(--ease)}
+.req-fields input::placeholder{color:var(--mut);font-size:14.5px}
+.req-fields input:focus{border-color:var(--a2)}
+.req-submit{font-family:var(--body);font-weight:700;font-size:15px;color:var(--void);background:linear-gradient(92deg,var(--a2),var(--a1));border:none;border-radius:var(--r99);padding:0 26px;min-height:48px;cursor:pointer;transition:transform var(--dur-fast) var(--ease);flex-shrink:0}
+.req-submit:hover{transform:translateY(-1px)}
+@media(max-width:600px){.req-fields{flex-direction:column}.req-fields input,.req-submit{width:100%}}
 .tabs{display:flex;gap:8px;margin-bottom:var(--sp5)}
 .tab{font-family:var(--body);font-weight:700;font-size:14px;color:var(--mut);background:rgba(255,255,255,.05);
 border:1px solid var(--edge);border-radius:var(--r99);padding:10px 22px;min-height:44px;cursor:pointer;
@@ -290,6 +299,18 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <input type="text" id="stockSearch" oninput="handleSearchInput(this.value)" onfocus="handleSearchInput(this.value)" placeholder="ابحث بالاسم أو الرمز… أبل، مايكروسوفت، Apple، AAPL / Search by name or ticker…">
 </label>
 <div class="search-dropdown gl" id="searchDropdown"></div>
+</section>
+
+<section class="rv">
+<div class="gl pad req-card">
+<h3><span class="i-ar">اطلب استشارة أو تحليل لسهم معين</span><span class="i-en">Request Analysis for a Specific Stock</span></h3>
+<p><span class="i-ar">سهم مو موجود بالمفضلة وتبي رأيي فيه؟ اكتب اسمه واتركلي بريدك، وأرد عليك عليه.</span><span class="i-en">A stock that's not in the favorites list? Tell me which one and leave your email — I'll get back to you.</span></p>
+<form class="req-fields" onsubmit="sendStockRequest(event)">
+<input type="text" id="reqStock" required placeholder="اسم السهم أو الرمز… / Stock name or ticker…">
+<input type="email" id="reqEmail" required placeholder="بريدك الإلكتروني… / Your email…">
+<button type="submit" class="req-submit"><span class="i-ar">إرسال الطلب</span><span class="i-en">Send request</span></button>
+</form>
+</div>
 </section>
 
 <section class="rv">
@@ -713,6 +734,15 @@ var SEARCH_TICKERS=[
 ];
 (function(){var names={};SEARCH_TICKERS.forEach(function(x){names[x.t]={ar:x.ar,en:x.en}});
 try{sessionStorage.setItem("tickerNames",JSON.stringify(names));}catch(e){}})();
+function sendStockRequest(e){
+e.preventDefault();
+var stock=document.getElementById("reqStock").value.trim();
+var email=document.getElementById("reqEmail").value.trim();
+var subject=encodeURIComponent((CUR==="ar"?"طلب تحليل سهم: ":"Stock analysis request: ")+stock);
+var body=encodeURIComponent((CUR==="ar"?"السهم المطلوب: ":"Requested stock: ")+stock+"\n"+(CUR==="ar"?"البريد للتواصل: ":"Contact email: ")+email);
+window.location.href="mailto:plutointelligence@gmail.com?subject="+subject+"&body="+body;
+return false;
+}
 function handleSearchInput(q){
 q=q.trim().toLowerCase();
 var dd=document.getElementById("searchDropdown");

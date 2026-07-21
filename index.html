@@ -118,6 +118,10 @@ filter:blur(46px)}
 border-radius:28px;
 -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 66%,transparent 100%);
 mask-image:radial-gradient(circle at 50% 50%,#000 66%,transparent 100%)}
+.hero-vis-video{width:100%;height:100%;object-fit:cover;display:block;
+border-radius:28px;pointer-events:none;
+-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 66%,transparent 100%);
+mask-image:radial-gradient(circle at 50% 50%,#000 66%,transparent 100%)}
 @keyframes hz{to{transform:scale(1.08)}}
 @media(max-width:780px){.hero-vis{max-width:340px;margin-inline:auto;width:100%}}
 section{margin-top:var(--sp7)}
@@ -304,7 +308,7 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <p class="lead"><span class="i-ar">ليست قائمة طويلة تُشتِّت انتباهك، بل عدد محدود من الأسهم أراقبها عن قرب.</span><span class="i-en">Not a long distracting list — a small set of stocks I track closely, each broken down into live numbers and real news, no filler.</span></p>
 </div>
 <div class="hero-vis" id="heroVis">
-<div class="hero-vis-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/4/4e/NYSE_Advanced_Trading_Floor.jpg)" role="img" aria-label="NYSE trading floor digital media wall"></div>
+<video class="hero-vis-video" src="assets/hero-bg.mp4" autoplay muted loop playsinline disablepictureinpicture aria-hidden="true"></video>
 </div>
 </section>
 

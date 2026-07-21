@@ -58,6 +58,14 @@ background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
 .bar .brandlockup b{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.03em}
 .bar .brandlockup i{font-style:normal;font-size:12.5px;color:var(--mut);font-weight:500}
 .bar .tagline{font-size:14.5px;color:var(--mut)}
+.market-status{display:flex;align-items:center;gap:8px;font-family:var(--num);font-size:14px;color:var(--mut);white-space:nowrap}
+.market-status b{font-weight:700;color:var(--ink)}
+.ms-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.ms-dot.open{background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pl 1.8s infinite}
+.ms-dot.closed{background:var(--coral);box-shadow:0 0 8px var(--coral)}
+@keyframes pl{50%{opacity:.4}}
+.ms-sep{opacity:.4}
+.ms-clock{direction:ltr;font-variant-numeric:tabular-nums}
 .lng{margin-inline-start:auto;font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:.08em;
 color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
 padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
@@ -75,9 +83,9 @@ padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:backg
 .board-cell .bd-px.neg,.board-cell .bd-chg.neg{color:var(--coral)}
 .board{position:relative}
 .board-toggle{position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:30px;height:30px;border-radius:50%;
-background:var(--void);border:1px solid var(--edgeTop);color:var(--mut);display:flex;align-items:center;justify-content:center;
-cursor:pointer;transition:color var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
-.board-toggle:hover{color:var(--ink)}
+background:linear-gradient(135deg,var(--a2),var(--a1));border:1px solid rgba(255,255,255,.3);color:var(--void);display:flex;align-items:center;justify-content:center;
+box-shadow:0 4px 14px rgba(0,0,0,.5);cursor:pointer;transition:transform var(--dur-fast) var(--ease)}
+.board-toggle:hover{transform:translateX(-50%) translateY(-2px)}
 .board-toggle svg{width:15px;height:15px;transition:transform var(--dur-med) var(--ease)}
 .board.collapsed .board-toggle svg{transform:rotate(180deg)}
 .board.collapsed .board-cell:nth-child(n+4){display:none}
@@ -266,6 +274,12 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <div class="bar gl rv">
 <a href="index.html" class="brand"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"><span class="brandlockup"><b>PLUTO INTELLIGENCE</b></span></a>
 <span class="tagline i-ar">تحليلات استثمارية مختارة بعناية</span><span class="tagline i-en">Curated market intelligence</span>
+<div class="market-status" id="marketStatus">
+<span class="ms-dot" id="msDot"></span>
+<b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b>
+<span class="ms-sep">·</span>
+<span class="ms-clock" id="msClock"></span>
+</div>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
 </div>
 
@@ -945,6 +959,39 @@ card.classList.toggle("collapsed");
 localStorage.setItem("boardCollapsed",card.classList.contains("collapsed")?"1":"0");
 }
 if(localStorage.getItem("boardCollapsed")==="1")document.getElementById("boardCard").classList.add("collapsed");
+
+var AR_MONTHS=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+var EN_MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function pad2(n){return n<10?"0"+n:""+n}
+function nyParts(){
+var o={};
+new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour12:false,weekday:"short",hour:"numeric",minute:"numeric"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});
+var h=parseInt(o.hour,10);if(h===24)h=0;
+return {weekday:o.weekday,hour:h,minute:parseInt(o.minute,10)};
+}
+function kuwaitParts(){
+var o={};
+new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Kuwait",hour12:false,hour:"numeric",minute:"numeric",second:"numeric",day:"numeric",month:"numeric"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});
+var h=parseInt(o.hour,10);if(h===24)h=0;
+return {h:h,m:parseInt(o.minute,10),s:parseInt(o.second,10),day:parseInt(o.day,10),month:parseInt(o.month,10)};
+}
+function isMarketOpen(){
+var p=nyParts();
+if(p.weekday==="Sat"||p.weekday==="Sun")return false;
+var mins=p.hour*60+p.minute;
+return mins>=570&&mins<960;
+}
+function tickMarketStatus(){
+var open=isMarketOpen();
+document.getElementById("msDot").className="ms-dot "+(open?"open":"closed");
+document.getElementById("msTextAr").textContent=open?"السوق مفتوح":"السوق مغلق";
+document.getElementById("msTextEn").textContent=open?"Market Open":"Market Closed";
+var k=kuwaitParts();
+var monthName=(CUR==="ar"?AR_MONTHS:EN_MONTHS)[k.month-1];
+document.getElementById("msClock").textContent=k.day+" "+monthName+" · "+pad2(k.h)+":"+pad2(k.m)+":"+pad2(k.s);
+}
+tickMarketStatus();
+setInterval(tickMarketStatus,1000);
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

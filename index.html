@@ -220,8 +220,8 @@ html[dir=ltr] .stock-card:hover .sc-cta svg{transform:translateX(4px)}
 display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .about .av svg{width:21px;height:21px;color:var(--void)}
 .about .av img{width:100%;height:100%;border-radius:12px;object-fit:cover}
-.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:stretch}
-@media(max-width:900px){.offer-grid{grid-template-columns:1fr}}
+.offer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp4);align-items:stretch}
+@media(max-width:700px){.offer-grid{grid-template-columns:1fr}}
 .offer{padding:0;display:flex;flex-direction:column;text-decoration:none;color:inherit;overflow:hidden}
 .offer-img{height:132px;background-size:cover;background-position:center;position:relative;flex-shrink:0}
 .offer-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,13,.1) 40%,rgba(5,6,13,.72) 82%,var(--void) 100%)}
@@ -242,6 +242,21 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 .offer-grid-sm .offer p{font-size:13px;margin-top:6px;line-height:1.65}
 .offer-grid-sm .offer-cta{font-size:13.5px;margin-top:var(--sp3)}
 .offer-grid-sm .offer-cta svg{width:11px;height:11px}
+
+.offer-featured{display:flex;text-decoration:none;color:inherit;overflow:hidden;margin-top:var(--sp4);
+border:1px solid rgba(91,141,239,.4);border-top:2px solid var(--a2);box-shadow:0 18px 50px rgba(91,141,239,.12),0 18px 50px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08)}
+@media(max-width:760px){.offer-featured{flex-direction:column}}
+.offer-featured-img{flex:0 0 42%;min-height:180px;background-size:cover;background-position:center;position:relative}
+.offer-featured-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,6,13,.05) 0%,rgba(5,6,13,.15) 60%,var(--void) 100%)}
+html[dir=ltr] .offer-featured-img::after{background:linear-gradient(270deg,rgba(5,6,13,.05) 0%,rgba(5,6,13,.15) 60%,var(--void) 100%)}
+@media(max-width:760px){.offer-featured-img::after{background:linear-gradient(180deg,rgba(5,6,13,.05) 30%,rgba(5,6,13,.5) 80%,var(--void) 100%)}}
+.offer-featured-body{padding:var(--sp6);display:flex;flex-direction:column;justify-content:center;flex:1}
+.offer-featured-badge{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--a2);
+border:1px solid rgba(91,141,239,.5);border-radius:var(--r99);padding:4px 12px;background:rgba(91,141,239,.1);margin-bottom:var(--sp3)}
+.offer-featured h3{font-family:var(--disp);font-weight:800;font-size:24px}
+.offer-featured p{font-size:15.5px;color:var(--mut);margin-top:8px;line-height:1.75;max-width:56ch}
+.offer-featured .offer-cta{font-size:16px;margin-top:var(--sp4)}
+.offer-featured .offer-cta svg{width:14px;height:14px}
 .about h4{font-family:var(--disp);font-weight:800;font-size:16px}
 .about p{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.7}
 .dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
@@ -325,14 +340,6 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 </div>
 </div>
 
-<a class="offer gl" href="course.html">
-<div class="offer-img" style="background-image:url(assets/offer-signals.jpg)" role="img" aria-label="Buy and sell trading decisions"></div>
-<div class="offer-body">
-<h3><span class="i-ar">كورس التداول</span><span class="i-en">Trading Course</span></h3>
-<p><span class="i-ar">كورس شامل يعلّمك أساسيات وأدوات التداول من الصفر، خطوة خطوة. اطلب التسجيل المبكر واحجز مكانك.</span><span class="i-en">A complete course covering trading fundamentals and tools from scratch, step by step. Request early registration to save your spot.</span></p>
-</div>
-</a>
-
 <a class="offer gl" href="investing-path.html">
 <div class="offer-img" style="background-image:url(assets/offer-path.jpg)" role="img" aria-label="Analyzing stocks on a phone"></div>
 <div class="offer-body">
@@ -342,6 +349,16 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 </a>
 
 </div>
+
+<a class="offer-featured gl" href="course.html">
+<div class="offer-featured-img" style="background-image:url(assets/offer-signals.jpg)" role="img" aria-label="Buy and sell trading decisions"></div>
+<div class="offer-featured-body">
+<span class="offer-featured-badge">⭐ <span class="i-ar">أساس المشروع · الاشتراك الرئيسي</span><span class="i-en">The core of the project · Main subscription</span></span>
+<h3><span class="i-ar">كورس التداول</span><span class="i-en">Trading Course</span></h3>
+<p><span class="i-ar">كورس شامل يعلّمك أساسيات وأدوات التداول من الصفر، خطوة خطوة. اطلب التسجيل المبكر واحجز مكانك.</span><span class="i-en">A complete course covering trading fundamentals and tools from scratch, step by step. Request early registration to save your spot.</span></p>
+<span class="offer-cta"><span class="i-ar">اطلب التسجيل المبكر</span><span class="i-en">Request early access</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+</div>
+</a>
 </section>
 
 <section class="rv" style="position:relative;z-index:30">

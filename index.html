@@ -246,15 +246,19 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 .offer-featured{display:flex;text-decoration:none;color:inherit;overflow:hidden;margin-top:var(--sp4);
 border:1px solid rgba(91,141,239,.4);border-top:2px solid var(--a2);box-shadow:0 18px 50px rgba(91,141,239,.12),0 18px 50px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08)}
 @media(max-width:760px){.offer-featured{flex-direction:column}}
-.offer-featured-img{flex:0 0 42%;min-height:180px;background-size:cover;background-position:center;position:relative}
-.offer-featured-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,6,13,.05) 0%,rgba(5,6,13,.15) 60%,var(--void) 100%)}
+.offer-featured-img{display:block;flex:0 0 42%;min-height:180px;background-size:cover;background-position:center;position:relative}
+.offer-featured-img::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(5,6,13,.05) 0%,rgba(5,6,13,.15) 60%,var(--void) 100%)}
 html[dir=ltr] .offer-featured-img::after{background:linear-gradient(270deg,rgba(5,6,13,.05) 0%,rgba(5,6,13,.15) 60%,var(--void) 100%)}
 @media(max-width:760px){.offer-featured-img::after{background:linear-gradient(180deg,rgba(5,6,13,.05) 30%,rgba(5,6,13,.5) 80%,var(--void) 100%)}}
 .offer-featured-body{padding:var(--sp6);display:flex;flex-direction:column;justify-content:center;flex:1}
+.offer-featured-link{display:block;text-decoration:none;color:inherit}
 .offer-featured h3{font-family:var(--disp);font-weight:800;font-size:24px}
 .offer-featured p{font-size:15.5px;color:var(--mut);margin-top:8px;line-height:1.75;max-width:56ch}
-.offer-featured .offer-cta{font-size:16px;margin-top:var(--sp4)}
-.offer-featured .offer-cta svg{width:14px;height:14px}
+.offer-subscribe-btn{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;
+font-family:var(--body);font-weight:700;font-size:15.5px;color:var(--void);text-decoration:none;
+background:linear-gradient(92deg,var(--a2),var(--a1));border-radius:var(--r99);padding:0 30px;min-height:48px;
+margin-top:var(--sp4);transition:transform var(--dur-fast) var(--ease)}
+.offer-subscribe-btn:hover{transform:translateY(-1px)}
 .about h4{font-family:var(--disp);font-weight:800;font-size:16px}
 .about p{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.7}
 .dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
@@ -348,14 +352,18 @@ html[dir=ltr] .offer-featured-img::after{background:linear-gradient(270deg,rgba(
 
 </div>
 
-<a class="offer-featured gl" href="course.html">
-<div class="offer-featured-img" style="background-image:url(assets/offer-signals.jpg)" role="img" aria-label="Buy and sell trading decisions"></div>
+<div class="offer-featured gl">
+<a href="course.html" class="offer-featured-img" style="background-image:url(assets/offer-signals.jpg)" role="img" aria-label="Buy and sell trading decisions"></a>
 <div class="offer-featured-body">
+<a href="course.html" class="offer-featured-link">
 <h3><span class="i-ar">كورس التداول</span><span class="i-en">Trading Course</span></h3>
-<p><span class="i-ar">كورس شامل يعلّمك أساسيات وأدوات التداول من الصفر، خطوة خطوة. اطلب التسجيل المبكر واحجز مكانك.</span><span class="i-en">A complete course covering trading fundamentals and tools from scratch, step by step. Request early registration to save your spot.</span></p>
-<span class="offer-cta"><span class="i-ar">اطلب التسجيل المبكر</span><span class="i-en">Request early access</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-</div>
+<p><span class="i-ar">كورس شامل يعلّمك أساسيات وأدوات التداول من الصفر، خطوة خطوة.</span><span class="i-en">A complete course covering trading fundamentals and tools from scratch, step by step.</span></p>
 </a>
+<a class="offer-subscribe-btn" href="mailto:plutointelligence@gmail.com?subject=اشتراك - كورس التداول&body=أبي أشترك بكورس التداول. أبلغوني بالتفاصيل والسعر عند فتح الاشتراك.">
+<span class="i-ar">اشترك</span><span class="i-en">Subscribe</span>
+</a>
+</div>
+</div>
 </section>
 
 <section class="rv" style="position:relative;z-index:30">

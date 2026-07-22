@@ -169,8 +169,7 @@ html[dir=ltr] .gold-hero-img::after{background:linear-gradient(270deg,rgba(5,6,1
 @media(max-width:600px){.karat-grid{grid-template-columns:repeat(2,1fr)}}
 .karat-cell{background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:14px 10px;text-align:center}
 .karat-cell b{display:block;font-family:var(--num);font-weight:800;font-size:14px;color:#d4af37;letter-spacing:.03em}
-.karat-cell .k-raw{display:block;font-family:var(--num);font-weight:600;font-size:12.5px;color:var(--mut);margin-top:8px;direction:ltr}
-.karat-cell .k-est{display:block;font-family:var(--num);font-weight:800;font-size:18px;color:var(--ink);margin-top:3px;direction:ltr}
+.karat-cell .k-est{display:block;font-family:var(--num);font-weight:800;font-size:19px;color:var(--ink);margin-top:8px;direction:ltr}
 .karat-note{font-size:12.5px;color:var(--mut);margin-top:var(--sp4);line-height:1.6}
 .kick{font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:.01em;color:var(--ink)}
 .find-more{text-align:center;color:var(--mut);font-size:18px;padding:var(--sp5) 0}
@@ -406,12 +405,12 @@ transition:transform var(--dur-fast) var(--ease)}
 </div>
 <div class="gold-live-tag"><i></i><span class="i-ar">أسعار حية بالدينار الكويتي</span><span class="i-en">Live prices in Kuwaiti Dinar</span></div>
 <div class="karat-grid" id="karatGrid">
-<div class="karat-cell"><b>24K</b><span class="k-raw" id="k24">…</span><span class="k-est" id="k24e">…</span></div>
-<div class="karat-cell"><b>22K</b><span class="k-raw" id="k22">…</span><span class="k-est" id="k22e">…</span></div>
-<div class="karat-cell"><b>21K</b><span class="k-raw" id="k21">…</span><span class="k-est" id="k21e">…</span></div>
-<div class="karat-cell"><b>18K</b><span class="k-raw" id="k18">…</span><span class="k-est" id="k18e">…</span></div>
+<div class="karat-cell"><b>24K</b><span class="k-est" id="k24">…</span></div>
+<div class="karat-cell"><b>22K</b><span class="k-est" id="k22">…</span></div>
+<div class="karat-cell"><b>21K</b><span class="k-est" id="k21">…</span></div>
+<div class="karat-cell"><b>18K</b><span class="k-est" id="k18">…</span></div>
 </div>
-<p class="karat-note"><span class="i-ar">السعر الأول هو سعر المعدن الخام فقط (بدون مصنعية)، محسوب لحظيًا من سعر الذهب العالمي وسعر صرف الدولار مقابل الدينار الكويتي. السعر الثاني تقدير يشمل هامش سوق تقريبي (~0.7%) أقرب لسعر الصياغة الفعلي — يبقى تقديريًا لأن أجرة الصنعة تختلف حسب المحل ونوع القطعة.</span><span class="i-en">The first price is the raw metal only (no workmanship), computed live from the global gold price and USD/KWD rate. The second is an estimate including an approximate market margin (~0.7%) closer to real jewelry pricing — still an estimate since actual workmanship fees vary by shop and item.</span></p>
+<p class="karat-note"><span class="i-ar">السعر شامل مصنعية تقديرية، محسوب لحظيًا من سعر الذهب العالمي وسعر صرف الدولار مقابل الدينار الكويتي، ومُعاير على أسعار البيع الفعلية بالسوق الكويتي. يبقى تقديريًا لأن أجرة الصنعة تختلف حسب المحل ونوع القطعة.</span><span class="i-en">Price includes an estimated workmanship margin, computed live from the global gold price and USD/KWD rate, calibrated against real Kuwait market sell prices. Still an estimate since actual workmanship fees vary by shop and item.</span></p>
 </div>
 </div>
 </section>
@@ -1327,18 +1326,16 @@ localStorage.setItem("boardCollapsed",card.classList.contains("collapsed")?"1":"
 if(localStorage.getItem("boardCollapsed")==="1")document.getElementById("boardCard").classList.add("collapsed");
 
 var GOLD_OUNCE_TO_GRAM=31.1035;
-var GOLD_MARKET_MARGIN=0.007;
+var GOLD_MARKET_MARGIN=0.0045;
 var KARATS=[{id:"k24",purity:0.999},{id:"k22",purity:22/24},{id:"k21",purity:21/24},{id:"k18",purity:18/24}];
 var GOLD_OZ_FALLBACK=4009.37,USDKWD_FALLBACK=0.3076;
 function renderKarats(ozUsd,usdKwd){
 var gramUsd=ozUsd/GOLD_OUNCE_TO_GRAM;
 KARATS.forEach(function(k){
 var el=document.getElementById(k.id);
-var elEst=document.getElementById(k.id+"e");
 if(!el)return;
-var kwd=gramUsd*usdKwd*k.purity;
+var kwd=gramUsd*usdKwd*k.purity*(1+GOLD_MARKET_MARGIN);
 el.textContent=kwd.toFixed(3)+" KWD";
-if(elEst)elEst.textContent=(kwd*(1+GOLD_MARKET_MARGIN)).toFixed(3)+" KWD";
 });
 }
 function loadGoldKarats(){

@@ -222,7 +222,10 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .about .av img{width:100%;height:100%;border-radius:12px;object-fit:cover}
 .offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4);align-items:stretch}
 @media(max-width:900px){.offer-grid{grid-template-columns:1fr}}
-.offer{padding:var(--sp5);display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.offer{padding:0;display:flex;flex-direction:column;text-decoration:none;color:inherit;overflow:hidden}
+.offer-img{height:132px;background-size:cover;background-position:center;position:relative;flex-shrink:0}
+.offer-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,13,.1) 40%,rgba(5,6,13,.72) 82%,var(--void) 100%)}
+.offer-body{padding:var(--sp5);display:flex;flex-direction:column;flex:1}
 .offer-ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--a2),var(--a1));display:flex;align-items:center;justify-content:center;margin-bottom:var(--sp3);flex-shrink:0}
 .offer-ic svg{width:24px;height:24px;color:var(--void)}
 .offer-badge{align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--gold);border:1px solid rgba(255,209,102,.4);border-radius:var(--r99);padding:3px 10px;background:rgba(255,209,102,.07);margin-bottom:var(--sp3)}
@@ -233,10 +236,8 @@ display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .offer-cta:hover svg{transform:translateX(-4px)}
 html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 .offer-grid-sm{gap:var(--sp3)}
-.offer-grid-sm .offer{padding:var(--sp4)}
-.offer-grid-sm .offer-ic{width:36px;height:36px;border-radius:11px;margin-bottom:10px}
-.offer-grid-sm .offer-ic svg{width:18px;height:18px}
-.offer-grid-sm .offer-badge{font-size:11px;padding:2px 8px;margin-bottom:8px}
+.offer-grid-sm .offer-body{padding:var(--sp4)}
+.offer-grid-sm .offer-img{height:120px}
 .offer-grid-sm .offer h3{font-size:16px}
 .offer-grid-sm .offer p{font-size:13px;margin-top:6px;line-height:1.65}
 .offer-grid-sm .offer-cta{font-size:13.5px;margin-top:var(--sp3)}
@@ -317,24 +318,27 @@ html[dir=ltr] .offer-cta:hover svg{transform:translateX(4px)}
 <div class="offer-grid offer-grid-sm">
 
 <div class="offer gl">
-<div class="offer-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-<span class="offer-badge"><span class="i-ar">قريبًا</span><span class="i-en">Coming soon</span></span>
+<div class="offer-img" style="background-image:url(assets/offer-signals.jpg)" role="img" aria-label="Buy and sell trading signals"></div>
+<div class="offer-body">
 <h3><span class="i-ar">توصيات استثمارية</span><span class="i-en">Investment Signals</span></h3>
 <p><span class="i-ar">تنبيهات وتوصيات مباشرة لعدد محدود من الأسهم، أول بأول. سجّل اهتمامك الحين وكن أول من يعرف عند الإطلاق.</span><span class="i-en">Direct alerts and recommendations for a curated set of stocks, as they happen. Register your interest now to be first in line at launch.</span></p>
 </div>
+</div>
 
 <a class="offer gl" href="course.html">
-<div class="offer-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></div>
-<span class="offer-badge"><span class="i-ar">قريبًا</span><span class="i-en">Coming soon</span></span>
+<div class="offer-img" style="background-image:url(assets/offer-course.jpg)" role="img" aria-label="Studying a trading chart"></div>
+<div class="offer-body">
 <h3><span class="i-ar">كورس التداول</span><span class="i-en">Trading Course</span></h3>
 <p><span class="i-ar">كورس شامل يعلّمك أساسيات وأدوات التداول من الصفر، خطوة خطوة. اطلب التسجيل المبكر واحجز مكانك.</span><span class="i-en">A complete course covering trading fundamentals and tools from scratch, step by step. Request early registration to save your spot.</span></p>
+</div>
 </a>
 
 <div class="offer gl">
-<div class="offer-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg></div>
-<span class="offer-badge"><span class="i-ar">قريبًا</span><span class="i-en">Coming soon</span></span>
+<div class="offer-img" style="background-image:url(assets/offer-path.jpg)" role="img" aria-label="Analyzing stocks on a phone"></div>
+<div class="offer-body">
 <h3><span class="i-ar">اختر طريقك الاستثماري</span><span class="i-en">Find Your Investing Path</span></h3>
 <p><span class="i-ar">كورس يساعدك تحدد أسلوبك الاستثماري المناسب، وآلية عملية لاختيار السهم الصح قبل ما تحط فلوسك فيه.</span><span class="i-en">A course to help you define the investing style that fits you, and a practical method for picking the right stock before you put your money in.</span></p>
+</div>
 </div>
 
 </div>

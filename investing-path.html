@@ -87,7 +87,6 @@ h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webk
 @media(max-width:760px){.steps{grid-template-columns:1fr}}
 .step{padding:var(--sp5)}
 .step .n{font-family:var(--num);font-weight:700;font-size:14px;color:var(--void);background:linear-gradient(135deg,var(--a2),var(--a1));width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--sp3)}
-.step .sym{font-family:var(--num);font-weight:700;font-size:13px;color:var(--void);padding:5px 11px;border-radius:9px;display:inline-block;margin-bottom:var(--sp3);letter-spacing:.02em;direction:ltr}
 .step h4{font-family:var(--disp);font-weight:800;font-size:17px}
 .step p{color:var(--mut);font-size:14.5px;line-height:1.7;margin-top:6px}
 
@@ -102,6 +101,7 @@ h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webk
 .metric-goal{margin-inline-start:auto;font-size:13px;font-weight:700;padding:5px 13px;border-radius:999px;white-space:nowrap}
 .metric-goal.hi{color:var(--mint);border:1px solid rgba(60,232,166,.4);background:rgba(60,232,166,.08)}
 .metric-goal.lo{color:var(--gold);border:1px solid rgba(255,209,102,.4);background:rgba(255,209,102,.08)}
+.metric-goal.nt{color:var(--a2);border:1px solid rgba(91,141,239,.4);background:rgba(91,141,239,.08)}
 .metric p{color:var(--mut);font-size:15px;line-height:1.8;margin-top:var(--sp4)}
 .metric .simple{color:var(--ink);font-weight:600;background:rgba(255,255,255,.04);border-inline-start:3px solid var(--a2);border-radius:8px;padding:12px 16px;margin-top:var(--sp3);font-size:14.5px;line-height:1.7}
 
@@ -162,7 +162,7 @@ h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webk
 <p class="sub"><span class="i-ar">الفلترة (Screening) طريقة تختصر آلاف الأسهم إلى قائمة قصيرة تناسب معاييرك. بدل ما تدور بالعمياني، تحدد شروطًا مالية، والأداة تطلّع لك الأسهم اللي تحققها.</span><span class="i-en">Screening is a way to narrow thousands of stocks down to a short list that fits your criteria. Instead of searching blindly, you set financial conditions, and the tool surfaces the stocks that meet them.</span></p>
 <div class="steps">
 <div class="step gl"><div class="n">1</div><h4><span class="i-ar">افهم المقاييس</span><span class="i-en">Understand the metrics</span></h4><p><span class="i-ar">تعرّف على معنى كل رقم (العائد، الربحية، الدين، النمو) وما هو المستوى الصحي له.</span><span class="i-en">Learn what each number means (returns, valuation, debt, growth) and what a healthy level looks like.</span></p></div>
-<div class="step gl"><div class="n">2</div><h4><span class="i-ar">افحص السهم</span><span class="i-en">Check a stock</span></h4><p><span class="i-ar">اكتب رمز أي سهم، والأداة تجيب أرقامه الحقيقية وتقيّمها لك بالألوان (ممتاز / متوسط / ضعيف).</span><span class="i-en">Enter any ticker and the tool pulls its real numbers and rates them by color (strong / fair / weak).</span></p></div>
+<div class="step gl"><div class="n">2</div><h4><span class="i-ar">طبّق المقاييس</span><span class="i-en">Apply the metrics</span></h4><p><span class="i-ar">افتح أداة فحص حقيقية واضبط الشروط اللي تعلّمتها — تفلتر آلاف الأسهم لقائمة قصيرة تناسب معاييرك أنت.</span><span class="i-en">Open a real screening tool and set the conditions you just learned — it filters thousands of stocks down to a short list that fits your own criteria.</span></p></div>
 <div class="step gl"><div class="n">3</div><h4><span class="i-ar">قرّر بثقة</span><span class="i-en">Decide with confidence</span></h4><p><span class="i-ar">تشوف نقاط القوة والضعف بوضوح قبل ما تحط فلوسك — القرار يبقى لك، بس على أساس معلومة.</span><span class="i-en">See the strengths and weaknesses clearly before you commit money — the decision stays yours, but informed.</span></p></div>
 </div>
 </section>
@@ -230,13 +230,68 @@ h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webk
 <section class="rv">
 <div class="kick"><span class="i-ar">وفيه أكثر من هذي الخمسة</span><span class="i-en">And there's more than these five</span></div>
 <p class="sub"><span class="i-ar">أدوات الفحص الاحترافية (Stock Screeners) فيها مئات الفلاتر، مو خمسة بس. المقاييس اللي شرحناها فوق هي أهم خمسة — نقطة انطلاق ممتازة لأي مبتدئ. بس لما تكبر خبرتك، بتلقى فلاتر ثانية مفيدة جدًا، منها مثلاً:</span><span class="i-en">Professional screening tools have hundreds of filters, not just five. What we explained above are the most important five — a great starting point for any beginner. But as your experience grows, you'll find other filters just as useful, like:</span></p>
-<div class="steps">
-<div class="step gl"><span class="sym" style="background:linear-gradient(135deg,#5b8def,#7ea9ff)">CAP</span><h4><span class="i-ar">القيمة السوقية</span><span class="i-en">Market Cap</span></h4><p><span class="i-ar">حجم الشركة الكلي — يفرّق بين شركة عملاقة مستقرة وشركة ناشئة عالية المخاطر.</span><span class="i-en">A company's total size — separates a stable giant from a high-risk startup.</span></p></div>
-<div class="step gl"><span class="sym" style="background:linear-gradient(135deg,#17bf8e,#3ce8a6)">PM %</span><h4><span class="i-ar">هامش الربح</span><span class="i-en">Profit Margin</span></h4><p><span class="i-ar">كم يتبقى من كل دولار مبيعات كربح صافي — يبيّن كفاءة الشركة الحقيقية.</span><span class="i-en">How much of every sales dollar becomes net profit — shows real operational efficiency.</span></p></div>
-<div class="step gl"><span class="sym" style="background:linear-gradient(135deg,#ffd166,#ff9500)">DIV %</span><h4><span class="i-ar">عائد التوزيعات</span><span class="i-en">Dividend Yield</span></h4><p><span class="i-ar">كم توزّع الشركة على المساهمين سنويًا كنسبة من سعر السهم — مهم لمن يبي دخل ثابت.</span><span class="i-en">How much a company pays shareholders yearly as a % of share price — key for income-focused investors.</span></p></div>
-<div class="step gl"><span class="sym" style="background:linear-gradient(135deg,#17bf8e,#5b8def)">FCF</span><h4><span class="i-ar">التدفق النقدي الحر</span><span class="i-en">Free Cash Flow</span></h4><p><span class="i-ar">النقد الفعلي المتبقي بعد كل المصاريف — أصعب رقم يتم التلاعب فيه محاسبيًا.</span><span class="i-en">Actual cash left after all expenses — the hardest number to manipulate on paper.</span></p></div>
-<div class="step gl"><span class="sym" style="background:linear-gradient(135deg,#ff9f6b,#ff6b6b)">β</span><h4><span class="i-ar">بيتا</span><span class="i-en">Beta</span></h4><p><span class="i-ar">مدى تقلّب السهم مقارنة بالسوق — يساعدك تقيس مستوى المخاطرة قبل ما تدخل.</span><span class="i-en">How much a stock swings versus the market — helps you gauge risk before you enter.</span></p></div>
-<div class="step gl"><span class="sym" style="background:linear-gradient(135deg,#7ea9ff,#3ce8a6)">SEC</span><h4><span class="i-ar">القطاع والصناعة</span><span class="i-en">Sector & Industry</span></h4><p><span class="i-ar">يخليك تقارن الشركة بمنافسيها الحقيقيين بدل ما تقارنها بالسوق كله.</span><span class="i-en">Lets you compare a company to its real peers instead of the whole market.</span></p></div>
+<div class="metrics">
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#5b8def,#7ea9ff)">CAP</div>
+<div class="metric-title"><b><span class="i-ar">القيمة السوقية</span><span class="i-en">Market Cap</span></b><span>Market Capitalization</span></div>
+<div class="metric-goal nt"><span class="i-ar">يعتمد على هدفك</span><span class="i-en">Depends on your goal</span></div>
+</div>
+<p><span class="i-ar">حجم الشركة الكلي بالسوق (سعر السهم × عدد الأسهم). يفرّق بين شركة عملاقة مستقرة وشركة ناشئة عالية المخاطر والعائد المحتمل.</span><span class="i-en">A company's total market size (share price × shares outstanding). It separates a stable giant from a high-risk, high-potential startup.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: فوق 10 مليار دولار = شركة كبيرة ومستقرة (نمو أبطأ). بين 2-10 مليار = متوسطة. تحت 2 مليار = صغيرة (نمو أسرع لكن مخاطرة أعلى).</span><span class="i-en">💡 In short: above $10B = large, stable company (slower growth). $2B–$10B = mid-cap. Below $2B = small-cap (faster growth, higher risk).</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#17bf8e,#3ce8a6)">PM %</div>
+<div class="metric-title"><b><span class="i-ar">هامش الربح</span><span class="i-en">Profit Margin</span></b><span>Net Profit Margin</span></div>
+<div class="metric-goal hi"><span class="i-ar">كل ما زاد أفضل</span><span class="i-en">Higher is better</span></div>
+</div>
+<p><span class="i-ar">كم يتبقى من كل دولار مبيعات كربح صافي، بعد خصم كل التكاليف والمصاريف والضرائب. يبيّن كفاءة الشركة الحقيقية في تحويل مبيعاتها لأرباح فعلية.</span><span class="i-en">How much of every sales dollar becomes net profit, after every cost, expense, and tax is deducted. It shows how efficiently a company turns sales into actual profit.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: هامش فوق 10% جيد، وفوق 20% ممتاز. يختلف كثير بين القطاعات — شركات التقنية عادة أعلى من شركات التجزئة.</span><span class="i-en">💡 In short: above 10% is good; above 20% is excellent. It varies a lot by sector — tech companies are typically higher than retailers.</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#ffd166,#ff9500)">DIV %</div>
+<div class="metric-title"><b><span class="i-ar">عائد التوزيعات</span><span class="i-en">Dividend Yield</span></b><span>Dividend Yield</span></div>
+<div class="metric-goal nt"><span class="i-ar">يعتمد على هدفك</span><span class="i-en">Depends on your goal</span></div>
+</div>
+<p><span class="i-ar">كم توزّع الشركة على المساهمين سنويًا كنسبة من سعر السهم. مهم لمن يبي دخل ثابت من استثماره، لا بس ارتفاع بسعر السهم.</span><span class="i-en">How much a company pays shareholders yearly, as a percentage of the share price. It matters for investors who want steady income, not just price appreciation.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: بين 2-4% عائد صحي ومستدام غالبًا. فوق 8% انتبه — أحيانًا يكون إنذار إن الشركة متعثرة والسعر هابط بسرعة أكبر من التوزيع.</span><span class="i-en">💡 In short: 2–4% is usually healthy and sustainable. Above 8%, be careful — it can signal a struggling company whose price is falling faster than the payout.</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#17bf8e,#5b8def)">FCF</div>
+<div class="metric-title"><b><span class="i-ar">التدفق النقدي الحر</span><span class="i-en">Free Cash Flow</span></b><span>Free Cash Flow</span></div>
+<div class="metric-goal hi"><span class="i-ar">كل ما زاد أفضل</span><span class="i-en">Higher is better</span></div>
+</div>
+<p><span class="i-ar">النقد الفعلي المتبقي بعد كل مصاريف التشغيل والاستثمار بالمعدّات والمشاريع. يعتبره كثير من المستثمرين أصدق رقم مالي، لأنه أصعب رقم يتم التجميل فيه محاسبيًا.</span><span class="i-en">The actual cash left after all operating expenses and capital investments. Many investors consider it the most honest financial number, since it's the hardest to dress up on paper.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: تدفق نقدي حر موجب ومتزايد = الشركة تولّد نقد فعلي أكثر مما تصرف. سالب مو دايمًا سيئ لشركة ناشئة تستثمر بالنمو، بس لازم يتجه للموجب مع الوقت.</span><span class="i-en">💡 In short: positive, growing FCF means the company generates more real cash than it spends. Negative isn't always bad for a young growth company, but it should trend positive over time.</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#ff9f6b,#ff6b6b)">β</div>
+<div class="metric-title"><b><span class="i-ar">بيتا</span><span class="i-en">Beta</span></b><span>Beta</span></div>
+<div class="metric-goal nt"><span class="i-ar">يعتمد على هدفك</span><span class="i-en">Depends on your goal</span></div>
+</div>
+<p><span class="i-ar">يقيس مدى تقلّب سعر السهم مقارنة بالسوق العام (المؤشر = 1). يساعدك تقيس مستوى المخاطرة والتذبذب المتوقع قبل ما تدخل بالسهم.</span><span class="i-en">Measures how much a stock's price swings compared to the overall market (the index = 1). It helps you gauge expected volatility and risk before you buy in.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: بيتا = 1 يتحرك مع السوق. أقل من 1 (مثل 0.6) = أهدأ من السوق ("دفاعي"). أكثر من 1 (مثل 1.8) = أعنف من السوق، صعود وهبوط أسرع.</span><span class="i-en">💡 In short: beta = 1 moves with the market. Below 1 (e.g. 0.6) = calmer than the market ("defensive"). Above 1 (e.g. 1.8) = more volatile, sharper swings up and down.</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#7ea9ff,#3ce8a6)">SEC</div>
+<div class="metric-title"><b><span class="i-ar">القطاع والصناعة</span><span class="i-en">Sector & Industry</span></b><span>Sector & Industry</span></div>
+<div class="metric-goal nt"><span class="i-ar">للمقارنة الصحيحة</span><span class="i-en">For fair comparison</span></div>
+</div>
+<p><span class="i-ar">مو مقياس رقمي، بل تصنيف يحدد مجال عمل الشركة (تقنية، طاقة، رعاية صحية…). يخليك تقارن الشركة بمنافسيها الحقيقيين بدل ما تقارنها بالسوق كله.</span><span class="i-en">Not a numeric metric, but a classification of what business a company is in (tech, energy, healthcare…). It lets you compare a company to its real peers instead of the whole market.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: المستوى "الصحي" لأي مقياس (زي P/E أو الهامش) يختلف كليًا بين القطاعات. لا تقارن بنك بشركة تقنية مباشرة — قارنه ببنوك ثانية.</span><span class="i-en">💡 In short: the "healthy" level for any metric (like P/E or margin) differs completely by sector. Don't compare a bank directly to a tech company — compare it to other banks.</span></div>
+</div>
+
 </div>
 </section>
 

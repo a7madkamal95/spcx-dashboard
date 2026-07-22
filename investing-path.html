@@ -104,40 +104,10 @@ h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webk
 .metric p{color:var(--mut);font-size:15px;line-height:1.8;margin-top:var(--sp4)}
 .metric .simple{color:var(--ink);font-weight:600;background:rgba(255,255,255,.04);border-inline-start:3px solid var(--a2);border-radius:8px;padding:12px 16px;margin-top:var(--sp3);font-size:14.5px;line-height:1.7}
 
-/* the tool */
-.tool{padding:var(--sp6)}
-.tool-search{display:flex;gap:var(--sp3);flex-wrap:wrap;margin-top:var(--sp4)}
-.tool-search input{flex:1;min-width:200px;background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:14px;padding:15px 18px;color:var(--ink);font-family:var(--body);font-size:16px;outline:none;transition:border-color var(--dur-fast) var(--ease)}
-.tool-search input:focus{border-color:var(--a2)}
-.tool-search input::placeholder{color:var(--mut);font-size:15px}
+/* CTA link to the external screener, styled like a primary button */
 .tool-btn{font-family:var(--body);font-weight:700;font-size:15px;color:var(--void);background:linear-gradient(92deg,var(--a2),var(--a1));border:none;border-radius:14px;padding:0 30px;min-height:52px;cursor:pointer;transition:transform var(--dur-fast) var(--ease)}
 .tool-btn:hover{transform:translateY(-1px)}
-.tool-btn:disabled{opacity:.6;cursor:default;transform:none}
-.tool-hint{font-size:13.5px;color:var(--mut);margin-top:var(--sp3)}
-.tool-note{margin-top:var(--sp4);font-size:14px;color:var(--gold);background:rgba(255,209,102,.07);border:1px solid rgba(255,209,102,.3);border-radius:12px;padding:14px 18px;line-height:1.7}
-
-.result{margin-top:var(--sp5);display:none}
-.result.show{display:block}
-.result-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:var(--sp4)}
-.result-head b{font-family:var(--disp);font-weight:800;font-size:22px}
-.result-head .sym{font-family:var(--num);font-weight:700;color:var(--a2);font-size:15px;direction:ltr}
-.result-head .verdict{margin-inline-start:auto;font-weight:800;font-size:14px;padding:6px 16px;border-radius:999px}
-.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp3)}
-@media(max-width:640px){.result-grid{grid-template-columns:1fr}}
-.rmetric{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.04);border:1px solid var(--edge);border-radius:12px;padding:14px 16px}
-.rmetric .lbl{font-size:14px;color:var(--mut)}
-.rmetric .rt{display:flex;align-items:center;gap:9px}
-.rmetric .val{font-family:var(--num);font-weight:700;font-size:16px;direction:ltr}
-.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.good{color:var(--mint)} .good .dot,.dot.good{background:var(--mint)}
-.ok{color:var(--gold)} .ok .dot,.dot.ok{background:var(--gold)}
-.bad{color:var(--coral)} .bad .dot,.dot.bad{background:var(--coral)}
-.v-good{color:var(--mint);border:1px solid rgba(60,232,166,.4);background:rgba(60,232,166,.1)}
-.v-ok{color:var(--gold);border:1px solid rgba(255,209,102,.4);background:rgba(255,209,102,.1)}
-.v-bad{color:var(--coral);border:1px solid rgba(255,107,107,.4);background:rgba(255,107,107,.1)}
-.spin{width:14px;height:14px;border-radius:50%;border:2px solid var(--edge);border-top-color:var(--a2);animation:sp .7s linear infinite;display:inline-block;vertical-align:-2px}
-@keyframes sp{to{transform:rotate(360deg)}}
-.result-err{color:var(--coral);font-size:14.5px}
+.tool-btn svg{width:16px;height:16px}
 
 .dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
 .rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
@@ -255,25 +225,31 @@ h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webk
 </div>
 </section>
 
-<!-- THE TOOL -->
-<section class="rv" id="tool">
-<div class="kick"><span class="i-ar">افحص أي سهم الآن</span><span class="i-en">Check any stock now</span></div>
-<div class="gl tool">
-<p style="color:var(--mut);font-size:15px;line-height:1.8"><span class="i-ar">اكتب رمز السهم (مثل AAPL أو MSFT) واضغط فحص. الأداة تجيب المقاييس الخمسة الحقيقية للسهم وتقيّمها لك بالألوان على أساس المستويات الصحية اللي شرحناها فوق.</span><span class="i-en">Enter a stock ticker (e.g. AAPL or MSFT) and press Check. The tool pulls the stock's five real metrics and rates them by color against the healthy levels explained above.</span></p>
-<form class="tool-search" onsubmit="checkStock(event)">
-<input type="text" id="tkr" placeholder="رمز السهم… / Ticker… (AAPL, MSFT, NVDA)" autocomplete="off" spellcheck="false">
-<button type="submit" class="tool-btn" id="checkBtn"><span class="i-ar">فحص</span><span class="i-en">Check</span></button>
-</form>
-<p class="tool-hint"><span class="i-ar">أمثلة: AAPL (أبل) · MSFT (مايكروسوفت) · NVDA (إنفيديا) · KO (كوكاكولا)</span><span class="i-en">Examples: AAPL · MSFT · NVDA · KO</span></p>
-
-<div class="tool-note" id="toolNote">
-<span class="i-ar">⏳ الفحص المباشر يُفعّل بمجرد ربط مصدر بيانات. جارٍ التجهيز — قريبًا تقدر تفحص أي سهم من هنا مباشرة.</span>
-<span class="i-en">⏳ Live checking activates once a data source is connected. Setup in progress — soon you'll be able to check any stock right here.</span>
+<!-- MORE FILTERS -->
+<section class="rv">
+<div class="kick"><span class="i-ar">وفيه أكثر من هذي الخمسة</span><span class="i-en">And there's more than these five</span></div>
+<p class="sub"><span class="i-ar">أدوات الفحص الاحترافية (Stock Screeners) فيها مئات الفلاتر، مو خمسة بس. المقاييس اللي شرحناها فوق هي أهم خمسة — نقطة انطلاق ممتازة لأي مبتدئ. بس لما تكبر خبرتك، بتلقى فلاتر ثانية مفيدة جدًا، منها مثلاً:</span><span class="i-en">Professional screening tools have hundreds of filters, not just five. What we explained above are the most important five — a great starting point for any beginner. But as your experience grows, you'll find other filters just as useful, like:</span></p>
+<div class="steps">
+<div class="step gl"><h4><span class="i-ar">القيمة السوقية</span><span class="i-en">Market Cap</span></h4><p><span class="i-ar">حجم الشركة الكلي — يفرّق بين شركة عملاقة مستقرة وشركة ناشئة عالية المخاطر.</span><span class="i-en">A company's total size — separates a stable giant from a high-risk startup.</span></p></div>
+<div class="step gl"><h4><span class="i-ar">هامش الربح</span><span class="i-en">Profit Margin</span></h4><p><span class="i-ar">كم يتبقى من كل دولار مبيعات كربح صافي — يبيّن كفاءة الشركة الحقيقية.</span><span class="i-en">How much of every sales dollar becomes net profit — shows real operational efficiency.</span></p></div>
+<div class="step gl"><h4><span class="i-ar">عائد التوزيعات</span><span class="i-en">Dividend Yield</span></h4><p><span class="i-ar">كم توزّع الشركة على المساهمين سنويًا كنسبة من سعر السهم — مهم لمن يبي دخل ثابت.</span><span class="i-en">How much a company pays shareholders yearly as a % of share price — key for income-focused investors.</span></p></div>
+<div class="step gl"><h4><span class="i-ar">التدفق النقدي الحر</span><span class="i-en">Free Cash Flow</span></h4><p><span class="i-ar">النقد الفعلي المتبقي بعد كل المصاريف — أصعب رقم يتم التلاعب فيه محاسبيًا.</span><span class="i-en">Actual cash left after all expenses — the hardest number to manipulate on paper.</span></p></div>
+<div class="step gl"><h4><span class="i-ar">بيتا</span><span class="i-en">Beta</span></h4><p><span class="i-ar">مدى تقلّب السهم مقارنة بالسوق — يساعدك تقيس مستوى المخاطرة قبل ما تدخل.</span><span class="i-en">How much a stock swings versus the market — helps you gauge risk before you enter.</span></p></div>
+<div class="step gl"><h4><span class="i-ar">القطاع والصناعة</span><span class="i-en">Sector & Industry</span></h4><p><span class="i-ar">يخليك تقارن الشركة بمنافسيها الحقيقيين بدل ما تقارنها بالسوق كله.</span><span class="i-en">Lets you compare a company to its real peers instead of the whole market.</span></p></div>
 </div>
+</section>
 
-<div class="result gl" id="result" style="padding:var(--sp5)"></div>
+<!-- USE THE REAL TOOL -->
+<section class="rv">
+<div class="gl pad" style="text-align:center">
+<div class="kick" style="margin-bottom:var(--sp2)"><span class="i-ar">جرّب الفلترة بنفسك</span><span class="i-en">Try screening yourself</span></div>
+<p class="sub" style="max-width:60ch;margin-inline:auto"><span class="i-ar">فهمت المقاييس؟ الحين طبّقها بنفسك على أداة فحص احترافية ومجانية فيها كل هالفلاتر (وأكثر من 300 فلتر ثاني) — اضبط الشروط اللي تعلّمتها وشوف أي الأسهم تحققها فعليًا.</span><span class="i-en">Understood the metrics? Now apply them yourself on a professional, free screening tool with all these filters (and 300+ more) — set the conditions you just learned and see which stocks actually meet them.</span></p>
+<a href="https://stockanalysis.com/stocks/screener/" target="_blank" rel="noopener" class="tool-btn" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-top:var(--sp5);padding:0 32px">
+<span class="i-ar">افتح أداة الفحص</span><span class="i-en">Open the screener</span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+</a>
+<p style="color:var(--mut);font-size:13px;margin-top:var(--sp4)"><span class="i-ar">stockanalysis.com — يفتح بصفحة جديدة</span><span class="i-en">stockanalysis.com — opens in a new tab</span></p>
 </div>
-<p style="color:var(--mut);font-size:13.5px;margin-top:var(--sp4);line-height:1.7"><span class="i-ar">ملاحظة: هذه الأداة للأغراض التعليمية والمعلوماتية فقط، وليست توصية بشراء أو بيع. الأرقام قد تختلف قليلاً بين مصادر البيانات.</span><span class="i-en">Note: this tool is for educational and informational purposes only, not a buy/sell recommendation. Numbers may vary slightly between data sources.</span></p>
 </section>
 
 <footer>
@@ -303,68 +279,6 @@ function isOpen(){var p=nyParts();if(p.weekday==="Sat"||p.weekday==="Sun")return
 function tick(){var o=isOpen();document.getElementById("msDot").className="ms-dot "+(o?"open":"closed");document.getElementById("msTextAr").textContent=o?"السوق مفتوح":"السوق مغلق";document.getElementById("msTextEn").textContent=o?"Market Open":"Market Closed";var k=kuwaitParts();document.getElementById("msClock").textContent=pad2(k.h)+":"+pad2(k.m)+":"+pad2(k.s);}
 tick();setInterval(tick,1000);
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"});}
-
-/* ===== The check tool ===== */
-/* Data source key — filled once a data provider is connected. */
-var FMP_KEY="";
-
-function rate(kind,v){
-  // returns 'good' | 'ok' | 'bad' based on healthy thresholds
-  if(v===null||v===undefined||isNaN(v))return null;
-  if(kind==="roa")return v>=15?"good":v>=5?"ok":"bad";
-  if(kind==="roe")return v>=15?"good":v>=8?"ok":"bad";
-  if(kind==="pe")return (v>0&&v<=20)?"good":(v>0&&v<=40)?"ok":"bad";
-  if(kind==="de")return (v>=0&&v<1)?"good":(v<2)?"ok":"bad";
-  if(kind==="growth")return v>=15?"good":v>=5?"ok":"bad";
-  return null;
-}
-function fmtPct(v){return (v===null||isNaN(v))?"—":(v>=0?"+":"")+v.toFixed(1)+"%";}
-function fmtNum(v){return (v===null||isNaN(v))?"—":v.toFixed(2);}
-
-function checkStock(ev){
-  ev.preventDefault();
-  var t=(document.getElementById("tkr").value||"").trim().toUpperCase();
-  if(!t)return;
-  var res=document.getElementById("result");
-  var note=document.getElementById("toolNote");
-  if(!FMP_KEY){
-    note.style.display="";
-    res.classList.remove("show");
-    return;
-  }
-  note.style.display="none";
-  res.classList.add("show");
-  res.innerHTML='<span class="spin"></span> '+(CUR==="ar"?" جارٍ الفحص…":" Checking…");
-  fetchFundamentals(t).then(function(d){ renderResult(t,d); })
-  .catch(function(){ res.innerHTML='<div class="result-err">'+(CUR==="ar"?"ما قدرنا نجيب بيانات هالسهم. تأكد من الرمز وحاول مرة ثانية.":"Couldn't load data for this ticker. Check the symbol and try again.")+'</div>'; });
-}
-
-/* Placeholder fetch — finalized & verified against real API responses once a data key is connected. */
-function fetchFundamentals(ticker){
-  return Promise.reject(new Error("no-data-source"));
-}
-
-function renderResult(ticker,d){
-  var rows=[
-    {k:"roa",lbl:CUR==="ar"?"العائد على الأصول (ROA)":"Return on Assets (ROA)",v:fmtPct(d.roa),r:rate("roa",d.roa)},
-    {k:"roe",lbl:CUR==="ar"?"العائد على حقوق الملكية (ROE)":"Return on Equity (ROE)",v:fmtPct(d.roe),r:rate("roe",d.roe)},
-    {k:"pe",lbl:CUR==="ar"?"مكرر الربحية (P/E)":"Price/Earnings (P/E)",v:fmtNum(d.pe),r:rate("pe",d.pe)},
-    {k:"de",lbl:CUR==="ar"?"الدين/حقوق الملكية (D/E)":"Debt/Equity (D/E)",v:fmtNum(d.de),r:rate("de",d.de)},
-    {k:"growth",lbl:CUR==="ar"?"نمو الإيرادات":"Revenue Growth",v:fmtPct(d.growth),r:rate("growth",d.growth)}
-  ];
-  var goods=rows.filter(function(x){return x.r==="good"}).length;
-  var bads=rows.filter(function(x){return x.r==="bad"}).length;
-  var vClass,vText;
-  if(goods>=4){vClass="v-good";vText=CUR==="ar"?"قوي":"Strong";}
-  else if(bads>=3){vClass="v-bad";vText=CUR==="ar"?"ضعيف":"Weak";}
-  else{vClass="v-ok";vText=CUR==="ar"?"متوسط":"Mixed";}
-  var html='<div class="result-head"><b>'+(d.name||ticker)+'</b><span class="sym">'+ticker+'</span><span class="verdict '+vClass+'">'+vText+'</span></div><div class="result-grid">';
-  rows.forEach(function(x){
-    html+='<div class="rmetric"><span class="lbl">'+x.lbl+'</span><span class="rt '+(x.r||"")+'"><span class="val">'+x.v+'</span><span class="dot '+(x.r||"")+'"></span></span></div>';
-  });
-  html+='</div>';
-  document.getElementById("result").innerHTML=html;
-}
 </script>
 <script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

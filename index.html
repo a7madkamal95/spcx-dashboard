@@ -168,7 +168,7 @@ html[dir=ltr] .find-more a:hover svg{transform:translateX(4px)}
 .req-fields input{flex:1;min-width:180px;background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:12px;padding:13px 16px;color:var(--ink);font-family:var(--body);font-size:15px;outline:none;transition:border-color var(--dur-fast) var(--ease)}
 .req-fields input::placeholder{color:var(--mut);font-size:14.5px}
 .req-fields input:focus{border-color:var(--a2)}
-.req-submit{font-family:var(--body);font-weight:700;font-size:15px;color:var(--void);background:linear-gradient(92deg,var(--a2),var(--a1));border:none;border-radius:var(--r99);padding:0 26px;min-height:48px;cursor:pointer;transition:transform var(--dur-fast) var(--ease);flex-shrink:0}
+.req-submit{font-family:var(--body);font-weight:700;font-size:15px;color:var(--ink);background:var(--a2);border:none;border-radius:var(--r99);padding:0 26px;min-height:48px;cursor:pointer;transition:transform var(--dur-fast) var(--ease);flex-shrink:0}
 .req-submit:hover{transform:translateY(-1px)}
 @media(max-width:600px){.req-fields{flex-direction:column}.req-fields input,.req-submit{width:100%}}
 .tabs{display:flex;gap:8px;margin-bottom:var(--sp5)}
@@ -255,10 +255,13 @@ html[dir=ltr] .offer-featured-img::after{background:linear-gradient(270deg,rgba(
 .offer-featured h3{font-family:var(--disp);font-weight:800;font-size:24px}
 .offer-featured p{font-size:15.5px;color:var(--mut);margin-top:8px;line-height:1.75;max-width:56ch}
 .offer-subscribe-btn{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;
-font-family:var(--body);font-weight:700;font-size:15.5px;color:var(--void);text-decoration:none;
-background:linear-gradient(92deg,var(--a2),var(--a1));border-radius:var(--r99);padding:0 30px;min-height:48px;
-margin-top:var(--sp4);transition:transform var(--dur-fast) var(--ease)}
+font-family:var(--body);font-weight:700;font-size:15.5px;color:var(--ink);text-decoration:none;
+background:var(--a2);border-radius:var(--r99);padding:0 30px;min-height:48px;
+margin-top:var(--sp3);transition:transform var(--dur-fast) var(--ease)}
 .offer-subscribe-btn:hover{transform:translateY(-1px)}
+.offer-price{display:flex;align-items:baseline;gap:10px;margin-top:var(--sp4);font-family:var(--num);direction:ltr}
+.offer-price .op-now{font-size:26px;font-weight:800;color:var(--gold)}
+.offer-price .op-was{font-size:16px;font-weight:600;color:var(--mut);text-decoration:line-through;text-decoration-color:rgba(183,191,221,.6)}
 .about h4{font-family:var(--disp);font-weight:800;font-size:16px}
 .about p{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.7}
 .dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
@@ -359,6 +362,10 @@ margin-top:var(--sp4);transition:transform var(--dur-fast) var(--ease)}
 <h3><span class="i-ar">كورس التداول</span><span class="i-en">Trading Course</span></h3>
 <p><span class="i-ar">كورس شامل يعلّمك أساسيات وأدوات التداول من الصفر، خطوة خطوة.</span><span class="i-en">A complete course covering trading fundamentals and tools from scratch, step by step.</span></p>
 </a>
+<div class="offer-price">
+<span class="op-now">$300</span>
+<span class="op-was">$450</span>
+</div>
 <a class="offer-subscribe-btn" href="mailto:plutointelligence@gmail.com?subject=اشتراك - كورس التداول&body=أبي أشترك بكورس التداول. أبلغوني بالتفاصيل والسعر عند فتح الاشتراك.">
 <span class="i-ar">اشترك</span><span class="i-en">Subscribe</span>
 </a>

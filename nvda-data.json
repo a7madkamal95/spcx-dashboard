@@ -21,12 +21,12 @@
     {"when":"يوليو 2026","what":"أبل تخطف عرش القيمة السوقية","note":"تتفوق مؤقتًا على Nvidia وسط حذر المستثمرين من فقاعة الذكاء الاصطناعي"}
   ],
   "news": [
-    {"text":"منصة Vera Rubin الجديدة من إنفيديا تدخل مرحلة الإنتاج الكامل رسميًا، وأوبن إيه آي تستعد لنشرها على نطاق واسع خلال الربع الثالث","src":"TheNextWeb","link":"https://thenextweb.com/news/nvidia-vera-rubin-full-production-customers"},
-    {"text":"إنفيديا تكشف عن حصة بنسبة 9.3% في شركة الحوسبة السحابية Nebius، ما يدفع سهمها للارتفاع أكثر من 6% في التداول المسبق","src":"Yahoo Finance","link":"https://finance.yahoo.com/technology/ai/articles/nvidia-discloses-9-3-stake-114204932.html"},
-    {"text":"بنك كي بانك يرفع السعر المستهدف لسهم إنفيديا إلى 330 دولارًا مستشهدًا بقوة الطلب على رقائق الذكاء الاصطناعي","src":"Investing.com","link":"https://www.investing.com/news/analyst-ratings/keybanc-raises-nvidia-stock-price-target-to-330-on-strong-demand-93CH-4790422"},
-    {"text":"سهم إنفيديا يقترب من اختبار مستوى 212 دولارًا مع توقعات بإيرادات الربع الثاني عند نحو 91 مليار دولار","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/21/nvidia-stock-forecast-can-nvda-break-212-as-q2-revenue-targets-91b/"},
-    {"text":"مسؤول أمريكي يؤكد أن شحنات رقائق H200 إلى الصين ما زالت 'ضئيلة جدًا' رغم موافقة واشنطن على تصديرها","src":"CNBC","link":"https://www.cnbc.com/2026/07/14/nvidia-h200-ai-chips-china.html"},
-    {"text":"إنفيديا وأبل تتنافسان على لقب أكبر شركة بالقيمة السوقية في العالم وسط تقلبات حادة بالأسواق","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/21/apple-and-nvidia-vie-for-the-position-as-the-world/"}
+    {"text":"إنفيديا تكشف عن حيازة حصة سلبية بنسبة 9.3% في شركة Nebius Group لخدمات الحوسبة السحابية للذكاء الاصطناعي، ما يدفع سهم الشركة للقفز أكثر من 16%","src":"24/7 Wall St.","link":"https://247wallst.com/investing/2026/07/21/nebius-explodes-16-higher-on-nvidia-stake-stunner-coreweave-surges-8-oracle-adds-5-as-ai-cloud-plays-pay-off/"},
+    {"text":"شركة Wistron الشريكة المصنّعة لإنفيديا تفتتح مصنعًا بقيمة 700 مليون دولار في فورت وورث بولاية تكساس، أول موقع لإنتاج رقائق GB300 الفائقة على الأراضي الأمريكية","src":"CNBC","link":"https://www.cnbc.com/2026/07/22/wistron-shares-surge-after-opening-texas-plant-for-nvidia-ai-servers-.html"},
+    {"text":"سهم إنفيديا يقترب من اختبار مستوى الدعم عند 200 دولار وسط مخاوف من تصاعد المنافسة الصينية في الذكاء الاصطناعي وضغوط على قطاع أشباه الموصلات","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/20/nvidia-stock-nvda-tests-200-support-as-chinese-ai-competition-shakes-the-chip-rally/"},
+    {"text":"بنك كي بانك يرفع السعر المستهدف لسهم إنفيديا إلى 330 دولارًا مع تثبيت تصنيف 'زيادة الوزن' استنادًا إلى قوة الطلب على رقائق الذكاء الاصطناعي","src":"Investing.com","link":"https://www.investing.com/news/analyst-ratings/keybanc-raises-nvidia-stock-price-target-to-330-on-strong-demand-93CH-4790422"},
+    {"text":"مسؤولون أمريكيون يؤكدون بدء أولى شحنات رقائق H200 من إنفيديا إلى الصين بكميات محدودة، بعد أشهر من ضوابط التصدير الصارمة","src":"Yahoo Finance","link":"https://finance.yahoo.com/technology/ai/articles/nvidia-begins-h200-shipments-china-141018933.html"},
+    {"text":"إنفيديا تنفي تقارير عن تأخر منصة Kyber للذكاء الاصطناعي حتى عام 2028، فيما يصف بنك غولدمان ساكس تقييم السهم الحالي بأنه 'جذاب'","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262015350-nvidia-nvda-stock-forecast-july-2026-kyber-denial-goldman-tradingkey"}
   ],
   "takeaways": [
     "الشركة تحولت فعليًا لشركة مراكز بيانات — الألعاب والرسوميات صارت هامشًا بسيطًا من الإيرادات",

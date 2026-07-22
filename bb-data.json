@@ -22,12 +22,8 @@
     {"when":"يونيو 2026","what":"أول تدفق نقدي إيجابي منذ 9 سنوات","note":"نتائج الربع الأول للسنة المالية 2027 (مارس–مايو 2026، لأن سنة BlackBerry المالية تبدأ في مارس) تتجاوز التوقعات وتدفع السهم للقفز نحو 21% بجلسة واحدة"}
   ],
   "news": [
-    {"text":"سهم بلاك بيري يتراجع نحو 35% عن أعلى مستوياته لهذا العام مع تصاعد جني الأرباح بعد الصعود الحاد الأخير","src":"Invezz","link":"https://invezz.com/news/2026/07/21/blackberry-stock-has-plunged-35-from-the-ytd-high-buy-the-dip/"},
-    {"text":"أسهم بلاك بيري تهبط في تعاملات الخميس مع استمرار موجة البيع عقب الصعود القوي الذي تلا نتائج الربع الأول","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/movers/26/07/60255671/why-is-blackberry-stock-falling-thursday"},
-    {"text":"الرئيس التنفيذي لقطاع الاتصالات الآمنة في بلاك بيري يبيع أسهمًا بملايين الدولارات في أحدث عمليات البيع من الداخل","src":"TipRanks","link":"https://www.tipranks.com/news/insider-trading/top-blackberry-executive-makes-major-move-with-multi-million-dollar-stock-sale-insider-trading-news"},
-    {"text":"بنك CIBC يرفع السعر المستهدف لسهم بلاك بيري إلى 13 دولارًا ويثبّت تصنيف «تفوق على السوق» عقب نتائج ربع أول قوية","src":"Moomoo","link":"https://www.moomoo.com/news/post/72115393/cibc-maintains-blackberry-bbus-with-buy-rating-raises-target-price"},
-    {"text":"بلاك بيري تحصل على شهادة معايير مشتركة دولية محدّثة لمنتجات SecuSUITE الخاصة بالاتصالات الآمنة","src":"GuruFocus","link":"https://www.gurufocus.com/news/8969165/blackberry-bb-achieves-new-certification-for-secusuite-products"},
-    {"text":"تقرير: بلاك بيري تعيد تشكيل تفوقها البرمجي بهدوء عبر توسع منصة QNX في قطاع صناعة السيارات","src":"Yahoo Finance","link":"https://finance.yahoo.com/news/blackberry-tsx-bb-quietly-recasting-011132339.html"}
+    {"text":"سهم بلاك بيري يتراجع نحو 35% عن أعلى مستوياته لهذا العام مع تصاعد جني الأرباح بعد الصعود الحاد الأخير","src":"Invezz","link":"https://invezz.com/news/2026/07/21/blackberry-stock-has-plunged-35-from-the-ytd-high-buy-the-dip/","date":"2026-07-21"},
+    {"text":"بلاك بيري تحصل على شهادة معايير مشتركة دولية محدّثة لمنتجات SecuSUITE الخاصة بالاتصالات الآمنة","src":"GuruFocus","link":"https://www.gurufocus.com/news/8969165/blackberry-bb-achieves-new-certification-for-secusuite-products","date":"2026-07-21"}
   ],
   "takeaways": [
     "شركة هواتف كادت تندثر تحولت إلى مزوّد برمجيات أمن سيبراني وقيادة حرجة، وحققت للتو أول تدفق نقدي تشغيلي إيجابي بربع أول منذ 9 سنوات",

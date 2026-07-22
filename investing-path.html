@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختر طريقك الاستثماري · PLUTO INTELLIGENCE</title>
+<meta name="description" content="أداة فحص الأسهم من PLUTO INTELLIGENCE: افهم كل مقياس مالي (العائد على الأصول، مكرر الربحية، الدين، النمو) وافحص أي سهم على ضوئها.">
+<meta name="theme-color" content="#05060d">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#05060d;--ink:#f5f7ff;--mut:#b7bfdd;
+--a1:#17bf8e;--a2:#5b8def;--mint:#3ce8a6;--coral:#ff6b6b;--gold:#ffd166;
+--glass:rgba(255,255,255,.055);--glassH:rgba(255,255,255,.11);
+--edge:rgba(255,255,255,.15);--edgeTop:rgba(255,255,255,.34);
+--focus:#5b8def;
+--disp:'Cairo',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Space Grotesk',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r16:16px;--r20:20px;--r24:24px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Space Grotesk',sans-serif;--body:'Space Grotesk','Segoe UI',sans-serif}
+.en,.num{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.topfade{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#232a42 0%,#161c30 15%,rgba(21,26,42,.5) 30%,transparent 55%)}
+.databg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.databg .glow{position:absolute;border-radius:50%;filter:blur(80px)}
+.databg .g1{width:38vw;height:38vw;background:radial-gradient(circle,rgba(23,191,142,.17),transparent 65%);top:-14%;left:2%;animation:gf1 34s ease-in-out infinite}
+.databg .g2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(91,141,239,.14),transparent 65%);bottom:-18%;right:6%;animation:gf2 40s ease-in-out infinite}
+@keyframes gf1{50%{transform:translate(4vw,6vh) scale(1.12)}}
+@keyframes gf2{50%{transform:translate(-5vw,-5vh) scale(1.08)}}
+.databg .mesh{position:absolute;top:0;left:0;width:100%;height:56vh;
+-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 20%,transparent 88%);
+mask-image:linear-gradient(180deg,#000 0%,#000 20%,transparent 88%)}
+.databg .mesh svg{width:100%;height:100%;display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(23,191,142,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+border:1px solid var(--edge);border-top-color:var(--edgeTop);
+border-radius:var(--r24);box-shadow:0 18px 50px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08);
+position:relative;overflow:hidden}
+.gl::before{content:"";position:absolute;top:0;right:8%;left:38%;height:1px;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;flex-shrink:0}
+.bar .brand img{width:24px;height:24px;border-radius:6px;object-fit:cover;flex-shrink:0}
+.bar .brandlockup{display:flex;flex-direction:column;line-height:1.25}
+.bar .brandlockup b{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.03em}
+.bar .tagline{font-size:14.5px;color:var(--mut)}
+.market-status{margin-inline-start:auto;display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-family:var(--num);font-size:13px;color:var(--mut);white-space:nowrap;line-height:1.35}
+.ms-row{display:flex;align-items:center;gap:6px}
+.market-status b{font-weight:700;color:var(--ink);font-size:14px}
+.ms-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.ms-dot.open{background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pl 1.8s infinite}
+.ms-dot.closed{background:var(--coral);box-shadow:0 0 8px var(--coral);animation:pl 1.8s infinite}
+@keyframes pl{50%{opacity:.4}}
+.ms-clock{direction:ltr;font-variant-numeric:tabular-nums}
+.ms-tz{font-size:11px;opacity:.65;letter-spacing:.04em}
+.lng{font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:.08em;
+color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
+section{margin-top:var(--sp7)}
+.back-link{display:inline-flex;align-items:center;gap:5px;color:var(--a2);font-weight:700;text-decoration:none;font-size:15px}
+.back-link svg{width:14px;height:14px}
+html[dir=ltr] .back-link svg{transform:scaleX(-1)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--gold);
+border:1px solid rgba(255,209,102,.4);border-radius:999px;padding:6px 15px;background:rgba(255,209,102,.08);letter-spacing:.02em;margin-top:var(--sp4)}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(26px,4.4vw,38px);line-height:1.22;margin-top:var(--sp4)}
+h1 .grad{background:linear-gradient(92deg,var(--a2),var(--a1) 65%,#7ef7d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:17px;line-height:1.8;max-width:66ch;margin-top:var(--sp4)}
+.kick{font-family:var(--disp);font-weight:800;font-size:clamp(21px,3vw,27px);letter-spacing:.01em;color:var(--ink);margin-bottom:var(--sp3)}
+.sub{color:var(--mut);font-size:15.5px;line-height:1.8;max-width:70ch;margin-bottom:var(--sp5)}
+.pad{padding:var(--sp6)}
+
+/* how-it-works steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4)}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{padding:var(--sp5)}
+.step .n{font-family:var(--num);font-weight:700;font-size:14px;color:var(--void);background:linear-gradient(135deg,var(--a2),var(--a1));width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--sp3)}
+.step h4{font-family:var(--disp);font-weight:800;font-size:17px}
+.step p{color:var(--mut);font-size:14.5px;line-height:1.7;margin-top:6px}
+
+/* metric glossary cards */
+.metrics{display:flex;flex-direction:column;gap:var(--sp4)}
+.metric{padding:var(--sp5) var(--sp6)}
+.metric-head{display:flex;align-items:center;gap:var(--sp4);flex-wrap:wrap}
+.metric-badge{font-family:var(--num);font-weight:700;font-size:16px;color:var(--void);padding:8px 14px;border-radius:12px;flex-shrink:0;letter-spacing:.02em;direction:ltr}
+.metric-title{display:flex;flex-direction:column;gap:2px}
+.metric-title b{font-family:var(--disp);font-weight:800;font-size:19px}
+.metric-title span{font-size:13.5px;color:var(--mut);direction:ltr;font-family:var(--num)}
+.metric-goal{margin-inline-start:auto;font-size:13px;font-weight:700;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.metric-goal.hi{color:var(--mint);border:1px solid rgba(60,232,166,.4);background:rgba(60,232,166,.08)}
+.metric-goal.lo{color:var(--gold);border:1px solid rgba(255,209,102,.4);background:rgba(255,209,102,.08)}
+.metric p{color:var(--mut);font-size:15px;line-height:1.8;margin-top:var(--sp4)}
+.metric .simple{color:var(--ink);font-weight:600;background:rgba(255,255,255,.04);border-inline-start:3px solid var(--a2);border-radius:8px;padding:12px 16px;margin-top:var(--sp3);font-size:14.5px;line-height:1.7}
+
+/* the tool */
+.tool{padding:var(--sp6)}
+.tool-search{display:flex;gap:var(--sp3);flex-wrap:wrap;margin-top:var(--sp4)}
+.tool-search input{flex:1;min-width:200px;background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:14px;padding:15px 18px;color:var(--ink);font-family:var(--body);font-size:16px;outline:none;transition:border-color var(--dur-fast) var(--ease)}
+.tool-search input:focus{border-color:var(--a2)}
+.tool-search input::placeholder{color:var(--mut);font-size:15px}
+.tool-btn{font-family:var(--body);font-weight:700;font-size:15px;color:var(--void);background:linear-gradient(92deg,var(--a2),var(--a1));border:none;border-radius:14px;padding:0 30px;min-height:52px;cursor:pointer;transition:transform var(--dur-fast) var(--ease)}
+.tool-btn:hover{transform:translateY(-1px)}
+.tool-btn:disabled{opacity:.6;cursor:default;transform:none}
+.tool-hint{font-size:13.5px;color:var(--mut);margin-top:var(--sp3)}
+.tool-note{margin-top:var(--sp4);font-size:14px;color:var(--gold);background:rgba(255,209,102,.07);border:1px solid rgba(255,209,102,.3);border-radius:12px;padding:14px 18px;line-height:1.7}
+
+.result{margin-top:var(--sp5);display:none}
+.result.show{display:block}
+.result-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:var(--sp4)}
+.result-head b{font-family:var(--disp);font-weight:800;font-size:22px}
+.result-head .sym{font-family:var(--num);font-weight:700;color:var(--a2);font-size:15px;direction:ltr}
+.result-head .verdict{margin-inline-start:auto;font-weight:800;font-size:14px;padding:6px 16px;border-radius:999px}
+.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp3)}
+@media(max-width:640px){.result-grid{grid-template-columns:1fr}}
+.rmetric{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(255,255,255,.04);border:1px solid var(--edge);border-radius:12px;padding:14px 16px}
+.rmetric .lbl{font-size:14px;color:var(--mut)}
+.rmetric .rt{display:flex;align-items:center;gap:9px}
+.rmetric .val{font-family:var(--num);font-weight:700;font-size:16px;direction:ltr}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.good{color:var(--mint)} .good .dot,.dot.good{background:var(--mint)}
+.ok{color:var(--gold)} .ok .dot,.dot.ok{background:var(--gold)}
+.bad{color:var(--coral)} .bad .dot,.dot.bad{background:var(--coral)}
+.v-good{color:var(--mint);border:1px solid rgba(60,232,166,.4);background:rgba(60,232,166,.1)}
+.v-ok{color:var(--gold);border:1px solid rgba(255,209,102,.4);background:rgba(255,209,102,.1)}
+.v-bad{color:var(--coral);border:1px solid rgba(255,107,107,.4);background:rgba(255,107,107,.1)}
+.spin{width:14px;height:14px;border-radius:50%;border:2px solid var(--edge);border-top-color:var(--a2);animation:sp .7s linear infinite;display:inline-block;vertical-align:-2px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.result-err{color:var(--coral);font-size:14.5px}
+
+.dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(18,22,42,.94)}}
+</style>
+</head>
+<body>
+<div class="topfade" aria-hidden="true"></div>
+<div class="databg" aria-hidden="true">
+<div class="glow g1"></div><div class="glow g2"></div>
+<div class="mesh">
+<svg viewBox="0 0 1000 700" preserveAspectRatio="none">
+<g stroke="rgba(255,255,255,.18)" stroke-width="1">
+<line x1="0" y1="90" x2="1000" y2="90"/><line x1="0" y1="200" x2="1000" y2="200"/><line x1="0" y1="310" x2="1000" y2="310"/><line x1="0" y1="420" x2="1000" y2="420"/><line x1="0" y1="530" x2="1000" y2="530"/>
+</g>
+<g stroke="rgba(255,255,255,.13)" stroke-width="1">
+<line x1="125" y1="0" x2="125" y2="700"/><line x1="250" y1="0" x2="250" y2="700"/><line x1="375" y1="0" x2="375" y2="700"/><line x1="500" y1="0" x2="500" y2="700"/><line x1="625" y1="0" x2="625" y2="700"/><line x1="750" y1="0" x2="750" y2="700"/><line x1="875" y1="0" x2="875" y2="700"/>
+</g>
+<path d="M0 480 L90 440 L180 500 L270 380 L360 430 L450 300 L540 350 L630 240 L720 300 L810 190 L900 250 L1000 150" fill="none" stroke="rgba(60,232,166,.75)" stroke-width="2.5"/>
+</svg>
+</div>
+</div>
+<div class="wrap">
+
+<div class="bar gl rv">
+<a href="index.html" class="brand"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"><span class="brandlockup"><b>PLUTO INTELLIGENCE</b></span></a>
+<span class="tagline i-ar">تحليلات استثمارية مختارة بعناية</span><span class="tagline i-en">Curated market intelligence</span>
+<div class="market-status" id="marketStatus">
+<div class="ms-tz"><span class="i-ar">الكويت</span><span class="i-en">Kuwait</span></div>
+<div class="ms-clock" id="msClock"></div>
+<div class="ms-row"><span class="ms-dot" id="msDot"></span><b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b></div>
+</div>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<section class="rv">
+<a href="index.html" class="back-link">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+<span class="i-ar">الرئيسية</span><span class="i-en">Home</span>
+</a>
+<div class="eyebrow"><span class="i-ar">أداة + دليل</span><span class="i-en">Tool + guide</span></div>
+<h1><span class="i-ar">اختر <span class="grad">طريقك</span> الاستثماري</span><span class="i-en">Find Your <span class="grad">Investing</span> Path</span></h1>
+<p class="lead"><span class="i-ar">قبل أن تسأل «أي سهم أشتري؟»، لازم تعرف كيف تقرأ السهم. هالصفحة تشرح لك أهم المقاييس المالية بلغة بسيطة، وتعطيك أداة تفحص فيها أي سهم على ضوء هذه المقاييس — عشان تختار بثقة، لا بالحظ.</span><span class="i-en">Before you ask "which stock should I buy?", you need to know how to read a stock. This page explains the key financial metrics in plain language, and gives you a tool to check any stock against them — so you choose with confidence, not luck.</span></p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="rv">
+<div class="kick"><span class="i-ar">كيف تشتغل الأداة؟</span><span class="i-en">How it works</span></div>
+<p class="sub"><span class="i-ar">الفلترة (Screening) طريقة تختصر آلاف الأسهم إلى قائمة قصيرة تناسب معاييرك. بدل ما تدور بالعمياني، تحدد شروطًا مالية، والأداة تطلّع لك الأسهم اللي تحققها.</span><span class="i-en">Screening is a way to narrow thousands of stocks down to a short list that fits your criteria. Instead of searching blindly, you set financial conditions, and the tool surfaces the stocks that meet them.</span></p>
+<div class="steps">
+<div class="step gl"><div class="n">1</div><h4><span class="i-ar">افهم المقاييس</span><span class="i-en">Understand the metrics</span></h4><p><span class="i-ar">تعرّف على معنى كل رقم (العائد، الربحية، الدين، النمو) وما هو المستوى الصحي له.</span><span class="i-en">Learn what each number means (returns, valuation, debt, growth) and what a healthy level looks like.</span></p></div>
+<div class="step gl"><div class="n">2</div><h4><span class="i-ar">افحص السهم</span><span class="i-en">Check a stock</span></h4><p><span class="i-ar">اكتب رمز أي سهم، والأداة تجيب أرقامه الحقيقية وتقيّمها لك بالألوان (ممتاز / متوسط / ضعيف).</span><span class="i-en">Enter any ticker and the tool pulls its real numbers and rates them by color (strong / fair / weak).</span></p></div>
+<div class="step gl"><div class="n">3</div><h4><span class="i-ar">قرّر بثقة</span><span class="i-en">Decide with confidence</span></h4><p><span class="i-ar">تشوف نقاط القوة والضعف بوضوح قبل ما تحط فلوسك — القرار يبقى لك، بس على أساس معلومة.</span><span class="i-en">See the strengths and weaknesses clearly before you commit money — the decision stays yours, but informed.</span></p></div>
+</div>
+</section>
+
+<!-- METRIC GLOSSARY -->
+<section class="rv">
+<div class="kick"><span class="i-ar">معنى كل مقياس</span><span class="i-en">What each metric means</span></div>
+<p class="sub"><span class="i-ar">هذي المقاييس الخمسة هي أساس تقييم أي شركة. فهمها يخليك تقرأ السهم بنفسك بدل ما تعتمد على كلام غيرك.</span><span class="i-en">These five metrics are the foundation of evaluating any company. Understanding them lets you read a stock yourself instead of relying on others.</span></p>
+<div class="metrics">
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#17bf8e,#3ce8a6)">ROA</div>
+<div class="metric-title"><b><span class="i-ar">العائد على الأصول</span><span class="i-en">Return on Assets</span></b><span>Return on Assets (ROA)</span></div>
+<div class="metric-goal hi"><span class="i-ar">كل ما زاد أفضل</span><span class="i-en">Higher is better</span></div>
+</div>
+<p><span class="i-ar">يقيس كم ربح تطلّع الشركة من كل دولار في أصولها (مصانع، معدات، نقد…). يجاوب على سؤال: هل الإدارة تستغل موجوداتها بكفاءة أم تهدرها؟</span><span class="i-en">Measures how much profit a company generates from every dollar of its assets (factories, equipment, cash…). It answers: is management using what it owns efficiently, or wasting it?</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: شركة ROA حقها 15% تعني إنها تكسب 15 قرش على كل دولار تملكه. فوق 5% تعتبر جيدة، وفوق 15% ممتازة.</span><span class="i-en">💡 In short: a company with 15% ROA earns 15 cents on every dollar it owns. Above 5% is good; above 15% is excellent.</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#5b8def,#7ea9ff)">P/E</div>
+<div class="metric-title"><b><span class="i-ar">مكرر الربحية</span><span class="i-en">Price-to-Earnings</span></b><span>P/E Ratio</span></div>
+<div class="metric-goal lo"><span class="i-ar">الأقل غالبًا أرخص</span><span class="i-en">Lower is often cheaper</span></div>
+</div>
+<p><span class="i-ar">يقارن سعر السهم بأرباحه. رقم 20 يعني إنك تدفع 20 دولار مقابل كل دولار ربح سنوي للشركة. يستخدم لمعرفة: هل السهم غالي أم رخيص مقارنة بأرباحه؟</span><span class="i-en">Compares a stock's price to its earnings. A value of 20 means you pay $20 for every $1 of the company's annual profit. It's used to judge: is the stock expensive or cheap relative to what it earns?</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: مكرر تحت 20 غالبًا سعر معقول، وفوق 40 يعني السوق متوقع نمو كبير (أو السهم مبالغ فيه). لازم يقارن مع شركات نفس القطاع.</span><span class="i-en">💡 In short: a P/E under 20 is often reasonable; above 40 means the market expects big growth (or the stock is overpriced). Always compare within the same sector.</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#ff9f6b,#ffd166)">D/E</div>
+<div class="metric-title"><b><span class="i-ar">الدين إلى حقوق الملكية</span><span class="i-en">Debt-to-Equity</span></b><span>Debt / Equity</span></div>
+<div class="metric-goal lo"><span class="i-ar">الأقل أأمن</span><span class="i-en">Lower is safer</span></div>
+</div>
+<p><span class="i-ar">يقارن ديون الشركة بأموال ملّاكها. يكشف قد إيش الشركة معتمدة على الاقتراض. الدين العالي يكبّر الأرباح وقت الرواج، لكنه خطر كبير وقت الأزمات.</span><span class="i-en">Compares a company's debt to its owners' equity. It reveals how much the company leans on borrowing. High debt magnifies profits in good times, but is a serious risk in downturns.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: النسبة تحت 1 تعني الديون أقل من رأس المال — وضع صحي ومتوازن. فوق 2 يعني اعتماد كبير على الدين، انتبه.</span><span class="i-en">💡 In short: a ratio under 1 means debt is less than equity — healthy and balanced. Above 2 signals heavy reliance on debt; be careful.</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#3ce8a6,#17bf8e)">↑%</div>
+<div class="metric-title"><b><span class="i-ar">نمو الإيرادات</span><span class="i-en">Revenue Growth</span></b><span>Revenue Growth</span></div>
+<div class="metric-goal hi"><span class="i-ar">كل ما زاد أفضل</span><span class="i-en">Higher is better</span></div>
+</div>
+<p><span class="i-ar">نسبة زيادة مبيعات الشركة مقارنة بالفترة السابقة. الإيرادات هي شريان الشركة — نموها المستمر دليل إن منتجاتها مطلوبة والسوق يتوسّع لها.</span><span class="i-en">The rate at which a company's sales grow versus the prior period. Revenue is a company's lifeblood — steady growth shows its products are in demand and its market is expanding.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: نمو فوق 5% سنويًا جيد لشركة كبيرة، وفوق 20% ممتاز. الشركات الصغيرة قد تنمو أسرع بكثير. نمو سالب = مبيعات تتراجع.</span><span class="i-en">💡 In short: growth above 5% a year is good for a large company; above 20% is excellent. Small companies can grow much faster. Negative growth = shrinking sales.</span></div>
+</div>
+
+<div class="metric gl">
+<div class="metric-head">
+<div class="metric-badge" style="background:linear-gradient(135deg,#17bf8e,#5b8def)">ROE</div>
+<div class="metric-title"><b><span class="i-ar">العائد على حقوق الملكية</span><span class="i-en">Return on Equity</span></b><span>Return on Equity (ROE)</span></div>
+<div class="metric-goal hi"><span class="i-ar">كل ما زاد أفضل</span><span class="i-en">Higher is better</span></div>
+</div>
+<p><span class="i-ar">يقيس كم ربح تطلّع الشركة من أموال مساهميها. هو المقياس المفضّل لكثير من كبار المستثمرين لأنه يبيّن جودة الشركة في تحويل استثمار الملّاك إلى أرباح.</span><span class="i-en">Measures how much profit a company generates from its shareholders' money. It's a favorite of many top investors because it shows how well a company turns owners' investment into profit.</span></p>
+<div class="simple"><span class="i-ar">💡 ببساطة: ROE فوق 15% يعتبر ممتاز ودليل شركة قوية. لكن انتبه — أحيانًا يرتفع بسبب الديون الكثيرة، فاقرأه دائمًا مع نسبة الدين.</span><span class="i-en">💡 In short: an ROE above 15% is excellent and signals a strong company. But beware — it can be inflated by heavy debt, so always read it alongside the debt ratio.</span></div>
+</div>
+
+</div>
+</section>
+
+<!-- THE TOOL -->
+<section class="rv" id="tool">
+<div class="kick"><span class="i-ar">افحص أي سهم الآن</span><span class="i-en">Check any stock now</span></div>
+<div class="gl tool">
+<p style="color:var(--mut);font-size:15px;line-height:1.8"><span class="i-ar">اكتب رمز السهم (مثل AAPL أو MSFT) واضغط فحص. الأداة تجيب المقاييس الخمسة الحقيقية للسهم وتقيّمها لك بالألوان على أساس المستويات الصحية اللي شرحناها فوق.</span><span class="i-en">Enter a stock ticker (e.g. AAPL or MSFT) and press Check. The tool pulls the stock's five real metrics and rates them by color against the healthy levels explained above.</span></p>
+<form class="tool-search" onsubmit="checkStock(event)">
+<input type="text" id="tkr" placeholder="رمز السهم… / Ticker… (AAPL, MSFT, NVDA)" autocomplete="off" spellcheck="false">
+<button type="submit" class="tool-btn" id="checkBtn"><span class="i-ar">فحص</span><span class="i-en">Check</span></button>
+</form>
+<p class="tool-hint"><span class="i-ar">أمثلة: AAPL (أبل) · MSFT (مايكروسوفت) · NVDA (إنفيديا) · KO (كوكاكولا)</span><span class="i-en">Examples: AAPL · MSFT · NVDA · KO</span></p>
+
+<div class="tool-note" id="toolNote">
+<span class="i-ar">⏳ الفحص المباشر يُفعّل بمجرد ربط مصدر بيانات. جارٍ التجهيز — قريبًا تقدر تفحص أي سهم من هنا مباشرة.</span>
+<span class="i-en">⏳ Live checking activates once a data source is connected. Setup in progress — soon you'll be able to check any stock right here.</span>
+</div>
+
+<div class="result gl" id="result" style="padding:var(--sp5)"></div>
+</div>
+<p style="color:var(--mut);font-size:13.5px;margin-top:var(--sp4);line-height:1.7"><span class="i-ar">ملاحظة: هذه الأداة للأغراض التعليمية والمعلوماتية فقط، وليست توصية بشراء أو بيع. الأرقام قد تختلف قليلاً بين مصادر البيانات.</span><span class="i-en">Note: this tool is for educational and informational purposes only, not a buy/sell recommendation. Numbers may vary slightly between data sources.</span></p>
+</section>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+</footer>
+
+</div>
+
+<script>
+var CUR=localStorage.getItem("lang")||"ar";
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+}
+function pad2(n){return n<10?"0"+n:""+n}
+function kuwaitParts(){var o={};new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Kuwait",hour12:false,hour:"numeric",minute:"numeric",second:"numeric"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});var h=parseInt(o.hour,10);if(h===24)h=0;return {h:h,m:parseInt(o.minute,10),s:parseInt(o.second,10)};}
+function nyParts(){var o={};new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour12:false,weekday:"short",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value});var h=parseInt(o.hour,10);if(h===24)h=0;return {weekday:o.weekday,year:+o.year,month:+o.month,day:+o.day,hour:h,minute:+o.minute};}
+function nthWeekday(y,m,wd,n){var f=new Date(Date.UTC(y,m-1,1)).getUTCDay();return 1+((wd-f+7)%7)+(n-1)*7;}
+function lastWeekday(y,m,wd){var l=new Date(Date.UTC(y,m,0));return l.getUTCDate()-((l.getUTCDay()-wd+7)%7);}
+function easter(y){var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451);return [Math.floor((h+l-7*m+114)/31),((h+l-7*m+114)%31)+1];}
+function obs(y,m,d){var dt=new Date(Date.UTC(y,m-1,d)),wd=dt.getUTCDay();if(wd===6)dt.setUTCDate(dt.getUTCDate()-1);else if(wd===0)dt.setUTCDate(dt.getUTCDate()+1);return {month:dt.getUTCMonth()+1,day:dt.getUTCDate()};}
+function isHoliday(y,m,d){var e=easter(y),gf=new Date(Date.UTC(y,e[0]-1,e[1]));gf.setUTCDate(gf.getUTCDate()-2);var L=[obs(y,1,1),{month:1,day:nthWeekday(y,1,1,3)},{month:2,day:nthWeekday(y,2,1,3)},{month:gf.getUTCMonth()+1,day:gf.getUTCDate()},{month:5,day:lastWeekday(y,5,1)},obs(y,6,19),obs(y,7,4),{month:9,day:nthWeekday(y,9,1,1)},{month:11,day:nthWeekday(y,11,4,4)},obs(y,12,25)];return L.some(function(x){return x.month===m&&x.day===d});}
+function isOpen(){var p=nyParts();if(p.weekday==="Sat"||p.weekday==="Sun")return false;if(isHoliday(p.year,p.month,p.day))return false;var t=p.hour*60+p.minute;return t>=570&&t<960;}
+function tick(){var o=isOpen();document.getElementById("msDot").className="ms-dot "+(o?"open":"closed");document.getElementById("msTextAr").textContent=o?"السوق مفتوح":"السوق مغلق";document.getElementById("msTextEn").textContent=o?"Market Open":"Market Closed";var k=kuwaitParts();document.getElementById("msClock").textContent=pad2(k.h)+":"+pad2(k.m)+":"+pad2(k.s);}
+tick();setInterval(tick,1000);
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"});}
+
+/* ===== The check tool ===== */
+/* Data source key — filled once a data provider is connected. */
+var FMP_KEY="";
+
+function rate(kind,v){
+  // returns 'good' | 'ok' | 'bad' based on healthy thresholds
+  if(v===null||v===undefined||isNaN(v))return null;
+  if(kind==="roa")return v>=15?"good":v>=5?"ok":"bad";
+  if(kind==="roe")return v>=15?"good":v>=8?"ok":"bad";
+  if(kind==="pe")return (v>0&&v<=20)?"good":(v>0&&v<=40)?"ok":"bad";
+  if(kind==="de")return (v>=0&&v<1)?"good":(v<2)?"ok":"bad";
+  if(kind==="growth")return v>=15?"good":v>=5?"ok":"bad";
+  return null;
+}
+function fmtPct(v){return (v===null||isNaN(v))?"—":(v>=0?"+":"")+v.toFixed(1)+"%";}
+function fmtNum(v){return (v===null||isNaN(v))?"—":v.toFixed(2);}
+
+function checkStock(ev){
+  ev.preventDefault();
+  var t=(document.getElementById("tkr").value||"").trim().toUpperCase();
+  if(!t)return;
+  var res=document.getElementById("result");
+  var note=document.getElementById("toolNote");
+  if(!FMP_KEY){
+    note.style.display="";
+    res.classList.remove("show");
+    return;
+  }
+  note.style.display="none";
+  res.classList.add("show");
+  res.innerHTML='<span class="spin"></span> '+(CUR==="ar"?" جارٍ الفحص…":" Checking…");
+  fetchFundamentals(t).then(function(d){ renderResult(t,d); })
+  .catch(function(){ res.innerHTML='<div class="result-err">'+(CUR==="ar"?"ما قدرنا نجيب بيانات هالسهم. تأكد من الرمز وحاول مرة ثانية.":"Couldn't load data for this ticker. Check the symbol and try again.")+'</div>'; });
+}
+
+/* Placeholder fetch — finalized & verified against real API responses once a data key is connected. */
+function fetchFundamentals(ticker){
+  return Promise.reject(new Error("no-data-source"));
+}
+
+function renderResult(ticker,d){
+  var rows=[
+    {k:"roa",lbl:CUR==="ar"?"العائد على الأصول (ROA)":"Return on Assets (ROA)",v:fmtPct(d.roa),r:rate("roa",d.roa)},
+    {k:"roe",lbl:CUR==="ar"?"العائد على حقوق الملكية (ROE)":"Return on Equity (ROE)",v:fmtPct(d.roe),r:rate("roe",d.roe)},
+    {k:"pe",lbl:CUR==="ar"?"مكرر الربحية (P/E)":"Price/Earnings (P/E)",v:fmtNum(d.pe),r:rate("pe",d.pe)},
+    {k:"de",lbl:CUR==="ar"?"الدين/حقوق الملكية (D/E)":"Debt/Equity (D/E)",v:fmtNum(d.de),r:rate("de",d.de)},
+    {k:"growth",lbl:CUR==="ar"?"نمو الإيرادات":"Revenue Growth",v:fmtPct(d.growth),r:rate("growth",d.growth)}
+  ];
+  var goods=rows.filter(function(x){return x.r==="good"}).length;
+  var bads=rows.filter(function(x){return x.r==="bad"}).length;
+  var vClass,vText;
+  if(goods>=4){vClass="v-good";vText=CUR==="ar"?"قوي":"Strong";}
+  else if(bads>=3){vClass="v-bad";vText=CUR==="ar"?"ضعيف":"Weak";}
+  else{vClass="v-ok";vText=CUR==="ar"?"متوسط":"Mixed";}
+  var html='<div class="result-head"><b>'+(d.name||ticker)+'</b><span class="sym">'+ticker+'</span><span class="verdict '+vClass+'">'+vText+'</span></div><div class="result-grid">';
+  rows.forEach(function(x){
+    html+='<div class="rmetric"><span class="lbl">'+x.lbl+'</span><span class="rt '+(x.r||"")+'"><span class="val">'+x.v+'</span><span class="dot '+(x.r||"")+'"></span></span></div>';
+  });
+  html+='</div>';
+  document.getElementById("result").innerHTML=html;
+}
+</script>
+<script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

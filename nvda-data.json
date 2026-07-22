@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-21",
+  "last_updated": "2026-07-22",
   "price_fallback": 203.81,
   "prev_close": 202.81,
   "market_cap": "$4.91T",
@@ -21,12 +21,12 @@
     {"when":"يوليو 2026","what":"أبل تخطف عرش القيمة السوقية","note":"تتفوق مؤقتًا على Nvidia وسط حذر المستثمرين من فقاعة الذكاء الاصطناعي"}
   ],
   "news": [
-    {"text":"سهم إنفيديا يختبر مستوى 212 دولارًا مع تحسن آفاق الطلب على الذكاء الاصطناعي واستئناف الشحنات لسوق الصين","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/15/nvidia-nvda-stock-price-forecast-nvda-tests-212-as-ai-demand-and-china-shipments-lift-outlook/"},
-    {"text":"واشنطن توافق على تراخيص لإنفيديا لاستئناف تصدير شرائح H20 إلى الصين مجددًا","src":"Yahoo Finance","link":"https://finance.yahoo.com/news/us-licenses-nvidia-export-chips-221538864.html"},
-    {"text":"إنفيديا تنفي تأخر منصة Kyber للذكاء الاصطناعي وتؤكد التزامها بالجدول الزمني، وجولدمان ساكس يصف التقييم الحالي بالجذاب","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262015350-nvidia-nvda-stock-forecast-july-2026-kyber-denial-goldman-tradingkey"},
-    {"text":"مضاعف الأرباح المستقبلي لإنفيديا يهبط لأدنى مستوى في 7 سنوات رغم تجاوز القيمة السوقية 5.1 تريليون دولار","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/12/nvidia-stock-just-did-something-for-the-first-time/"},
-    {"text":"سهم إنفيديا يتخلف عن منافسيه في قطاع الرقائق خلال 2026 مع تباطؤ حماس الذكاء الاصطناعي، بينما يقفز AMD ومايكرون أكثر من 100%","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/04/nvidia-stock-is-flat-for-2026-time-to-cash-out-or/"},
-    {"text":"انقسام في التوقعات حول ما إذا كان سهم إنفيديا مقبلاً على انتعاش أو مزيد من التراجع خلال يوليو","src":"BeInCrypto","link":"https://beincrypto.com/nvidia-stock-price-forecast-july-2026/"}
+    {"text":"منصة Vera Rubin الجديدة من إنفيديا تدخل مرحلة الإنتاج الكامل رسميًا، وأوبن إيه آي تستعد لنشرها على نطاق واسع خلال الربع الثالث","src":"TheNextWeb","link":"https://thenextweb.com/news/nvidia-vera-rubin-full-production-customers"},
+    {"text":"إنفيديا تكشف عن حصة بنسبة 9.3% في شركة الحوسبة السحابية Nebius، ما يدفع سهمها للارتفاع أكثر من 6% في التداول المسبق","src":"Yahoo Finance","link":"https://finance.yahoo.com/technology/ai/articles/nvidia-discloses-9-3-stake-114204932.html"},
+    {"text":"بنك كي بانك يرفع السعر المستهدف لسهم إنفيديا إلى 330 دولارًا مستشهدًا بقوة الطلب على رقائق الذكاء الاصطناعي","src":"Investing.com","link":"https://www.investing.com/news/analyst-ratings/keybanc-raises-nvidia-stock-price-target-to-330-on-strong-demand-93CH-4790422"},
+    {"text":"سهم إنفيديا يقترب من اختبار مستوى 212 دولارًا مع توقعات بإيرادات الربع الثاني عند نحو 91 مليار دولار","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/21/nvidia-stock-forecast-can-nvda-break-212-as-q2-revenue-targets-91b/"},
+    {"text":"مسؤول أمريكي يؤكد أن شحنات رقائق H200 إلى الصين ما زالت 'ضئيلة جدًا' رغم موافقة واشنطن على تصديرها","src":"CNBC","link":"https://www.cnbc.com/2026/07/14/nvidia-h200-ai-chips-china.html"},
+    {"text":"إنفيديا وأبل تتنافسان على لقب أكبر شركة بالقيمة السوقية في العالم وسط تقلبات حادة بالأسواق","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/21/apple-and-nvidia-vie-for-the-position-as-the-world/"}
   ],
   "takeaways": [
     "الشركة تحولت فعليًا لشركة مراكز بيانات — الألعاب والرسوميات صارت هامشًا بسيطًا من الإيرادات",

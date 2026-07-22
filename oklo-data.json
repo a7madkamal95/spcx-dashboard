@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-21",
+  "last_updated": "2026-07-22",
   "price_fallback": 41.10,
   "prev_close": 40.95,
   "market_cap": "7.16B$",
@@ -22,12 +22,12 @@
     {"when":"1 يوليو 2026","what":"الموافقة على تحليل السلامة","note":"وزارة الطاقة تعتمد تحليل السلامة الموثق لمفاعل اختبار النظائر Groves، بهدف بلوغ أول حرجية هذا الشهر"}
   ],
   "news": [
-    {"text":"مفاعل Groves النظائري التابع لأوكلو في تكساس يجتاز المراجعة الأمنية النهائية من وزارة الطاقة الأمريكية قبيل التشغيل","src":"Interesting Engineering","link":"https://interestingengineering.com/energy/oklo-texas-isotope-reactor-doe-safety-approval"},
-    {"text":"أوكلو تتجاوز عقبة تنظيمية كبرى مع وزارة الطاقة، واختبار الحرجية في يوليو قد يجعل 2026 عامها الأفضل","src":"ainvest.com","link":"https://www.ainvest.com/news/oklo-cleared-big-doe-hurdle-july-criticality-test-2026-year-2607/"},
-    {"text":"سهم أوكلو يتراجع 41% خلال 2026 رغم موافقة وزارة الطاقة – ما الذي يجب أن يعرفه المستثمرون","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/15/oklo-stock-is-sliding-what-investors-need-to-under/"},
-    {"text":"سهم أوكلو تحت ضغط برنامج قروض وزارة الطاقة بقيمة 17.5 مليار دولار المائل للمفاعلات الكبيرة وحذفه من مؤشرات راسل، رغم هدف سعري يوحي بصعود 100%","src":"24/7 Wall St.","link":"https://247wallst.com/investing/2026/07/10/one-nuclear-energy-stock-with-a-100-upside-potential/"},
-    {"text":"أوكلو تحقق مكسبًا تنظيميًا كبيرًا، و2026 لا يزال بإمكانه أن يكون عام انطلاقتها الحقيقي","src":"Barchart","link":"https://www.barchart.com/story/news/3144294/oklo-stock-just-got-a-major-win-2026-could-still-be-its-breakout-year"},
-    {"text":"سهم أوكلو يهبط دون 50 دولارًا – هل يستحق المستثمرون على المدى الطويل الشراء عند هذا المستوى؟","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/09/oklo-below-50-heres-whether-long-term/"}
+    {"text":"بلومبرغ: إدارة ترامب تضم أوكلو وإكس-إنرجي إلى برنامج بقيمة 200 مليون دولار لتسريع تطوير المفاعلات النووية لتغذية مراكز بيانات الذكاء الاصطناعي، ويقفز سهم أوكلو نحو 10% في التداول بعد الإغلاق","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-21/oklo-x-energy-join-trump-effort-to-speed-new-nuclear-reactors-for-ai"},
+    {"text":"تحليل من موتلي فول يستعرض توقعات المحللين ببلوغ سهم أوكلو 87 دولارًا بحلول 2027، ويتساءل هل تستحق المخاطرة العالية هذا العائد المحتمل","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/19/analyst-project-oklo-stock-price-risk-reward/"},
+    {"text":"تراجع حاد لأسهم القطاع النووي أوكلو وNuScale وإكس-إنرجي يوم 16 يوليو وسط مخاوف السوق من مخاطر التنفيذ في مشاريع المفاعلات الصغيرة","src":"TipRanks","link":"https://www.tipranks.com/news/oklo-smr-xe-why-did-nuclear-stocks-fall-hard-on-7-16-26"},
+    {"text":"سهم أوكلو يهبط 28% خلال شهر واحد، ما يطرح تساؤلات حول ما إذا كان الوقت مناسبًا للتخلي عن أسهم الطاقة النووية الصاعدة","src":"24/7 Wall St.","link":"https://247wallst.com/investing/2026/07/16/oklo-just-dropped-28-in-a-month-is-it-time-to-abandon-nuclear-stocks-like-oklo-nuscale-and-uranium-energy-corp/"},
+    {"text":"سهم أوكلو يلامس أدنى مستوى له خلال 52 أسبوعًا عند 44.88 دولارًا، فيما يعيد بنك تكساس كابيتال تأكيد تصنيف الشراء بسعر مستهدف 93 دولارًا","src":"Investing.com","link":"https://www.investing.com/news/company-news/oklo-stock-hits-52week-low-at-4488-usd-93CH-4793859"},
+    {"text":"تكساس كابيتال يؤكد تصنيف الشراء لسهم أوكلو ويصفها بأنها الخيار الأول في تغطيته لقطاع الطاقة النووية، متوقعًا رد فعل إيجابيًا عند وصول مفاعل Groves لحالة الحرجية","src":"Investing.com","link":"https://www.investing.com/news/analyst-ratings/texas-capital-reiterates-oklo-stock-buy-rating-on-tech-edge-93CH-4787786"}
   ],
   "takeaways": [
     "Oklo تراهن أن الذكاء الاصطناعي سيحتاج طاقة نووية صغيرة الحجم وسريعة النشر — وسام ألتمان كان أول من راهن معها كرئيس مجلس إدارة سابق",

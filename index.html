@@ -154,6 +154,23 @@ section{margin-top:var(--sp7)}
 @keyframes sdspin{to{transform:rotate(360deg)}}
 .sd-empty{padding:16px 18px;text-align:center;color:var(--mut);font-size:15px}
 .fav-heading{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,32px);margin-bottom:var(--sp5)}
+.gold-hero{display:flex;overflow:hidden;border-top:2px solid #d4af37}
+@media(max-width:760px){.gold-hero{flex-direction:column}}
+.gold-hero-img{flex:0 0 34%;min-height:170px;background-size:cover;background-position:center;position:relative}
+.gold-hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,6,13,.05) 0%,rgba(5,6,13,.2) 60%,var(--void) 100%)}
+html[dir=ltr] .gold-hero-img::after{background:linear-gradient(270deg,rgba(5,6,13,.05) 0%,rgba(5,6,13,.2) 60%,var(--void) 100%)}
+@media(max-width:760px){.gold-hero-img::after{background:linear-gradient(180deg,rgba(5,6,13,.05) 30%,rgba(5,6,13,.5) 80%,var(--void) 100%)}}
+.gold-hero-body{padding:var(--sp6);flex:1}
+.gold-hero-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--sp3)}
+.gold-hero-top h2{font-family:var(--disp);font-weight:800;font-size:clamp(22px,3vw,28px);color:#d4af37}
+.gold-live-tag{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--mint);margin-top:var(--sp3)}
+.gold-live-tag i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pl 1.8s infinite;display:block}
+.karat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3);margin-top:var(--sp4)}
+@media(max-width:600px){.karat-grid{grid-template-columns:repeat(2,1fr)}}
+.karat-cell{background:rgba(212,175,55,.07);border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:14px 10px;text-align:center}
+.karat-cell b{display:block;font-family:var(--num);font-weight:800;font-size:14px;color:#d4af37;letter-spacing:.03em}
+.karat-cell span{display:block;font-family:var(--num);font-weight:700;font-size:16px;color:var(--ink);margin-top:6px;direction:ltr}
+.karat-note{font-size:12.5px;color:var(--mut);margin-top:var(--sp4);line-height:1.6}
 .kick{font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:.01em;color:var(--ink)}
 .find-more{text-align:center;color:var(--mut);font-size:18px;padding:var(--sp5) 0}
 .find-more a{display:inline-flex;align-items:center;gap:5px;color:var(--a2);font-weight:700;text-decoration:none;margin-inline-start:6px}
@@ -399,21 +416,29 @@ transition:transform var(--dur-fast) var(--ease)}
 </section>
 
 <section class="rv">
+<div class="gold-hero gl">
+<div class="gold-hero-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/3/34/400-oz-Gold-Bars-AB-01.jpg)" role="img" aria-label="Gold bullion bars"></div>
+<div class="gold-hero-body">
+<div class="gold-hero-top">
+<h2><span class="i-ar">الذهب</span><span class="i-en">Gold</span></h2>
+<a href="gold.html" class="sc-cta"><span class="i-ar">التحليل الكامل</span><span class="i-en">Full analysis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+</div>
+<div class="gold-live-tag"><i></i><span class="i-ar">أسعار حية بالدينار الكويتي</span><span class="i-en">Live prices in Kuwaiti Dinar</span></div>
+<div class="karat-grid" id="karatGrid">
+<div class="karat-cell"><b>24K</b><span id="k24">…</span></div>
+<div class="karat-cell"><b>22K</b><span id="k22">…</span></div>
+<div class="karat-cell"><b>21K</b><span id="k21">…</span></div>
+<div class="karat-cell"><b>18K</b><span id="k18">…</span></div>
+</div>
+<p class="karat-note"><span class="i-ar">السعر لكل غرام، محسوب لحظيًا من سعر الذهب العالمي وسعر صرف الدولار مقابل الدينار الكويتي.</span><span class="i-en">Price per gram, computed live from the global gold price and the USD/KWD exchange rate.</span></p>
+</div>
+</div>
+</section>
+
+<section class="rv">
 <h2 class="fav-heading"><span class="i-ar">الأسهم المفضلة</span><span class="i-en">Favorite Stocks</span></h2>
 <div class="stocks-grid" id="grid">
 
-<a href="gold.html" class="stock-card gl" data-fav="true" data-q="الذهب ذهب gold xau comex" style="border-top-color:rgba(212,175,55,.55)">
-<div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/3/34/400-oz-Gold-Bars-AB-01.jpg)" role="img" aria-label="Gold bullion bars"></div>
-<div class="sc-body">
-<div class="sc-top">
-<span class="sc-ticker" style="color:#d4af37">COMEX · GOLD</span>
-</div>
-<h3><span class="i-ar">الذهب</span><span class="i-en">Gold</span></h3>
-<p><span class="i-ar">شراء قياسي من البنوك المركزية + مفارقة الملاذ الآمن + طرق الاستثمار بالذهب شرحًا كاملًا</span><span class="i-en">Record central bank buying + the safe-haven paradox + a full guide to investing in gold</span></p>
-<div class="sc-price"><b id="hp-px7">…</b><span id="hp-chg7"></span></div>
-<div class="sc-cta"><span class="i-ar">التحليل الكامل</span><span class="i-en">Full analysis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div>
-</div>
-</a>
 
 <a href="spcx.html" class="stock-card gl" data-fav="true" data-q="سبيس اكس سبيس إكس spacex spcx nasdaq">
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/9/9e/SpaceX_Falcon_9_Starlink_4-7_Launch_%2851860439246%29.jpg)" role="img" aria-label="Falcon 9 launch"></div>
@@ -1254,7 +1279,6 @@ setInterval(live,10000);
 makeCardPricer("hp-px4","hp-chg4","NVDA",203.81,202.81);
 makeCardPricer("hp-px5","hp-chg5","INTC",97.00,98.05);
 makeCardPricer("hp-px6","hp-chg6","AMD",492.10,486.27);
-makeCardPricer("hp-px7","hp-chg7","GC=F",4009.37,4001.06);
 makeCardPricer("hp-px8","hp-chg8","BB",8.77,8.62);
 makeCardPricer("hp-px9","hp-chg9","OKLO",41.10,40.95);
 
@@ -1300,6 +1324,33 @@ card.classList.toggle("collapsed");
 localStorage.setItem("boardCollapsed",card.classList.contains("collapsed")?"1":"0");
 }
 if(localStorage.getItem("boardCollapsed")==="1")document.getElementById("boardCard").classList.add("collapsed");
+
+var GOLD_OUNCE_TO_GRAM=31.1035;
+var KARATS=[{id:"k24",purity:0.999},{id:"k22",purity:22/24},{id:"k21",purity:21/24},{id:"k18",purity:18/24}];
+var GOLD_OZ_FALLBACK=4009.37,USDKWD_FALLBACK=0.3076;
+function renderKarats(ozUsd,usdKwd){
+var gramUsd=ozUsd/GOLD_OUNCE_TO_GRAM;
+KARATS.forEach(function(k){
+var el=document.getElementById(k.id);
+if(!el)return;
+var kwd=gramUsd*usdKwd*k.purity;
+el.textContent=kwd.toFixed(3)+" د.ك";
+});
+}
+function loadGoldKarats(){
+Promise.all([
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/GC=F?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).catch(function(){return null}),
+fetchViaProxies("https://query1.finance.yahoo.com/v8/finance/chart/USDKWD=X?interval=1d&range=1d").then(function(t){return JSON.parse(t)}).catch(function(){return null})
+]).then(function(res){
+var ozUsd=GOLD_OZ_FALLBACK,usdKwd=USDKWD_FALLBACK;
+if(res[0]){var m1=res[0].chart.result[0].meta;if(m1.regularMarketPrice>0)ozUsd=m1.regularMarketPrice;}
+if(res[1]){var m2=res[1].chart.result[0].meta;if(m2.regularMarketPrice>0)usdKwd=m2.regularMarketPrice;}
+renderKarats(ozUsd,usdKwd);
+});
+}
+renderKarats(GOLD_OZ_FALLBACK,USDKWD_FALLBACK);
+loadGoldKarats();
+setInterval(loadGoldKarats,10000);
 
 function pad2(n){return n<10?"0"+n:""+n}
 function nyDateParts(){

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-22",
+  "last_updated": "2026-07-23",
   "price_fallback": 97.00,
   "prev_close": 98.05,
   "market_cap": "$419B",
@@ -22,12 +22,11 @@
     {"when":"يوليو 2026","what":"موجة تسريح جديدة","note":"دفعة إضافية من التسريحات في أوريغون ضمن خفض التكاليف المستمر"}
   ],
   "news": [
-    {"text":"سجّل سهم إنتل قفزة بنسبة 8.4% ليصل إلى 105.45 دولارًا، مدفوعًا بثلاثة عوامل مجتمعة: ترقية ذاكرة معالجات Xeon 6700P، وتوسيع الشراكة مع جوجل كلاود في الذكاء الاصطناعي، وارتفاع عائد تصنيع تقنية 18A إلى 85%، قبيل الإعلان عن نتائج الربع الثاني الخميس","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262045233-intel-intc-stock-surged-8-percent-july-22-2026-xeon-google-earnings-tradingkey","date":"2026-07-22"},
-    {"text":"ارتفع سهم إنتل يوم الأربعاء مع تموضع المستثمرين قبيل نتائج الربع الثاني، فيما نفت شركة SK هاينكس الكورية الجنوبية تقارير عن مفاوضات لشراء منشأة إنتل لتصنيع الرقائق في ولاية أوهايو","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/movers/26/07/60607986/whats-going-on-with-intel-stock-wednesday-8","date":"2026-07-22"},
-    {"text":"تباينت آراء المحللين حيال سهم إنتل مع تراجعه 3.4%، إذ أبقت روزنبلات على تصنيف بيع مع رفع سعرها المستهدف إلى 65 دولارًا، بينما رفعت نيو ستريت ريسيرش سعرها المستهدف إلى 122 دولارًا","src":"Timothy Sykes","link":"https://timothysykes.com/news/intel-corporation-intc-news-2026_07_22/","date":"2026-07-22"},
-    {"text":"تستعد إنتل للإعلان عن نتائج الربع الثاني الخميس وسط تعافي أسهم قطاع أشباه الموصلات من خسائرها الأخيرة، بعدما ارتفع سهم الشركة نحو 184% منذ بداية العام مدعومًا بخطة الإصلاح التي يقودها الرئيس التنفيذي ليب-بو تان","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/stocks/article/intel-to-report-q2-earnings-as-chip-stocks-bounce-off-recent-losses-121538508.html","date":"2026-07-22"},
-    {"text":"أشارت تقارير إلى أن كشف TSMC عن تنامي الطلب على المعالجات المركزية لتطبيقات الذكاء الاصطناعي الوكيل يمثل إشارة شراء قوية لسهم إنتل، بالنظر إلى هيمنتها على نحو 54% من سوق معالجات الخوادم، قبيل نتائج الربع الثاني","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/22/a-massive-buying-signal-just-flashed-for-intel-sto/","date":"2026-07-22"},
-    {"text":"اقترب سهم إنتل من مناطق التشبع البيعي بعد تراجعه 13.5% خلال أسبوع و22% خلال شهر، مع توقعات بأن تشكل نتائج الأرباح المرتقبة محفزًا لارتداد فني حاد","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/22/intel-nears-deeply-oversold-territory-earnings-could-spark-sharp-relief-rally/","date":"2026-07-22"}
+    {"text":"ذكرت بلومبرغ أن نتائج إنتل القوية المتوقعة للربع الثاني قد لا تكون كافية لوقف تراجع السهم، بعدما فقد نحو 27% من قيمته خلال يوليو وسط تراجع واسع في قطاع أشباه الموصلات وانخفاض مؤشر فيلادلفيا لأشباه الموصلات 20% عن ذروته","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-23/intel-needs-more-than-blowout-earnings-as-chips-rally-falters","date":"2026-07-23"},
+    {"text":"رفع محللون بارزون أسعارهم المستهدفة لسهم إنتل قبيل مكالمة نتائج الربع الثاني اليوم، إذ رفع محلل يو بي إس هدفه إلى 121 دولارًا ومحلل كي بانك إلى 155 دولارًا، بينما بقي آخرون عند مستويات أكثر تحفظًا","src":"Benzinga","link":"https://www.benzinga.com/analyst-stock-ratings/price-target/26/07/60633471/intel-earnings-are-imminent-these-most-accurate-analysts-revise-forecasts-ahead-of-earnings-call-7","date":"2026-07-23"},
+    {"text":"حذّرت إي بي سي فايننشال من أن نتائج إنتل يجب أن تُظهر تجاوز إيرادات قسم مركز البيانات والذكاء الاصطناعي حاجز 5.56 مليار دولار، مع الحفاظ على هامش الربح الإجمالي عند نحو 39%، لإقناع المستثمرين باستدامة نمو الشركة القائم على الذكاء الاصطناعي وتقنية 18A","src":"EBC Financial Group","link":"https://www.ebc.com/forex/intel-q2-2026-earnings-preview-ai-demand-tests-18a","date":"2026-07-23"},
+    {"text":"تستعد إنتل للإعلان عن نتائج الربع الثاني اليوم وسط انتعاش أسهم قطاع الرقائق، مع توقعات بربحية معدلة 0.21 دولار للسهم وإيرادات 14.43 مليار دولار، مدعومة بخطة تسريح وظائف جديدة وصفقات مع غوغل ونمو نحو 40% في قطاعي مركز البيانات والتصنيع","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/stocks/article/intel-to-report-q2-earnings-as-chip-stocks-bounce-off-recent-losses-121538508.html","date":"2026-07-23"},
+    {"text":"أوضحت كريبتو بريفنغ أن سهم إنتل يواجه ضغوطاً هبوطية مستمرة خلال يوليو رغم توقعات بنمو قوي في إيرادات مركز البيانات والذكاء الاصطناعي إلى 14.42 مليار دولار وربحية 0.22 دولار للسهم، في ظل تسريحات وظيفية أعلنتها الشركة مؤخراً في هذا القطاع","src":"CryptoBriefing","link":"https://cryptobriefing.com/intel-q2-earnings-preview-ai-data-center/","date":"2026-07-23"}
   ],
   "takeaways": [
     "الحكومة الأمريكية صارت أكبر مساهم في إنتل — تدخل غير مسبوق في شركة تقنية خاصة",

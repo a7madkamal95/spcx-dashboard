@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-22",
+  "last_updated": "2026-07-23",
   "price_fallback": 492.10,
   "prev_close": 486.27,
   "market_cap": "$797B",
@@ -22,10 +22,11 @@
     {"when":"22-23 يوليو 2026","what":"فعالية Advancing AI","note":"الكشف عن تحديثات MI450 ومنصة الخوادم Helios، وإطلاق معالج Zen 6 Venice"}
   ],
   "news": [
-    {"text":"أعلنت AMD شراكة استراتيجية مع Anthropic بقيمة عشرات المليارات من الدولارات تشمل استثماراً محتملاً يصل إلى 5 مليارات دولار ونشر معالجات Instinct MI450، في خطوة تتحدى هيمنة Nvidia على سوق رقائق الذكاء الاصطناعي","src":"Yahoo Finance","link":"https://ca.finance.yahoo.com/news/amd-challenges-nvidia-massive-anthropic-131409608.html","date":"2026-07-22"},
-    {"text":"افتتحت AMD فعاليتها Advancing AI 2026 في سان فرانسيسكو بإطلاق تجاري لمعالج الخوادم Zen 6 المعروف باسم Venice بتقنية 2 نانومتر، إلى جانب مسرّعات Instinct MI450 ومنظومة Helios المتكاملة للذكاء الاصطناعي","src":"Tech Times","link":"https://www.techtimes.com/articles/321257/20260722/amd-advancing-ai-2026-opens-zen-6-venice-helios-open-ai-rack-bet.htm","date":"2026-07-22"},
-    {"text":"أعلنت مايكروسوفت نشر أنظمة Helios الجديدة من AMD على مستوى الرف الكامل عبر سحابة Azure لتوسيع بنيتها التحتية للذكاء الاصطناعي وتوفير بديل لمعالجات Nvidia المهيمنة على السوق","src":"Newsbytes.PH","link":"https://newsbytes.ph/2026/07/22/microsoft-expands-amd-chip-deployment-for-azure-ai-workloads/","date":"2026-07-22"},
-    {"text":"تراجع سهم AMD أكثر من 2% في التداول قبل افتتاح السوق مع تفاعل المستثمرين مع كشف Nvidia عن تفاصيل معالج Vera الجديد المنافس لمعالجات EPYC، وسط ضعف عام في أسهم قطاع أشباه الموصلات","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/07/60601029/whats-going-on-with-amd-stock-wednesday-8","date":"2026-07-22"}
+    {"text":"تتوقع الأسواق أن تطلق شركة AMD الجيل الجديد من بنيتها التحتية للذكاء الاصطناعي (رفوف Helios ومعالج Venice) خلال مؤتمرها Advancing AI في سان فرانسيسكو، في تحدٍ مباشر لهيمنة نفيديا على قطاع معالجات مراكز البيانات","src":"Reuters","link":"https://finance.yahoo.com/news/amd-expected-launch-next-generation-100622308.html","date":"2026-07-23"},
+    {"text":"تحقق AMD تقدماً ملحوظاً في الاستحواذ على حصة سوقية بقطاع مراكز البيانات عبر إبرام صفقات بمليارات الدولارات، ما دفع سهمها للارتفاع نحو 1.5% إلى مستوى 552.50 دولاراً","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/23/massive-news-for-amd-stock-investors/","date":"2026-07-23"},
+    {"text":"أبقى بنك Benchmark على تصنيفه بالشراء لسهم AMD مع تحديد سعر مستهدف عند 685 دولاراً، في إشارة إلى استمرار ثقة المحللين بآفاق نمو الشركة قبيل فعالية Advancing AI","src":"Investing.com","link":"https://www.investing.com/news/pro/benchmark-maintains-amd-at-buy-with-a-price-target-of-68500-4808718","date":"2026-07-23"},
+    {"text":"أفادت تقارير بأن إنتل و AMD تتفاوضان مع عملاء صينيين على عقود توريد معالجات خوادم متعددة السنوات، في ظل تشديد المعروض بسبب الطفرة في الطلب المرتبط بالذكاء الاصطناعي","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/07/60629604/intel-and-amd-eye-multi-year-server-chip-deals-with-chinese-customers-amid-ai-boom-report","date":"2026-07-23"},
+    {"text":"تساءلت تحليلات مالية حديثة عمّا إذا كانت AMD ستلجأ لتجزئة سهمها بعد إعلان نتائجها في الرابع من أغسطس، مرجحة أن ذلك غير متوقع في المدى القريب رغم القفزة الكبيرة في سعر السهم هذا العام","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/23/is-an-amd-stock-split-likely-after-aug-4/","date":"2026-07-23"}
   ],
   "takeaways": [
     "ليزا سو حوّلت شركة على حافة الإفلاس إلى منافس حقيقي بسوق يتجاوز نصف تريليون دولار",

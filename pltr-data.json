@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-22",
+  "last_updated": "2026-07-23",
   "price_fallback": 135.53,
   "prev_close": 131.79,
   "market_cap": "$322.3B",
@@ -22,9 +22,9 @@
     {"when":"يوليو 2026","what":"شراكة Nvidia للذكاء الاصطناعي السيادي","note":"إعلان يرفع السهم وسط تراجع مايكل بيري عن جزء من رهانه القصير"}
   ],
   "news": [
-    {"text":"سهم Palantir يتراجع 3.54% في تعاملات اليوم 22 يوليو وسط ارتفاع عوائد السندات السيادية وتزايد حذر المستثمرين المؤسسيين إزاء غياب أدلة ملموسة على تحقيق عوائد فعلية من استثمارات الذكاء الاصطناعي","src":"TradingKey","link":"https://www.tradingkey.com/news/market-movers/262047485-market-movers-pltr-20260722","date":"2026-07-22"},
-    {"text":"موقع Investing.com يرصد تراجع سهم Palantir نحو 4% اليوم مدفوعًا بمخاوف من ارتفاع التقييم وبيوعات داخلية جديدة من كبار المسؤولين قبيل نتائج الربع الثاني في 3 أغسطس","src":"Investing.com","link":"https://ca.investing.com/news/stock-market-news/why-is-palantir-technologies-stock-sliding-today-93CH-4746949","date":"2026-07-22"},
-    {"text":"موقع ts2.tech يرصد انقسامًا حادًا بين المحللين اليوم حول القيمة العادلة لسهم Palantir، إذ يعتبره نموذج BlackGoat مبالغًا في تقييمه بنسبة 24%، بينما يراه نموذج Simply Wall St أقل من قيمته العادلة بنحو 23%","src":"ts2.tech","link":"https://ts2.tech/en/stock-market-today-22-07-2026/","date":"2026-07-22"}
+    {"text":"تراجعت أسهم بالانتير بنسبة 6% وسط مخاوف من ارتفاع التقييم ومبيعات من الداخل وتدقيق تنظيمي بشأن عقد هيئة الصحة الوطنية البريطانية، وذلك قبيل الإعلان عن نتائج الربع الثاني في الثالث من أغسطس","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/23/pltr-stock-drops-6-as-valuation-fears-nhs-scrutiny-build-before-palantir-earnings/","date":"2026-07-23"},
+    {"text":"انخفض سهم بالانتير 6% بعد تدقيق من هيئة الإحصاء البريطانية بشأن منصة البيانات الموحدة الخاصة بها لدى الخدمة الصحية الوطنية، وظهور أداة منافسة مجانية مفتوحة المصدر تُدعى \"وورلد مونيتور\"، قبيل نتائج الربع الثاني المرتقبة في 3 أغسطس","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262048106-palantir-pltr-stock-falls-july-22-2026-nhs-scrutiny-world-monitor-earnings-tradingkey","date":"2026-07-23"},
+    {"text":"يعزز توسّع شراكة بالانتير مع إدارة الأعمال الصغيرة الأمريكية في مكافحة الاحتيال المرتبط بقروض جائحة كورونا حضورها ضمن العقود الحكومية، وإن كان المحللون يرون أن أثر ذلك محدود على المحفزات الاستثمارية القريبة","src":"Simply Wall St","link":"https://simplywall.st/stocks/us/software/nasdaq-pltr/palantir-technologies/news/is-palantirs-deepening-sba-partnership-quietly-redefining-it","date":"2026-07-23"}
   ],
   "takeaways": [
     "الشركة سُمّيت على حجر رؤية سحري من أساطير الخواتم — لكن الذي يراقب فعليًا هو الحكومات والجيوش",

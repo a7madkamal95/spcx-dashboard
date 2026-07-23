@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-22",
+  "last_updated": "2026-07-23",
   "price_fallback": 203.81,
   "prev_close": 202.81,
   "market_cap": "$4.91T",
@@ -21,9 +21,11 @@
     {"when":"يوليو 2026","what":"أبل تخطف عرش القيمة السوقية","note":"تتفوق مؤقتًا على Nvidia وسط حذر المستثمرين من فقاعة الذكاء الاصطناعي"}
   ],
   "news": [
-    {"text":"سهم شركة Wistron الشريكة المصنّعة لإنفيديا يقفز أكثر من 9% في تايوان بعد افتتاح مصنعها الأول في الولايات المتحدة بفورت وورث بولاية تكساس لإنتاج رقائق GB300 الفائقة","src":"CNBC","link":"https://www.cnbc.com/2026/07/22/wistron-shares-surge-after-opening-texas-plant-for-nvidia-ai-servers-.html","date":"2026-07-22"},
-    {"text":"سهم إنفيديا يتراجع في التداول المسبق رغم اتفاقيات جديدة بسلسلة التوريد، إذ يحوّل المستثمرون تركيزهم نحو مدى استفادة العملاء الفعلية من زيادة طاقة توريد الذكاء الاصطناعي","src":"ts2.tech","link":"https://ts2.tech/en/nvidia-nasdaqnvda-shares-dip-on-increased-ai-supply-investor-attention-turns-to-client-orders/","date":"2026-07-22"},
-    {"text":"تحليل مالي يشير إلى أن تقييم سهم إنفيديا هبط إلى أدنى مستوياته منذ نحو سبع سنوات عند نحو 23 ضعف الأرباح المستقبلية، فيما يرى محللون أن السوق يسعّر السهم بشكل خاطئ متجاهلاً آفاق نموه","src":"24/7 Wall St.","link":"https://247wallst.com/investing/2026/07/22/nvidia-is-the-cheapest-its-looked-in-over-7-years-the-markets-dead-wrong-to-price-peak-growth/","date":"2026-07-22"}
+    {"text":"اتهم مسؤول في البيت الأبيض شركة الذكاء الاصطناعي الصينية «مونشوت» بالحصول بشكل غير مشروع على رقائق إنفيديا المتقدمة GB300 الخاضعة لقيود التصدير، عبر خوادم في تايلاند، لتدريب نموذجها Kimi K3، في تصعيد جديد للتوترات الأميركية الصينية بشأن ضوابط تصدير رقائق الذكاء الاصطناعي","src":"CNBC","link":"https://www.cnbc.com/2026/07/23/moonshot-kimi-nvidia-ai-chips-export-ban.html","date":"2026-07-23"},
+    {"text":"تستعد شركة AMD للكشف عن مجموعة جديدة من معدات الذكاء الاصطناعي لمراكز البيانات، في خطوة تستهدف مباشرة منافسة هيمنة إنفيديا على قطاع البنية التحتية لحوسبة الذكاء الاصطناعي","src":"Reuters","link":"https://www.reuters.com/business/amd-expected-launch-next-generation-ai-infrastructure-challenge-nvidia-2026-07-23/","date":"2026-07-23"},
+    {"text":"قفزت أسهم شركات الذاكرة مع تزايد رهانات المستثمرين على استمرار ضيق المعروض المدفوع بالطلب على الذكاء الاصطناعي، بعد أن أشار الرئيس التنفيذي لإنفيديا جينسن هوانغ إلى أن أزمة نقص الذاكرة قد تستمر لسنوات","src":"Benzinga","link":"https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/07/60630151/why-micron-sandisk-and-sk-hynix-are-surging-and-how-to-play-it","date":"2026-07-23"},
+    {"text":"اختار أحد كبار مديري الاستثمار سهم إنفيديا كأفضل صفقاته في فقرة «الصفقات الأخيرة» على قناة CNBC، بالتزامن مع إعلان الشركة توسيع حزمة أدوات الوكلاء الخاصة بها بمكتبات Omniverse جديدة كُشف عنها في مؤتمر SIGGRAPH","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/long-ideas/26/07/60634476/unitedhealth-ardagh-metal-packaging-nvidia-and-more-cnbc-final-trades","date":"2026-07-23"},
+    {"text":"كشف إيداع مؤسسي جديد أن سهم إنفيديا لا يزال يشكّل أكبر مركز استثماري ضمن محفظة شركة Welch & Forbes بقيمة نحو 540 مليون دولار، رغم تخفيض الشركة لحصتها بنسبة تقارب 7.2% خلال الربع الأخير","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/filing-nvidia-corporation-nvda-is-welch-forbes-llcs-largest-position-2026-07-23/","date":"2026-07-23"}
   ],
   "takeaways": [
     "الشركة تحولت فعليًا لشركة مراكز بيانات — الألعاب والرسوميات صارت هامشًا بسيطًا من الإيرادات",

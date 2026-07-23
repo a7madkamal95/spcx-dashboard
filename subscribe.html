@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الاشتراك بكورس التداول · PLUTO INTELLIGENCE</title>
+<meta name="description" content="سجّل اشتراكك بكورس التداول من PLUTO INTELLIGENCE — دفعة واحدة والمحتوى يبقى لك للأبد.">
+<meta name="theme-color" content="#05060d">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--void:#05060d;--ink:#f5f7ff;--mut:#b7bfdd;
+--a1:#17bf8e;--a2:#5b8def;--mint:#3ce8a6;--coral:#ff6b6b;--gold:#ffd166;
+--glass:rgba(255,255,255,.055);--glassH:rgba(255,255,255,.11);
+--edge:rgba(255,255,255,.15);--edgeTop:rgba(255,255,255,.34);
+--focus:#5b8def;
+--disp:'Cairo',sans-serif;--body:'IBM Plex Sans Arabic',Tahoma,sans-serif;--num:'Space Grotesk',monospace;
+--sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:48px;--sp8:64px;
+--r16:16px;--r20:20px;--r24:24px;--r99:999px;
+--dur-fast:150ms;--dur-med:220ms;--dur-slow:320ms;--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+html[data-lang=en]{--disp:'Space Grotesk',sans-serif;--body:'Space Grotesk','Segoe UI',sans-serif}
+.en,.num{font-variant-numeric:tabular-nums}
+html[data-lang=ar] .i-en{display:none!important}
+html[data-lang=en] .i-ar{display:none!important}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px;border-radius:6px}
+.topfade{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#232a42 0%,#161c30 15%,rgba(21,26,42,.5) 30%,transparent 55%)}
+.databg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.databg .glow{position:absolute;border-radius:50%;filter:blur(80px)}
+.databg .g1{width:38vw;height:38vw;background:radial-gradient(circle,rgba(23,191,142,.17),transparent 65%);top:-14%;left:2%;animation:gf1 34s ease-in-out infinite}
+.databg .g2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(91,141,239,.14),transparent 65%);bottom:-18%;right:6%;animation:gf2 40s ease-in-out infinite}
+@keyframes gf1{50%{transform:translate(4vw,6vh) scale(1.12)}}
+@keyframes gf2{50%{transform:translate(-5vw,-5vh) scale(1.08)}}
+.wrap{max-width:760px;margin:0 auto;padding:0 var(--sp5) 90px}
+::selection{background:rgba(23,191,142,.4)}
+.gl{background:var(--glass);
+backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+border:1px solid var(--edge);border-top-color:var(--edgeTop);
+border-radius:var(--r24);box-shadow:0 18px 50px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.08);
+position:relative;overflow:hidden}
+.gl::before{content:"";position:absolute;top:0;right:8%;left:38%;height:1px;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
+.bar{position:sticky;top:var(--sp3);z-index:50;display:flex;gap:var(--sp4);align-items:center;flex-wrap:wrap;padding:var(--sp3) var(--sp5);margin-top:var(--sp4)}
+.bar .brand{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;flex-shrink:0}
+.bar .brand img{width:24px;height:24px;border-radius:6px;object-fit:cover;flex-shrink:0}
+.bar .brandlockup{display:flex;flex-direction:column;line-height:1.25}
+.bar .brandlockup b{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.03em}
+.lng{font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:.08em;
+color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
+padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;margin-inline-start:auto;transition:background var(--dur-fast) var(--ease)}
+.lng:hover{background:rgba(255,255,255,.17)}
+section{margin-top:var(--sp7)}
+.pad{padding:var(--sp6)}
+.back-link{display:inline-flex;align-items:center;gap:5px;color:var(--a2);font-weight:700;text-decoration:none;font-size:15px}
+.back-link svg{width:14px;height:14px}
+html[dir=ltr] .back-link svg{transform:scaleX(-1)}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(24px,4vw,34px);line-height:1.25;margin-top:var(--sp4)}
+.lead{color:var(--mut);font-size:16.5px;line-height:1.8;max-width:64ch;margin-top:var(--sp3)}
+.sum-row{display:flex;align-items:center;justify-content:space-between;gap:var(--sp4);flex-wrap:wrap}
+.sum-price{display:flex;align-items:baseline;gap:12px}
+.sum-price .now{font-family:var(--num);font-weight:800;font-size:42px;color:var(--gold)}
+.sum-price .was{font-family:var(--num);font-weight:600;font-size:18px;color:var(--mut);text-decoration:line-through}
+.sum-once{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--mint)}
+.sum-once svg{width:15px;height:15px;flex-shrink:0}
+.feat{display:flex;flex-direction:column;gap:10px;margin-top:var(--sp4);padding-top:var(--sp4);border-top:1px solid var(--edge)}
+.feat div{display:flex;align-items:center;gap:9px;font-size:14.5px;color:var(--mut)}
+.feat svg{width:15px;height:15px;color:var(--mint);flex-shrink:0}
+.f-label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.f-group{margin-top:var(--sp4)}
+input,textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:12px;padding:13px 16px;color:var(--ink);font-family:var(--body);font-size:15px;outline:none;transition:border-color var(--dur-fast) var(--ease)}
+input:focus,textarea:focus{border-color:var(--a2)}
+input::placeholder,textarea::placeholder{color:var(--mut);opacity:.7;font-size:14px}
+textarea{resize:vertical;min-height:80px}
+.submit-btn{margin-top:var(--sp5);width:100%;padding:15px;border-radius:14px;border:none;cursor:pointer;font-family:var(--body);font-weight:700;font-size:16px;color:#0a0e1e;background:linear-gradient(135deg,#4a7ade,#14a87d);transition:transform var(--dur-fast) var(--ease),opacity var(--dur-fast) var(--ease)}
+.submit-btn:hover{transform:translateY(-1px)}
+.submit-btn:disabled{opacity:.55;cursor:default;transform:none}
+.form-err{color:#ff8a8a;font-size:13.5px;min-height:18px;margin-top:8px}
+.pay-note{display:flex;gap:12px;align-items:flex-start;margin-top:var(--sp4);padding:14px 16px;border-radius:14px;background:rgba(255,209,102,.06);border:1px solid rgba(255,209,102,.3);font-size:13.5px;color:var(--mut);line-height:1.7}
+.pay-note svg{width:18px;height:18px;color:var(--gold);flex-shrink:0;margin-top:2px}
+.success{display:none;text-align:center;padding:var(--sp7) var(--sp6)}
+.success.show{display:block}
+.success .ok-ic{width:64px;height:64px;border-radius:50%;background:rgba(60,232,166,.12);border:1.5px solid var(--mint);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp4)}
+.success .ok-ic svg{width:28px;height:28px;color:var(--mint)}
+.success h2{font-family:var(--disp);font-weight:800;font-size:24px}
+.success p{color:var(--mut);font-size:15.5px;margin-top:var(--sp3);line-height:1.8}
+.dsc{text-align:center;color:var(--mut);font-size:14.5px;margin-top:var(--sp7);line-height:1.7}
+.rv{opacity:0;transform:translateY(22px);transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@supports not (backdrop-filter:blur(1px)){.gl{background:rgba(18,22,42,.94)}}
+</style>
+</head>
+<body>
+<div class="topfade" aria-hidden="true"></div>
+<div class="databg" aria-hidden="true">
+<div class="glow g1"></div><div class="glow g2"></div>
+</div>
+<div class="wrap">
+
+<div class="bar gl rv">
+<a href="index.html" class="brand"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"><span class="brandlockup"><b>PLUTO INTELLIGENCE</b></span></a>
+<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+</div>
+
+<section class="rv">
+<a href="course.html" class="back-link">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+<span class="i-ar">صفحة الكورس</span><span class="i-en">Course page</span>
+</a>
+<h1><span class="i-ar">الاشتراك بكورس التداول</span><span class="i-en">Enroll in the Trading Course</span></h1>
+<p class="lead"><span class="i-ar">كورس شامل يعلّمك أساسيات وأدوات التداول من الصفر، خطوة بخطوة. سجّل بياناتك وسنتواصل معك لإتمام الدفع وتفعيل وصولك.</span><span class="i-en">A complete course covering trading fundamentals from scratch, step by step. Fill in your details and we will contact you to complete payment and activate your access.</span></p>
+</section>
+
+<section class="rv">
+<div class="gl pad">
+<div class="sum-row">
+<div class="sum-price">
+<span class="now">$300</span>
+<span class="was">$450</span>
+</div>
+<div class="sum-once">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+<span class="i-ar">دفعة واحدة فقط — المحتوى يبقى لك للأبد</span><span class="i-en">One-time payment — yours forever</span>
+</div>
+</div>
+<div class="feat">
+<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="i-ar">أساسيات التداول من الصفر، بالعربي</span><span class="i-en">Trading fundamentals from scratch, in Arabic</span></div>
+<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="i-ar">شرح منصة ميتا تريدر خطوة بخطوة</span><span class="i-en">MetaTrader walkthrough step by step</span></div>
+<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="i-ar">إدارة المخاطر: وقف الخسارة وجني الأرباح</span><span class="i-en">Risk management: stop loss and take profit</span></div>
+<div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="i-ar">بدون اشتراك متجدد — تدفع مرة واحدة فقط</span><span class="i-en">No recurring subscription — pay once only</span></div>
+</div>
+</div>
+</section>
+
+<section class="rv">
+<div class="gl pad" id="formCard">
+<h2 style="font-family:var(--disp);font-weight:800;font-size:20px"><span class="i-ar">بياناتك</span><span class="i-en">Your details</span></h2>
+<form id="subForm" onsubmit="submitSubscription(event)">
+<div class="f-group">
+<label class="f-label" for="subName"><span class="i-ar">الاسم الكامل</span><span class="i-en">Full name</span></label>
+<input type="text" id="subName" required autocomplete="name" placeholder="الاسم الثلاثي… / Your full name…">
+</div>
+<div class="f-group">
+<label class="f-label" for="subEmail"><span class="i-ar">البريد الإلكتروني</span><span class="i-en">Email</span></label>
+<input type="email" id="subEmail" required autocomplete="email" placeholder="name@example.com">
+</div>
+<div class="f-group">
+<label class="f-label" for="subPhone"><span class="i-ar">رقم الهاتف (واتساب)</span><span class="i-en">Phone (WhatsApp)</span></label>
+<input type="tel" id="subPhone" required autocomplete="tel" placeholder="+965 XXXX XXXX" style="direction:ltr;text-align:start">
+</div>
+<div class="f-group">
+<label class="f-label" for="subNote"><span class="i-ar">ملاحظة (اختياري)</span><span class="i-en">Note (optional)</span></label>
+<textarea id="subNote" placeholder="أي سؤال أو ملاحظة… / Any question or note…"></textarea>
+</div>
+<div class="pay-note">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+<span><span class="i-ar">بعد إرسال الطلب سنتواصل معك خلال 24 ساعة على واتساب أو البريد الإلكتروني لإتمام الدفع بالطريقة الأنسب لك، ثم يُفعَّل وصولك للكورس مباشرة.</span><span class="i-en">After you submit, we will contact you within 24 hours via WhatsApp or email to complete payment, then your course access is activated immediately.</span></span>
+</div>
+<button type="submit" class="submit-btn" id="subBtn"><span class="i-ar">إرسال طلب الاشتراك</span><span class="i-en">Submit enrollment request</span></button>
+<p class="form-err" id="subErr"></p>
+</form>
+</div>
+
+<div class="gl success" id="successCard">
+<div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+<h2><span class="i-ar">تم استلام طلبك بنجاح</span><span class="i-en">Request received</span></h2>
+<p><span class="i-ar">شكرًا لاهتمامك بكورس التداول. سنتواصل معك خلال 24 ساعة على واتساب أو بريدك الإلكتروني لإتمام الدفع وتفعيل وصولك للكورس.</span><span class="i-en">Thank you for enrolling. We will contact you within 24 hours via WhatsApp or email to complete payment and activate your access.</span></p>
+</div>
+</section>
+
+<footer>
+<p class="dsc"><span class="i-ar">تحليل معلوماتي فقط وليس نصيحة استثمارية</span><span class="i-en">Informational only, not investment advice</span></p>
+</footer>
+
+</div>
+
+<script>
+var CUR=localStorage.getItem("lang")||"ar";
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+function setLang(l){CUR=l;localStorage.setItem("lang",l);
+document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
+document.documentElement.setAttribute("data-lang",l);
+document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+}
+if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+</script>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+var SB_URL="https://bmcysrlzbxsytpgusqen.supabase.co";
+var SB_KEY="sb_publishable_n84xHMo8VjfQxEME4JlOFQ_9C0-bFwM";
+var sb=window.supabase.createClient(SB_URL,SB_KEY);
+
+function submitSubscription(ev){
+ev.preventDefault();
+var btn=document.getElementById("subBtn");
+var errEl=document.getElementById("subErr");
+errEl.textContent="";
+btn.disabled=true;
+var rec={
+name:document.getElementById("subName").value.trim(),
+email:document.getElementById("subEmail").value.trim(),
+phone:document.getElementById("subPhone").value.trim(),
+note:document.getElementById("subNote").value.trim()||null
+};
+sb.from("course_subscriptions").insert(rec).then(function(res){
+if(res.error){
+btn.disabled=false;
+errEl.textContent=(CUR==="ar"?"صار خطأ أثناء الإرسال، حاول مرة أخرى أو راسلنا على plutointelligence@gmail.com":"Something went wrong — try again or email plutointelligence@gmail.com");
+return;
+}
+document.getElementById("formCard").style.display="none";
+var sc=document.getElementById("successCard");
+sc.classList.add("show","rv","on");
+sc.scrollIntoView({behavior:"smooth",block:"center"});
+});
+return false;
+}
+</script>
+<script data-goatcounter="https://pluto-int.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

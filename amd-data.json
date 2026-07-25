@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-23",
+  "last_updated": "2026-07-25",
   "price_fallback": 492.10,
   "prev_close": 486.27,
   "market_cap": "$797B",
@@ -22,11 +22,11 @@
     {"when":"22-23 يوليو 2026","what":"فعالية Advancing AI","note":"الكشف عن تحديثات MI450 ومنصة الخوادم Helios، وإطلاق معالج Zen 6 Venice"}
   ],
   "news": [
-    {"text":"تتوقع الأسواق أن تطلق شركة AMD الجيل الجديد من بنيتها التحتية للذكاء الاصطناعي (رفوف Helios ومعالج Venice) خلال مؤتمرها Advancing AI في سان فرانسيسكو، في تحدٍ مباشر لهيمنة نفيديا على قطاع معالجات مراكز البيانات","src":"Reuters","link":"https://finance.yahoo.com/news/amd-expected-launch-next-generation-100622308.html","date":"2026-07-23"},
-    {"text":"تحقق AMD تقدماً ملحوظاً في الاستحواذ على حصة سوقية بقطاع مراكز البيانات عبر إبرام صفقات بمليارات الدولارات، ما دفع سهمها للارتفاع نحو 1.5% إلى مستوى 552.50 دولاراً","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/23/massive-news-for-amd-stock-investors/","date":"2026-07-23"},
-    {"text":"أبقى بنك Benchmark على تصنيفه بالشراء لسهم AMD مع تحديد سعر مستهدف عند 685 دولاراً، في إشارة إلى استمرار ثقة المحللين بآفاق نمو الشركة قبيل فعالية Advancing AI","src":"Investing.com","link":"https://www.investing.com/news/pro/benchmark-maintains-amd-at-buy-with-a-price-target-of-68500-4808718","date":"2026-07-23"},
-    {"text":"أفادت تقارير بأن إنتل و AMD تتفاوضان مع عملاء صينيين على عقود توريد معالجات خوادم متعددة السنوات، في ظل تشديد المعروض بسبب الطفرة في الطلب المرتبط بالذكاء الاصطناعي","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/07/60629604/intel-and-amd-eye-multi-year-server-chip-deals-with-chinese-customers-amid-ai-boom-report","date":"2026-07-23"},
-    {"text":"تساءلت تحليلات مالية حديثة عمّا إذا كانت AMD ستلجأ لتجزئة سهمها بعد إعلان نتائجها في الرابع من أغسطس، مرجحة أن ذلك غير متوقع في المدى القريب رغم القفزة الكبيرة في سعر السهم هذا العام","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/23/is-an-amd-stock-split-likely-after-aug-4/","date":"2026-07-23"}
+    {"text":"ضاعفت شركة Baird سعرها المستهدف لسهم AMD إلى مستوى قياسي في السوق بلغ 1250 دولارًا مقارنة بـ625 دولارًا سابقًا، مراهنة على نمو قوي متوقع في إيرادات معالجات الذكاء الاصطناعي والخوادم حتى عام 2030","src":"Investing.com","link":"https://ca.investing.com/news/stock-market-news/baird-raises-amd-stock-price-target-to-1250-on-ai-growth-outlook-93CH-4751524","date":"2026-07-24"},
+    {"text":"رفع بنك UBS سعره المستهدف لسهم AMD إلى 730 دولارًا من 700 دولارًا، مؤكدًا أن السهم الذي تضاعف أداؤه خلال عام 2026 ما زال أمامه مجال إضافي للارتفاع بفضل تحسّن آفاق نمو معالجات الخوادم","src":"CNBC","link":"https://www.cnbc.com/2026/07/24/amd-has-more-than-doubled-in-2026-it-has-more-room-to-run-ubs-says.html","date":"2026-07-24"},
+    {"text":"رفعت شركة Futurum Equities سعرها المستهدف لسهم AMD إلى 800 دولار واصفة إياه بـ'أعلى قناعة استثمارية' لديها، فيما توقع الخبير باتريك مورهيد أن يتوسع سوق معالجات الخوادم إلى أكثر من 200 مليار دولار بحلول عام 2030 مدفوعًا بالطلب على الذكاء الاصطناعي الوكيلي","src":"Benzinga","link":"https://www.benzinga.com/markets/equities/26/07/60660114/amd-stock-could-surge-48-as-daniel-newman-calls-it-a-top-conviction-patrick-moorhead-sees-200-billion-server-cpu-market","date":"2026-07-24"},
+    {"text":"تراجع سهم AMD نحو 1.3% رغم موجة واسعة من رفع التوقعات السعرية عقب مؤتمر 'Advancing AI'، وسط تساؤلات لدى المتداولين الأفراد حول ما إذا كانت موجة صعود أسهم الذكاء الاصطناعي بدأت تفقد زخمها","src":"Stocktwits","link":"https://stocktwits.com/news-articles/markets/equity/amd-stock-slips-price-target-hikes-retail-chip-rally-looking-exhausted/cZZpTwzR7z4","date":"2026-07-24"},
+    {"text":"أغلق سهم AMD منخفضًا بنسبة 3.53% متأثرًا بجني أرباح على مستوى قطاع أشباه الموصلات ومخاوف المستثمرين بشأن استدامة الإنفاق على الذكاء الاصطناعي قبيل موسم الإعلان عن النتائج المالية","src":"TradingKey","link":"https://www.tradingkey.com/news/market-movers/262053419-market-movers-amd-20260724","date":"2026-07-24"}
   ],
   "takeaways": [
     "ليزا سو حوّلت شركة على حافة الإفلاس إلى منافس حقيقي بسوق يتجاوز نصف تريليون دولار",

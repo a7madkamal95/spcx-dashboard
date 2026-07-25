@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-23",
+  "last_updated": "2026-07-25",
   "price_fallback": 135.53,
   "prev_close": 131.79,
   "market_cap": "$322.3B",
@@ -22,9 +22,11 @@
     {"when":"يوليو 2026","what":"شراكة Nvidia للذكاء الاصطناعي السيادي","note":"إعلان يرفع السهم وسط تراجع مايكل بيري عن جزء من رهانه القصير"}
   ],
   "news": [
-    {"text":"تراجعت أسهم بالانتير بنسبة 6% وسط مخاوف من ارتفاع التقييم ومبيعات من الداخل وتدقيق تنظيمي بشأن عقد هيئة الصحة الوطنية البريطانية، وذلك قبيل الإعلان عن نتائج الربع الثاني في الثالث من أغسطس","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/23/pltr-stock-drops-6-as-valuation-fears-nhs-scrutiny-build-before-palantir-earnings/","date":"2026-07-23"},
-    {"text":"انخفض سهم بالانتير 6% بعد تدقيق من هيئة الإحصاء البريطانية بشأن منصة البيانات الموحدة الخاصة بها لدى الخدمة الصحية الوطنية، وظهور أداة منافسة مجانية مفتوحة المصدر تُدعى \"وورلد مونيتور\"، قبيل نتائج الربع الثاني المرتقبة في 3 أغسطس","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262048106-palantir-pltr-stock-falls-july-22-2026-nhs-scrutiny-world-monitor-earnings-tradingkey","date":"2026-07-23"},
-    {"text":"يعزز توسّع شراكة بالانتير مع إدارة الأعمال الصغيرة الأمريكية في مكافحة الاحتيال المرتبط بقروض جائحة كورونا حضورها ضمن العقود الحكومية، وإن كان المحللون يرون أن أثر ذلك محدود على المحفزات الاستثمارية القريبة","src":"Simply Wall St","link":"https://simplywall.st/stocks/us/software/nasdaq-pltr/palantir-technologies/news/is-palantirs-deepening-sba-partnership-quietly-redefining-it","date":"2026-07-23"}
+    {"text":"سحبت وكالة الاستخبارات الدفاعية الأمريكية طرحها لعقد منظومة استخبارات عسكرية بعد اعتراض رسمي من بالانتير، في تطور تعتبره الشركة انتصاراً مؤقتاً يعزز حضورها في قطاع الدفاع الأمريكي","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-24/after-palantir-beef-us-withdraws-bid-to-improve-military-intel","date":"2026-07-24"},
+    {"text":"خفّض بنك سيتي هدفه السعري لسهم بالانتير إلى 200 دولار من 225 دولاراً مع إبقائه على توصية الشراء، مشيراً إلى ضغط على مضاعفات التقييم رغم توقعاته بنمو إيرادات قوي","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/citigroup-has-lowered-expectations-for-palantir-technologies-nasdaqpltr-stock-price-2026-07-24/","date":"2026-07-24"},
+    {"text":"انضمت بالانتير إلى إنفيديا ومايكروسوفت وميتا وأكثر من عشرين شركة تقنية في رسالة مفتوحة تحث صناع القرار الأمريكيين على عدم فرض قيود صارمة على نماذج الذكاء الاصطناعي مفتوحة الأوزان، في ظل تصاعد المنافسة الصينية","src":"Fortune","link":"https://fortune.com/2026/07/24/nvidia-microsoft-lead-call-for-open-weight-ai-models-after-kimi/","date":"2026-07-24"},
+    {"text":"رغم تراجع سهم بالانتير نحو 25 بالمئة منذ بداية العام، رأى محلل في موقع موتلي فول أن الفرصة الاستثمارية لا تزال قائمة بفضل منصة الذكاء الاصطناعي الفريدة للشركة ونمو إيراداتها القوي","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/24/palantir-is-down-28-heres-why-im-buying-more/","date":"2026-07-24"},
+    {"text":"حذّر الرئيس التنفيذي لبالانتير أليكس كارب من أن الذكاء الاصطناعي سيولّد ثروات هائلة لكن بشكل غير متكافئ، إذ قد يصبح مبتكرو التقنية أثرى بأضعاف مقارنة بالعمال العاديين، محذراً من انقسامات اجتماعية خطيرة","src":"Benzinga","link":"https://www.benzinga.com/news/topics/26/07/60676323/palantir-ceo-alex-karp-says-al-will-create-unimaginable-wealth-for-oddly-shaped-iq-specimens-you-wouldnt-want-to-have-over-for-dinner","date":"2026-07-24"}
   ],
   "takeaways": [
     "الشركة سُمّيت على حجر رؤية سحري من أساطير الخواتم — لكن الذي يراقب فعليًا هو الحكومات والجيوش",

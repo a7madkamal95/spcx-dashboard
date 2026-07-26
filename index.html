@@ -187,7 +187,11 @@ html[dir=ltr] .find-more a:hover svg{transform:translateX(4px)}
 .req-fields input{flex:1;min-width:180px;background:rgba(255,255,255,.05);border:1px solid var(--edge);border-radius:12px;padding:13px 16px;color:var(--ink);font-family:var(--body);font-size:15px;outline:none;transition:border-color var(--dur-fast) var(--ease)}
 .req-fields input::placeholder{color:var(--mut);font-size:14.5px}
 .req-fields input:focus{border-color:var(--a2)}
-.req-submit{font-family:var(--body);font-weight:700;font-size:15px;color:var(--ink);background:#4a78d6;border:none;border-radius:var(--r99);padding:0 26px;min-height:48px;cursor:pointer;transition:transform var(--dur-fast) var(--ease);flex-shrink:0}
+.req-submit{position:relative;overflow:hidden;font-family:var(--body);font-weight:700;font-size:15px;color:var(--ink);background:#4a78d6;border:none;border-radius:var(--r99);padding:0 26px;min-height:48px;cursor:pointer;transition:transform var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease);flex-shrink:0}
+.req-submit:hover{transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(74,120,214,.65)}
+.req-submit::before{content:"";position:absolute;top:0;bottom:0;left:-75%;width:45%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg)}
+.req-submit:hover::before{animation:btnshine .85s ease}
 .req-submit:hover{transform:translateY(-1px)}
 @media(max-width:600px){.req-fields{flex-direction:column}.req-fields input,.req-submit{width:100%}}
 .tabs{display:flex;gap:8px;margin-bottom:var(--sp5)}
@@ -198,8 +202,9 @@ transition:color var(--dur-fast) var(--ease),background var(--dur-fast) var(--ea
 .tab.on{color:var(--void);background:linear-gradient(92deg,var(--a2),var(--a1));border-color:transparent}
 .stocks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--sp4);align-items:start}
 .stock-card{display:block;padding:0;text-decoration:none;color:inherit;cursor:pointer;border-top:2px solid rgba(56,212,255,.55);
-transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
-.stock-card:hover{transform:translateY(-5px);background:var(--glassH)}
+--acc:rgba(56,212,255,.55);
+transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease),box-shadow var(--dur-med) var(--ease)}
+.stock-card:hover{transform:translateY(-5px);background:var(--glassH);box-shadow:0 14px 40px -12px var(--acc),0 18px 50px rgba(0,0,0,.42)}
 .sc-img{height:120px;background-size:cover;background-position:center;position:relative}
 .sc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,13,.05) 35%,rgba(5,6,13,.75) 85%,var(--void) 100%)}
 .sc-body{padding:14px var(--sp5) var(--sp5)}
@@ -273,11 +278,15 @@ html[dir=ltr] .offer-featured-img::after{background:linear-gradient(270deg,rgba(
 .offer-featured-link{display:block;text-decoration:none;color:inherit}
 .offer-featured h3{font-family:var(--disp);font-weight:800;font-size:24px}
 .offer-featured p{font-size:15.5px;color:var(--mut);margin-top:8px;line-height:1.75;max-width:56ch}
-.offer-subscribe-btn{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;
+.offer-subscribe-btn{position:relative;overflow:hidden;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;
 font-family:var(--body);font-weight:700;font-size:15.5px;color:var(--ink);text-decoration:none;
 background:#4a78d6;border-radius:var(--r99);padding:0 30px;min-height:48px;
-transition:transform var(--dur-fast) var(--ease)}
-.offer-subscribe-btn:hover{transform:translateY(-1px)}
+transition:transform var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease)}
+.offer-subscribe-btn:hover{transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(74,120,214,.65)}
+.offer-subscribe-btn::before{content:"";position:absolute;top:0;bottom:0;left:-75%;width:45%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg)}
+.offer-subscribe-btn:hover::before{animation:btnshine .85s ease}
+@keyframes btnshine{from{left:-75%}to{left:135%}}
 .offer-price-row{display:flex;align-items:center;justify-content:space-between;gap:var(--sp4);flex-wrap:wrap;margin-top:var(--sp4)}
 .offer-onetime{display:flex;align-items:center;gap:7px;margin-top:var(--sp3);font-size:13px;font-weight:600;color:var(--mint)}
 .offer-onetime svg{width:15px;height:15px;flex-shrink:0}
@@ -454,7 +463,7 @@ transition:transform var(--dur-fast) var(--ease)}
 </div>
 </a>
 
-<a href="gme.html" class="stock-card gl" data-fav="true" data-q="جيم ستوب gamestop gme nyse" style="border-top-color:rgba(255,33,48,.55)">
+<a href="gme.html" class="stock-card gl" data-fav="true" data-q="جيم ستوب gamestop gme nyse" style="border-top-color:rgba(255,33,48,.55);--acc:rgba(255,33,48,.55)">
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/8/89/GameStop_Retail_Store_-_Vallejo_-_California_%2850906730711%29.jpg)" role="img" aria-label="GameStop storefront"></div>
 <div class="sc-body">
 <div class="sc-top">
@@ -467,7 +476,7 @@ transition:transform var(--dur-fast) var(--ease)}
 </div>
 </a>
 
-<a href="pltr.html" class="stock-card gl" data-fav="true" data-q="بالانتير palantir pltr nasdaq" style="border-top-color:rgba(255,149,0,.55)">
+<a href="pltr.html" class="stock-card gl" data-fav="true" data-q="بالانتير palantir pltr nasdaq" style="border-top-color:rgba(255,149,0,.55);--acc:rgba(255,149,0,.55)">
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/5/5d/BalticServers_data_center.jpg)" role="img" aria-label="Data center servers"></div>
 <div class="sc-body">
 <div class="sc-top">
@@ -480,7 +489,7 @@ transition:transform var(--dur-fast) var(--ease)}
 </div>
 </a>
 
-<a href="nvda.html" class="stock-card gl" data-fav="true" data-q="إنفيديا انفيديا nvidia nvda nasdaq" style="border-top-color:rgba(118,185,0,.55)">
+<a href="nvda.html" class="stock-card gl" data-fav="true" data-q="إنفيديا انفيديا nvidia nvda nasdaq" style="border-top-color:rgba(118,185,0,.55);--acc:rgba(118,185,0,.55)">
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/0/03/NVIDIA_GPU.jpg)" role="img" aria-label="NVIDIA graphics card"></div>
 <div class="sc-body">
 <div class="sc-top">
@@ -493,7 +502,7 @@ transition:transform var(--dur-fast) var(--ease)}
 </div>
 </a>
 
-<a href="intc.html" class="stock-card gl" data-fav="true" data-q="إنتل انتل intel intc nasdaq" style="border-top-color:rgba(0,113,197,.55)">
+<a href="intc.html" class="stock-card gl" data-fav="true" data-q="إنتل انتل intel intc nasdaq" style="border-top-color:rgba(0,113,197,.55);--acc:rgba(0,113,197,.55)">
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/4/44/Intel_Fab_12%2C_Fab_22%2C_Fab_32.jpg)" role="img" aria-label="Intel semiconductor fab"></div>
 <div class="sc-body">
 <div class="sc-top">
@@ -506,7 +515,7 @@ transition:transform var(--dur-fast) var(--ease)}
 </div>
 </a>
 
-<a href="amd.html" class="stock-card gl" data-fav="true" data-q="ايه ام دي amd advanced micro devices nasdaq" style="border-top-color:rgba(237,28,36,.55)">
+<a href="amd.html" class="stock-card gl" data-fav="true" data-q="ايه ام دي amd advanced micro devices nasdaq" style="border-top-color:rgba(237,28,36,.55);--acc:rgba(237,28,36,.55)">
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/2/25/AMD_Ryzen_9_9950X.jpg)" role="img" aria-label="AMD Ryzen processor"></div>
 <div class="sc-body">
 <div class="sc-top">
@@ -519,7 +528,7 @@ transition:transform var(--dur-fast) var(--ease)}
 </div>
 </a>
 
-<a href="bb.html" class="stock-card gl" data-fav="true" data-q="بلاك بيري blackberry bb nyse" style="border-top-color:rgba(124,92,255,.55)">
+<a href="bb.html" class="stock-card gl" data-fav="true" data-q="بلاك بيري blackberry bb nyse" style="border-top-color:rgba(124,92,255,.55);--acc:rgba(124,92,255,.55)">
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/2/2c/BlackBerry_Priv%2C_Passport_and_Classic.jpg)" role="img" aria-label="BlackBerry Priv, Passport, and Classic phones"></div>
 <div class="sc-body">
 <div class="sc-top">
@@ -532,7 +541,7 @@ transition:transform var(--dur-fast) var(--ease)}
 </div>
 </a>
 
-<a href="oklo.html" class="stock-card gl" data-fav="true" data-q="اوكلو أوكلو oklo nyse nuclear" style="border-top-color:rgba(61,219,255,.55)">
+<a href="oklo.html" class="stock-card gl" data-fav="true" data-q="اوكلو أوكلو oklo nyse nuclear" style="border-top-color:rgba(61,219,255,.55);--acc:rgba(61,219,255,.55)">
 <div class="sc-img" style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Advanced_Test_Reactor.jpg)" role="img" aria-label="Glowing nuclear reactor core"></div>
 <div class="sc-body">
 <div class="sc-top">

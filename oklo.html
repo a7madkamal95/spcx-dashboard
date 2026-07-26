@@ -99,6 +99,7 @@ section{margin-top:var(--sp8)}
 .pad{padding:var(--sp6)}
 .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp3)}
 @media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.tl{grid-template-columns:1fr}}
 .ts{padding:var(--sp4);border-radius:8px;background:rgba(61,219,255,.05);border:1px solid var(--edge)}
 .ts .w{font-family:var(--num);font-size:14px;color:var(--cyan);letter-spacing:.02em;font-weight:700}
 .ts .t{font-family:var(--disp);font-weight:700;font-size:17px;margin-top:4px}
@@ -126,9 +127,10 @@ html[data-lang=en] .force td:first-child{text-align:left;padding-inline-end:10px
 .force.open .more svg{transform:rotate(180deg)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
 @media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.stats{grid-template-columns:1fr}}
 .st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
 .st .sti{width:20px;height:20px;color:var(--cyan);opacity:.9;margin-bottom:6px}
-.st b{display:block;font-family:var(--num);font-size:25px;font-weight:700;direction:ltr;color:var(--cyan)}
+.st b{display:block;font-family:var(--num);font-size:clamp(19px,6vw,25px);font-weight:700;direction:ltr;color:var(--cyan)}
 .st span{font-size:14.5px;color:var(--mut)}
 #news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}
 #news li:first-child{border-top:none}

@@ -105,6 +105,7 @@ section{margin-top:var(--sp8)}
 .pad{padding:var(--sp6)}
 .tl{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
 @media(max-width:780px){.tl{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.tl{grid-template-columns:1fr}}
 .ts{padding:var(--sp4);border-radius:var(--r16);background:rgba(255,255,255,.045);border:1px solid var(--edge);border-top-color:var(--edgeTop)}
 .ts .w{font-family:var(--num);font-size:13px;color:var(--gold);letter-spacing:.08em;font-weight:700}
 .ts .t{font-family:var(--disp);font-weight:800;font-size:17px;margin-top:2px}
@@ -138,9 +139,10 @@ html[data-lang=en] .vein td:first-child{text-align:left;padding-inline-end:10px}
 .vein.open .more svg{transform:rotate(180deg)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp3)}
 @media(max-width:780px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.stats{grid-template-columns:1fr}}
 .st{padding:var(--sp5) var(--sp3);text-align:center;transition:transform var(--dur-med) var(--ease),background var(--dur-med) var(--ease)}
 .st .sti{width:20px;height:20px;color:var(--a2);opacity:.85;margin-bottom:6px}
-.st b{display:block;font-family:var(--num);font-size:27px;font-weight:700;direction:ltr;
+.st b{display:block;font-family:var(--num);font-size:clamp(21px,6vw,27px);font-weight:700;direction:ltr;
 background:linear-gradient(90deg,var(--a2),var(--a1));-webkit-background-clip:text;background-clip:text;color:transparent}
 .st span{font-size:14.5px;color:var(--mut)}
 #news li{list-style:none;padding:var(--sp4) 0;border-top:1px solid var(--edge);font-size:15px}

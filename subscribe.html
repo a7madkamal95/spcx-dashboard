@@ -160,7 +160,7 @@ textarea{resize:vertical;min-height:80px}
 </div>
 <div class="pay-note">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-<span><span class="i-ar">بعد إرسال الطلب سنتواصل معك خلال 24 ساعة على واتساب أو البريد الإلكتروني لإتمام الدفع بالطريقة الأنسب لك، ثم يُفعَّل وصولك للكورس مباشرة.</span><span class="i-en">After you submit, we will contact you within 24 hours via WhatsApp or email to complete payment, then your course access is activated immediately.</span></span>
+<span><span class="i-ar">بعد إرسال الطلب سيفتح لك واتساب برسالة جاهزة — فقط اضغط إرسال، وسنكمل معك تفاصيل الدفع مباشرة هناك. بعد الدفع يُفعَّل وصولك للكورس عبر بريد لتعيين كلمة مرورك.</span><span class="i-en">After you submit, WhatsApp will open with a ready message — just tap send, and we will sort out payment with you there directly. Once paid, your course access is activated via an email to set your password.</span></span>
 </div>
 <button type="submit" class="submit-btn" id="subBtn"><span class="i-ar">إرسال طلب الاشتراك</span><span class="i-en">Submit enrollment request</span></button>
 <p class="form-err" id="subErr"></p>
@@ -170,7 +170,7 @@ textarea{resize:vertical;min-height:80px}
 <div class="gl success" id="successCard">
 <div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
 <h2><span class="i-ar">تم استلام طلبك بنجاح</span><span class="i-en">Request received</span></h2>
-<p><span class="i-ar">شكرًا لاهتمامك بكورس التداول. سنتواصل معك خلال 24 ساعة على واتساب أو بريدك الإلكتروني لإتمام الدفع وتفعيل وصولك للكورس.</span><span class="i-en">Thank you for enrolling. We will contact you within 24 hours via WhatsApp or email to complete payment and activate your access.</span></p>
+<p><span class="i-ar">فتحنا لك واتساب برسالة جاهزة بنافذة جديدة — إذا ما فتحت تلقائيًا، تأكد إن متصفحك ما حظر النوافذ المنبثقة. اضغط إرسال هناك وسنكمل معك بقية التفاصيل مباشرة.</span><span class="i-en">We opened WhatsApp with a ready message in a new tab — if it did not open automatically, check your browser did not block the pop-up. Tap send there and we will take it from there.</span></p>
 </div>
 </section>
 
@@ -209,16 +209,28 @@ email:document.getElementById("subEmail").value.trim(),
 phone:document.getElementById("subPhone").value.trim(),
 note:document.getElementById("subNote").value.trim()||null
 };
+// Open the tab synchronously (still inside the click's call stack) so
+// browsers don't treat it as an unrequested popup once the insert below
+// resolves asynchronously; we point it at the real URL once ready.
+var waTab=window.open("about:blank","_blank");
 sb.from("course_subscriptions").insert(rec).then(function(res){
-if(res.error){
 btn.disabled=false;
+if(res.error){
 errEl.textContent=(CUR==="ar"?"صار خطأ أثناء الإرسال، حاول مرة أخرى أو راسلنا على plutointelligence@gmail.com":"Something went wrong — try again or email plutointelligence@gmail.com");
+if(waTab)waTab.close();
 return;
 }
 document.getElementById("formCard").style.display="none";
 var sc=document.getElementById("successCard");
 sc.classList.add("show","rv","on");
 sc.scrollIntoView({behavior:"smooth",block:"center"});
+var msg=(CUR==="ar"?"طلب اشتراك جديد بكورس التداول:":"New trading course enrollment:")+"\n"
++(CUR==="ar"?"الاسم: ":"Name: ")+rec.name+"\n"
++(CUR==="ar"?"الإيميل: ":"Email: ")+rec.email+"\n"
++(CUR==="ar"?"الهاتف: ":"Phone: ")+rec.phone
++(rec.note?"\n"+(CUR==="ar"?"ملاحظة: ":"Note: ")+rec.note:"");
+var waUrl="https://wa.me/96555979545?text="+encodeURIComponent(msg);
+if(waTab){waTab.location=waUrl}else{window.open(waUrl,"_blank")}
 });
 return false;
 }

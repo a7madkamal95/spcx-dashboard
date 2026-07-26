@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-25",
+  "last_updated": "2026-07-26",
   "price_fallback": 97.00,
   "prev_close": 98.05,
   "market_cap": "$419B",
@@ -22,11 +22,9 @@
     {"when":"يوليو 2026","what":"موجة تسريح جديدة","note":"دفعة إضافية من التسريحات في أوريغون ضمن خفض التكاليف المستمر"}
   ],
   "news": [
-    {"text":"تراجعت أسهم إنتل بنسبة 7.9% يوم الجمعة رغم تجاوز نتائج الربع الثاني توقعات المحللين، إذ ركّز المستثمرون على ارتفاع موازنة الإنفاق الرأسمالي إلى 20 مليار دولار وضعف حجم مبيعات رقائق الحواسيب الشخصية","src":"TS2.tech","link":"https://ts2.tech/en/intel-nasdaqintc-shares-drop-7-9-despite-earnings-exceeding-estimates-server-pricing-gains-offset-weaker-volumes/","date":"2026-07-25"},
-    {"text":"تتساءل مجلة موتلي فول عمّا إذا كان الوقت مناسباً لشراء سهم إنتل في ظل مساعيها لإعادة بناء مكانتها في صناعة الرقائق عبر توسيع أعمال التصنيع بالتعاقد وتقنية 18A","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/25/should-you-buy-intel-stock-as-it-rebuilds-its-chip/","date":"2026-07-25"},
-    {"text":"أظهر تقرير أن إنتل تجاوزت توقعات ربحية السهم للربع الثاني بواقع 21 سنتاً مسجلة إيرادات بلغت 16.13 مليار دولار، فيما ارتفع متوسط السعر المستهدف من المحللين إلى 107.67 دولار وسط تباين تقييماتهم بين الشراء والاحتفاظ والبيع","src":"The Markets Daily","link":"https://www.themarketsdaily.com/2026/07/25/intel-nasdaqintc-releases-quarterly-earnings-results-beats-estimates-by-0-21-eps.html","date":"2026-07-25"},
-    {"text":"أبقت مؤسسة باركليز على تصنيف \"احتفاظ\" لسهم إنتل مع سعر مستهدف عند 100 دولار، في تقييم حذر جاء عقب نتائج الربع الثاني القوية","src":"The Globe and Mail (TipRanks)","link":"https://www.theglobeandmail.com/investing/markets/stocks/INTC/pressreleases/3459895/intel-intc-gets-a-hold-from-barclays/","date":"2026-07-25"},
-    {"text":"رفع صندوق تقاعد الرعاية الصحية في أونتاريو حصته في أسهم إنتل بنسبة 164.7% خلال الربع الأول، ليصل إجمالي استثماره إلى نحو 196.9 مليون دولار","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/filing-healthcare-of-ontario-pension-plan-trust-fund-raises-stake-in-intel-corporation-intc-2026-07-25/","date":"2026-07-25"}
+    {"text":"تصدر سهم إنتل اهتمام المستثمرين الأفراد هذا الأسبوع بعد تجاوز نتائج الربع الثاني للتوقعات، مدعومة بقفزة 59% في مبيعات مراكز البيانات والذكاء الاصطناعي ورفع موازنة الإنفاق الرأسمالي إلى 20 مليار دولار وشراكة فورتينت الجديدة في التصنيع.","src":"Benzinga","link":"https://www.benzinga.com/markets/equities/26/07/60684194/intel-tesla-ibm-and-more-5-stocks-investors-couldnt-stop-buzzing-about-this-week","date":"2026-07-25"},
+    {"text":"تراجع سهم إنتل بعد ارتفاعه الأولي عقب نتائج الربع الثاني القوية، وسط تساؤلات المستثمرين حول جدوى اقتناص الانخفاض في ظل مخاوف تتعلق بأعمال التصنيع بالتعاقد والإنفاق على الذكاء الاصطناعي.","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/25/should-you-buy-the-dip-in-intel-stock/","date":"2026-07-25"},
+    {"text":"تناول تقرير لموقع \"موتلي فول\" مدى جدوى الاستثمار في سهم إنتل في ظل استراتيجية الرئيس التنفيذي ليب-بو تان لإعادة بناء إمبراطورية الشركة عبر التصنيع بالتعاقد واستعادة مكانتها في صناعة الرقائق العالمية.","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/25/should-you-buy-intel-stock-as-it-rebuilds-its-chip/","date":"2026-07-25"}
   ],
   "takeaways": [
     "الحكومة الأمريكية صارت أكبر مساهم في إنتل — تدخل غير مسبوق في شركة تقنية خاصة",

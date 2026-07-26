@@ -151,7 +151,7 @@ h1{font-family:var(--disp);font-weight:800;font-size:clamp(24px,4vw,34px);line-h
 <div class="ms-clock" id="msClock"></div>
 <div class="ms-row"><span class="ms-dot" id="msDot"></span><b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b></div>
 </div>
-<button class="admin-btn" id="adminBtn" onclick="openLoginModal()" aria-label="Admin login">
+<button class="admin-btn" id="adminBtn" onclick="openLoginModal()" aria-label="Login">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.5 12.5 19 4M19 4h-4M19 4v4"/></svg>
 </button>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
@@ -236,7 +236,7 @@ h1{font-family:var(--disp);font-weight:800;font-size:clamp(24px,4vw,34px);line-h
 <button class="login-close" onclick="closeLoginModal()" aria-label="Close">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
 </button>
-<h3><span class="i-ar">دخول المالك</span><span class="i-en">Owner Login</span></h3>
+<h3><span class="i-ar">تسجيل الدخول</span><span class="i-en">Login</span></h3>
 <form id="loginForm" onsubmit="handleLogin(event)">
 <input type="email" id="loginEmail" required placeholder="البريد الإلكتروني… / Email…">
 <input type="password" id="loginPass" required placeholder="كلمة المرور… / Password…">

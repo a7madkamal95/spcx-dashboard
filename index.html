@@ -427,11 +427,12 @@ transition:transform var(--dur-fast) var(--ease)}
 <section class="rv">
 <div class="gl pad req-card">
 <h3><span class="i-ar">اطلب استشارة أو تحليل لسهم معين</span><span class="i-en">Request Analysis for a Specific Stock</span></h3>
-<form class="req-fields" onsubmit="sendStockRequest(event)" style="margin-top:var(--sp4)">
+<form class="req-fields" id="reqForm" onsubmit="sendStockRequest(event)" style="margin-top:var(--sp4)">
 <input type="text" id="reqStock" required placeholder="اسم السهم أو الرمز… / Stock name or ticker…">
 <input type="email" id="reqEmail" required placeholder="بريدك الإلكتروني… / Your email…">
-<button type="submit" class="req-submit"><span class="i-ar">إرسال الطلب</span><span class="i-en">Send request</span></button>
+<button type="submit" class="req-submit" id="reqBtn"><span class="i-ar">إرسال الطلب</span><span class="i-en">Send request</span></button>
 </form>
+<p id="reqMsg" style="font-size:13.5px;margin-top:10px;min-height:18px"></p>
 </div>
 </section>
 
@@ -1149,13 +1150,38 @@ var SEARCH_TICKERS=[
 ];
 (function(){var names={};SEARCH_TICKERS.forEach(function(x){names[x.t]={ar:x.ar,en:x.en}});
 try{sessionStorage.setItem("tickerNames",JSON.stringify(names));}catch(e){}})();
+var FORMSPREE_ENDPOINT="https://formspree.io/f/xzdnybpg";
 function sendStockRequest(e){
 e.preventDefault();
+var btn=document.getElementById("reqBtn");
+var msgEl=document.getElementById("reqMsg");
 var stock=document.getElementById("reqStock").value.trim();
 var email=document.getElementById("reqEmail").value.trim();
-var subject=encodeURIComponent((CUR==="ar"?"طلب تحليل سهم: ":"Stock analysis request: ")+stock);
-var body=encodeURIComponent((CUR==="ar"?"السهم المطلوب: ":"Requested stock: ")+stock+"\n"+(CUR==="ar"?"البريد للتواصل: ":"Contact email: ")+email);
-window.location.href="mailto:plutointelligence@gmail.com?subject="+subject+"&body="+body;
+msgEl.textContent="";msgEl.style.color="";
+btn.disabled=true;
+fetch(FORMSPREE_ENDPOINT,{
+method:"POST",
+headers:{"Content-Type":"application/json","Accept":"application/json"},
+body:JSON.stringify({
+_subject:(CUR==="ar"?"طلب استشارة - ":"Consultation request - ")+stock,
+stock:stock,
+email:email
+})
+}).then(function(res){
+btn.disabled=false;
+if(res.ok){
+document.getElementById("reqForm").reset();
+msgEl.style.color="var(--mint)";
+msgEl.textContent=(CUR==="ar"?"تم إرسال طلبك بنجاح":"Your request was sent successfully");
+}else{
+msgEl.style.color="#ff8a8a";
+msgEl.textContent=(CUR==="ar"?"صار خطأ، حاول مرة أخرى":"Something went wrong, try again");
+}
+}).catch(function(){
+btn.disabled=false;
+msgEl.style.color="#ff8a8a";
+msgEl.textContent=(CUR==="ar"?"صار خطأ، حاول مرة أخرى":"Something went wrong, try again");
+});
 return false;
 }
 function handleSearchInput(q){

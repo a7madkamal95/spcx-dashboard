@@ -67,10 +67,18 @@ background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)}
 @keyframes pl{50%{opacity:.4}}
 .ms-clock{direction:ltr;font-variant-numeric:tabular-nums}
 .ms-tz{font-size:11px;opacity:.65;letter-spacing:.04em}
-.lng{font-family:var(--num);font-weight:700;font-size:15px;letter-spacing:.08em;
-color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
-padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
-.lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
+.lng-toggle{position:relative;direction:ltr;width:76px;height:40px;border-radius:var(--r99);
+background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);cursor:pointer;padding:0;
+display:flex;align-items:center;flex-shrink:0;transition:background var(--dur-fast) var(--ease)}
+.lng-toggle:hover{background:rgba(255,255,255,.15)}
+.lng-knob{position:absolute;top:3px;left:3px;width:35px;height:32px;border-radius:50%;
+background:linear-gradient(135deg,var(--a2),var(--a1));box-shadow:0 4px 12px rgba(0,0,0,.35);
+transition:transform var(--dur-med) var(--ease);z-index:1}
+.lng-toggle[data-lang="en"] .lng-knob{transform:translateX(36px)}
+.lng-opt{position:relative;z-index:2;flex:1;text-align:center;font-family:var(--num);font-weight:800;
+font-size:13px;letter-spacing:.03em;color:var(--mut);transition:color var(--dur-med) var(--ease);pointer-events:none}
+.lng-toggle[data-lang="ar"] .lng-opt-ar{color:#0a0e1e}
+.lng-toggle[data-lang="en"] .lng-opt-en{color:#0a0e1e}
 .lng:active{transform:translateY(0)}
 .board{margin-top:var(--sp3);padding:var(--sp4) var(--sp5)}
 .board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp4) var(--sp5)}
@@ -150,9 +158,8 @@ section{margin-top:var(--sp7)}
 .sd-row{display:flex;justify-content:space-between;font-size:14.5px;color:var(--mut)}
 .sd-row b{color:var(--ink);font-family:var(--num);direction:ltr;font-weight:600}
 .sd-loading{font-size:14.5px;color:var(--mut);padding:13px 18px;display:flex;align-items:center;gap:6px}
-.sd-spin{width:11px;height:11px;border-radius:50%;border:2px solid var(--edge);border-top-color:var(--a2);animation:sdspin .7s linear infinite;flex-shrink:0}
-@keyframes sdspin{to{transform:rotate(360deg)}}
-.sd-empty{padding:16px 18px;text-align:center;color:var(--mut);font-size:15px}
+.sd-empty{padding:22px 18px;text-align:center;color:var(--mut);font-size:15px}
+.sd-empty svg{width:26px;height:26px;color:var(--mut);opacity:.55;margin-bottom:8px}
 .fav-heading{font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,32px);margin-bottom:var(--sp5)}
 .gold-hero{display:flex;overflow:hidden;border-top:2px solid #d4af37}
 @media(max-width:760px){.gold-hero{flex-direction:column}}
@@ -345,7 +352,9 @@ background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent)
 <div class="ms-clock" id="msClock"></div>
 <div class="ms-row"><span class="ms-dot" id="msDot"></span><b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b></div>
 </div>
-<button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
+<button class="lng-toggle" id="lngBtn" data-lang="ar" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">
+<span class="lng-opt lng-opt-ar">ع</span><span class="lng-opt lng-opt-en">EN</span><span class="lng-knob"></span>
+</button>
 </div>
 
 <div class="board gl rv" id="boardCard">
@@ -602,7 +611,7 @@ document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
 function setLang(l){CUR=l;localStorage.setItem("lang",l);
 document.documentElement.lang=l;document.documentElement.dir=(l==="ar"?"rtl":"ltr");
 document.documentElement.setAttribute("data-lang",l);
-document.getElementById("lngBtn").textContent=(l==="ar"?"EN":"عربي");
+document.getElementById("lngBtn").setAttribute("data-lang",l);
 }
 var SEARCH_TICKERS=[
 {t:"SPCX",ar:"سبيس إكس",en:"SpaceX",page:"spcx.html"},
@@ -1220,7 +1229,7 @@ if(score>-1)scored.push([score,x]);
 });
 scored.sort(function(a,b){return a[0]-b[0]});
 var matches=scored.slice(0,10).map(function(s){return s[1]});
-if(!matches.length){dd.innerHTML='<div class="sd-empty">'+(CUR==="ar"?"ما فيه نتائج":"No results")+'</div>';dd.classList.add("show");return;}
+if(!matches.length){dd.innerHTML='<div class="sd-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6"/></svg><div>'+(CUR==="ar"?"ما فيه نتائج":"No results")+'</div></div>';dd.classList.add("show");return;}
 dd.innerHTML=matches.map(function(x){
 var href=x.page||("stock.html?t="+encodeURIComponent(x.t));
 var badge=x.page?(CUR==="ar"?"التحليل الكامل ›":"Full analysis ›"):(CUR==="ar"?"عرض السعر ›":"View price ›");
@@ -1240,7 +1249,7 @@ if(first)location.href=first.getAttribute("href");
 }
 });
 if(CUR!=="ar"){document.documentElement.lang="en";document.documentElement.dir="ltr";document.documentElement.setAttribute("data-lang","en");
-document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").textContent="عربي"})}
+document.addEventListener("DOMContentLoaded",function(){document.getElementById("lngBtn").setAttribute("data-lang","en")})}
 var FALLBACK_PRICE={"price_fallback":124,"ipo_price":135};
 var PROXIES=[
 function(u){return "https://api.allorigins.win/raw?url="+encodeURIComponent(u)},

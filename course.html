@@ -72,11 +72,12 @@ color:var(--ink);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop
 padding:11px 20px;min-height:44px;min-width:44px;cursor:pointer;transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease)}
 .lng:hover{background:rgba(255,255,255,.17);transform:translateY(-1px)}
 .lng:active{transform:translateY(0)}
-.admin-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex-shrink:0;
-color:var(--mut);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);border-radius:var(--r99);
+.admin-btn{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;white-space:nowrap;
+padding:10px 20px;border-radius:var(--r99);background:rgba(255,255,255,.09);border:1px solid var(--edgeTop);color:var(--ink);
+font-family:var(--disp);font-weight:700;font-size:14.5px;
 cursor:pointer;transition:background var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease)}
-.admin-btn svg{width:18px;height:18px}
-.admin-btn:hover{background:rgba(255,255,255,.17);color:var(--ink)}
+.admin-btn svg{width:18px;height:18px;flex-shrink:0}
+.admin-btn:hover{background:rgba(255,255,255,.17)}
 .admin-btn.logged-in{color:var(--gold);border-color:rgba(255,209,102,.5)}
 .login-backdrop{position:fixed;inset:0;background:rgba(6,8,18,.72);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:var(--sp4)}
 .login-backdrop.open{display:flex}
@@ -146,14 +147,15 @@ h1{font-family:var(--disp);font-weight:800;font-size:clamp(24px,4vw,34px);line-h
 <div class="bar gl rv">
 <a href="index.html" class="brand"><img src="assets/logo.png" alt="PLUTO INTELLIGENCE"><span class="brandlockup"><b>PLUTO INTELLIGENCE</b></span></a>
 <span class="tagline i-ar">تحليلات استثمارية مختارة بعناية</span><span class="tagline i-en">Curated market intelligence</span>
+<button class="admin-btn" id="adminBtn" onclick="openLoginModal()" aria-label="Login">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.5 12.5 19 4M19 4h-4M19 4v4"/></svg>
+<span class="i-ar" id="adminBtnTxtAr">تسجيل الدخول</span><span class="i-en" id="adminBtnTxtEn">Login</span>
+</button>
 <div class="market-status" id="marketStatus">
 <div class="ms-tz"><span class="i-ar">الكويت</span><span class="i-en">Kuwait</span></div>
 <div class="ms-clock" id="msClock"></div>
 <div class="ms-row"><span class="ms-dot" id="msDot"></span><b><span class="i-ar" id="msTextAr"></span><span class="i-en" id="msTextEn"></span></b></div>
 </div>
-<button class="admin-btn" id="adminBtn" onclick="openLoginModal()" aria-label="Login">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.5 12.5 19 4M19 4h-4M19 4v4"/></svg>
-</button>
 <button class="lng" id="lngBtn" onclick="setLang(CUR==='ar'?'en':'ar')" aria-label="Switch language">EN</button>
 </div>
 
@@ -364,6 +366,8 @@ function handleLogout(){sb.auth.signOut().then(function(){setLoggedInUI(false)})
 function setLoggedInUI(on){
 var btn=document.getElementById("adminBtn");
 btn.classList.toggle("logged-in",on);
+document.getElementById("adminBtnTxtAr").textContent=on?"تسجيل الخروج":"تسجيل الدخول";
+document.getElementById("adminBtnTxtEn").textContent=on?"Log out":"Login";
 document.querySelectorAll(".lesson-locked").forEach(function(box){
 box.classList.toggle("unlocked",on);
 var v=box.querySelector(".lesson-video-bg");

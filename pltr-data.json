@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-25",
+  "last_updated": "2026-07-26",
   "price_fallback": 135.53,
   "prev_close": 131.79,
   "market_cap": "$322.3B",
@@ -22,11 +22,7 @@
     {"when":"يوليو 2026","what":"شراكة Nvidia للذكاء الاصطناعي السيادي","note":"إعلان يرفع السهم وسط تراجع مايكل بيري عن جزء من رهانه القصير"}
   ],
   "news": [
-    {"text":"سحبت وكالة الاستخبارات الدفاعية الأمريكية طرحها لعقد منظومة استخبارات عسكرية بعد اعتراض رسمي من بالانتير، في تطور تعتبره الشركة انتصاراً مؤقتاً يعزز حضورها في قطاع الدفاع الأمريكي","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-24/after-palantir-beef-us-withdraws-bid-to-improve-military-intel","date":"2026-07-24"},
-    {"text":"خفّض بنك سيتي هدفه السعري لسهم بالانتير إلى 200 دولار من 225 دولاراً مع إبقائه على توصية الشراء، مشيراً إلى ضغط على مضاعفات التقييم رغم توقعاته بنمو إيرادات قوي","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/citigroup-has-lowered-expectations-for-palantir-technologies-nasdaqpltr-stock-price-2026-07-24/","date":"2026-07-24"},
-    {"text":"انضمت بالانتير إلى إنفيديا ومايكروسوفت وميتا وأكثر من عشرين شركة تقنية في رسالة مفتوحة تحث صناع القرار الأمريكيين على عدم فرض قيود صارمة على نماذج الذكاء الاصطناعي مفتوحة الأوزان، في ظل تصاعد المنافسة الصينية","src":"Fortune","link":"https://fortune.com/2026/07/24/nvidia-microsoft-lead-call-for-open-weight-ai-models-after-kimi/","date":"2026-07-24"},
-    {"text":"رغم تراجع سهم بالانتير نحو 25 بالمئة منذ بداية العام، رأى محلل في موقع موتلي فول أن الفرصة الاستثمارية لا تزال قائمة بفضل منصة الذكاء الاصطناعي الفريدة للشركة ونمو إيراداتها القوي","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/24/palantir-is-down-28-heres-why-im-buying-more/","date":"2026-07-24"},
-    {"text":"حذّر الرئيس التنفيذي لبالانتير أليكس كارب من أن الذكاء الاصطناعي سيولّد ثروات هائلة لكن بشكل غير متكافئ، إذ قد يصبح مبتكرو التقنية أثرى بأضعاف مقارنة بالعمال العاديين، محذراً من انقسامات اجتماعية خطيرة","src":"Benzinga","link":"https://www.benzinga.com/news/topics/26/07/60676323/palantir-ceo-alex-karp-says-al-will-create-unimaginable-wealth-for-oddly-shaped-iq-specimens-you-wouldnt-want-to-have-over-for-dinner","date":"2026-07-24"}
+    {"text":"توقع تحليل نشره موقع موتلي فول أن يتراجع سهم بالانتير بعد الإعلان عن نتائج الربع الثاني في 3 أغسطس، مشيراً إلى أن تقييم السهم المرتفع عند نحو 90 ضعف الأرباح المتوقعة يترك هامشاً ضئيلاً لأي خيبة أمل تشغيلية","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/26/prediction-palantir-stock-will-drop-to-this-price/","date":"2026-07-26"}
   ],
   "takeaways": [
     "الشركة سُمّيت على حجر رؤية سحري من أساطير الخواتم — لكن الذي يراقب فعليًا هو الحكومات والجيوش",

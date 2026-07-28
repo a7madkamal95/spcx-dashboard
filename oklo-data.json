@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-26",
+  "last_updated": "2026-07-28",
   "price_fallback": 41.10,
   "prev_close": 40.95,
   "market_cap": "7.16B$",
@@ -22,7 +22,8 @@
     {"when":"1 يوليو 2026","what":"الموافقة على تحليل السلامة","note":"وزارة الطاقة تعتمد تحليل السلامة الموثق لمفاعل اختبار النظائر Groves، بهدف بلوغ أول حرجية هذا الشهر"}
   ],
   "news": [
-    {"text":"حصلت شركة أوكلو على تصريح تشغيل من وزارة الطاقة الأمريكية لمفاعل غروفز في تكساس، في خطوة تنظيمية مهمة تمهد لتحميل الوقود وتحقيق أول تفاعل تسلسلي مستدام بعد نحو عشرة أشهر فقط من بدء الإنشاء.","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/25/nuclear-company-oklo-receives-startup-authorization-for-groves-reactor-a-key-step-in-its-regulatory-journey/","date":"2026-07-25"}
+    {"text":"ارتدّ سهم أوكلو عن مستويات أدنى في 52 أسبوعًا مرتفعًا نحو 3.2% في التداول قبل افتتاح السوق، مدفوعًا بحصوله على تصريح تشغيل مفاعل غروفز من وزارة الطاقة وانضمامه إلى برنامج فيدرالي بقيمة 200 مليون دولار إلى جانب مايكروسوفت وإنفيديا.","src":"Benzinga","link":"https://www.benzinga.com/trading-ideas/movers/26/07/60693580/oklo-shares-bounce-off-52-week-low-zone-whats-driving-the-action","date":"2026-07-27"},
+    {"text":"أعلنت أوكلو أنها ستصدر نتائجها المالية للربع الثاني من عام 2026 قبل افتتاح السوق في 7 أغسطس، يليها مؤتمر هاتفي مع المستثمرين يشارك فيه الرئيس التنفيذي جايكوب ديويت والمدير المالي كريغ بيلمير.","src":"Business Wire","link":"https://www.businesswire.com/news/home/20260727390956/en/Oklo-Announces-Date-for-Second-Quarter-2026-Financial-Results-and-Business-Update-Call","date":"2026-07-27"}
   ],
   "takeaways": [
     "Oklo تراهن أن الذكاء الاصطناعي سيحتاج طاقة نووية صغيرة الحجم وسريعة النشر — وسام ألتمان كان أول من راهن معها كرئيس مجلس إدارة سابق",

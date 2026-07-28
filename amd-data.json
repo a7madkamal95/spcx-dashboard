@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-26",
+  "last_updated": "2026-07-28",
   "price_fallback": 492.10,
   "prev_close": 486.27,
   "market_cap": "$797B",
@@ -22,11 +22,10 @@
     {"when":"22-23 يوليو 2026","what":"فعالية Advancing AI","note":"الكشف عن تحديثات MI450 ومنصة الخوادم Helios، وإطلاق معالج Zen 6 Venice"}
   ],
   "news": [
-    {"text":"أصبحت شركة AMD من الأسهم المفضلة لدى وول ستريت في قطاع البنية التحتية للذكاء الاصطناعي، إذ رفع المحللون توقعاتهم السعرية إلى مستويات وصلت إلى 1250 دولاراً بعد فعالية Advancing AI 2026 التي رسّخت مكانتها كمورّد متكامل لحلول الذكاء الاصطناعي.","src":"TipRanks","link":"https://www.tipranks.com/news/advanced-micro-devices-ignites-wall-street-with-bold-ai-bet","date":"2026-07-25"},
-    {"text":"رفع بنك أوف أمريكا هدفه السعري لسهم AMD إلى 620 دولاراً من 560 دولاراً مع تثبيت توصية الشراء، معتبراً الشركة موردة متكاملة لأنظمة الذكاء الاصطناعي على مستوى الحاسبات الكاملة بعد فعالية Advancing AI 2026.","src":"AOL (TheStreet)","link":"https://www.aol.com/articles/bank-america-revamps-amd-stock-131700000.html","date":"2026-07-25"},
-    {"text":"رأى تحليل نشره موقع Seeking Alpha أن السوق ما زال يقلل من قيمة تحوّل AMD إلى مزوّد شامل لبنية الذكاء الاصطناعي التحتية، متوقعاً أن تتجاوز إيراداتها 107.6 مليار دولار بحلول عام 2028.","src":"Seeking Alpha","link":"https://seekingalpha.com/article/4925610-amd-next-leg-higher","date":"2026-07-25"},
-    {"text":"خلص تحليل لموقع Motley Fool إلى أن AMD برزت كأقوى منافس لشركة إنفيديا خلال النصف الأول من عام 2026، بعدما حققت نمواً بنسبة 57% في إيرادات مراكز البيانات وأبرمت صفقات كبرى مع OpenAI وميتا.","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/25/nvidia-vs-amd-vs-intel-which-one-actually-won-the/","date":"2026-07-25"},
-    {"text":"ارتفع سهم AMD بنسبة 5% خلال الأسبوع رغم استمرار مسؤولي الشركة في بيع مكثف لأسهمهم، إذ سجّلت بيانات Quiver Quantitative 99 عملية بيع مقابل صفر عمليات شراء خلال الأشهر الستة الماضية.","src":"Quiver Quantitative","link":"https://www.quiverquant.com/news/%24AMD+stock+rose+5%25+this+week.+Here%27s+what+we+see+in+our+data.","date":"2026-07-25"}
+    {"text":"تراجعت أسهم قطاع الرقائق، ومنها AMD التي هبطت أكثر من 5%، بعد تقارير عن مفاوضات إنفيديا لضمان تمويل بقيمة 250 مليار دولار لصالح OpenAI، ما أعاد إحياء مخاوف المستثمرين من ظاهرة \"التمويل الدائري\" في قطاع الذكاء الاصطناعي.","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/article/nvidia-drops-nearly-5-leading-chip-stocks-lower-amid-renewed-worries-of-circular-financing-193309793.html","date":"2026-07-27"},
+    {"text":"تراجع سهم AMD بشكل حاد إثر تراجع واسع في قطاع أشباه الموصلات، وسط تداعيات نتائج إنتل المخيبة للآمال ومخاوف من ارتفاع الإنفاق الرأسمالي على البنية التحتية للذكاء الاصطناعي قبيل إعلان أرباح الشركة في 4 أغسطس.","src":"Investing.com","link":"https://www.investing.com/news/stock-market-news/why-is-advanced-micro-devices-stock-sliding-today-93CH-4814721","date":"2026-07-27"},
+    {"text":"ارتفع سهم AMD أكثر من 2% في التداول المبكر مطلع الأسبوع، مدعوماً بموجة جديدة من رفع التوقعات السعرية من محللي UBS وJefferies وRoth Capital عقب فعالية Advancing AI، قبيل إعلان الأرباح المرتقب في 4 أغسطس.","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/07/60692400/whats-going-on-with-amd-stock-monday-8","date":"2026-07-27"},
+    {"text":"أغلق سهم AMD منخفضاً بنسبة 3.39% مع تصاعد حذر المستثمرين قبل موسم الأرباح واستمرار الجدل حول جدوى الاستثمارات الضخمة في البنية التحتية للذكاء الاصطناعي.","src":"TradingKey","link":"https://www.tradingkey.com/news/market-movers/262056476-market-movers-amd-20260727","date":"2026-07-27"}
   ],
   "takeaways": [
     "ليزا سو حوّلت شركة على حافة الإفلاس إلى منافس حقيقي بسوق يتجاوز نصف تريليون دولار",

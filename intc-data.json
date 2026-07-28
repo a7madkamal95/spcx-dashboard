@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-26",
+  "last_updated": "2026-07-28",
   "price_fallback": 97.00,
   "prev_close": 98.05,
   "market_cap": "$419B",
@@ -22,9 +22,11 @@
     {"when":"يوليو 2026","what":"موجة تسريح جديدة","note":"دفعة إضافية من التسريحات في أوريغون ضمن خفض التكاليف المستمر"}
   ],
   "news": [
-    {"text":"تصدر سهم إنتل اهتمام المستثمرين الأفراد هذا الأسبوع بعد تجاوز نتائج الربع الثاني للتوقعات، مدعومة بقفزة 59% في مبيعات مراكز البيانات والذكاء الاصطناعي ورفع موازنة الإنفاق الرأسمالي إلى 20 مليار دولار وشراكة فورتينت الجديدة في التصنيع.","src":"Benzinga","link":"https://www.benzinga.com/markets/equities/26/07/60684194/intel-tesla-ibm-and-more-5-stocks-investors-couldnt-stop-buzzing-about-this-week","date":"2026-07-25"},
-    {"text":"تراجع سهم إنتل بعد ارتفاعه الأولي عقب نتائج الربع الثاني القوية، وسط تساؤلات المستثمرين حول جدوى اقتناص الانخفاض في ظل مخاوف تتعلق بأعمال التصنيع بالتعاقد والإنفاق على الذكاء الاصطناعي.","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/25/should-you-buy-the-dip-in-intel-stock/","date":"2026-07-25"},
-    {"text":"تناول تقرير لموقع \"موتلي فول\" مدى جدوى الاستثمار في سهم إنتل في ظل استراتيجية الرئيس التنفيذي ليب-بو تان لإعادة بناء إمبراطورية الشركة عبر التصنيع بالتعاقد واستعادة مكانتها في صناعة الرقائق العالمية.","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/25/should-you-buy-intel-stock-as-it-rebuilds-its-chip/","date":"2026-07-25"}
+    {"text":"رفعت بيرد السعر المستهدف لسهم إنتل إلى 125 دولارًا من 75 دولارًا مع إبقاء التصنيف عند \"محايد\"، مستندة إلى تسارع الطلب على أعمال التصنيع بالتعاقد وتحسن إنتاجية عقدة 18A.","src":"Investing.com","link":"https://www.investing.com/news/analyst-ratings/baird-raises-intel-stock-price-target-to-125-on-foundry-demand-93CH-4813860","date":"2026-07-27"},
+    {"text":"أعلنت إنتل تأمين أول عميل خارجي معلن لأعمال التصنيع بالتعاقد بعد فوزها بصفقة مع فورتينت لتصنيع معالج الأمن السيبراني الجديد SP6 على تقنية Intel 4.","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/27/intel-just-secured-a-huge-customer-for-its-foundry/","date":"2026-07-27"},
+    {"text":"تراجع سهم إنتل 3.56% مع تصاعد مخاوف المستثمرين من تأخر الجدول الزمني لعقدة التصنيع 18A وضغط النفقات الرأسمالية على هوامش الربح.","src":"TradingKey","link":"https://www.tradingkey.com/news/market-movers/262056723-market-movers-intc-20260727","date":"2026-07-27"},
+    {"text":"توقع محلل من بنك أوف أمريكا أن تتضاعف أرباح إنتل أربع مرات خلال ثلاث إلى أربع سنوات مدفوعة بنمو أعمال معالجات الخوادم للذكاء الاصطناعي، ما ساهم في ارتفاع السهم يوم الاثنين.","src":"Benzinga","link":"https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/07/60694256/intels-earnings-could-quadruple-in-4-years-analyst-says","date":"2026-07-27"},
+    {"text":"تساءل تقرير لموقع \"موتلي فول\" عمّا إذا كان سهم إنتل يستحق الشراء بعد نتائج الربع الثاني القوية، رغم تراجعه نحو 33% خلال الشهر الماضي بسبب مخاوف الإنفاق الرأسمالي.","src":"Motley Fool","link":"https://www.fool.com/investing/2026/07/27/is-intel-stock-a-buy-after-its-latest-earnings-report/","date":"2026-07-27"}
   ],
   "takeaways": [
     "الحكومة الأمريكية صارت أكبر مساهم في إنتل — تدخل غير مسبوق في شركة تقنية خاصة",

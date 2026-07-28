@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-23",
+  "last_updated": "2026-07-28",
   "price_fallback": 21.75,
   "prev_close": 21.89,
   "market_cap": "$9.73B",
@@ -22,7 +22,8 @@
     {"when":"يوليو 2026","what":"الحصة تتضخم لـ 9.8%","note":"كوهين واصل الشراء بعد رفض العرض الأول، ليرفع حصته الاقتصادية في eBay إلى 9.8%"}
   ],
   "news": [
-    {"text":"رفعت شركة جيم ستوب حصتها في موقع إيباي إلى ما يقارب 10%، في وقت يؤكد فيه الرئيس التنفيذي راين كوهين عزمه على مواصلة السعي للاستحواذ على الشركة رغم رفض مجلس إدارتها للعرض الأولي البالغ نحو 55-56 مليار دولار","src":"Foreign Policy Journal","link":"https://www.foreignpolicyjournal.com/2026/07/22/gamestop-nyse-gme-raises-ebay-nasdaq-ebay-stake-to-10-as-ryan-cohen-vows-to-escalate-takeover-battle/","date":"2026-07-22"}
+    {"text":"رفعت شركة رينيسانس تكنولوجيز حصتها في أسهم جيم ستوب بنسبة 376% خلال الربع الأول، لترتفع حيازتها إلى نحو 2.65 مليون سهم بقيمة تقارب 61.1 مليون دولار","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/filing-renaissance-technologies-llc-grows-stake-in-gamestop-corp-gme-2026-07-27/","date":"2026-07-27"},
+    {"text":"خفّض صندوق تقاعد موظفي كاليفورنيا الحكوميين (كالبرس) حصته في أسهم جيم ستوب بنسبة 38.6% خلال الربع الأول، ليحتفظ بنحو 277 ألف سهم بقيمة 6.38 مليون دولار","src":"MarketBeat","link":"https://www.marketbeat.com/instant-alerts/filing-gamestop-corp-gme-shares-sold-by-california-public-employees-retirement-system-2026-07-27/","date":"2026-07-27"}
   ],
   "takeaways": [
     "الشركة تحوّلت فعليًا لصندوق نقدي ضخم، ومتجر الألعاب صار مجرد واجهة — المقتنيات واستثمار النقد هم القصة الحقيقية اليوم",

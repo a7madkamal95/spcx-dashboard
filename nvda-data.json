@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-28",
+  "last_updated": "2026-07-30",
   "price_fallback": 203.81,
   "prev_close": 202.81,
   "market_cap": "$4.91T",
@@ -21,8 +21,10 @@
     {"when":"يوليو 2026","what":"أبل تخطف عرش القيمة السوقية","note":"تتفوق مؤقتًا على Nvidia وسط حذر المستثمرين من فقاعة الذكاء الاصطناعي"}
   ],
   "news": [
-    {"text":"تراجع سهم إنفيديا دون حاجز 200 دولار بعد تقارير عن نية الشركة ضمان تمويل يصل إلى 250 مليار دولار لمشروع مركز بيانات تابع لـ OpenAI، ما أعاد إحياء مخاوف المستثمرين من التمويل الدائري في قطاع الذكاء الاصطناعي.","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/28/nvda-stock-falls-below-200-as-250-billion-openai-plan-revives-ai-financing-fears/","date":"2026-07-28"},
-    {"text":"امتد الانخفاض إلى أسواق الرقائق الآسيوية عقب هبوط سهم إنفيديا 5% بسبب تقارير عن مفاوضات لضمان تمويل ضخم لمراكز بيانات OpenAI، وسط تصاعد المنافسة الصينية ومخاوف من استدامة إنفاق البنية التحتية للذكاء الاصطناعي.","src":"Investing.com","link":"https://www.investing.com/news/economy-news/morning-bid-chips-jolted-as-momentum-shifts-in-ai-4815448","date":"2026-07-28"}
+    {"text":"اشترت كاثي وود عبر صناديق آرك أسهم إنفيديا بقيمة 15.6 مليون دولار، مستغلة تراجع السهم عقب مخاوف من ظاهرة التمويل الدائري في صفقات الذكاء الاصطناعي الضخمة التي تجاوزت 750 مليار دولار خلال أسبوع.","src":"Benzinga","link":"https://www.benzinga.com/etfs/broad-u-s-equity-etfs/26/07/60748911/cathie-wood-nvidia-stock-spacex-tesla-jim-cramer-chip-selloff","date":"2026-07-29"},
+    {"text":"أعلنت شركة F5 دمج منصتها الأمنية F5 AI Guardrails مع تقنية NeMo Guardrails من إنفيديا لتوفير حماية موحدة لتطبيقات الذكاء الاصطناعي المؤسسية من هجمات حقن الأوامر وتسريب البيانات.","src":"Investing.com","link":"https://ca.investing.com/news/stock-market-news/f5-launches-ai-security-integration-with-nvidia-nemo-guardrails-93CH-4760229","date":"2026-07-29"},
+    {"text":"أطلقت شركة Direxion 6 صناديق مؤشرات جديدة تعتمد على بيع خيارات الشراء لتوليد دخل من أسهم بارزة تتصدرها إنفيديا وتسلا وميتا وبالانتير ومايكرون.","src":"Investing.com","link":"https://www.investing.com/news/stock-market-news/direxion-unveils-options-income-etf-suite-tied-to-nvidia-tesla-and-other-megacap-4820160","date":"2026-07-29"},
+    {"text":"تراجع سهم إنفيديا نحو 2-3% مع تصاعد التوتر الجيوسياسي في الشرق الأوسط وارتفاع أسعار النفط، إضافة لتزايد الحديث عن رفع الفائدة من قبل بعض أعضاء الفيدرالي، ما امتد للقطاع بأكمله.","src":"Invezz","link":"https://invezz.com/news/2026/07/29/why-nvidia-stock-is-down-around-2-today/","date":"2026-07-29"}
   ],
   "takeaways": [
     "الشركة تحولت فعليًا لشركة مراكز بيانات — الألعاب والرسوميات صارت هامشًا بسيطًا من الإيرادات",

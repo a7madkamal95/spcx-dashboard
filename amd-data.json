@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-28",
+  "last_updated": "2026-07-30",
   "price_fallback": 492.10,
   "prev_close": 486.27,
   "market_cap": "$797B",
@@ -22,10 +22,9 @@
     {"when":"22-23 يوليو 2026","what":"فعالية Advancing AI","note":"الكشف عن تحديثات MI450 ومنصة الخوادم Helios، وإطلاق معالج Zen 6 Venice"}
   ],
   "news": [
-    {"text":"تراجعت أسهم قطاع الرقائق، ومنها AMD التي هبطت أكثر من 5%، بعد تقارير عن مفاوضات إنفيديا لضمان تمويل بقيمة 250 مليار دولار لصالح OpenAI، ما أعاد إحياء مخاوف المستثمرين من ظاهرة \"التمويل الدائري\" في قطاع الذكاء الاصطناعي.","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/article/nvidia-drops-nearly-5-leading-chip-stocks-lower-amid-renewed-worries-of-circular-financing-193309793.html","date":"2026-07-27"},
-    {"text":"تراجع سهم AMD بشكل حاد إثر تراجع واسع في قطاع أشباه الموصلات، وسط تداعيات نتائج إنتل المخيبة للآمال ومخاوف من ارتفاع الإنفاق الرأسمالي على البنية التحتية للذكاء الاصطناعي قبيل إعلان أرباح الشركة في 4 أغسطس.","src":"Investing.com","link":"https://www.investing.com/news/stock-market-news/why-is-advanced-micro-devices-stock-sliding-today-93CH-4814721","date":"2026-07-27"},
-    {"text":"ارتفع سهم AMD أكثر من 2% في التداول المبكر مطلع الأسبوع، مدعوماً بموجة جديدة من رفع التوقعات السعرية من محللي UBS وJefferies وRoth Capital عقب فعالية Advancing AI، قبيل إعلان الأرباح المرتقب في 4 أغسطس.","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/07/60692400/whats-going-on-with-amd-stock-monday-8","date":"2026-07-27"},
-    {"text":"أغلق سهم AMD منخفضاً بنسبة 3.39% مع تصاعد حذر المستثمرين قبل موسم الأرباح واستمرار الجدل حول جدوى الاستثمارات الضخمة في البنية التحتية للذكاء الاصطناعي.","src":"TradingKey","link":"https://www.tradingkey.com/news/market-movers/262056476-market-movers-amd-20260727","date":"2026-07-27"}
+    {"text":"هبط سهم AMD 5.7% رغم توقيعها اتفاقية مع Core Scientific لتأمين ما يصل إلى 2.5 غيغاواط من سعة مراكز بيانات الذكاء الاصطناعي، إذ طغت موجة تراجع القطاع على أثر الصفقة الإيجابية.","src":"Yahoo Finance","link":"https://ca.finance.yahoo.com/news/amd-stock-drops-5-7-183608429.html","date":"2026-07-29"},
+    {"text":"حذّر محللو Wedbush من أن صفقة AMD مع Core Scientific، رغم قيمتها التي تبلغ 14 مليار دولار، قد تعكس نمط \"تمويل دائري\" حيث تموّل شركات الرقائق البنية التحتية التي ستستضيف منتجاتها بنفسها.","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/stocks/articles/wedbush-says-amd-deal-comes-140254104.html","date":"2026-07-29"},
+    {"text":"وصفت تحليلات الصفقة بين AMD وCore Scientific بأنها مؤشر على تحوّل استثمارات الذكاء الاصطناعي من الرقائق وحدها نحو البنية التحتية والطاقة اللازمة لدعم التوسع المتسارع في مراكز البيانات.","src":"Yahoo Finance","link":"https://ca.finance.yahoo.com/news/amds-core-scientific-deal-hints-201731172.html","date":"2026-07-28"}
   ],
   "takeaways": [
     "ليزا سو حوّلت شركة على حافة الإفلاس إلى منافس حقيقي بسوق يتجاوز نصف تريليون دولار",

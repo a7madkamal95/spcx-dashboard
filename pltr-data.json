@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-28",
+  "last_updated": "2026-07-30",
   "price_fallback": 135.53,
   "prev_close": 131.79,
   "market_cap": "$322.3B",
@@ -22,7 +22,10 @@
     {"when":"يوليو 2026","what":"شراكة Nvidia للذكاء الاصطناعي السيادي","note":"إعلان يرفع السهم وسط تراجع مايكل بيري عن جزء من رهانه القصير"}
   ],
   "news": [
-    {"text":"أفادت بلومبرغ بأن فرنسا تسعى لاستبدال بالانتير بمنصة محلية بديلة هي ChapsVision، في ظل تنامي الضغوط الأوروبية للحد من الاعتماد على شركات التحليل الأمريكية للبيانات","src":"Bloomberg","link":"https://www.thestar.com.my/business/business-news/2026/07/28/palantir-faces-growing-continental-backlash","date":"2026-07-28"}
+    {"text":"أنهت جهاز المخابرات الفرنسي الداخلي (DGSI) تعاقده مع بالانتير بعد تجديده بأشهر قليلة فقط، واختار شركة ChapsVision المحلية بديلاً ضمن مساعي فرنسا لتقليص الاعتماد على شركات التحليل الأمريكية للبيانات.","src":"Yahoo Finance","link":"https://finance.yahoo.com/markets/stocks/articles/palantir-pltr-faces-french-exit-090847762.html","date":"2026-07-29"},
+    {"text":"يسعّر متداولو الخيارات تحركاً محتملاً يقارب 15% لسهم بالانتير عقب نتائج الربع الثاني في 3 أغسطس، وهو أعلى بكثير من متوسط تحركات السهم التاريخية بعد الإعلان عن الأرباح.","src":"TipRanks","link":"https://www.tipranks.com/news/palantir-stock-price-braces-for-a-15-swing-as-q2-earnings-near","date":"2026-07-29"},
+    {"text":"ارتفع عدد صناديق التحوط المالكة لأسهم بالانتير إلى 96 صندوقاً خلال الربع الأول من 2026، في وقت تقلصت فيه مراكز الصناديق بمنافستها سنوفليك.","src":"Insider Monkey","link":"https://finance.yahoo.com/markets/stocks/articles/smart-money-shifts-palantir-pltr-220224389.html","date":"2026-07-29"},
+    {"text":"تستعد بالانتير للإعلان عن نتائج الربع الثاني في 3 أغسطس وسط تراجع 30% من قمتها هذا العام، مع مخاوف المستثمرين من تباطؤ النمو الدولي وعدم تجديد عقد NHS البريطاني.","src":"Barchart","link":"https://www.barchart.com/story/news/3532685/dear-palantir-stock-fans-mark-your-calendars-for-august-3","date":"2026-07-29"}
   ],
   "takeaways": [
     "الشركة سُمّيت على حجر رؤية سحري من أساطير الخواتم — لكن الذي يراقب فعليًا هو الحكومات والجيوش",

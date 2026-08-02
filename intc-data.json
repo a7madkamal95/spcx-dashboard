@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-30",
+  "last_updated": "2026-08-01",
   "price_fallback": 97.00,
   "prev_close": 98.05,
   "market_cap": "$419B",
@@ -22,9 +22,11 @@
     {"when":"يوليو 2026","what":"موجة تسريح جديدة","note":"دفعة إضافية من التسريحات في أوريغون ضمن خفض التكاليف المستمر"}
   ],
   "news": [
-    {"text":"كشف تقرير حصري لرويترز أن إنتل توفر تقنية معالجات من محفظتها الخاصة لشركة ناشئة يقودها شريك استثماري قديم للرئيس التنفيذي ليب-بو تان، في خطوة نادرة لشركة الرقائق الأمريكية.","src":"Reuters","link":"https://finance.yahoo.com/technology/articles/exclusive-intel-providing-chip-technology-225454435.html","date":"2026-07-29"},
-    {"text":"هبط سهم إنتل نحو 40% دون قمته رغم نتائج ربع ثاني قوية، إذ لا يزال معظم المحللين متحفظين بسبب مخاوف الإنفاق الرأسمالي الضخم وتكاليف إعادة هيكلة أعمال التصنيع.","src":"Barchart","link":"https://www.barchart.com/story/news/3533418/intel-stock-sinks-40-but-most-analysts-still-arent-bullish-on-intc","date":"2026-07-29"},
-    {"text":"تراجع سهم إنتل 4.24% مع تصاعد مخاوف المستثمرين من تأخر الجدول الزمني لعقدة التصنيع 18A وتباطؤ تحسّن العائد الإنتاجي، وسط منافسة متصاعدة بمراكز البيانات وضغط الإنفاق الرأسمالي.","src":"TradingKey","link":"https://www.tradingkey.com/news/market-movers/262061892-market-movers-intc-20260729","date":"2026-07-29"}
+    {"text":"قفز سهم إنتل في تعاملات ما قبل افتتاح الجمعة مع تحسن شهية المخاطرة وتقرير عن تطوير TSMC تقنية تعبئة رقائق منافسة لتقنية إنتل المتقدمة.","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/07/60836472/intel-stock-is-surging-friday-whats-going-on","date":"2026-07-31"},
+    {"text":"قال المحلل جيم كريمر إن موجة بيع سهم إنتل بعد الأرباح جاءت بسبب تصفية إجبارية لصندوق ذكاء اصطناعي رافعي مدين، لا بسبب الأساسيات، ورأى أن السهم يستحق 110 دولارًا.","src":"Benzinga","link":"https://www.benzinga.com/markets/equities/26/07/60833376/jim-cramer-says-intc-stock-belongs-at-110-blames-situational-awareness-blowup-for-intels-post-earnings-hideous-selling","date":"2026-07-31"},
+    {"text":"أظهر تحليل أن تجاوز إنتل توقعات أرباح الربع الثاني جاء مدفوعًا أساسًا برفع أسعار رقائق الخوادم وتحسّن مزيج المنتجات، لا بنمو الوحدات المباعة.","src":"ts2.tech","link":"https://ts2.tech/en/intel-nasdaqintc-shares-recover-price-increases-product-mix-account-for-82-of-server-expansion/","date":"2026-07-31"},
+    {"text":"أكد بنك أوف أمريكا تصنيفه \"شراء\" لسهم إنتل بسعر مستهدف 160 دولارًا، مستندًا إلى تحسن آفاق مراكز البيانات والتصنيع بعد نتائج الربع الثاني القوية.","src":"Markets Daily","link":"https://www.themarketsdaily.com/2026/07/31/intels-intc-buy-rating-reiterated-at-bank-of-america.html","date":"2026-07-31"},
+    {"text":"أغلق سهم إنتل الأسبوع عند نحو 90 دولارًا بعد فشله في استعادة مستوى 100 دولار، رغم تحسن هوامش التشغيل ونمو الإيرادات 25% سنويًا.","src":"FX Leaders","link":"https://www.fxleaders.com/news/2026/07/31/intel-stock-ends-week-at-90-after-failing-to-retake-100-despite-improving-profitability/","date":"2026-07-31"}
   ],
   "takeaways": [
     "الحكومة الأمريكية صارت أكبر مساهم في إنتل — تدخل غير مسبوق في شركة تقنية خاصة",

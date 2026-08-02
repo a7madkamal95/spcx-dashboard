@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-30",
+  "last_updated": "2026-08-01",
   "price_fallback": 4009.37,
   "prev_close": 4001.06,
   "market_cap": "COMEX",
@@ -21,8 +21,10 @@
     {"when":"17 يوليو 2026","what":"كسر حاجز الـ4000","note":"الذهب يهبط دون 4,000$ رغم توتر الشرق الأوسط، بأكبر خسارة أسبوعية خلال 6 أسابيع"}
   ],
   "news": [
-    {"text":"أبقى مجلس الاحتياطي الفيدرالي على أسعار الفائدة دون تغيير للاجتماع الخامس على التوالي بتصويت منقسم 9 مقابل 3، فارتفع الذهب قرابة 1% إلى نحو 4,064 دولاراً للأونصة.","src":"Bloomberg","link":"https://www.bloomberg.com/news/articles/2026-07-29/gold-advances-after-federal-reserve-keeps-interest-rates-on-hold","date":"2026-07-29"},
-    {"text":"قفزت أسعار النفط 7.3% بعد إعلان الولايات المتحدة صدّها هجوماً صاروخياً إيرانياً \"مفاجئاً\"، ما حدّ من مكاسب الذهب رغم قرار الفيدرالي بإبقاء الفائدة ثابتة.","src":"Investing.com","link":"https://www.investing.com/news/commodities-news/gold-prices-steady-ahead-of-fed-decision-oil-rebound-revives-inflation-concerns-4818551","date":"2026-07-29"}
+    {"text":"عاد الذهب لكسر حاجز 4,100 دولار للأونصة بعد وقف الولايات المتحدة ضرباتها الجوية الليلية في إيران، ما خفف بعض التوتر الجغرافي.","src":"Yahoo Finance","link":"https://finance.yahoo.com/personal-finance/investing/article/gold-prices-today-friday-july-31-2026-gold-price-finally-breaks-above-4100-as-us-paused-airstrikes-overnight-123436216.html","date":"2026-07-31"},
+    {"text":"تراجع الذهب في تعاملات الجمعة لكنه ظل في طريقه لإنهاء سلسلة خسائر استمرت أربعة أشهر بأول مكسب شهري له منذ فبراير.","src":"CNBC","link":"https://www.cnbc.com/2026/07/31/gold-slips-but-on-track-to-end-four-month-losing-streak.html","date":"2026-07-31"},
+    {"text":"أفاد بنك ING بأن مشتريات البنوك المركزية من الذهب خلال الربع الثاني من 2026 عوّضت ضعف الطلب من صناديق المؤشرات المتداولة، رغم أن وتيرة الشراء السنوية لا تزال دون مستويات 2025.","src":"FXStreet","link":"https://www.fxstreet.com/news/gold-central-bank-buying-offsets-etf-outflows-ing-202607310855","date":"2026-07-31"},
+    {"text":"تداول الذهب عند نحو 4,038 دولارًا للأونصة، متراجعًا خلال اليوم لكن مرتفعًا نحو 729 دولارًا عن مستواه قبل عام.","src":"Fortune","link":"https://fortune.com/article/current-price-of-gold-07-31-2026/","date":"2026-07-31"}
   ],
   "takeaways": [
     "الذهب تجاوز تاريخيًا حصة السندات الأمريكية بمحافظ البنوك المركزية لأول مرة منذ 1996",

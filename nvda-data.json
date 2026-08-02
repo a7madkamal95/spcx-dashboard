@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-30",
+  "last_updated": "2026-08-01",
   "price_fallback": 203.81,
   "prev_close": 202.81,
   "market_cap": "$4.91T",
@@ -21,10 +21,10 @@
     {"when":"يوليو 2026","what":"أبل تخطف عرش القيمة السوقية","note":"تتفوق مؤقتًا على Nvidia وسط حذر المستثمرين من فقاعة الذكاء الاصطناعي"}
   ],
   "news": [
-    {"text":"اشترت كاثي وود عبر صناديق آرك أسهم إنفيديا بقيمة 15.6 مليون دولار، مستغلة تراجع السهم عقب مخاوف من ظاهرة التمويل الدائري في صفقات الذكاء الاصطناعي الضخمة التي تجاوزت 750 مليار دولار خلال أسبوع.","src":"Benzinga","link":"https://www.benzinga.com/etfs/broad-u-s-equity-etfs/26/07/60748911/cathie-wood-nvidia-stock-spacex-tesla-jim-cramer-chip-selloff","date":"2026-07-29"},
-    {"text":"أعلنت شركة F5 دمج منصتها الأمنية F5 AI Guardrails مع تقنية NeMo Guardrails من إنفيديا لتوفير حماية موحدة لتطبيقات الذكاء الاصطناعي المؤسسية من هجمات حقن الأوامر وتسريب البيانات.","src":"Investing.com","link":"https://ca.investing.com/news/stock-market-news/f5-launches-ai-security-integration-with-nvidia-nemo-guardrails-93CH-4760229","date":"2026-07-29"},
-    {"text":"أطلقت شركة Direxion 6 صناديق مؤشرات جديدة تعتمد على بيع خيارات الشراء لتوليد دخل من أسهم بارزة تتصدرها إنفيديا وتسلا وميتا وبالانتير ومايكرون.","src":"Investing.com","link":"https://www.investing.com/news/stock-market-news/direxion-unveils-options-income-etf-suite-tied-to-nvidia-tesla-and-other-megacap-4820160","date":"2026-07-29"},
-    {"text":"تراجع سهم إنفيديا نحو 2-3% مع تصاعد التوتر الجيوسياسي في الشرق الأوسط وارتفاع أسعار النفط، إضافة لتزايد الحديث عن رفع الفائدة من قبل بعض أعضاء الفيدرالي، ما امتد للقطاع بأكمله.","src":"Invezz","link":"https://invezz.com/news/2026/07/29/why-nvidia-stock-is-down-around-2-today/","date":"2026-07-29"}
+    {"text":"قفزت عقود مقايضة التخلف عن سداد ديون إنفيديا إلى مستويات قياسية مع تصاعد قلق المستثمرين من التزامات تمويل ضخمة مرتبطة بالذكاء الاصطناعي تشمل التزامًا مزعومًا بدعم OpenAI بقيمة 250 مليار دولار.","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/07/60832453/nvidia-stock-is-still-up-but-250-billion-ai-risk-has-spooked-the-debt-market","date":"2026-07-31"},
+    {"text":"قال الرئيس التنفيذي لإنفيديا جنسن هوانغ إن رقائق الذاكرة، وليس قدرة الحوسبة، صارت العائق الأكبر أمام الذكاء الاصطناعي، ما يضع إنفيديا في موقع أفضل لتأمين إمدادات إضافية بفضل حجمها الكبير.","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/31/jensen-huang-says-memory-is-now-ais-biggest-bottle/","date":"2026-07-31"},
+    {"text":"أفادت CNBC بأن ارتفاع أسعار رقائق الذاكرة المرتبطة بأنظمة إنفيديا للذكاء الاصطناعي يضغط على السيولة النقدية لشركات الحوسبة السحابية الكبرى مع تصاعد كلفة التوسع في البنية التحتية.","src":"CNBC","link":"https://www.cnbc.com/2026/07/31/tech-earnings-cash-memory-ai.html","date":"2026-07-31"},
+    {"text":"أغلق سهم إنفيديا مرتفعًا 3.46% يوم الجمعة مدفوعًا بتوجيهات إنفاق رأسمالي قوية من كبرى شركات الحوسبة السحابية.","src":"TradingKey","link":"https://www.tradingkey.com/news/market-movers/262068195-market-movers-nvda-20260731","date":"2026-07-31"}
   ],
   "takeaways": [
     "الشركة تحولت فعليًا لشركة مراكز بيانات — الألعاب والرسوميات صارت هامشًا بسيطًا من الإيرادات",

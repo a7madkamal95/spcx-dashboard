@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-01",
+  "last_updated": "2026-08-02",
   "price_fallback": 135.53,
   "prev_close": 131.79,
   "market_cap": "$322.3B",
@@ -22,10 +22,9 @@
     {"when":"يوليو 2026","what":"شراكة Nvidia للذكاء الاصطناعي السيادي","note":"إعلان يرفع السهم وسط تراجع مايكل بيري عن جزء من رهانه القصير"}
   ],
   "news": [
-    {"text":"أبقت RBC كابيتال على تصنيفها المتحفظ \"أداء أضعف\" وسعر مستهدف 90 دولارًا لسهم بالانتير، مشيرة إلى مضاعف ربحية مرتفع يقارب 135 مرة وتساؤلات حول استدامة الزخم التجاري قبيل نتائج الربع الثاني.","src":"Investing.com","link":"https://www.investing.com/news/analyst-ratings/rbc-capital-maintains-palantir-stock-rating-on-valuation-concerns-93CH-4828811","date":"2026-07-31"},
-    {"text":"توقع محلل في Motley Fool تراجع سهم بالانتير عقب إعلان نتائج 3 أغسطس رغم احتمال تجاوزها التوقعات، مستندًا إلى تقييم يراه غير مستدام.","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/31/prediction-palantir-stock-is-going-to-plunge-aug-4/","date":"2026-07-31"},
-    {"text":"رأى تحليل آخر لـMotley Fool أن نتائج بالانتير المرتقبة في 3 أغسطس قد تدفع السهم للصعود بقوة، مدعومة باستمرار الزخم التجاري والحكومي المرتبط بالذكاء الاصطناعي.","src":"The Motley Fool","link":"https://www.fool.com/investing/2026/07/31/palantir-technologies-next-earnings-report-on-aug-3-could-send-the-stock-soaring-heres-why/","date":"2026-07-31"},
-    {"text":"صنّفت Seeking Alpha سهم بالانتير \"شراء قوي\" قبيل نتائج الربع الثاني، معتبرة أن المخاطرة إلى العائد أصبحت جذابة بعد تراجع مضاعف الربحية الآجل إلى نحو 82.6 مرة.","src":"Seeking Alpha","link":"https://seekingalpha.com/article/4928884-palantir-looks-very-enticing-ahead-of-q2-earnings","date":"2026-07-31"}
+    {"text":"دافع الرئيس التنفيذي لبالانتير أليكس كارب عن داريو أموداي الرئيس التنفيذي لأنثروبيك، ووصف مختبرات الذكاء الاصطناعي المنافسة بأنها \"غير محببة إلى حد كبير\".","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/08/60859658/palantir-ceo-alex-karp-says-anthropics-dario-amodei-isnt-the-caricature-most-americans-think-but-still-calls-ai-rivals-wildly-unlikable","date":"2026-08-01"},
+    {"text":"معاينة لنتائج بالانتير للربع الثاني من 2026 قبيل الإعلان المرتقب في 3 أغسطس، مع تركّز اهتمام المستثمرين على استمرار نمو الإيرادات الحكومية والتجارية.","src":"StockStory","link":"https://markets.financialcontent.com/stocks/article/stockstory-2026-8-2-palantir-technologies-pltr-q2-earnings-what-to-expect","date":"2026-08-01"},
+    {"text":"مع انطلاق شهر أغسطس، تصدّرت بالانتير قائمة الأسهم الأكثر ترقبًا هذا الأسبوع قبيل إعلان نتائجها المالية.","src":"TradingKey","link":"https://www.tradingkey.com/analysis/stocks/us-stocks/262067492-august-3-7-2026-preview-palantir-amd-sandisk-earnings-nfarm-payrolls-tradingkey","date":"2026-08-01"}
   ],
   "takeaways": [
     "الشركة سُمّيت على حجر رؤية سحري من أساطير الخواتم — لكن الذي يراقب فعليًا هو الحكومات والجيوش",

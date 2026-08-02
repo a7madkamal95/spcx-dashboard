@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-01",
+  "last_updated": "2026-08-02",
   "price_fallback": 492.10,
   "prev_close": 486.27,
   "market_cap": "$797B",
@@ -22,10 +22,7 @@
     {"when":"22-23 يوليو 2026","what":"فعالية Advancing AI","note":"الكشف عن تحديثات MI450 ومنصة الخوادم Helios، وإطلاق معالج Zen 6 Venice"}
   ],
   "news": [
-    {"text":"ارتفع سهم AMD في تعاملات الجمعة مع تحفيز نتائج قوية لمايكروسوفت ولام ريسيرش شراء واسع في أسهم أشباه الموصلات المتراجعة قبيل إعلان أرباح AMD نفسها في 4 أغسطس.","src":"Benzinga","link":"https://www.benzinga.com/markets/tech/26/07/60835573/amd-stock-is-gaining-friday-whats-going-on","date":"2026-07-31"},
-    {"text":"أبلغت AMD شركاءها بزيادة أسعار بطاقات الرسوميات وحزم الذاكرة بنسبة 10% على الأقل اعتبارًا من أغسطس، في خطوة تحذو حذو إنفيديا وسط ارتفاع كلفة ذاكرة GDDR.","src":"The FPS Review","link":"https://www.thefpsreview.com/2026/07/31/amd-is-reportedly-jumping-on-the-gpu-price-hike-gravy-train-as-its-partners-claim-a-10-increase-is-on-its-way-in-august/","date":"2026-07-31"},
-    {"text":"رأى تحليل لـ24/7 Wall St أن سهم AMD لا يزال مقوّمًا بأقل من قيمته عند 429.56 دولارًا بسعر مستهدف 563.35 دولارًا، مستشهدًا بنمو إيرادات مراكز البيانات 57% سنويًا والتزامات عملاء ضخمة بالذكاء الاصطناعي.","src":"24/7 Wall St.","link":"https://finance.yahoo.com/markets/stocks/articles/amd-stock-big-wall-street-143032128.html","date":"2026-07-31"},
-    {"text":"رغم تراجع AMD 10% خلال الشهر الماضي، أعادت نتائج مايكروسوفت القوية إشعال التفاؤل بإنفاق شركات الحوسبة السحابية، مع تحديد بيرد سعرًا مستهدفًا قياسيًا بالسوق عند 1,250 دولارًا.","src":"24/7 Wall St.","link":"https://247wallst.com/investing/2026/07/31/amd-is-down-10-over-a-month-did-microsofts-catalyst-just-spark-the-155-upside-expected-by-wall-street-pro/","date":"2026-07-31"}
+    {"text":"زخم معالجات EPYC المخصصة للخوادم قد يمنح سهم AMD دفعة إيجابية عقب إعلان نتائجها المالية المرتقب في 4 أغسطس.","src":"Barchart","link":"https://finance.yahoo.com/markets/stocks/articles/server-cpus-could-amd-stock-130002075.html","date":"2026-08-01"}
   ],
   "takeaways": [
     "ليزا سو حوّلت شركة على حافة الإفلاس إلى منافس حقيقي بسوق يتجاوز نصف تريليون دولار",
